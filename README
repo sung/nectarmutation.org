@@ -1,0 +1,94 @@
+############################################################
+# Nectar-WebV3.00 is served from
+# http://www.nectarmutation.org
+# ##########################################################
+# rsync
+sudo rsync -a   /BiO/Serve/mysql/NECTAR_DEVEL/ /BiO/Serve/mysql/NECTAR
+
+Run script/nectar_webv2_server.pl to test the application.
+
+#Stub
+$catalyst.pl Nectar::Web
+
+#Controller
+[sung@cmr000018 Nectar-WebV2]$ ./script/nectar_webv2_create.pl controller Browser::Mutation
+[sung@cmr000018 Nectar-WebV2]$ ./script/nectar_webv2_create.pl controller Browser::Run
+[sung@cmr000018 Nectar-WebV2]$ ./script/nectar_webv2_create.pl controller Browser::Disease
+[sung@cmr000018 Nectar-WebV2]$ ./script/nectar_webv2_create.pl controller Browser::Gene
+[sung@cmr000018 Nectar-WebV2]$ ./script/nectar_webv2_create.pl controller Browser::Patient
+[sung@cmr000018 Nectar-WebV2]$ ./script/nectar_webv2_create.pl controller Util::Downloader
+
+[sung@cmr000018 Nectar-WebV2]$ ./script/nectar_webv2_create.pl controller Util::Messenger
+[sung@cmr000018 Nectar-WebV2]$ ./script/nectar_webv2_create.pl controller Util::Service
+
+[sung@cmr000018 Nectar-WebDev]$ ./script/nectar_webv2_create.pl controller User
+[sung@cmr000018 Nectar-WebDev]$ ./script/nectar_webv2_create.pl controller Captcha 
+
+[sung@cardiodb Nectar-WebV2.99]$ ./script/nectar_webv2_create.pl controller Parser::VCF
+
+#Model
+[sung@cmr000018 Nectar-WebDev]$ cpanm DBIx::Class::TimeStamp
+[sung@cmr000018 Nectar-WebDev]$ cpanm DBIx::Class::PassphraseColumn
+[sung@cmr000018 Nectar-WebV2]$ ./script/nectar_webv2_create.pl model CARDIODB DBIC::Schema Nectar::Schema::CARDIODB create=static dbi:mysql:dbname=CARDIODB_DEVEL\;host=fs01 sung snrnsk
+[sung@cmr000018 Nectar-WebDev]$ ./script/nectar_webv2_create.pl model NECTAR DBIC::Schema Nectar::Schema::NECTAR create=static components=TimeStamp,PassphraseColumn dbi:mysql:dbname=NECTAR\;host=fs01 sung snrnsk
+[sung@cmr000018 Nectar-WebDev]$ ./script/nectar_webv2_create.pl model UNIPROT DBIC::Schema Nectar::Schema::UNIPROT create=static dbi:mysql:dbname=UNIPROT\;host=fs01 sung snrnsk
+[sung@cmr000018 Nectar-WebV2.99]$ ./script/nectar_webv2_create.pl model COSMIC DBIC::Schema Nectar::Schema::COSMIC create=static dbi:mysql:dbname=COSMIC\;host=fs01 sung snrnsk
+[sung@cardiodb Nectar-WebV2.99]$ ./script/nectar_webv2_create.pl model VCF
+
+
+add following at 'lib/Nectar/Schema/CARDIODB/Result/TargetGene.pm' as this is a view:
+__PACKAGE__->set_primary_key("id");
+
+#View
+[sung@cmr000018 Nectar-WebV2]$ ./script/nectar_webv2_create.pl view TT TTSite
+[sung@beomaster01 Nectar-WebV2]$ ./script/nectar_webv2_create.pl view JSON JSON
+								./script/nectar_web_create.pl view Download
+								./script/nectar_web_create.pl view XML::Feed 
+								./script/nectar_web_create.pl view Excel Excel::Template::Plus
+
+# JavaScript 
+[sung@beomaster01 Web]$ cp /data/Install/JavaScript/coda-slider/javascripts/* Cardiodb.org/Nectar-WebV2/root/static/js/
+
+# CSS
+[sung@beomaster01 Web]$ cp /data/Install/JavaScript/coda-slider/stylesheets/coda-slider-2.0.css Cardiodb.org/Nectar-WebV2/root/static/css/
+
+# relative/absolute URL link
+1. nectar.js 
+2. static/mutation_profile.html (look at img src)
+
+# HTML::FormHandler
+[sung@cmr000018 Nectar-WebDev]$ form_generator.pl --rs_name=User --schema_name=Nectar::Schema::NECTAR  --db_dsn=dbi:mysql:database=NECTAR;host=fs01
+
+## Before Publishing Nectar (pribaly via Apache) check the proper URL shown below:
+1. root/static/site/reg_warning.html
+		<form method='post' action='/main/register/tnc' id='reg_agree'> <!-- /register/tnc to set a session argument-->
+2. root/static/js/nectar.js
+		boxy_content +="<a style=\"font-size: 9px; text-align: right;\" title=\"create account\" href=\"/main/register\">need an account?</a><br/>";
+                    $.post("/main/sendmail", { subject: c.find("input[name='subject']").val(), sender: c.find("input[name='sender']").val(), comment: c.find("#comment").val()},
+                    $.post("/main/login", { username: c.find("input[name='username']").val(), password: c.find("input[name='password']").val()},
+								loginBoxy.hideAndUnload(window.location = "/");
+3. lib/Nectar/Form/Captcha.pm and 
+	lib/Nectar/Form/Register.pm
+	sub captcha_image_url { return '/main/captcha/image' }
+4. root/static/site/not_logged_in.html
+	<form id="login" method='post' action="/main/login">
+		<a href="/main/register" title="create your account">need an account?</a>
+5. root/lib/js/login_ready.tt2
+			boxy_content +="<a style=\"font-size: 10px; text-align: right;\" title=\"create account\" href=\"/main/register\">need an account?</a><br/>";
+6. root/src/Form/login.tt2
+	<form id="login" method='post' action="[%c.uri_for('/main/login')%]">
+		<a href="[%c.uri_for('/main/register')%]" title="create your account">need an account?</a>
+
+### Sitemap ###
+mysql NECTAR --skip-column-names <  script/SQL/sitemap_gene.sql > root/static/site/sitemap_genes.txt
+mysql NECTAR --skip-column-names <  script/SQL/sitemap_disease.sql > root/static/site/sitemap_diseases.txt
+mysql NECTAR --skip-column-names <  script/SQL/sitemap_remove_disease.sql > root/static/site/sitemap_remove_diseases.txt
+mysql NECTAR --skip-column-names <  script/SQL/sitemap_gbrowse_ensp.sql > root/static/site/sitemap_gbrowse_ensp.txt
+mysql NECTAR --skip-column-names <  script/SQL/sitemap_das_para.sql > root/static/site/sitemap_das_para.txt
+
+### NEW SQL for 'get_colocated_mutations'
+SELECT me.*,
+_UnifiedCalls.chr, _UnifiedCalls.v_start, _UnifiedCalls.v_end, _UnifiedCalls.reference, _UnifiedCalls.genotype 
+FROM V2Ensembls me  
+JOIN _UnifiedCalls _UnifiedCalls ON _UnifiedCalls.id = me.uid 
+WHERE me.ensp = 'ENSP00000279022' AND me.p_start = '19' AND me.is_canonical = 1
