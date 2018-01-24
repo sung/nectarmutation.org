@@ -1,0 +1,8 @@
+use strict;
+use warnings;
+
+use Nectar::Web;
+
+my $app = Nectar::Web->apply_default_middlewares(Nectar::Web->psgi_app);
+$app;
+
