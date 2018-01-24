@@ -1,0 +1,82 @@
+[% meta.title = 'NGS Runs'-%]
+<a href='[%c.uri_for('/')%]'>Home</a> >> 
+<a href='[%c.uri_for('/run')%]'>Run lists</a> >>
+<a href='[%c.uri_for('/run')%]/[%run_name%]'>[%run_name%]</a> >>
+<a href='[%c.uri_for('/run')%]/[%run_name%]/[%sample_name%]'>[%sample_name%]</a> >>
+<a href='[%c.uri_for('/run')%]/[%run_name%]/[%sample_name%]/[%v_caller%]'>[%v_caller%]</a> >>
+[%IF snp_type %]
+<a href='[%c.uri_for('/run')%]/[%run_name%]/[%sample_name%]/[%v_caller%]/Ensembl'>Ensembl</a>  >>
+<a href='[%c.uri_for('/run')%]/[%run_name%]/[%sample_name%]/[%v_caller%]/Ensembl?[%snp_type%]'>[%snp_type%]</a> 
+[%ELSE%]
+<a href='[%c.uri_for('/run')%]/[%run_name%]/[%sample_name%]/[%v_caller%]/Ensembl'>Ensembl</a> 
+[%END%]
+<br><br>
+
+[%PROCESS pager.tt2%]
+<a href='[%c.uri_for('/run')%]/[%run_name%]/[%sample_name%]/[%v_caller%]/Ensembl/download/csv?[%snp_type%]'>download</a>
+
+<div id='snp_by_gene'>
+<table id='stat_table'>
+	<tr>
+		<th>ENSG</th>
+		<th>Gene</th>
+		<th>Chr</th>
+		<th>Strand</th>
+		<th>Start</th>
+		<th>End</th>
+		<th>Allele</th>
+		<th>ENSG type</th>
+		<th>ENST</th>
+		<th>Start</th>
+		<th>End</th>
+		<th>CDS start</th>
+		<th>CDS end</th>
+		<th>Codon</th>
+		<th>ENST type</th>
+		<th>CCDS</th>
+		<th>SNP type</th>
+		<th>dbSNPs</th>
+		<th>HGMDs</th>
+		<th>ENSP</th>
+		<th>Start</th>
+		<th>End</th>
+		<th>Allele</th>
+		<th>SIFT</th>
+		<th>SIFT score</th>
+		<th>Polyphen</th>
+		<th>Polyphen score</th>
+	</tr>
+[%-FOREACH v IN variations%]
+	<tr>
+		<td>[%v.ensg%]</td>
+		<td>[%v.hgnc%]</td>
+		<td>[%v.chr%]</td>
+		<td>[%v.strand%]</td>
+		<td>[%v.g_start%]</td>
+		<td>[%v.g_end%]</td>
+		<td>[%v.allele%]</td>
+		<td>[%v.ensg_type%]</td>
+		<td>[%v.enst%]</td>
+		<td>[%v.t_start%]</td>
+		<td>[%v.t_end%]</td>
+		<td>[%v.cds_start%]</td>
+		<td>[%v.cds_end%]</td>
+		<td>[%v.codon%]</td>
+		<td>[%v.enst_type%]</td>
+		<td>[%v.ccds%]</td>
+		<td>[%v.snp_type%]</td>
+		<td>[%v.rs_ids%]</td>
+		<td>[%v.hgmds%]</td>
+		<td>[%v.ensp%]</td>
+		<td>[%v.p_start%]</td>
+		<td>[%v.p_end%]</td>
+		<td>[%v.p_ref%]/[%v.p_mut%]</td>
+		<td>[%v.sift%]</td>
+		<td>[%v.sift_score%]</td>
+		<td>[%v.polyphen%]</td>
+		<td>[%v.polyphen_score%]</td>
+	</tr>	
+[%-END%]
+</table>
+</div>
+[%PROCESS pager.tt2%]

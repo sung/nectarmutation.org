@@ -1,0 +1,6 @@
+
+		<div id='form_upload' style='font-size:90%'>
+			[% form.render %]
+			File size should be less than 2MB<br/>
+			Try a dummy <a href="[%c.uri_for('/static/nectar_dummy.vcf')%]">VCF</a>
+		</div>

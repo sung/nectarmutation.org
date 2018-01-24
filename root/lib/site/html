@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="author" content="Sungsam Gong">
+		<meta name="description" content="Nectar" /> 
+		<meta name="keywords" content="nectar, mutation, disease, ngs, nhs" />
+		<title>[% meta.title or site.title %]</title>
+		<link rel="alternate" type="application/rss+xml" title="NECTAR news" href="[%c.uri_for('/rss')%]" />
+		[% INCLUDE site/css-%]
+		[% INCLUDE site/js-%]
+		<style type="text/css">
+		[%- PROCESS ttsite.css -%]
+		</style>
+	</head>
+
+	<body>
+
+[% content %]
+	[%IF no_wrapper%]<div id="my_activity"></div>[%END%]
+	[%-# root/lib/js/google_analytics.tt2%]
+	[%INCLUDE google_analytics.tt2-%]
+	</body>
+</html>

@@ -1,0 +1,162 @@
+			[%IF switcher=='Disease'%]
+				[%SET gb_image=gb_disease_img %]
+				[%SET hpmd_ftp_link= nectar_ftp _ '/ProteinAnnotations/Diseases/' _ hgnc _ '_disease_anno.txt'%]
+				[%SET enrich_ftp_link= nectar_ftp _ '/EnrichedAnnotations/Diseases/' _ hgnc _ '_disease_enriched_anno.txt'%]
+			[%ELSE%]
+				[%SET gb_image=gb_ft_img%]
+				[%SET hpmd_ftp_link= nectar_ftp _ '/ProteinAnnotations/Functions/' _ hgnc _ '_function_anno.txt'%]
+				[%SET enrich_ftp_link= nectar_ftp _ '/EnrichedAnnotations/Functions/' _ hgnc _ '_function_enriched_anno.txt'%]
+			[%END%]
+			<div id="list_of_[%switcher%]">
+				<a title="Click to see in the Gbrowse mode" href="[%gb_link%][%ensx.0.ensp%]" target="_blank"><img src="[%gb_image%][%ensx.0.ensp%]" border=0 blank"></a>
+				<table class="general_list_table">
+					<caption>
+					[%switcher%] annotations of <a class="external" title="see the source" href="[%link.uniprot%]/uniprot/[%uniprot_seq.0.acc%]#section_features" target="_blank">[%hgnc%]</a> 
+					<a class='text rfloat' href='[%enrich_ftp_link%]' title='download enriched annotations at the chromosome coordinate level' target='_blank'>&nbsp;</a>&nbsp;
+					<a class='text rfloat' href='[%hpmd_ftp_link%]' title='download annotations at the protein sequence level' target='_blank'>&nbsp;</a>&nbsp;  
+					</caption>
+					<tr class='column'>
+						<th>Category</a></th>
+						<th>Feature</th>
+						<th>Description</th>
+						<th>NO. of amino aicd residues</a></th>
+					</tr>
+					[%-FOREACH d IN hpmd_stats%]
+						[%-IF switcher=='Disease'%]
+							[%IF d.get_column('feature')=='HUMSAVAR' or d.get_column('feature')=='COSMIC' or d.get_column('feature')=='HGMD-PUBLIC' or d.get_column('feature')=='ClinVar'%]
+							<tr>
+								<td>[%d.get_column('category')%]</td>
+								<td><a title="click to see details below" href="#" id="subselect_[%d.get_column('feature')%]">[%d.get_column('feature')%]</a></td>
+								<td>[%d.get_column('des')%]</td>
+								<td>[%d.get_column('cnt')%]</td>
+							</tr>
+							[%END%]
+						[%ELSE%]
+							[%UNLESS d.get_column('feature')=='HUMSAVAR' or d.get_column('feature')=='COSMIC' or d.get_column('feature')=='HGMD-PUBLIC' or d.get_column('feature')=='ClinVar'%]
+							<tr>
+								<td>[%d.get_column('category')%]</td>
+								<td><a title="click to see details below" href="#" id="subselect_[%d.get_column('feature')%]">[%d.get_column('feature')%]</a></td>
+								<td>[%d.get_column('des')%]</td>
+								<td>[%d.get_column('cnt')%]</td>
+							</tr>
+							[%END%]
+						[%END-%]
+					[%END-%]
+				</table>
+			</div>
+
+			[%-SET sub_tab_container="hpmd_subtab" _ switcher%]
+			<script type="text/javascript">
+				[%-FOREACH d IN hpmd_stats%]
+					[%-IF switcher=='Disease'%]
+						[%IF d.get_column('feature')=='HUMSAVAR' or d.get_column('feature')=='COSMIC' or d.get_column('feature')=='HGMD-PUBLIC' or d.get_column('feature')=='ClinVar'%]
+						$('#subselect_[%d.get_column('feature')%]').click( function() {
+							$('#[%sub_tab_container%]').easytabs('select', '#[%d.get_column('feature')%]');
+						});
+						[%END-%]
+					[%ELSE%]
+						[%UNLESS d.get_column('feature')=='HUMSAVAR' or d.get_column('feature')=='COSMIC' or d.get_column('feature')=='HGMD-PUBLIC' or d.get_column('feature')=='ClinVar'%]
+						$('#subselect_[%d.get_column('feature')%]').click( function() {
+							$('#[%sub_tab_container%]').easytabs('select', '#[%d.get_column('feature')%]');
+						});
+						[%END-%]
+					[%END%]
+				[%END-%]
+			</script>
+
+			[%PROCESS easy_tab.tt2 tab_container="$sub_tab_container"%] [%# root/lib/js/easy_tab.tt2%]
+			<div id="[%sub_tab_container%]" class='tab-container sub_container'>
+				<ul class='etabs'>
+				[%-FOREACH d IN hpmd_stats%]
+					[%-IF switcher=='Disease'%]
+						[%IF d.get_column('feature')=='HUMSAVAR' or d.get_column('feature')=='COSMIC' or d.get_column('feature')=='HGMD-PUBLIC' or d.get_column('feature')=='ClinVar'%]
+						<li class='tab'><a href="#[%d.get_column('feature')%]" title="known mutations from [%d.get_column('feature')%]">[%d.get_column('feature')%]</a></li>
+						[%END%]
+					[%ELSE%]
+						[%UNLESS d.get_column('feature')=='HUMSAVAR' or d.get_column('feature')=='COSMIC' or d.get_column('feature')=='HGMD-PUBLIC' or d.get_column('feature')=='ClinVar'%]
+						<li class='tab'><a href="#[%d.get_column('feature')%]" title="known mutations from [%d.get_column('feature')%]">[%d.get_column('feature')%]</a></li>
+						[%END%]
+					[%END%]
+				[%END%]
+				</ul>
+
+				<div class='easytab-panel-container'>
+				[%-FOREACH d IN hpmd_stats%]
+					[%IF switcher=='Disease'%]
+						[%IF d.get_column('feature')=='HUMSAVAR' or d.get_column('feature')=='COSMIC' or d.get_column('feature')=='HGMD-PUBLIC' or d.get_column('feature')=='ClinVar'%]
+							[%IF d.get_column('feature')=='HUMSAVAR'%]
+								[%-SET alink=link.humsavar title='go to expasy'%]
+							[%ELSIF d.get_column('feature')=='HGMD-PUBLIC'%]
+								[%-SET alink=ensembl.hgmd title='to go ensembl'%]
+							[%ELSIF d.get_column('feature')=='COSMIC'%]
+								[%-SET alink=link.cosmic title='go to cosmic'%]
+							[%ELSIF d.get_column('feature')=='ClinVar'%]
+								[%-SET alink=link.clinvar title='go to clinvar'%]
+							[%END%]
+						<div id="[%d.get_column('feature')%]">
+							<table class='general_list_table'>
+								<tr class='column'>
+									<th>ENSP [<a title='Ensembl protein'>?</a>]</th>
+									<th>Position [<a title="click to see enriched chromosome region of this residue">?</a>]</th>
+									[%IF d.get_column('feature')=='HGMD-PUBLIC'%]
+									<th>Residue</th>
+									<th>Xref [<a title="click to visit the source site">?</a>]</th>
+									[%ELSE%]
+									<th>Allele [<a title="reference/mutation">?</a>]</th>
+									<th>Xref [<a title="click to visit the source site">?</a>]</th>
+									<th>Description</th>
+									<th>OMIM</th>
+									<th>PubMed</th>
+									[%END%]
+								</tr>
+							[%-FOREACH h IN hpmds%]
+								[%IF d.get_column('feature') == h.get_column('feature')%]
+								<tr class='entry'>
+									<td>[%h.ensp%]</td>
+									<td><a href="#" onClick='Boxy.load("[%c.uri_for('/get_colocated_mutations')%]?hgnc=[%hgnc%]&feature=[%h.get_column('feature')%]&xref=[%h.xref%]&ensp=[%h.ensp%]&res_num=[%h.res_num%]&boxy=1", {title:"List of possible non-synonymous mutations where [%h.ensp%]:[%h.res_num%] occurs"})'>[%h.res_num%]</a></td>
+									[%IF d.get_column('feature')=='HGMD-PUBLIC'%]
+									<td>[%h.p_ref%]</td>
+									<td><a class="external" href="[%alink%][%h.xref%]" target="_blank">[%h.xref%]</a></td>
+									[%ELSE%]
+									<td>[%h.p_ref%]/[%h.p_mut%]</td>
+									<td><a class="external" href="[%alink%][%IF h.get_column('feature')=='ClinVar'%][%h.xref.substr(2)%][varid][%ELSE%][%h.xref%][%END%]" target="_blank">[%h.xref%]</a></td>
+									<td>[%h.get_column('des')%]</td>
+									<td>[%IF h.get_column('omim')%]<a class="external" title="OMIM:[%h.get_column('omim')%]" href="http://omim.org/entry/[%h.get_column('omim')%]" target="_blank">[%h.get_column('omim')%]</a>[%END%]</td>
+									<td>[%IF h.get_column('pmid')%]<a class="external" title="PubMed:[%h.get_column('pmid')%]" href="[%link.pubmed%]/[%h.get_column('pmid')%]" target="_blank">[%h.get_column('pmid')%]</a>[%END%]</td>
+									[%END%]
+								</tr>
+								[%END%]
+							[%END-%]
+							</table>
+						</div>
+						[%END%][%#end of UNLESS d.get_col%]
+					[%ELSE%][%# switcher='Disease'%]
+						[%UNLESS d.get_column('feature')=='HUMSAVAR' or d.get_column('feature')=='COSMIC' or d.get_column('feature')=='HGMD-PUBLIC' or d.get_column('feature')=='ClinVar'%]
+						<div id="[%d.get_column('feature')%]">
+							<table class='general_list_table'>
+								<tr class='column'>
+									<th>ENSP [<a title='Ensembl protein'>?</a>]</th>
+									<th>Position [<a title="click to see enriched chromosome region of this residue">?</a>]</th>
+									<th>Residue</th>
+									<th>Description</th>
+									<th>PubMed</th>
+								</tr>
+							[%-FOREACH h IN hpmds%]
+								[%IF d.get_column('feature') == h.get_column('feature')%]
+								<tr class='entry'>
+									<td>[%h.ensp%]</td>
+									<td><a href="#" onClick='Boxy.load("[%c.uri_for('/get_colocated_mutations')%]?hgnc=[%hgnc%]&feature=[%h.get_column('feature')%]&xref=[%h.xref%]&ensp=[%h.ensp%]&res_num=[%h.res_num%]&boxy=1", {title:"List of possible non-synonymous mutations where [%h.ensp%]:[%h.res_num%] occurs"})'>[%h.res_num%]</a></td>
+									<td>[%h.p_ref%]</td>
+									<td>[%h.get_column('des')%]</td>
+									<td>[%IF h.get_column('pmid')%]<a class="external" title="PubMed:[%h.get_column('pmid')%]" href="[%link.pubmed%]/[%h.get_column('pmid')%]" target="_blank">[%h.get_column('pmid')%]</a>[%END%]</td>
+								</tr>
+								[%END%]
+							[%END-%]
+							</table>
+						</div>
+						[%END%][%#end of UNLESS d.get_col%]
+					[%END%]
+				[%END-%][%#end of foreach %]
+				</div>[%#end of <div class='easytab-panel-container'>%]
+			</div>
+			[%#end of <div id="sub_tab_container%]

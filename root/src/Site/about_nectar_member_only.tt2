@@ -1,0 +1,74 @@
+			<h2 class="main_title">NECTAR?</h2>
+			<p class="desc">
+				So, what is 'NECTAR'? It stands for <strong>NECT</strong>ar is not <strong>AR</strong>chive.
+				Or more in science-wise, <strong>NE</strong>xt Generation <strong>C</strong>ardiovascular <strong>T</strong>r<strong>A</strong>nslationl <strong>R</strong>esearch.
+				Yes, that's what I meant for this website.
+			</p>
+			<p class="desc">
+				If you are a nerd, you might be wondering what NECTAR is made of.
+			</p>
+
+			<p class="desc">
+				The short version: it is developed on the basis of the Perl <a class="external" href="[%link.cat%]">Catalyst</a> 
+				web application framework and served by <a class="external" href="[%link.apache%]">Apache</a> with <a class="external" href="[%link.modperl%]">mod-perl</a> as a glue, 
+				all running on Linux and developed on <a class="external" href="[%link.centos%]">CentOS</a>. 
+				We use <a class="external" href="[%link.mysql%]">MySQL</a> as a back-end DBMS. 
+				We use <a class="external" href="[%link.memcached%]">memcached</a> to keep the database from getting crushed. 
+				If this is not enough yet, read on for further <a title="nector for nerds" class='boxy' href=[%c.uri_for('/about#nectar_details_for_nerd')%]>details</a>.
+			</p>
+
+			<p class="desc">
+				If you are a scientist, you might be wondering how NECTAR is made with.
+			</p>
+			<p class="desc">
+				The short version: sequencing data is mainly fed by two
+				<a title="bioinformatics system configuration" class='boxy' href="[%c.uri_for('/static/images/site/hw_big_picture_small.png')%]">NGS machines</a>.
+				Sequence reads are assembled using <a title="go to LifeScope" class="external" href="[%link.lifescope%]">LifeScopes</a> (v[%ls_ver%]) (or TorrentSuite for IonTorrent (v[%ts_ver%]))
+ 				and mapped to Ensembl human genome (v[%ensembl_ver%]).  
+				Variants are called by LifeScope (diBayes and small indel module), <a title="go to Samtools" class="external" href="[%link.samtool%]">Samtools</a> (v[%samtool_ver%])  
+				and <a title="GATK" class="external" href="[%link.gatk%]">GATK</a> ([%gatk_ver%]).
+				
+				If this is not enough yet, read on for further <a title="nector for scientists" class='boxy' href=[%c.uri_for('/about#nectar_details_for_scientist')%]>details</a>
+			</p>
+
+			<div id="nectar_details_for_nerd" class='hidden' style="width:600px">
+				<p class='desc'>
+					Perl, of course, is the great do-everything of scripting languages. It is not exactly elegant, but it is supremely powerful in qualified hands.
+				</p>
+				<p class='desc'>
+					MySQL is a modern, easy-to-use and free or very inexpensive (depending on how you use it) relational database. It is very reliable, and very fast. I'm not saying that you should take your gigantic multi-site global banking system and port it to use MySQL, but for maintaining data about all the genetic mutations in genome, it's just fine.
+				</p>
+				<p class='desc'>
+					Memcached is a distributed memory cache. It works for many languages, but we use it for Perl ORM (DBIx::Class). It is a magic bullet that lets you scale up massively without buying massive, expensive, complex database hardware. 
+				<p class='desc'>
+					Modern Javacript is a 'must-have' item for modern web site development to make it fancier and user-friendlier. We are using jQuery and lots of its plugins. This pop-up diaglog is implemented by the boxy jquery plugin.
+				</p>
+				<p class='desc'>
+					We run the NECTAR web site on Linux because it is free and it works.
+				</p>
+				<p class="desc">
+					Cheers,<br/>
+					Sungsam Gong, the developer of NECTAR
+				</p>
+			</div>
+
+			<div id="nectar_details_for_scientist" class='hidden' style="width:600px">
+				<p class="desc">
+					The primary analysis was performed on the 5500 Series sequencing instrument which generate color space reads (eXtensible SeQuence format [XSQ]) 
+					that were mapped into Ensembl human genome (v[%ensembl_ver%]) reference using LifeScope v[%ls_ver%] (Life Technologies,California, USA) software with the global alignment algorithm. 
+				</p>
+				<p class="desc">
+					In this mapping procedure the reads were distributed into the available compute nodes to achieve parallelization. 
+					We have used the Lifescope v[%ls_ver%]  “Targeted resequencing” workflow for the secondary and tertiary level analysis with the default parameters recommended by Life tech. 
+					The workflow comprised of SOLiD™ Accuracy Enhancement Tool (SAET) for improving color call accuracy prior to mapping, paired mapping and mapping statistics (BAMstats) in secondary level analysis. 
+				</p>
+				<p class="desc">
+					As for the workflow in tertiary level analysis, it consisted of enrichment statistics (percentage on target, enrichment fold, coverage), 
+					single nucleotide polymorphisms (SNPs) finding, small indels and SNP/indel annotations.
+				</p>
+				<p class="desc">
+					Yet another set of tools - Genome Analysis Toolkit (GATK; Genome Sequencing and Analysis Group, USA) [%gatk_ver%] and samtools v[%samtool_ver%] were used 
+					to identify SNPs and insertions or deletions (indels). 
+					Comparison of variants called by these three tools mentioned above have contributed towards reducing false positives to a great extend. 
+				</p>
+			</div>

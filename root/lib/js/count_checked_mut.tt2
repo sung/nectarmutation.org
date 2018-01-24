@@ -1,0 +1,28 @@
+
+	<script language="JavaScript">
+		function count_checked_mut() {
+			if($("#get_uid input:checkbox:checked").length >=10){
+				var r=confirm("This could be extremly show! Proceed?");
+				if (r==true){
+					$('#my_activity').activity()
+					//alert("Bring it on!")
+					return true;
+				}else{
+					return false;
+					//alert("Will stay here!")
+					//window.location = "http://www.google.com/";
+				}
+				//Boxy.ask("This could be extremly slow! Proceed?", ["OK", "Cancel"], function(val) {
+				//	if(val=="OK"){
+				//		return true;
+				//	}else{
+				//		return false;
+				//	}
+    			//}, {title: "This is a question..."});
+				//return true;
+			}else{
+				$('#my_activity').activity()
+				return true;
+			}
+		}
+	</script>

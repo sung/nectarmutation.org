@@ -1,0 +1,55 @@
+
+		[%-UNLESS iccs.size%]
+		No ICC mutations reported for [%hgnc%]
+		[%-ELSE%]
+			<table class='general_list_table'>
+				<caption>
+					Known [%hgnc%] mutations from <a class='external' title='go to ICC_Mutation' href="[%IF c.req.address.match('192.168.\d+.\d+')%][%link.icc_int%][%ELSE%][%link.icc_ext%][%END%]">ICC_Mutation</a>
+					<a class='excel rfloat' href='[%c.req.uri_with({download=>1,source=>'icc'})%]'>&nbsp;</a>
+				<caption>
+				<tr class='column'>
+					<th>ID</th>
+					<th>HGVS</th>
+					<th>Disease</th>
+					<th>Sources</th>
+					<th>PubMed</th>
+					<th>Has Found [<a title='mutation found at the same position in Nectar'>?</a>]</th>
+				</tr>
+				[%-FOREACH h IN iccs%]
+				<tr class='entry'>
+					<td><a class="external" href="[%IF c.req.address.match('192.168.\d+.\d+')%][%link.icc_int%]icc_mutation.php?id=[%h.mut_id%][%ELSE%][%link.icc_ext%]icc_mutation.php?id=[%h.mut_id%][%END%]">[%h.mut_id%]</a></td>
+					<td>[%h.hgvs_coding%]</a></td>	
+					<td>[%h.diseases%]</a></td>	
+					<td>
+					[%-FOREACH r IN h.exrefs.split(',')%]
+						[%IF r.split(':').0=='HGMD'%]
+						<a title="[%r%]" href="#" onClick='Boxy.load("[%c.uri_for('/mutation')%]/exref?q=hgmd&id=[%r.split(':').1%]", {title:"[%r%]"})'>[%r.split(':').1%]</a><br/>
+						[%ELSIF r.split(':').0=='dbSNP'%]
+						<a class="external" title="[%r%]" href="[%ncbi.dbsnp%]/[%r.split(':').1%]" >[%r.split(':').1%]</a><br/>
+						[%ELSIF r.split(':').0=='ZJU-CGGM'%]
+						<a class="external" title="[%r%]" href="http://www.genomed.org/lovd/lqts/variants.php?select_db=[%hgnc%]&action=search_all&search_Variant%2FDBID=[%r.split(':').1%]">[%r.split(':').1%]</a><br/>	
+						[%ELSE%]
+						[%r%]<br/>
+						[%END%]
+					[%END%]
+					</td>
+					<td>
+					[%-FOREACH r IN h.pubmeds.split(',')%]
+						<a class="external" title="PubMed:[%r%]" href="[%link.pubmed%]/[%r%]">[%r%]</a><br/>	
+					[%END%]
+					</td>	
+					<td>
+						[%UNLESS bru_code%][%# called by /gene/TTN#known_mutation%]
+						<a title='click to see this mutation' href='[%c.uri_for('/mutation')%]/[%h.get_column('uid')%]'>[%h.get_column('uid')%]
+						[%ELSE%][%# called by /10AT00324/gene/TTN#known_mutation%]
+							[%FOREACH m IN metacalls%]
+								[%IF h.get_column('uid')==m.uid%]
+						<a title='click to see this mutation' href='[%c.uri_for('/mutation')%]/[%h.get_column('uid')%]'>[%h.get_column('uid')%]
+								[%END%]
+							[%END%]
+						[%END%]
+					</td>	
+				</tr>
+				[%-END%]
+			</table>
+		[%END%]

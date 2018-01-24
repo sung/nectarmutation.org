@@ -1,0 +1,76 @@
+	[%- meta.title='About Mutation Sequence Terminology' UNLESS no_wrapper %]	
+	<div id='so_terms'>
+		<table class='general_list_table '>
+			<tr class='column'>
+				<th>Level</th>
+				<th>Ensembl Term</th>
+				<th>SO Term</th>
+				<th>SO accession</th>
+			</tr>
+			<tr class='entry'>
+				<td rowspan=6><b>a</b></td>	
+				<td>TRANSCRIPT_ABLATION</td>
+				<td>transcript_ablation</td>
+				<td><a class='external' href='http://www.sequenceontology.org/miso/current_release/term/SO:0001893'>SO:0001893</a></td>
+			</tr>
+			<tr>
+				<td rowspan=2>ESSENTIAL_SPLICE_SITE</td>
+				<td>splice_donor_variant</td>
+				<td><a class='external' href='http://www.sequenceontology.org/miso/current_release/term/SO:0001575'>SO:0001575</a></td>
+			</tr>
+			<tr>
+				<td>splice_acceptor_variant</td>
+				<td><a class='external' href='http://www.sequenceontology.org/miso/current_release/term/SO:0001574'>SO:0001574</a></td>
+			</tr>
+			<tr>
+				<td>FRAMESHIFT_CODING</td>
+				<td>frameshift_variant</td>
+				<td><a class='external' href='http://www.sequenceontology.org/miso/current_release/term/SO:0001589'>SO:0001589</a></td>
+			</tr>
+			<tr>
+				<td>STOP_GAINED</td>
+				<td>stop_gained</td>
+				<td><a class='external' href='http://www.sequenceontology.org/miso/current_release/term/SO:0001587'>SO:0001587</a></td>
+			</tr>
+			<tr>
+				<td>STOP_LOST</td>
+				<td>stop_lost</td>
+				<td><a class='external' href='http://www.sequenceontology.org/miso/current_release/term/SO:0001578'>SO:0001578</a></td>
+			</tr>
+			<tr>
+				<td rowspan=4><b>b<b/></td>
+				<td rowspan=4>NON_SYNONYMOUS_CODING</td>
+				<td>missense_variant</td>
+				<td><a class='external' href='http://www.sequenceontology.org/miso/current_release/term/SO:0001583'>SO:0001583<a/></td>
+			</tr>
+			<tr>
+				<td>initiator_codon_variant</td>
+				<td><a class='external' href='http://www.sequenceontology.org/miso/current_release/term/SO:0001582'>SO:0001582</a></td>
+			</tr>
+			<tr>
+				<td>inframe_deletion</td>
+				<td><a class='external' href='http://www.sequenceontology.org/miso/current_release/term/SO:0001822'>SO:0001822</a></td>
+			</tr>
+			<tr>
+				<td>inframe_insertion</td>
+				<td><a class='external' href='http://www.sequenceontology.org/miso/current_release/term/SO:0001821'>SO:0001821<a/></td>
+			</tr>
+			<tr>
+				<td rowspan=2><b>c</b></td>
+				<td>SPLICE_SITE</td>
+				<td>splice_region_variant</td>
+				<td><a class='external' href='http://www.sequenceontology.org/miso/current_release/term/SO:0001630'>SO:0001630</a></td>
+			</tr>
+			<tr>
+				<td>TRANSCRIPT_AMPLIFICATION</td>
+				<td>transcript_amplification</td>
+				<td><a class='external' href='http://www.sequenceontology.org/miso/current_release/term/SO:0001889'>SO:0001889</a></td>
+			</tr>
+			<tr>
+				<td><b>d</b></td>
+				<td><i>none of above</i></td>
+				<td><i>none of above</i></td>
+				<td>N/A</td>
+			</tr>
+		</table>
+	</div>

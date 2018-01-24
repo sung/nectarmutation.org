@@ -1,0 +1,58 @@
+
+		<table class='general_list_table'>
+			[%IF total%][%#index %]
+				[%IF bru_code%][%#index %]
+				<caption>There are [%total%] targeted gene[%IF total>=2%]s[%END%] for [%bru_code%]</caption> [%#/pateint/xx/gene%]
+				[%ELSE%]
+				<caption>There are [%total%] patient[%IF total>=2%]s[%END%] in Nectar</caption>
+				[%END%]
+			[%-ELSE%]
+				[%UNLESS bru_code%][%# Patient.pm by_gene%]
+			<caption>There are [%meta_patients.size%] 
+				[%-IF diag_code%]<a title="browse [%diag_code%]" href="[%c.uri_for('/disease')%]/[%diag_code%]">[%diag_code%]</a>[%END%] patient[%IF meta_patients.size>=2%]s[%END%] 
+				[%IF hgnc%]having <a title="browse [%hgnc%]" href="[%c.uri_for('/gene')%]/[%hgnc%]">[%hgnc%]</a> mutations[%END%] 
+				[%IF target_name%]targeting <a title="browse [%target_name%]" href="[%c.uri_for('/target')%]/[%target_name%]">[%target_name%]</a>[%END%] 
+			</caption>
+				[%-ELSE%][%# matched UNLESS bru_code | Patient.pm by_bru%]
+			<caption>Brief stat. of [%UNLESS hgnc=='all'%]<a title="browse [%hgnc%]" href="[%c.uri_for('/gene')%]/[%hgnc%]">[%hgnc%]</a> [%END%]mutations called within '[%bru_code%]'</caption>
+				[%-END%]
+			[%-END%]
+			<tr class='column'>
+				<th rowspan=2>BRU code</th>
+				<th rowspan=2>Disease</th>
+				[%IF hgnc%]<th rowspan=2>Gene</th>[%END%]
+				<th colspan=[%IF hgnc%]4[%ELSE%]5[%END%]>Number of</th>
+			</tr>
+			<tr class='column'>
+				[%UNLESS hgnc%]<th>Genes</th>[%END%]
+				<th>Runs</th>
+				<th>Samples <a title="samples having at least one called varaint; total NO. of sample might be more than this number">[?]</a></th>
+				<th>Unique calls <a title="distinct variant after merging samples">[?]</a></th>
+				<th>Total calls <a title="same varaints are counted as many as the samples">[?]</a></th>
+			</tr>
+			[%-FOREACH g IN meta_patients%]
+			<tr class='entry'>
+				<td><a title="browse [%g.bru_code%]" href="[%c.uri_for('/patient')%]/[%g.bru_code%]">[%g.bru_code%]</a></td>
+				<td><a title="[%g.Diseases.des%]" href="[%c.uri_for('/patient/disease')%]/[%g.diag_code%]">[%g.diag_code%]</td>	
+				[%UNLESS hgnc%] [%# /patient or /patient/10AA00306%]
+					<td><a title="click to see these genes" href="[%c.uri_for('/patient')%]/[%g.bru_code%]/gene">[%g.cnt_unique_gene.chunk(-3).join(',')%]</a></td>
+				[%ELSE%] [%# /patient/10AA00306/gene or /patient/10AA00306/gene/TTN%]
+					<td><a title="click to see [%g.hgnc%] gene" href="[%c.uri_for('/patient')%]/[%g.bru_code%]/gene/[%g.hgnc%]">[%g.hgnc%]</a></td>
+				[%END%]
+				<td>[%g.cnt_unique_run%]</td>	
+				<td><a title="see [%g.cnt_unique_sample%] sample[%IF g.cnt_unique_sample>=2%]s[%END%]" href="[%c.uri_for('/run/bru')%]/[%g.bru_code%]">[%g.cnt_unique_sample%]</a></td>
+				<td>[%-IF hgnc%]
+						[%-UNLESS g.hgnc%]
+						<!--<a title="mapped onto inter-genic region" href="[%c.uri_for('/patient')%]/[%g.bru_code%]/gene/inter-genic">[%g.cnt_unique_call.chunk(-3).join(',')%]</a>-->
+						<a title="mapped onto inter-genic region">[%g.cnt_unique_call.chunk(-3).join(',')%]</a>
+						[%-ELSE%]
+						[%g.cnt_unique_call.chunk(-3).join(',')%]
+						[%END-%]
+					[%-ELSE%]
+						[%g.cnt_unique_call.chunk(-3).join(',')%]
+					[%END-%]
+				</td>
+				<td>[%g.cnt_call.chunk(-3).join(',')%]</td>	
+			[%-END%]
+			</tr>
+		</table>

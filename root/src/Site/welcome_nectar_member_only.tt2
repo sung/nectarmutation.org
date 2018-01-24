@@ -1,0 +1,14 @@
+		<h2 class="main_title" title="very welcome">Welcome to NECTAR <a class="tipsy_r" href="[%c.uri_for('/news')%]" title="NECTAR news"><img src="[%c.uri_for('/static/images/rss/feed-icon-14x14.png')%]" alt="RSS logo"/></a></h2>
+		<p class="desc">
+			The Next Generation Sequencing (<a title="what's NGS?" class="external" href="[%link.ngs%]">NGS</a>) platform brings a new dimension of genome research by generating massive high-throughput sequencing data in an ultra-fast manner unprecedented ever before.
+			This highlights the importance of data management and development of intelligent data retrieval system, 
+			which is the crux of bioinformatics in the post-NGS era. 
+		</p>
+		<p class="desc">
+			With this in mind, we developed</br> i) <a title="browse schema" href="[%c.uri_for('/about/schema')%]">CardioDB</a> which is the data back-end to collate in-house NGS data and to compile known genetic mutations behind <a title="browse disease" href="[%c.uri_for('/disease')%]">cardiac diseases</a> and <br/>
+			ii) <a title="about NECTAR" href="[%c.uri_for('/about')%]">NECTAR</a>, the web front-end of CardioDB, which enables retrieval of NGS data and browsing genetic mutations in an interactive manner.
+		</p>
+		<p class="desc">
+			In short, NECTAR is a web-based database system where users can browse genetics mutations of pateints, whose identities are anonymised, having cardiovascular <a title="browse disease" href="[%c.uri_for('/disease')%]">diseases</a> such as cardiomyopathy and arrhythmia. 
+			NECTAR also accommodates amino acid variations and mutations information so that users can interprete them by looking their structural and functional environments at the same time.
+		</p>

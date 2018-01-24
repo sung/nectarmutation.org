@@ -1,0 +1,29 @@
+
+		<pre>
+Canonical transcripts are defined by a number of rules which for most species boils 
+down to the longest transcript wins. However some species, like human, have a more 
+complicated assignment method:
+
+- if a gene has protein producing transcripts & divide into groups
+		- Group A: protein_coding biotype transcripts in CCDS
+		- Group B: take protein_coding biotype transcripts in havana
+		- Group C: take protein producing biotypes in havana
+		- Group D: remaining protein producing biotypes
+
+Order these sets by length & then ask in order for a transcript i.e. if group A had 
+no transcripts but group B had 2 transcripts then we would use the longest from B. 
+Equality to CCDS is based on an identical exon coding model.
+
+- if a gene has no protein producing transcripts
+		- Group A: take transcripts in havana
+		- Group B: all other transcripts
+
+Apply the same rules but using just groups A & B.
+
+Just adding more information to how a canonical transcript for a gene has chosen:
+
+We take the longest CCDS model in each gene, if none available then the longest coding Ensembl-Havana 
+merged transcript is chosen. If no merged transcript is present, we take the longest coding transcript 
+regardless of their source; this can be either an Ensembl or a Havana transcript. 
+Finally, if there are no coding transcripts in the gene, the longest non-coding transcript is selected.
+		</pre>

@@ -1,0 +1,34 @@
+[%- meta.title = 'About Nectar' %]
+
+		[%-SET div_tag="google_search_result"-%] [%-# this tag is used in nectar.css%]
+		[%-SET find_this="next generation sequencing"-%]
+		[%-SET search_width="350px;"-%]
+		[% PROCESS google_search_api.tt2 keyword="$find_this" dom="$div_tag" result_size="large"-%] [%-# root/lib/js/google_search_api.tt2%]
+
+		<div id="google_panel" class="rfloat">
+			<div id="[%div_tag%]" class="nectar_panel google_api">
+				<h2 class="main_title">Google Search</h2>
+				Loading...
+			</div>
+		</div>
+
+		<div id="about_nectar_left" class="nectar_panel">
+		[%-IF c.user.get('active') && c.user.get('role')!='guest'%]
+			[% INCLUDE about_nectar_member_only.tt2 -%]
+		[%ELSE%]
+			[% INCLUDE about_nectar.tt2 -%]
+		[%END-%]
+		</div>
+
+		<div id="disclaimer" class="nectar_panel">
+			[% INCLUDE nectar_disclaimer.tt2 -%]
+		</div>
+
+		[%-# api key loaded by root/lib/site/js%]
+		<div id="about_nectar_map" class="nectar_panel">
+			[% INCLUDE about_map.tt2 -%]
+		</div>
+
+		<div id="canonical" class="hidden">
+			[%INCLUDE Site/canonical_transcript.tt2%][%# src/Site/canonical_transcript.tt2%]
+		</div>

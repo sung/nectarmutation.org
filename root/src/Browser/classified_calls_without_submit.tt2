@@ -1,0 +1,59 @@
+[%# this is called within root/src/Mutation/search_mutation.tt2-%]
+		<table id='classified_calls' class='general_list_table'>
+			<caption>Mutation profiles</caption>
+			<tr class='column'>
+				<th class="right" colspan=2>
+				Mutation Class
+				<a title="What is mutation profile?" href="#" onClick='Boxy.load("[%c.uri_for('/about/mutation_profile')%]?boxy=1", {title:"Mutation Profile", modal:false})'>[?]</a>
+				</th>
+				<th [%UNLESS any_novel%]class='right'[%END%] colspan=
+				[%IF caller=="sample"%]
+					2
+				[%-ELSIF caller=="patient"%]
+					3
+				[%-ELSE%]
+					4
+				[%-END%]
+				>Number of</th>
+			[%UNLESS any_novel%]
+				<th colspan=4><a title="Known mutations">Known Mutations</a></th>
+			[%END%]
+			<tr class='column'>
+				<th>Category</th>
+				<th class="right">Is novel [<a title="NO. of mutation found by HGMD, dbSNP, ICC_Mutations and UniProt Human mutations">?</a>]</th>
+				<th>Unique calls <a title="this sums up the number of unique calls shown above">[?]</a></th>
+				<th>Total calls <a title="this sums up the number of total calls shown above">[?]</a></th>
+			[%-UNLESS caller=="sample"%]
+				<th [%UNLESS any_novel%][%IF caller=="patient"%]class='right'[%END%][%END%]>Unique Samples</th>
+				[%UNLESS caller=="patient"%]
+				<th [%UNLESS any_novel%]class='right'[%END%]>Unique Patients</th>
+				[%-END%]
+			[%-END%]
+			[%UNLESS any_novel%]
+				<th>HGMD</th>
+				<th>dbSNP</th>
+				<th>ICC</th>
+				<th>UNIPROT</th>
+			[%END%]
+			</tr>
+		[%-FOREACH m IN c.session.cmuts%]
+			<tr class='entry'>
+				<td class="wide [%m.get_column('category')%]">[%m.get_column('category')%]</td>
+				<td>[%m.get_column('is_novel')%]</td>
+				<td>[%m.get_column('cnt_unique_call').chunk(-3).join(',')%]</td>
+				<td>[%m.get_column('cnt_call').chunk(-3).join(',')%]</td>
+			[%-UNLESS caller=="sample"%]
+				<td>[%m.get_column('cnt_unique_sample').chunk(-3).join(',')%]</td>
+				[%UNLESS caller=="patient"%]
+				<td>[%m.get_column('cnt_unique_bru').chunk(-3).join(',')%]</td>
+				[%-END%]
+			[%-END%]
+			[%UNLESS any_novel%]
+				<td>[%m.get_column('cnt_unique_hgmd').chunk(-3).join(',')%]</td>
+				<td>[%m.get_column('cnt_unique_dbsnp').chunk(-3).join(',')%]</td>
+				<td>[%m.get_column('cnt_unique_icc').chunk(-3).join(',')%]</td>
+				<td>[%m.get_column('cnt_unique_humsavar').chunk(-3).join(',')%]</td>
+			[%END%]
+			</tr>	
+			[%-END%][%#end of cmut%]
+		</table>

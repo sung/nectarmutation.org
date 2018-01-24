@@ -1,0 +1,49 @@
+
+		<row>
+			[%IF called_by=='para'%]
+			<bold><cell>Paralogue Gene</cell></bold>
+			<bold><cell>Paralogue ENSP</cell></bold>
+			[%END%]
+			<bold><cell>Category</cell></bold>
+			<bold><cell>Feature</cell></bold>
+			<bold><cell>Xref</cell></bold>
+			<bold><cell>Gene</cell></bold>
+			<bold><cell>Position</cell></bold>
+			<bold><cell>Allele</cell></bold>
+			<bold><cell>Codon</cell></bold>
+			<bold><cell>SO terms</cell></bold>
+			<bold><cell>dbSNP</cell></bold>
+			<bold><cell>HGMD</cell></bold>
+			<bold><cell>COSMIC</cell></bold>
+			<bold><cell>t.HGVS</cell></bold>
+			<bold><cell>p.HGVS</cell></bold>
+			<bold><cell>SIFT</cell></bold>
+			<bold><cell>SIFT socre</cell></bold>
+			<bold><cell>Polyphen</cell></bold>
+			<bold><cell>Polyphen score</cell></bold>
+		</row>
+		[%-FOREACH m IN colocates%]
+		<row>
+			[%IF called_by=='para'%]
+			<cell>[%m.get_column('para_hgnc')%]</cell>
+			<cell>[%m.get_column('ensp')%]:[%m.get_column('hpmd_ref')%][%m.get_column('res_num')%][%m.get_column('hpmd_mut')%]</cell>
+			[%END%]
+			<cell>[%m.get_column('category')%]</cell>
+			<cell>[%m.get_column('feature')%]</cell>
+			<cell>[%m.get_column('xref')%]</cell>
+			<cell>[%m.hgnc%]</cell>
+			<cell>[%m.get_column('chr')%]:[%m.get_column('v_start')%]</cell>
+			<cell>[%m.get_column('reference')%]/[%m.get_column('genotype')%]</cell>
+			<cell>[%m.codon%]</cell>
+			<cell>[%m.so_terms%]</cell>
+			<cell>[%m.rs_ids%]</cell>
+			<cell>[%m.HGMD%]</cell>
+			<cell>[%m.COSMIC%]</cell>
+			<cell>[%m.hgvs_coding%]</cell>
+			<cell>[%m.hgvs_protein%]</cell>
+			<cell>[%m.sift%]</cell>
+			<cell>[%m.sift_score%]</cell>
+			<cell>[%m.polyphen%]</cell>
+			<cell>[%m.polyphen_score%]</cell>
+		</row>
+		[%END%]

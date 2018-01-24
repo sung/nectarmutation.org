@@ -1,0 +1,9 @@
+	<script language="JavaScript">
+		function [%checkbox_name%]_toggle_novel(source) {
+		checkboxes = document.getElementsByName('[%checkbox_name%]');
+		for(var i in checkboxes)
+			if(checkboxes[i].className=='novel' ){
+    			checkboxes[i].checked = source.checked;
+			}
+		}
+	</script>

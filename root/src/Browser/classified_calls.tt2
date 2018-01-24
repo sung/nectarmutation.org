@@ -1,0 +1,105 @@
+
+		[%# already defined for caller='gene' or 'target' or 'disease' within 'Browser/classified_x_disease_easy_slider.tt2'%]
+		[%-IF caller=='sample' or caller=="patient" %]
+			[%-SET checkbox_name="mut_type"%]
+			[%PROCESS js/select_all.tt2 checkbox_name="$checkbox_name"%] [%# javascirpt to check all. see root/lib/js/select_all.tt2%]
+			[%PROCESS js/select_novel.tt2 checkbox_name="$checkbox_name"%] [%# javascirpt to check all. see root/lib/js/select_all.tt2%]
+		[%-END%]
+
+		[%PROCESS js/count_checked_mut.tt2 %] 
+
+		<form id="get_uid" onSubmit="return count_checked_mut()" method="get" action="[%c.uri_for('/mutation/search')%]">
+			[%# protein coding gene and canonical transcript by default%]
+			<input type="hidden" name="is_protein_coding" value="1" />
+			<input type="hidden" name="is_canon" value="1" />
+
+			<table id='classified_calls' class='general_list_table'>
+			[%-IF caller=="sample"%]
+				<caption>Mutation profiles of this sample</caption>
+				<input type="hidden" name="sample_id" value="[%sample_id%]" />
+			[%-ELSIF caller=="patient"%][%#- /patient/10AA00306 or /patient/10AA00306/gene/TTN %]
+				[%-IF hgnc%]<input type="hidden" name="hgnc" value="[%hgnc%]" />[%END%]
+				<caption>Mutation profiles of the [%IF hgnc%][%hgnc%] gene from the [%END%] patient '[%bru_code%]'</caption>
+				<input type="hidden" name="bru_code" value="[%bru_code%]" />
+				[%#- /patient/10AA00306/gene/TTN %]
+			[%-ELSIF caller=="disease"%]
+				<caption>Mutation profiles of the [%diag_code%] samples targeting <a title='click to browse [%gd.$to%]' href='[%c.uri_for('/target')%]/[%gd.$to%]'>[%gd.$to%]</a></caption>
+				<input type="hidden" name="target_name" value="[%gd.target_name%]" />
+				<input type="hidden" name="diag_code" value="[%diag_code%]" />
+			[%-ELSIF caller=="target"%]
+				<caption>Mutation profiles of the <a title='click to browse [%gd.$to%]' href='[%c.uri_for('/disease')%]/[%gd.$to%]'>[%gd.$to%]</a> samples targeting [%target_name%]</a></caption>
+				<input type="hidden" name="diag_code" value="[%gd.diag_code%]" />
+				<input type="hidden" name="target_name" value="[%target_name%]" />
+			[%-ELSIF caller=="gene"%]
+				<caption>Mutation profiles for the '[%gd.diag_code%]' samples of [%hgnc%] gene</caption>
+				<input type="hidden" name="diag_code" value="[%gd.diag_code%]" />
+				<input type="hidden" name="hgnc" value="[%hgnc%]" />
+			[%-END%]
+				<input type="hidden" name="caller" value="[%caller%]" />
+				<tr class='column'>
+					<th class="right" colspan=2>
+					Mutation Class
+					<a title="What is mutation profile?" href="#" onClick='Boxy.load("[%c.uri_for('/about/mutation_profile')%]?boxy=1", {title:"Mutation Profile", modal:false})'>[?]</a>
+					</th>
+					<th colspan=
+					[%IF caller=="sample"%]
+						2	
+					[%-ELSIF caller=="patient"%]
+						3	
+					[%-ELSE%]
+						4	
+					[%-END%]
+					>Number of </th>
+				<tr class='column'>
+					<th><input title="click to (de)select all" type="checkbox" onClick="[%checkbox_name%]_toggle_all(this)" />category</th>
+					<th class="right"><input title="click to (de)select novel only" type="checkbox" onClick="[%checkbox_name%]_toggle_novel(this)" />Is novel [<a title="NO. of mutation found by HGMD, dbSNP and ICC_Mutations">?</a>]</th>
+					<th>Unique calls <a title="this sums up the number of unique calls shown above">[?]</a></th>
+					<th>Total calls <a title="this sums up the number of total calls shown above">[?]</a></th>
+				[%-UNLESS caller=="sample"%]
+					<th>Unique Samples</th>
+					[%UNLESS caller=="patient"%]
+					<th>Unique Patients</th>
+					[%-END%]
+				[%-END%]
+				</tr>
+			[%-FOREACH m IN cmuts%]
+				[%-IF caller=="gene" or caller=='target' or caller=='disease'%]
+					[%# - NB these callers have sub-tab-container %]
+					[%# - NB $to is defined within Browser/meta_x_disease.tt2%]
+					[%-IF gd.$to==m.$to%]
+					<tr class='entry'>
+						<td class="wide [%m.category%]"><input type="checkbox" [%IF m.is_novel%]class="novel"[%END%] name="[%checkbox_name%]" value="[%m.category%][%m.is_novel%]" />[%m.category%]</td>
+						<td class="right_border">[%m.is_novel%]</td>
+						<td>[%m.cnt_unique_call.chunk(-3).join(',')%]</td>
+						<td>[%m.cnt_call.chunk(-3).join(',')%]</td>
+						<td>[%m.cnt_unique_sample.chunk(-3).join(',')%]</td>
+						<td>[%m.cnt_unique_bru.chunk(-3).join(',')%]</td>
+					</tr>	
+					[%-END%]
+				[%-ELSE%][%# caller either 'sample' or 'patient'%]
+					<tr class='entry'>
+						<td class="wide [%m.category%]"><input title="click to (de)select all novel" type="checkbox" [%IF m.is_novel%]class="novel"[%END%] name="[%checkbox_name%]" value="[%m.category%][%m.is_novel%]" />[%m.category%]</td>
+						<td>[%m.is_novel%]</td>
+						<td>[%m.cnt_unique_call.chunk(-3).join(',')%]</td>
+						<td>[%m.cnt_call.chunk(-3).join(',')%]</td>
+					[%-UNLESS caller=="sample"%]
+						<td>[%m.cnt_unique_sample.chunk(-3).join(',')%]</td>
+						[%UNLESS caller=="patient"%]
+						<td>[%m.cnt_unique_bru.chunk(-3).join(',')%]</td>
+						[%-END%]
+					[%-END%]
+					</tr>	
+					[%-END%]
+			[%-END%][%#end of cmut%]
+				<tr>
+					<td><input type="submit" value="Get mutations" ></td>
+					[%-IF caller=="sample"%]
+					<td colspan=3></td>
+					[%-ELSIF caller=="patient"%]
+					<td colspan=4></td>
+					[%-ELSE%]
+					<td colspan=5></td>
+					[%-END%]
+				</tr>
+			</table>
+		</form>

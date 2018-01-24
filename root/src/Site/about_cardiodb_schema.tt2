@@ -1,0 +1,112 @@
+[%meta.title='Database Schema of CardioDB'%]
+
+<div id="schema">
+	<ul class="schema_legend">
+		<li class="core">Core</li>
+		<li class="caller">Caller</li>
+		<li class="annotation">Annotation</li>
+		<li class="classification">Classification</li>
+	</ul>
+	<canvas id="viewport" style="background-color:#fff;" width="980" height="850"></canvas>
+	[%-#this javascript is using root/static/js/schema.js%]
+	<script language="javascript" type="text/javascript">
+
+		var theUI = {
+			nodes:{
+				// core
+				run:{'color':'#b01700','shape':'dot','label':'Runs', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/Runs')%]'},
+				sample:{'color':'#b01700','shape':'dot','label':'Samples', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/Samples')%]'},
+				disease:{'color':'#b01700','shape':'dot','label':'Diseases', alpha:1, link:'[%c.uir_for('/about/schema/autocrud/cardiodb/Diseases')%]'},
+				target:{'color':'#b01700','shape':'dot','label':'Targets', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/Targets')%]'},
+				targetregion:{'color':'#b01700','shape':'dot','label':'TargetRegions', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/TargetRegions')%]'},
+				targetgene:{'color':'#b01700','shape':'dot','label':'TargetGene', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/TargetGenes')%]'},
+
+				// caller
+				samtool:{'color':'green','shape':'dot','label':'Samtools', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/Samtools')%]' },
+				gatk:{'color':'green','shape':'dot','label':'GATKs', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/GATKs')%]' },
+				smallindel:{'color':'green','shape':'dot','label':'SmallIndels', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/SmallIndels')%]' },
+				dibayes:{'color':'green','shape':'dot','label':'diBayes', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/diBayes')%]' },
+				uc:{'color':'green','shape':'dot','label':'UnifiedCalls', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/_UnifiedCalls')%]' },
+				mc:{'color':'green','shape':'dot','label':'MetaCalls', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/_MetaCalls')%]' },
+
+				// annotation
+				ens:{'color':'#ffe35f','shape':'dot','label':'2Ensembls', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/V2Ensembls')%]' },
+				uniprot:{'color':'#ffe35f','shape':'dot','label':'2UniProts', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/2UniProts')%]' },
+				pdb:{'color':'#ffe35f','shape':'dot','label':'2PDBs', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/2PDBs')%]' },
+
+				// entropy
+				tofamily:{'color':'#ffe35f','shape':'dot','label':'2Families', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/V2Families')%]' },
+				enmember:{'color':'#ffe35f','shape':'dot','label':'EnMembers', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/EnMembers')%]' },
+				enfamily:{'color':'#ffe35f','shape':'dot','label':'EnFamilies', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/EnFamilies')%]' },
+				msa:{'color':'#ffe35f','shape':'dot','label':'MSAs', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/EnMSAs')%]'},
+				entropy:{'color':'#ffe35f','shape':'dot','label':'Entropies', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/EnEntropies')%]' },
+				
+				// classification
+				cc:{'color':'#db8e3c','shape':'dot','label':'ClassifiedCalls', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/ClassifiedCalls')%]'},
+				cs:{'color':'#db8e3c','shape':'dot','label':'ClassifiedSamples', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/_ClassifiedSamples')%]' },
+				cp:{'color':'#db8e3c','shape':'dot','label':'ClassifiedPatients', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/_ClassifiedPatients')%]' },
+				cd:{'color':'#db8e3c','shape':'dot','label':'ClassifiedDiseases', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/_ClassifiedDiseases')%]' },
+				cg:{'color':'#db8e3c','shape':'dot','label':'ClassifiedGenes', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/_ClassifiedGenes')%]' },
+				ct:{'color':'#db8e3c','shape':'dot','label':'ClassifiedTargets', alpha:1, link:'[%c.uri_for('/about/schema/autocrud/cardiodb/_ClassifiedTargets')%]' },
+			}, 
+			edges:{
+				// core
+				run:{ sample:{directed:true}},
+				disease:{ sample:{directed:true}},
+				target:{ sample:{directed:true}, targetregion:{directed:true}, targetgene:{directed:true}, ct:{directed:true}},
+				targetgene:{ cg:{directed:true}},
+
+				// caller
+				sample:{ samtool:{directed:true}, gatk:{directed:true}, smallindel:{directed:true}, dibayes:{directed:true}, mc:{directed:true}, cs:{directed:true}, cp:{directed:true}, cd:{directed:true}},
+				samtool:{ uc:{directed:true}, mc:{directed:true}},
+				gatk:{ uc:{directed:true}, mc:{directed:true}},
+				smallindel:{ uc:{directed:true}, mc:{directed:true}},
+				dibayes:{ uc:{directed:true}, mc:{directed:true}},
+				uc:{ mc:{directed:true}, ens:{directed:true}, cc:{directed:true}},
+
+				// annotation
+				ens:{ uniprot:{directed:true}, pdb:{directed:true}, tofamily:{directed:true}},
+				uniprot:{ pdb:{directed:true}, cc:{directed:true} },
+				pdb:{ cc:{directed:true} },
+
+				// entropies
+				enmember:{ tofamily:{directed:true}, entropy:{directed:true}},
+				enfamily:{ tofamily:{directed:true}, entropy:{directed:true}},
+				msa:{ tofamily:{directed:true}, entropy:{directed:true}},
+				entropy:{ cc:{directed:true}},
+				
+				// classification
+			}
+		}// end of theUI
+
+
+		var sys = arbor.ParticleSystem()
+		sys.parameters({stiffness:400, repulsion:1000, gravity:true, dt:0.015})
+		sys.renderer = Renderer("#viewport")
+		sys.graft(theUI)
+		
+		//var nav = Nav("#nav")
+		//$(sys.renderer).bind('navigate', nav.navigate)
+		//$(nav).bind('mode', sys.renderer.switchMode)
+		//nav.init()
+
+/*
+		setTimeout(function(){
+			var postLoadData = {
+				nodes:{
+					joe:{'color':'orange','shape':'dot','label':'joe'},
+					fido:{'color':'green','shape':'dot','label':'fido'},
+					fluffy:{'color':'blue','shape':'dot','label':'fluffy'}
+				}, 
+				edges:{
+					dog:{ fido:{} },
+					cat:{ fluffy:{} },
+					joe:{ fluffy:{},fido:{} }
+				}
+			};
+			sys.graft(postLoadData);
+		},10000);
+*/
+	</script>
+</div>
+<!--<script src="[%c.uri_for('/static/js/site.js')%]"></script>-->

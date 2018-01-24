@@ -1,0 +1,30 @@
+[%# this is depreciated, so do not use this%]
+[%# look at Controller/Util/Boxy.pm %]
+[%# and lib/Nectar/WebV2/Form/Locus.pm %]
+	[%-BLOCK search_locus_form-%]
+<form id='search_locus_boxy' method='get' action='[%c.uri_for('/mutation/search')%]'><input type='hidden' name='caller' value='locus' /><select name='chr'>[%FOREACH chr IN chromosomes%]<option value='[%chr%]'[%IF chr=='chr2'%]selected[%END%]>[%chr%]</option>[%END%]</select><input type='text' name='v_start' size='10' value='179390664' ONFOCUS='clearDefault(this)'/><input type='text' name='v_end' size='10' value='179699152' ONFOCUS='clearDefault(this)'/><input type='submit' value='Go'/></form>
+	[%-END%]
+
+	<script type="text/javascript">
+	/* Boxy searching interface with a prompt dialog 
+	 * locus search
+	 */
+		var locusBoxy = null;
+		$('.locus_boxy').click(function(){
+			var boxy_content;
+			boxy_content="[%INCLUDE search_locus_form%]";
+			locusBoxy = new Boxy(boxy_content, {
+				title: "Search by Locus",
+				draggable: false,
+				modal: true,
+				/*center: false,fixed: false,*/
+				behaviours: function(c) {
+					c.find('#search_locus_boxy').submit(function() {
+						return true;
+					}); // end of .submit
+				} //end of behaviours
+			});
+			return true;
+
+		});
+	</script>

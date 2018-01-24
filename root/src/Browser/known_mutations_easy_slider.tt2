@@ -1,0 +1,88 @@
+			<div id="list_of_known_mutation">
+				<a title="Click to see in the Gbrowse mode" href="[%gb_link%][%ensx.0.ensp%]"><img src="[%gb_disease_img%][%ensx.0.ensp%]" border=0 target="_blank"></a>
+				<table class="general_list_table">
+					<caption>
+					List of Known Mutations 
+					<a class='excel rfloat' href='[%c.req.uri_with({download=>1})%]'>&nbsp;</a>
+					</caption>
+					<tr class='column'>
+						<th><a title="the source of external reference">Source</a></th>
+						<th>Description</th>
+						<th>NO. of mutation</th>
+					</tr>
+					<tr class='entry'>
+						<td><a title="click to see HGMD below" href="#" id="subselect_hgmd">HGMD</a></td>
+						<td>The Human Gene Mutation Database</td>
+						<td>[%hgmds.size%]</td>
+					</tr>
+					<tr class='entry'>
+						<td><a title="click to see HUMSAVAR below" href="#" id="subselect_humsavar">HUMSAVAR</a></td>
+						<td>Human polymorphisms and disease mutations from UniProt</td>
+						<td>[%humsavars.size%]</td>
+					</tr>
+					<tr class='entry'>
+						<td><a title="click to see COSMIC below" href="#" id="subselect_cosmic">COSMIC</a></td>
+						<td>Catalogue Of Somatic Mutations In Cancer</td>
+						<td>[%cosmics.size%]</td>
+					</tr>
+					[%-IF c.user.get('active') && c.user.get('role')!='guest' and iccs.size%]
+					<tr class='entry'>
+						<td><a title="click to see ICC below" href="#" id="subselect_icc">ICC</a></td>
+						<td>Inheirted Cardiac Mutation Database</td>
+						<td>[%iccs.size%]</td>
+					</tr>
+					[%END%]
+				</table>
+			</div>
+
+			[%-SET sub_tab_container="known_mutation_subtab"%]
+			<script type="text/javascript">
+				$('#subselect_hgmd').click( function() {
+					$('#[%sub_tab_container%]').easytabs('select', '#hgmd');
+				});
+				$('#subselect_humsavar').click( function() {
+					$('#[%sub_tab_container%]').easytabs('select', '#humsavar');
+				});
+				$('#subselect_cosmic').click( function() {
+					$('#[%sub_tab_container%]').easytabs('select', '#cosmic');
+				});
+				$('#subselect_icc').click( function() {
+					$('#[%sub_tab_container%]').easytabs('select', '#icc');
+				});
+			</script>
+
+			[%PROCESS easy_tab.tt2 tab_container="$sub_tab_container"%] [%# root/lib/js/easy_tab.tt2%]
+			<div id="[%sub_tab_container%]" class='tab-container sub_container'>
+				<ul class='etabs'>
+					<li class='tab'><a href="#hgmd" title="known mutations from HGMD pro">HGMD</a></li>
+					<li class='tab'><a href="#humsavar" title="Human polymorphisms and disease mutations from UniProt">HUMSAVAR</a></li>
+					<li class='tab'><a href="#cosmic" title="Catalogue Of Somatic Mutations In Cancer">COSMIC</a></li>
+					[%-IF c.user.get('active') && c.user.get('role')!='guest' and iccs.size%]
+					<li class='tab'><a href="#icc" title="mutations in ICC (Inherited Cardiac Condition) database">ICC</a></li>
+					[%END%]
+				</ul>
+
+				<div class='easytab-panel-container'>
+					[%# Tab 1. HGMD mutations%]
+					<div id="hgmd">
+						[%PROCESS cleaned_hgmds.tt2%]
+					</div>
+
+					[%# Tab 2. SwissVariant mutations%]
+					<div id="humsavar">
+						[%PROCESS humsavar.tt2%]
+					</div>
+
+					[%# Tab 3. SwissVariant mutations%]
+					<div id="cosmic">
+						[%PROCESS cosmic.tt2%]
+					</div>
+
+					[%# Tab 4. ICC mutations%]
+					[%-IF c.user.get('active') && c.user.get('role')!='guest' and iccs.size%]
+						<div id="icc">
+							[%PROCESS icc.tt2%]
+						</div>
+					[%END%]
+				</div>
+			</div>

@@ -1,0 +1,58 @@
+
+	[%# /about/mutation_profile?boxy=1%]
+	[%IF no_wrapper%]
+		<div class="mutation_profile" style="width:1000px">
+			[%INCLUDE about_category0.tt2%]
+
+			<div id='category1' class='mut_category'>
+				<h2>I. Mutation Consequence Types</h2>
+				[%INCLUDE about_category1.tt2%]
+				[%INCLUDE about_mut_level.tt2%]
+			</div><!-- end of id='category1' -->
+
+			<div id='category2' >
+				<div id='category2-1' class='mut_category'>
+					<h2>II. Degree of Damaging Effects (level <b>b</b> only)</h2>
+					[%INCLUDE about_category2.tt2%]
+				</div>
+			</div><!-- end of id='category2' -->
+
+			<div id='category3' class='mut_category'>
+				<h2>III. Is the Mutation Novel?</h2>
+				[%INCLUDE about_category3.tt2%]
+			</div><!-- end of id='category3' -->
+		</div><!-- end of class='mutation_profile' -->
+	[%# /about/mutation_profile%]
+	[%ELSE%]
+		[%- meta.title='About Mutation Profile'%]
+
+		<div id='mutation_profile_intro' class='nectar_lpanel'>
+			<h2 class='main_title'>Introduction</h2>
+			<p class='desc'>
+			[%INCLUDE about_category0.tt2%]
+			</p>
+		</div><!-- end of id='mutation_profile_intro'-->
+
+		<div id='category1' class='nectar_lpanel'>
+			<h2 class='main_title'>I. Mutation Consequence Types</h2>
+			<p class='desc'>
+			[%INCLUDE about_category1.tt2%]
+			</p>
+			[%INCLUDE about_so_terms.tt2%]
+		</div><!-- end of id='category1' -->
+
+		<div id='category2' class='nectar_lpanel'>
+			<h2 class='main_title'>II. Degree of Damaging Effects (level <b>b</b> only)</h2>
+			<p class='desc'>
+			[%INCLUDE about_category2.tt2%]
+			</p>
+			[%INCLUDE mut_signal_matrix.tt2%]
+		</div><!-- end of category2-->
+
+		<div id='category3' class='nectar_lpanel'>
+			<h2 class='main_title'>III. Is the Mutation Novel?</h2>
+			<p class='desc'>
+			[%INCLUDE about_category3.tt2%]
+			</p>
+		</div><!-- end of category3-->
+	[%END%]

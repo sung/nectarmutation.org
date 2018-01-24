@@ -1,0 +1,43 @@
+
+				[%# 1. ENSEMBL%]
+				<h2 title="Ensembl mapping" class="title hidden">Ensembl</h2>
+				<table class='general_list_table'>
+					<caption>[%ensx.size%] [%IF ensx.size>=2%]entries[%ELSE%]entry[%END%] mapped onto Ensembl transcripts (<span style="background-color:#fff;">canonical transcript [<a class="boxy" title="what's this" href="[%c.uri_for('/mutation')%]/[%uid%]#canonical">?</a>]</span> coloured in <span style="background-color:#fff;">white</span>)</caption>
+					<tr class='column'>
+						<th rowspan=2>Class</th>
+						<th rowspan=2>Gene</th>
+						<th rowspan=2>CCDS</th>
+						<th colspan=2>HGVS</th>
+						<th [%IF any_c1%]colspan=2[%ELSE%]rowspan=2[%END%]>Prediction [<a title="Assessemnt of the impact of amino acid substition">?</a>]</th>
+					<tr class='column'>
+						<th>CDS</th>
+						<th>Protein</th>
+						[%IF any_c1%]
+						<th>SIFT</th>
+						<th>PolyPhen</th>
+						[%END%]
+					</tr>
+				[%-FOREACH m IN ensx%]
+					<tr class='entry [%UNLESS m.is_canonical%]non_canon[%END%]'>
+						<td class="[%m.ClassifiedCalls.category%]"><a title="[%m.so_terms%]">[%m.ClassifiedCalls.class%]</a></td>
+						<td><a title="go to [%m.hgnc%]" href="[%c.uri_for('/gene')%]/[%m.hgnc%]">[%m.hgnc%]</a></td>
+						<td>[%IF m.ccds%]<a title="go to CCDS of NCBI" class="external" href="[%ncbi.ccds%][%m.ccds%]">[%m.ccds%]</a>[%END%]</td>
+						<td>[%IF m.hgvs_coding%][%m.hgvs_coding%][%ELSE%]<a title="[%m.enst%]">[%m.enst_type%]</a>[%END%]</td>
+						<td class="right_border"><a title="amino acid allele: [%m.p_ref%]/[%m.p_mut%]">[%m.hgvs_protein%]</a></td>
+						[%IF any_c1%]
+						<td>
+							<span [%IF m.sift.match('deleterious')%]class="[%m.ClassifiedCalls.category%]"[%END%]>
+								<a title="score:[%m.sift_score%]" >[%m.sift%]</a>
+							<span>
+						</td>
+						<td>
+							<span [%IF m.pph_var.match('damaging')%]class="[%m.ClassifiedCalls.category%]"[%END%]>
+								<a title="score:[%m.pph_var_score%]" >[%m.pph_var%]</a>
+							</span>
+						</td>
+						[%ELSE%]
+						<td>No data</td>
+						[%END%]
+					</tr>
+				[%-END%]
+				</table>

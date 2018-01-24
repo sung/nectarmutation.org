@@ -1,0 +1,18 @@
+[% meta.title = 'Gene list'-%]
+
+	[%#-PROCESS hgnc_autocomplete.tt2%]
+
+	[%-SET myList="hgncList"%]
+	[%#PROCESS ListNav.tt2 myList="$myList"%] [%# root/lib/js/ListNav.tt2%]
+
+	[%PROCESS pager.tt2%]
+
+	<div id="gene_index">
+		<!-- list nav
+		<div id="[%myList%]-nav" class="listNav"></div>
+		<ul id="[%myList%]" class="demo"><li><a href="[%c.uri_for('/gene')%]/[%g.hgnc%]">[%g.hgnc%]</a></li>
+		-->
+		[%PROCESS meta_gene.tt2%]
+	</div>
+
+	[%PROCESS pager.tt2%]

@@ -1,0 +1,122 @@
+[%# CAN BE CALLED BY /vcf (lib/Nectar/WebV2/Controller/Parser/VCF.pm) or /get_colocated_mutation' (lib/Nectar/WebV2/Controller/Browser/Gene.pm)%]  
+	<div class='desc x_scroll' style='width:850px'>
+		<div id="colocated_mutatins">
+			<table class='general_list_table'>
+				<caption>
+					[%IF feature=='HGMD-PUBLIC'%]
+					<a class='external' href='http://www.ensembl.org/Homo_sapiens/Search/Details?species=Homo_sapiens;idx=Variation;end=1;q=[%xref%]' target='_blank'>[%xref%]</a> of HGMD-PUBLIC
+					[%ELSIF feature=='HUMSAVAR'%]
+					<a class="external" href="http://web.expasy.org/cgi-bin/variant_pages/get-sprot-variant.pl?[%xref%]">[%xref%]</a> of HUMSAVAR
+					[%ELSIF feature=='COSMIC'%]
+					<a class="external" href="http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=[%xref%]" target="_blank">[%xref%]</a> from <a class="external" title="go to COSMIC" href="http://cancer.sanger.ac.uk/cosmic/gene/overview?ln=[%hgnc%]" target="_blank">COSMIC</a>
+					[%ELSIF feature=='ClinVar'%]
+					<a class="external" href="[%link.clinvar%][%xref.substr(2)%][varid]" target="_blank">[%xref%]</a> from <a class="external" title="go to ClinVar" href="http://www.ncbi.nlm.nih.gov/clinvar" target="_blank">ClinVar</a>
+					[%ELSE%]
+
+					[%END%]
+				</caption>
+				<tr class='column'>
+					[%IF vcf_calls%]
+						[%IF called_by=='vcf_para_anno'%]
+							[%SET vcf_colspan=4 vcf_anno_field='Sources of paralogue annotations'%]
+						[%ELSE%]
+							[%SET vcf_colspan=3 vcf_anno_field='Sources of annotations'%]
+						[%END%]
+					<th class='right' colspan=[%vcf_colspan%]>[%vcf_anno_field%]</th>
+					<th class='right' colspan=4>Calls in your VCF</th>
+					[%END%]
+					[%UNLESS vcf_calls%]
+					<th rowspan=2>Position</th>
+					<th rowspan=2>Allele</th>
+					<th class='right' rowspan=2>Codon</th>
+					[%END%]
+					<th class='right' rowspan=2>SO terms</th>
+					<th class='right' colspan=3>Co-located Known Mutations</th>
+					<th class='right' colspan=2>HGVS</th>
+					<th colspan=2>Prediction [<a title="Assessemnt of the impact of amino acid substition">?</a>]</th>
+				</tr>
+				<tr class='column'>
+					[%IF vcf_calls%]
+						[%IF called_by=='vcf_para_anno'%]
+					<th>Paralogue</th>
+						[%END%]
+					<th>Category</th>
+					<th>Feature</th>
+					<th class='right'>Xref</th>
+					<th>Gene</th>
+					<th>Position</th>
+					<th>Allele</th>
+					<th>Codon</th>
+					[%END%]
+					<th>dbSNP</th>
+					<th>HGMD [<a title='public version from Ensembl'>?</a>]</th>
+					<th class='right'>COSMIC</th>
+					<th>CDS</th>
+					<th class='right'>Protein</th>
+					<th>SIFT</th>
+					<th>PolyPhen</th>
+				</tr>
+				[%SET ini_pos=colocates.0.get_column('v_start')%]
+				[%-FOREACH m IN colocates%]
+					[%UNLESS vcf_calls%][%SET modu = (ini_pos-m.get_column('v_start')) % 2%][%END%]
+				<tr class='entry [%UNLESS vcf_calls or modu%]grey[%END%]'>
+					[%IF vcf_calls%]
+						[%IF called_by=='vcf_para_anno'%]
+					<td><a title="[%m.get_column('ensp')%]:[%m.get_column('hpmd_ref')%][%m.get_column('res_num')%][%m.get_column('hpmd_mut')%]">[%m.get_column('para_hgnc')%]</a></td>
+						[%END%]
+					<td>[%m.get_column('category')%]</td>
+					<td>
+						<a title="click for details" href="#" onClick='Boxy.load("[%c.uri_for('/about/annotation')%]?id=[%m.get_column('feature')%]&boxy=1", {title:"Annotation: [%m.get_column('feature')%]"})'>[%m.get_column('feature')%]</a>
+					</td>
+					<td class='right_border'>
+						<!--<a title="[%m.get_column('hpmd_ref')%]/[%m.get_column('hpmd_mut')%]" href='#' Boxy.load("[%c.uri_for('/gbrowse')%]?ensp=[%m.get_column('ensp')%]", {title:"Gbrowse: [%m.get_column('ensp')%]"})'>[%m.get_column('xref')%]</a>-->
+						<a title="[%m.get_column('ensp')%]:[%m.get_column('hpmd_ref')%][%m.get_column('res_num')%][%UNLESS m.get_column('feature')=='HGMD-PUBLIC'%][%m.get_column('hpmd_mut')%][%END%]" href='[%gb_link%][%m.get_column('ensp')%];h_feat=[%m.get_column('xref')%];h_region=[%m.get_column('ensp')%]:[%m.get_column('res_num')%]..[%m.get_column('res_num')%]@red' target='_blank'>[%m.get_column('xref')%]</a>
+					</td>
+					<td><a title='browse [%m.hgnc%] in detail' onClick="$('#my_activity').activity()" href='[%c.uri_for('/gene')%]/[%m.hgnc%]'>[%m.hgnc%]</td>
+					[%# hide mut type for HPMD entries%] 
+					[%UNLESS m.get_column('feature')=='HGMD-PUBLIC'%][%SET mut_aa=m.get_column('hpmd_mut')%][%ELSE%][%SET mut_aa='NULL'%][%END%]
+					[%END%][%# end of if vcf_calls%]
+					<td [%IF mut_aa==m.p_mut%]class='yellow'[%SET is_yellow=1%][%END-%]
+						[%IF hgmd_start==m.get_column('v_start')%]class='yellow'[%SET hgmd_locus=1%][%END-%]>
+						[%m.get_column('chr')%]:[%m.get_column('v_start')%]
+					</td>
+					<td [%IF mut_aa==m.p_mut%]class='yellow'[%END%]>[%m.get_column('reference')%]/[%m.get_column('genotype')%]</td>
+					<td class="right_border">[%m.codon%]</td>
+					<td class="right_border">
+						<span [%IF m.so_terms.match('stop')%]class="a0"[%END%]>[%m.so_terms%]</span>
+					</td>
+					<td>[%m.rs_ids%]</td>
+					<td>[%m.hgmds%]</td>
+					<td class="right_border">[%m.cosmics%]</td>
+					<td>[%m.hgvs_coding%]</td>
+					<td class="right_border"><a title="amino acid allele: [%m.p_ref%]/[%m.p_mut%]">[%m.hgvs_protein%]</a></td>
+					<td>
+						<span [%IF m.sift.match('deleterious')%]class="b3"[%END%]>
+							<a title="score:[%m.sift_score%]" >[%m.sift%]</a>
+						</span>
+					</td>
+					<td>
+						<span [%IF m.pph_var.match('damaging')%]class="b3"[%END%]>
+							<a title="score:[%m.pph_var_score%]" >[%m.pph_var%]</a>
+						</span>
+					</td>
+				</tr>
+				[%END%]
+				[%IF is_yellow%]
+				<tr>
+					<td colspan=[%IF vcf_calls%]15[%ELSE%]11[%END%] class='left'>[Note] <span style="background-color:#f9df6b">The genotype allele is coloured in yellow</span> if it makes the same amino acid replacement of the reported mutation (HUMSAVAR, COSMIC or ClinVar only)</td>
+				</tr>
+				[%END%]
+				[%IF hgmd_locus%]
+				<tr>
+					<td colspan=[%IF vcf_calls%]15[%ELSE%]11[%END%] class='left'>[Note] <span style="background-color:#f9df6b">The locus coloured in yellow</span> is where this HGMD ([%xref%]) is located</td>
+				</tr>
+				[%END%]
+				[%UNLESS vcf_calls%]
+				<tr>
+					<td colspan=11 class='left'>[Note] Each base position displayed in <span style="background-color:#ebebeb">alternating backgroun</span> colour</td>
+				</tr>
+				[%END%]
+			</table>
+		</div>
+	</div>

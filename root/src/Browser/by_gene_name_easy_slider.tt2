@@ -1,0 +1,89 @@
+[% meta.title = 'Gene: ' _ hgnc _ ' (' _ uniprot_seq.0.name _ ')' -%]
+
+	[%-SET caller="gene"%]
+	[%-SET tab_container="by_gene_name"%]
+	[%INCLUDE no_js_warning.tt2 -%]
+	[%PROCESS easy_tab.tt2 tab_container="$tab_container"%] [%# root/lib/js/easy_tab.tt2%]
+
+	[%PROCESS Browser/set_gbrowse.tt2%] [%# root/src/Browser/set_gbrowse.tt2%]
+
+	<div id="[%tab_container%]" class='tab-container'>
+		<ul class='etabs'>
+			[%-IF c.user.get('active') && c.user.get('role')!='guest'%]
+			<li class='tab'><a href="#mutation" title="Genetic vairations called within [%hgnc%]">Mutation Calls</a></li>
+			[%END%]
+			<li class='tab'><a href="#disease_annotation" title="Disease involvement of [%hgnc%]">Disease Associations</a></li>
+			<li class='tab'><a href="#known_disease_mutation" title="Known disease mutations of [%hgnc%]">Disease Variants</a></li>
+			<li class='tab'><a href="#func_anno" title="Function annotations of amino acid residues [%hgnc%]">Function Annotations</a></li>
+			<li class='tab'><a href="#para_anno" title="Mutation annotations from the paralogues of [%hgnc%]">Paralogue Annotations</a></li>
+		</ul>
+
+ 		<div class='easytab-panel-container'>
+			[%-IF c.user.get('active') && c.user.get('role')!='guest'%]
+			[%# Tab 1. Mutation info%]
+			<div id="mutation">
+				<div id="meta_gene">
+					[%PROCESS meta_gene.tt2%]
+				</div>
+
+				<div id="meta_gene_disease">
+					[%PROCESS meta_x_disease.tt2%]
+				</div>
+
+				<div id="meta_x_disease_slider">
+					[%#PROCESS classified_gene_disease_coda_slider.tt2%]
+					[%PROCESS classified_x_disease_easy_slider.tt2%]
+				</div>
+			</div><!-- end of id="mutation"-->
+			[%END%]
+
+			[%# Tab 2. UniProt disease-annotation %]
+			<div id="disease_annotation">
+				[%#PROCESS disease_annos.tt2%] [%# accordion %]
+				[%PROCESS disease_annotations.tt2%]
+			</div>
+
+			[%SET cnt_func_anno=0%]
+			[%SET cnt_disease_src=0%]
+			[%-FOREACH d IN hpmd_stats%]
+				[%IF d.get_column('feature')=='HUMSAVAR' or d.get_column('feature')=='COSMIC' or d.get_column('feature')=='HGMD-PUBLIC' or d.get_column('feature')=='ClinVar'%]
+					[%cnt_disease_src=cnt_disease_src + 1%]
+				[%ELSE%]
+					[%cnt_func_anno=cnt_func_anno + 1%]
+				[%END%]
+			[%END-%]
+
+			[%# Tab 3-1. All Known disease mutations%]
+			[%# HGMD-PUBLIC, HUMSAVAR, COSMIC ClinVar%]
+			<div id="known_disease_mutation">
+				[%-IF c.user.get('active') && c.user.get('role')!='guest'%]
+					[%PROCESS known_mutations_easy_slider.tt2%]
+				[%ELSE%]
+					[%-UNLESS cnt_disease_src%]
+						<p>No disease annotation found</p>
+					[%-ELSE%]
+						[%PROCESS hpmd_easy_slider.tt2 switcher='Disease'%]
+					[%END-%]
+				[%END%]
+			</div>
+
+			[%# Tab 4. Function Annotations%]
+			<div id="func_anno">
+			[%-UNLESS cnt_func_anno%]
+				<p>No functional annotation found</p>
+			[%ELSE%]
+				[%PROCESS hpmd_easy_slider.tt2 switcher='Functional'%]
+			[%END-%]
+			</div>
+
+			[%# Tab 5. Paralogue Annotations%]
+			<div id="para_anno">
+			[%-UNLESS para_stats.0%]
+				<p>No paralogue detected</p>
+			[%ELSE%]
+				[%PROCESS para_anno.tt2%]
+			[%END-%]
+			</div>
+
+ 		</div> <!-- end of  class='easytab-panel-container' -->
+	</div> <!-- end of id="[%tab_container%]" class='tab-container' -->

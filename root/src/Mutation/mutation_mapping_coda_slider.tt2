@@ -1,0 +1,167 @@
+
+		[%-SET slider_id="coda_slider_mutation_mapping"%]
+		[%-SET dynamicArrows=1%]
+		[%-SET dynamicTabs=1%] [%# value 0 does not work%]
+		[%PROCESS coda_slider.tt2 slider_id="$slider_id" dynamicArrows="$dynamicArrows" dynamicTabs="$dynamicTabs"%] [%# root/lib/js/coda_slider.tt2%]
+
+			<div class="coda-slider-wrapper">
+				<div class="coda-slider preload" id="[%slider_id%]">
+
+					[%# 1. ENSEMBL%]
+					<div class="panel x_scroll">
+						<div class="panel-wrapper">
+							<h2 title="Ensembl mapping" class="title hidden">Ensembl</h2>
+							<table class='general_list_table'>
+								<caption>[%ensx.size%] [%IF ensx.size>=2%]entries[%ELSE%]entry[%END%] mapped onto Ensembl transcripts (<span style="background-color:#fff;">canonical transcript [<a class="boxy" title="what's this" href="[%c.uri_for('/mutation')%]/[%uid%]#canonical">?</a>]</span> coloured in <span style="background-color:#fff;">white</span>)</caption>
+								<tr class='column'>
+									<th rowspan=2>Variant Type</td>
+									<th rowspan=2>Gene</td>
+									<th rowspan=2>CCDS</td>
+									<th colspan=2>HGVS</td>
+									<th title="Assessemnt of the impact of amino acid substition" [%IF classified.is_c1%]colspan=3[%ELSE%]rowspan=2[%END%]>Prediction</td>
+								<tr class='column'>
+									<th>CDS</td>
+									<th>Protein</td>
+									[%IF classified.is_c1%]
+									<th>SIFT</td>
+									<th>PolyPhen</td>
+									<th>Condel</td>
+									[%ELSE%]
+									[%END%]
+								</tr>
+							[%-FOREACH m IN ensx%]
+								<tr class='entry [%UNLESS m.is_canonical%]non_canon[%END%]'>
+									<td><a title="[%m.so_snp_type%]" class="[%FOREACH mu IN mut_levels.$level%][%IF m.snp_type.match(mu)%][%classified.class.chunk(2).first%][%LAST%][%END%][%END%]">[%m.snp_type%]</a></td>
+									<td><a title="go to [%m.hgnc%]" href="[%c.uri_for('/gene')%]/[%m.hgnc%]">[%m.hgnc%]</a></td>
+									<td>[%IF m.ccds%]<a title="go to CCDS of NCBI" class="external" href="[%ncbi.ccds%][%m.ccds%]">[%m.ccds%]</a>[%END%]</td>
+									<td>[%IF m.hgvs_coding%][%m.hgvs_coding%][%ELSE%]<a title="[%m.enst%]">[%m.enst_type%]</a>[%END%]</td>
+									<td class="right_border"><a title="allele: [%m.p_ref%]/][%m.p_mut%]">[%m.hgvs_protein%]</a></td>
+									[%IF classified.is_c1%]
+									<td><a title="score:[%m.sift_score%]" class="[%IF m.sift.match('deleterious')%][%classified.class.chunk(2).first%][%END%]">[%m.sift%]</a></td>
+									<td><a title="score:[%m.pph_var_score%]" class="[%IF m.pph_var.match('damaging')%][%classified.class.chunk(2).first%][%END%]">[%m.pph_var%]</a></td>
+									<td><a title="score:[%m.condel_score%]" class="[%IF m.condel.match('deleterious')%][%classified.class.chunk(2).first%][%END%]">[%m.condel%]</a></td>
+									[%ELSE%]
+									<td>No data</td>
+									[%END%]
+								</tr>
+							[%-END%]
+							</table>
+						</div><!-- end of panel-wrapper-->
+					</div><!-- end of panel-->
+
+					[%# 2. UNIPROT %]
+					<div class="panel">
+						<div class="panel-wrapper">
+							<h2 class="title hidden">UniProt</h2>
+							[%-UNLESS uniprots.size%]
+							No mapping to UniProt protein
+							[%-ELSE%]
+							<table class='general_list_table'>
+								<caption>Mapping to [%uniprots.size%] UniProt residue[%IF uniprots.size>=2%]s[%END%] (from <span style="background-color:#fff;">canonical transcript [<a class="boxy" title="what's this" href="[%c.uri_for('/mutation')%]/[%uid%]#canonical">?</a>]</span> coloured in <span style="background-color:#fff;">white</span>)</caption>
+								<tr class='column'>
+									<th>UniProt</th>
+									<th>Residue NO.</th>
+									<th>Allele</th>
+									<th>Annotation<a title="what are 'annotaions'?" href="#" onClick='Boxy.load("[%c.uri_for('/static/site/func_anno.html')%]", {title:"Function Annotation", modal:false})'>[?]</a></th>
+									<th>Descriptions</th>
+									<th><a class="external" title="Block Subsititution Matrix" href="[%link.blosum%]">BLOSUM</a></th>
+									<th><a class="external" title="Point Accepted Mutation" href="[%link.pam%]">PAM</a></th>
+								</tr>
+							[%-FOREACH u IN uniprots%]
+								<tr class='entry [%UNLESS u.get_column('is_canonical')%]non_canon[%END%]'>
+									<td><a class="external" title="go to UniProt" href="[%link.uniprot%]/uniprot/[%u.get_column('uniprot')%]#section_features">[%u.get_column('uniprot')%]</td>
+									<td><a onClick="$('#my_activity').activity()" title="browse in 2D via Gbrowse" href="
+								[%-IF c.req.address.match('192.168.\d+.\d+')%]
+										[%gbrowse.link_int%]
+								[%-ELSE%]
+										[%gbrowse.link%]
+								[%END-%]
+									[%u.uniprot%];h_feat=[%uid%]@yellow;h_region=[%u.uniprot%]:[%u.res_num%]..[%u.res_num+1%]@red">[%u.res_num%]</a>
+									</td>
+									<td>[%u.p_ref%]/[%u.p_mut%]</td>
+									<td>
+										<span class="[%FOREACH ft IN c.session.ft_tags %][%IF u.annotation==ft%][%classified.class.chunk(2).first%][%LAST%][%END%][%END%]">
+										<a title="click for details" href="#" onClick='Boxy.load("[%c.uri_for('/about/annotation')%]?id=[%u.annotation%]&boxy=1", {title:"Annotation: [%u.annotation%]"})'>[%u.annotation%]</a>
+										</span>
+									</td>
+									<td>[%u.des%]</td>
+									<td>[%u.blosum62%]</td>
+									<td>[%u.pam70%]</td>
+								</tr>
+							[%-END%]
+							</table>
+							[%-END%]
+						</div><!-- end of panel-wrapper-->
+					</div><!-- end of panel-->
+
+					[%# 3. PDB%]
+					<div class="panel">
+						<div class="panel-wrapper">
+							<h2 class="title hidden">PDB</h2>
+							[%-UNLESS pdbs.size%]
+							No mapping to PDB
+							[%-ELSE%]
+							<script type="text/javascript" src="[%link.pdb_js%]"> </script>
+							<table class='general_list_table'>
+								<caption>Mapping to [%pdbs.size%] PDB residue[%IF pdbs.size>=2%]s[%END%] (from <span style="background-color:#fff;">canonical transcript [<a class="boxy" title="what's this" href="[%c.uri_for('/mutation')%]/[%uid%]#canonical">?</a>]</span> coloured in <span style="background-color:#fff;">white</span>)</caption>
+								<tr class='column'>
+									<th>PDB</th>
+									<th>Chain</th>
+									<th>Res num</th>
+									<th>Res</th>
+									<th>ENV<a title="what is 'ENV'?" href="#" onClick='Boxy.load("[%c.uri_for('/static/site/env.html')%]", {title:"Definitions of Structural Envronment", modal:false})'>[?]</a></th>
+									<th>Annotation<a title="what are 'annotaions'?" href="#" onClick='Boxy.load("[%c.uri_for('/static/site/func_anno.html')%]", {title:"Function Annotation", modal:false})'>[?]</a></th>
+									<th>Descriptions</th>
+									<th><a title="Environment Specific Substituion Table" class="external" href="[%ref.doublemap%]">ESST</a></th>
+								</tr>
+							[%-FOREACH p IN pdbs%]
+								<tr class='entry [%UNLESS u.get_column('is_canonical')%]non_canon[%END%]'>
+									<!--<td><a class="external" title="go to PDB" href="[%link.pdb%]/pdb/explore/explore.do?structureId=[%p.pdb%]">[%p.pdb%]</td>-->
+									<td><span class="rcsb_tag" title="id|[%p.pdb%]|">[%p.pdb%]</span></td>
+									<td>[%p.chain%]</td>
+									<td><a class="external" title="see in 3D" href='http://samul.org/main/pdb/[%p.pdb%]/jmol?hl=[%p.res_num%]:[%p.chain%]'>[%p.res_num%]</a></td>
+									<td>[%p.pdb_res%]</td>
+									<td>[%p.env%]</td>
+									<td>
+										<span class="[%FOREACH ft IN c.session.ft_tags %][%IF p.annotation==ft%][%classified.class.chunk(2).first%][%LAST%][%END%][%END%]">
+										<a title="click to see detail" href="#" onClick='Boxy.load("[%c.uri_for('/about/annotation')%]?id=[%p.annotation%]&boxy=1", {title:"Annotation: [%p.annotation%]"})'>[%p.annotation%]</a>
+										</span>
+									</td>
+									<td>[%p.des%]</td>
+									<td>[%p.esst%]</td>
+								</tr>
+							[%-END%]
+							</table>
+							[%-END%]
+						</div><!-- end of panel-wrapper-->
+					</div><!-- end of panel-->
+
+					[%# 3. IsNovel%]
+					<div class="panel">
+						<div class="panel-wrapper">
+							<h2 class="title hidden">ExRef</h2>
+						[%IF classified.is_novel%]
+							This is a novel mutation (based on HGMD and dbSNP at least)
+						[%ELSE%]
+							<table class='general_list_table'>
+								<caption>Mapping to external reference(s)</caption>
+								<tr class='column'>
+									<th>HGMD</th>
+									<th>dbSNP</th>
+									<th>ICC_Mutation</th>
+								</tr>
+							[%-FOREACH n IN novels%]
+								<tr class='entry'>
+									<td><a title="click to see detail" href="#" onClick='Boxy.load("[%c.uri_for('/mutation')%]/exref?q=hgmd&id=[%n.acc_num%]&uid=[%uid%]", {title:"HGMD: [%n.acc_num%]"})'>[%n.acc_num%]</a></td>
+									<td>[%IF n.rs_id%]<a title="go to dbSNP of this rsID" class="external" href="[%ncbi.dbsnp%][%n.rs_id%]">[%n.rs_id%]</a>[%END%]</td>
+									<!-- <td><a title="click to see detail" href="#" onClick='Boxy.load("[%c.uri_for('/mutation')%]/exref?q=icc&id=[%n.mut_id%]", {title:"ICC_Mutation: [%n.mut_id%]"})'>[%n.mut_id%]</a></td>-->
+									<td><a title="click to see detail" class="external" href="[%IF c.req.address.match('192.168.\d+.\d+')%][%link.icc_int%]icc_mutation.php?id=[%n.mut_id%][%ELSE%][%link.icc_ext%]icc_mutation.php?id=[%n.mut_id%][%END%]" >[%n.mut_id%]</a></td>
+								</tr>
+							[%-END%]
+							</table>
+						[%END%]
+						</div><!-- end of panel-wrapper-->
+					</div><!-- end of panel is_novel-->
+
+				</div><!-- end of pre-loader-->
+			</div><!-- end of slider-wrapper-->

@@ -1,0 +1,8 @@
+
+	<documentproperties>
+		<Author>[%site.author%]</Author>
+		<LastAuthor>[%site.author%]</LastAuthor>
+		<Created>2007-03-15T23:04:04Z</Created>
+		<Company>[%site.group%] [%site.dept%] [%site.ini%]</Company>
+		<Version>[%site.version%]</Version>
+	</documentproperties>

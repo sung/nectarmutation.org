@@ -1,0 +1,84 @@
+
+	<!--<div class='desc' style='width:800px'>-->
+	<div class='desc'>
+	[%IF c.req.params.q=='hgmd'%]
+		<table class='general_list_table'>
+			<tr class='column'>
+				<th>ID</th><th>Category</th><th>Gene</th><th>HGVS</th><th>Disease</th><th>OMIM</th><th>PubMed</th>
+			</tr>
+			<tr class='entry'>
+				<td><a class='external' href='http://www.ensembl.org/Homo_sapiens/Search/Details?species=Homo_sapiens;idx=Variation;end=1;q=[%exref.acc_num%]' target='_blank'>[%exref.acc_num%]</a></td>
+				<td><a title='[%exref.get_column('tag_name')%]'>[%exref.tag%]</a></td>
+				<td>[%exref.hgnc%]</td>
+				<td>[%exref.hgvs_coding%]</td>
+				<td>[%exref.disease%]</td>
+				<td><a class='external' [%IF exref.omim%]href='http://omim.org/entry/[%exref.omim%]'[%END%] target='_blank'>[%exref.omim%]</a></td>
+				<td><a class='external' [%IF exref.pmid%][%link.pubked%]/[%exref.pmid%]'[%END%] target='_blank'>[%exref.pmid%]</a></td>
+			</tr>
+		</table>
+	[%ELSIF c.req.params.q=='icc'%]
+		<table class='general_list_table'>
+			<tr class='column'>
+				<th>ID</th><th>HGVS</th><th>Disease</th><th>Source</th><th>PubMed</th>
+			</tr>
+			<tr class='entry'>
+				<td><a class='external' href='[%IF c.req.address.match('192.168.\d+.\d+')%]http://cardiodb/[%ELSE%]http://cardiodb.org/[%END%]ICC_Mutations/icc_mutation.php?id=[%exref.mut_id%]' target='_blank'>[%exref.mut_id%]</a></td>
+				<td>[%exref.hgvs_coding%]</td>
+				<td>[%exref.diseases%]</td>
+				<td>[%exref.exrefs%]</td>
+				<td>[%exref.pubmeds%]</td>
+			</tr>
+		</table>
+	[%ELSIF c.req.params.q=='dbsnp'%]
+		<table class='general_list_table'>
+			<tr class='column'>
+				<th>rsID</th><th>Allele</th><th>Minor Allele</th><th>Ancestral Allele</th><th>Allele Count</th><th>MAF</th><th>Validation</th><th>Clinical Significance</th>
+			</tr>
+			[%FOREACH ex IN exref%]
+			<tr class='entry'>
+				<td><a class="external" href="[%ncbi.dbsnp%][%ex.rs_id%]" target='_BLINK'>[%ex.rs_id%]</a></td>
+				<td>[%ex.allele_string%]</td>
+				<td>[%ex.minor_allele%]</td>
+				<td>[%ex.ancestral_allele%]</td>
+				<td>[%ex.mac%]</td>
+				<td>[%ex.maf%]</td>
+				<td>[%ex.validation%]</td>
+				<td>[%ex.clinical_sigificance%]</td>
+			</tr>
+			[%END%]
+		</table>
+		[%# this is a bit awkward. look at 'root/src/Mutation/ensembl_mapping.tt2' which shows how to use 'prefetced' data normally%] 
+		[%# presumably this is because non-primary key relationship between V2dbSNPs and V2Phens%]
+		[%IF exref.first.V2Phens.size>2%]
+		<table class='general_list_table'>
+			<caption>Phenotype Information</caption>
+			<tr class='column'>
+				<th>Description</th><th>Exref</th><th>P-value</th><th>Risk Allele</th><th>Source</th><th>Study</th><th>Study Type</th>
+			</tr>
+			[%FOREACH ex IN exref.first.V2Phens%]
+			<tr class='entry'>
+				<td>[%ex.des%]</td>
+				<td>
+					[%-IF ex.ex_ref.match('pubmed')%]
+						<a title='go to PubMed' class='external' href="[%link.pubmed%]/[%ex.ex_ref.split('/').last%]" target='_BLINK'>[%ex.ex_ref.split('/').last%]</a>
+					[%-ELSIF ex.ex_ref.match('MIM')%]
+						<a title='go to OMIM' class='external' href='[%link.omim%]/entry/[%ex.ex_ref.split(':').last%]' target='_BLINK'>[%ex.ex_ref.split(':').last%]</a>
+					[%ELSE%]
+						[%ex.ex_ref%]
+					[%END%]
+				</td>
+				<td>[%ex.p_value%]</td>
+				<td>[%ex.risk_allele%]</td>
+				<td>[%ex.source%]</td>
+				<td>[%ex.study%]</td>
+				<td>[%ex.study_type%]</td>
+			</tr>
+			[%END%]
+		</table>
+		[%END%]
+	[%ELSIF c.req.params.q=='swissvariant'%]
+		[%INCLUDE Browser/humsavar.tt2%]
+	[%END%]
+	</div>
+
+

@@ -1,0 +1,58 @@
+[% meta.title = 'Gene: ' _ hgnc-%]
+
+	[%-SET slider_id="coda_slider_hgnc"%]
+	[%-SET dynamicArrows=1%]
+	[%-SET dynamicTabs=1%]
+	[%INCLUDE no_js_warning.tt2 -%]
+	[%PROCESS coda_slider.tt2 slider_id="$slider_id" dynamicArrows="$dynamicArrows" dynamicTabs="$dynamicTabs"%] [%# root/lib/js/coda_slider.tt2%]
+
+	<div id="diseae_annotation">
+		[%#PROCESS disease_annos.tt2%]
+	</div>
+
+	<div id="meta_gene">
+		[%PROCESS meta_gene.tt2%]
+	</div>
+
+	<div id="meta_gene_disease">
+		[%PROCESS meta_gene_disease.tt2%]
+	</div>
+
+	[%-SET caller="gene"%]
+	[%-IF meta_gene_diseases.size%]
+	<div class="coda-slider-wrapper">
+		[%-UNLESS dynamicTabs%]
+			[%-# todo template for tabs? %]
+			[%-# don't forget 'dynamicTabs: false' %]
+			[%-UNLESS dynamicArrows%]
+			<div class="coda-nav-left"><a href="#" title="Slide left">&#171;</a></div>
+			[%-END%]
+			<div class="coda-nav" id="coda-nav-1" style="margin: auto; ">
+				<ul styld="width: 100%">
+					[%-cnt=0%]
+					[%-FOREACH gd IN meta_gene_diseases%]
+					[%-cnt=cnt+1%]
+					<li class="tab[%cnt%]"><a href="#[%cnt%]">[%gd.diag_code%]</a></li>
+					[%-END%]
+				</ul>
+			</div>
+			[%-UNLESS dynamicArrows%]
+			<div class="coda-nav-right"><a href="#" title="Slide right">&#187;</a></div>
+			[%-END%]
+		[%-END%]
+
+		<div class="coda-slider preload" id="[%slider_id%]">
+			[%-FOREACH gd IN meta_gene_diseases%]
+			[%-SET checkbox_name="mut_type"_ gd.diag_code%]
+			[%PROCESS select_all.tt2 checkbox_name="$checkbox_name"-%] [%# javascirpt to check all. see root/lib/js/select_all.tt2%]
+			[%PROCESS select_novel.tt2 checkbox_name="$checkbox_name"-%] [%# javascirpt to check all. see root/lib/js/select_all.tt2%]
+			<div class="panel">
+				<div class="panel-wrapper">
+					<h2 class="title hidden">[%gd.diag_code%]</h2>
+					[%PROCESS classified_calls.tt2 caller="$caller"%]	
+				</div><!-- end of panel-wrapper-->
+			</div><!-- end of panel-->
+			[%-END%]
+		</div><!-- end of coda-slider preload -->
+	</div><!-- end of coda-slider wrapper -->
+	[%-END%]

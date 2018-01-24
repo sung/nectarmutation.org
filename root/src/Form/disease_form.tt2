@@ -1,0 +1,19 @@
+[%-UNLESS no_wrapper-%]
+	[%-meta.title='Search Disease'-%]
+[%-ELSE-%]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<script type="text/javascript" src="[%c.uri_for('/static/js/jquery-1.7.2.min.js')%]"></script>
+		<script type="text/javascript" src="[%c.uri_for('/static/js/jquery.autocomplete-min.js')%]"></script>
+	</head>
+	<body>
+[%END%]
+		<div id="main_search_boxy">
+			[%SET search_this='disease_keyword'%]
+			[%INCLUDE Site/sub_search.tt2%]
+		</div>
+[%IF no_wrapper%]
+	</body>
+</html>
+[%END%]

@@ -1,0 +1,7 @@
+<!-- BEGIN site/footer -->
+	<a href="http://en.wikipedia.org/wiki/Genome_Research_Foundation" title="Hosted by Genome Research Foundation" target="_BLINK"><img class='lfloat limg' src="[%c.uri_for('/static/images/site/GRF_50_31_logo.jpg')%]" alt="hosted by GRF/PGI" /></a>
+	<a href="http://www.catalystframework.org" title="link to catalyst framework website" target="_BLINK"><img class='rfloat rimg' src="[%c.uri_for('/static/images/btn_88x31_powered.png')%]" alt="powered by catalyst" /></a>
+<p>
+	[%site.group%], [%site.dept%], [%site.ini%]
+</p>
+<!-- END site/footer -->

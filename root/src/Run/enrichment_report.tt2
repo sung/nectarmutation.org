@@ -1,0 +1,45 @@
+<table class='general_list_table'>
+	<caption>Enrichment reports</caption>
+		<tr class='column'>
+			<th rowspan=2>BAM<br/>file</th>
+			<th rowspan=2>Target (bp)</th>
+			<th rowspan=2>Reads (bp)</th>
+			<th rowspan=2>Ratio<br/>(on/off)</th>
+			<th rowspan=2>Enrichment<br/>Fold</th>
+			<th rowspan=2>Not covered (bp)</th>
+			<th colspan="4">Coverage (%)</th>
+			<th rowspan=2>Max<br/>Depth</th>
+			<th rowspan=2>Avg<br/>Depth</th>
+		</tr>
+		<tr class='column'>
+			<th>1X</th>
+			<th>5X</th>
+			<th>10X</th>
+			<th>20X</th>
+		</tr>
+[%-FOREACH r IN reports.first.EnrichmentReports%]
+	<tr class='entry'>
+		<td>
+			<a title="click to download this BAM file"
+		[%-IF c.req.address.match('192.168.\d+.\d+') %]
+			href='http://cardiodb[%r.bamfile%]'>download</a><br/><br/>
+			<a title="click to view the BAM file with Integrative Genomics Viewer" href='http://www.broadinstitute.org/igv/projects/current/igv.php?sessionURL=http://cardiodb[%r.bamfile%]&genome=hg19'>see in IGV</a>
+		[%-ELSE%]
+			href='http://cardiodb.org[%r.bamfile%]'>download</a><br/><br/>
+			<a title="click to view the BAM file with Integrative Genomics Viewer" href='http://www.broadinstitute.org/igv/projects/current/igv.php?sessionURL=http://cardiodb.org[%r.bamfile%]&genome=hg19'>see in IGV</a>
+		[%END-%]
+		</td>
+		<td>[%r.bp_target.chunk(-3).join(',')%]</td>
+		<td><img src="https://chart.googleapis.com/chart?cht=p3&chs=300x100&chd=t:[%r.pct_reads_on%],[%r.pct_reads_off%]&chl=[%r.reads_on%]|[%r.reads_off%]&chdl=on|off" /></td>
+		<td>[%r.ratio_on_off%]</td>
+		<td>[%r.enrichment_fold%]</td>
+		<td><img src="https://chart.googleapis.com/chart?cht=p&chs=200x100&chd=t:[%100-r.pct_target_bp_not_covered%],[%r.pct_target_bp_not_covered%]&chl=|[%r.bp_target_null_coverage%]|" /></td>
+		<td><img src="https://chart.googleapis.com/chart?cht=p&chs=165x100&chd=t:[%r.target_covered_1x%],[%100-r.target_covered_1x%]&chl=[%r.target_covered_1x%]|" /></td>
+		<td><img src="https://chart.googleapis.com/chart?cht=p&chs=165x100&chd=t:[%r.target_covered_5x%],[%100-r.target_covered_5x%]&chl=[%r.target_covered_5x%]|" /></td>
+		<td><img src="https://chart.googleapis.com/chart?cht=p&chs=165x100&chd=t:[%r.target_covered_10x%],[%100-r.target_covered_10x%]&chl=[%r.target_covered_10x%]|" /></td>
+		<td><img src="https://chart.googleapis.com/chart?cht=p&chs=165x100&chd=t:[%r.target_covered_20x%],[%100-r.target_covered_20x%]&chl=[%r.target_covered_20x%]|" /></td>
+		<td>[%r.max_depth_of_target_coverage%]</td>
+		<td>[%r.avg_depth_of_target_coverage%]</td>
+	</tr>	
+[%-END%]
+</table>

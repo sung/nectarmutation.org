@@ -1,0 +1,19 @@
+
+				<p class="desc">
+					The primary analysis was performed on the 5500 Series sequencing instrument which generate color space reads (eXtensible SeQuence format [XSQ]) 
+					that were mapped into Ensembl human genome (v[%ensembl_ver%]) reference using LifeScope v[%ls_ver%] (Life Technologies,California, USA) software with the global alignment algorithm. 
+				</p>
+				<p class="desc">
+					In this mapping procedure the reads were distributed into the available compute nodes to achieve parallelization. 
+					We have used the Lifescope v[%ls_ver%]  “Targeted resequencing” workflow for the secondary and tertiary level analysis with the default parameters recommended by Life tech. 
+					The workflow comprised of SOLiD™ Accuracy Enhancement Tool (SAET) for improving color call accuracy prior to mapping, paired mapping and mapping statistics (BAMstats) in secondary level analysis. 
+				</p>
+				<p class="desc">
+					As for the workflow in tertiary level analysis, it consisted of enrichment statistics (percentage on target, enrichment fold, coverage), 
+					single nucleotide polymorphisms (SNPs) finding, small indels and SNP/indel annotations.
+				</p>
+				<p class="desc">
+					Yet another set of tools - Genome Analysis Toolkit (GATK; Genome Sequencing and Analysis Group, USA) [%gatk_ver%] and samtools v[%samtool_ver%] were used 
+					to identify SNPs and insertions or deletions (indels). 
+					Comparison of variants called by these three tools mentioned above have contributed towards reducing false positives to a great extend. 
+				</p>

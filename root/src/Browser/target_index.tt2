@@ -1,0 +1,8 @@
+[% meta.title = 'Targets'-%]
+
+	<!-- google chart api for /patient -->
+	[%PROCESS patient_percentage_chart.tt2 source_data=meta_targets my_type='target' print_this='target_name' link_this='/target/'%]
+
+	<div id='disease_list'>
+		[%INCLUDE meta_target.tt2%]
+	</div>

@@ -1,0 +1,28 @@
+	<script type="text/javascript">
+
+		// http://www.learningjquery.com/2006/09/slicker-show-and-hide
+		$(document).ready(function() {
+			[%-FOREACH f IN entry%]
+			 // hides the fam_name as soon as the DOM is ready
+
+			  $('#[%f%]').hide();
+			 // shows the fam_name on clicking the noted link  
+			  $('#[%f%]-show').click(function() {
+			    $('#[%f%]').show('slow');
+			    return false;
+			  });
+			 // hides the fam_name on clicking the noted link  
+			  $('#[%f%]-hide').click(function() {
+			    $('#[%f%]').hide('fast');
+			    return false;
+			  });
+			 
+			 // toggles the fam_name on clicking the noted link  
+			  $('#[%f%]-toggle').click(function() {
+			    $('#[%f%]').slideToggle(700);
+			    return false;
+			  });
+			[%-END%]
+		});
+
+	</script>

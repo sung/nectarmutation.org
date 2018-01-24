@@ -1,0 +1,54 @@
+		<div id="list_of_mapping">
+			<table class="general_list_table">
+				<tr class='column'>
+					<th><a title="the source of external reference">ExRef</a></th>
+					<th>Desscription</th>
+				</tr>
+				<tr class='entry'>
+					<td><a title="show ensembl below" href="#" id="subselect_ensembl">Ensembl</a></td>
+					<td>[%ensx.size%] [%IF ensx.size>=2%]entries[%ELSE%]entry[%END%] mapped onto Ensembl transcripts (<span style="background-color:#fff;">canonical transcript [<a class="boxy" title="what's this" href="[%c.uri_for('/mutation')%]/[%uid%]#canonical">?</a>]</span> coloured in <span style="background-color:#fff;">white</span>)</td>
+				</tr>
+				<tr class='entry'>
+					<td><a title="show uniprot below" href="#" id="subselect_uniprot">UniProt</a></td>
+					<td>[%UNLESS uniprots.size%]No mapping to UniProt proteins[%ELSE%]Mapping to [%uniprots.size%] UniProt residue[%IF uniprots.size>=2%]s[%END%] (from <span style="background-color:#fff;">canonical transcript [<a class="boxy" title="what's this" href="[%c.uri_for('/mutation')%]/[%uid%]#canonical">?</a>]</span> coloured in <span style="background-color:#fff;">white</span>)[%END%]</td>
+				</tr>
+				<tr class='entry'>
+					<td><a title="show pdb below" href="#" id="subselect_pdb">PDB</a></td>
+					<td>[%UNLESS pdbs.size%]No mapping to PDB[%ELSE%]Mapping to [%pdbs.size%] PDB residue[%IF pdbs.size>=2%]s[%END%] (from <span style="background-color:#fff;">canonical transcript [<a class="boxy" title="what's this" href="[%c.uri_for('/mutation')%]/[%uid%]#canonical">?</a>]</span> coloured in <span style="background-color:#fff;">white</span>)[%END%]</td>
+				</tr>
+			</table>
+		</div><!-- end of list mapping-->
+
+		[%-SET sub_tab_container="mapping_subtab"%]
+		<script type="text/javascript">
+			$('#subselect_ensembl').click( function() {
+				$('#[%sub_tab_container%]').easytabs('select', '#ensembl');
+			});
+			$('#subselect_uniprot').click( function() {
+				$('#[%sub_tab_container%]').easytabs('select', '#uniprot');
+			});
+			$('#subselect_pdb').click( function() {
+				$('#[%sub_tab_container%]').easytabs('select', '#pdb');
+			});
+		</script>
+		[%PROCESS easy_tab.tt2 tab_container="$sub_tab_container"%] [%# root/lib/js/easy_tab.tt2%]
+
+		<div id="[%sub_tab_container%]" class='tab-container sub_container'>
+			<ul class='etabs'>
+				<li class='tab'><a href="#ensembl" title="mapping to Ensembl transcripts">Ensembl</a></li>
+				<li class='tab'><a href="#uniprot" title="mapping to UniProt proteins">UniProt</a></li>
+				<li class='tab'><a href="#pdb" title="mapping to PDB">PDB</a></li>
+			</ul>
+
+			<div class='easytab-panel-container'>
+				<div id="ensembl" class="x_scroll">
+					[%PROCESS ensembl_mapping.tt2%]
+				</div><!-- end of ensembl -->
+				<div id="uniprot">
+					[%PROCESS uniprot_mapping.tt2%]
+				</div><!-- end of uniprot-->
+				<div id="pdb">
+					[%PROCESS pdb_mapping.tt2%]
+				</div><!-- end of pdb-->
+			</div> <!-- end of class=easytab-panel-container-->
+		</div> 

@@ -1,0 +1,178 @@
+[% # config/main
+   #
+   # This is the main configuration template which is processed before
+   # any other page, by virtue of it being defined as a PRE_PROCESS
+   # template.  This is the place to define any extra template variables,
+   # macros, load plugins, and perform any other template setup.
+
+   IF Catalyst.debug;
+     # define a debug() macro directed to Catalyst's log
+     MACRO debug(message) CALL Catalyst.log.debug(message);
+   END;
+
+   # define a data structure to hold sitewide data
+   site = {
+		name=> 'NECTAR',
+		title => 'NECTAR: ',
+		author=> 'Sungsam Gong',
+		contact=> 'sung@bio.cc',
+		version=> 1.00,
+		year=> 2013,
+		group=> 'Cardiovascular Genetics Group',
+		dept=> 'NIHR Biomedical Research Unit',
+		ini=> 'Royal Brompton & Harefield NHS Trust and Imperial College',
+     	copyright => '2013 Sungsam Gong',
+   };
+	address = {
+		street=>'Sydney Street',
+		city=>'London',
+		postcode=>'SW3 6NP',
+		country=>'UK',
+	};
+
+	google={
+		ajax_api_key=>'AIzaSyBuJcDknAn8iwwusV8CKj4WXGJUyXafIwY',
+		map_api_key=> 'AIzaSyBuJcDknAn8iwwusV8CKj4WXGJUyXafIwY',
+	};
+
+	jquery={
+		ver=>'1.7.1', # 1.7.1 (or lower version) required for coda-slider
+		ui_ver=>'1.7.2',
+	};
+
+	link={
+		dept=>'http://www.rbht.nhs.uk/research/brus/cardiovascular-bru/',
+		ngs=>'http://en.wikipedia.org/wiki/DNA_sequencing#Next-generation_methods',
+		entropy=>'http://en.wikipedia.org/wiki/Entropy_%28information_theory%29',
+
+		en_api=>'http://www.ensembl.org/info/docs/api/index.html',
+		en_homo=>'http://www.ensembl.org/Homo_sapiens/Info/Index',
+		en_cons=>'http://www.ensembl.org/info/docs/variation/predicted_data.html#consequences',
+		en_func=>'http://www.ensembl.org/info/docs/variation/predicted_data.html#nsSNP',
+		en_var_sources=>'http://www.ensembl.org/info/docs/variation/sources_documentation.html#homo_sapiens',
+		en_homology=>'http://www.ensembl.org/info/docs/compara/homology_method.html'
+
+		blosum=>'http://en.wikipedia.org/wiki/BLOSUM',
+		pam=>'http://en.wikipedia.org/wiki/Point_accepted_mutation',
+
+		lifescope=>'http://www.appliedbiosystems.com/lifescope',
+		gatk=>'http://www.broadinstitute.org/gsa/wiki/index.php/The_Genome_Analysis_Toolkit',
+		samtool=>'http://samtools.sourceforge.net/',
+		cga=>'http://www.completegenomics.com/analysis-tools/cgatools/',
+
+		bipa=>'http://www-cryst.bioc.cam.ac.uk/bipa',
+		credo=>'http://www-cryst.bioc.cam.ac.uk/credo',
+		piccolo=>'http://mordred.bioc.cam.ac.uk/piccolo/piccolo.php',
+		joy=>'http://tardis.nibio.go.jp/joy',
+
+		jmol=>'http://jmol.org',
+		pdb=>'http://www.pdb.org',
+		pdb_js=>'http://www.rcsb.org/pdb/widgets/rcsbPdbTagLib.js',
+		uniprot=>'http://www.uniprot.org',
+		gbrowse=>'http://gmod.org/wiki/Gbrowse',
+		das=>'http://en.wikipedia.org/wiki/Distributed_Annotation_System',
+		ensembl_human=>'http://www.ensembl.org/Homo_sapiens/Info/Index',
+		uniprot_ft=>'http://www.uniprot.org/manual/?query=category:sequence_annotation',
+		uniprot_disease=>'http://www.uniprot.org/diseases',
+		pubmed=>'http://www.ncbi.nlm.nih.gov/pubmed',
+
+		cat=>'http://www.catalystframework.org/',
+		dbix=>'http://www.dbix-class.org/',
+		mysql=>'http://www.mysql.com/',
+		centos=>'http://www.centos.org/',
+		apache=>'http://httpd.apache.org/',
+		modperl=>'http://perl.apache.org/',
+		memcached=>'http://memcached.org/',
+
+		dbsnp=>'http://www.ncbi.nlm.nih.gov/projects/SNP/',
+		omim=>'http://omim.org',
+		icc_ext=>'http://cardiodb.org/ICC_Mutations/',
+		icc_int=>'http://cardiodb/ICC_Mutations/',
+		hgmd=>'http://www.hgmd.cf.ac.uk',
+
+		humsavar_url=>'http://www.uniprot.org/docs/humsavar',
+		humsavar=>'http://web.expasy.org/cgi-bin/variant_pages/get-sprot-variant.pl?',
+		vep=>'http://www.ensembl.org/info/docs/variation/vep/index.html',
+		cosmic_url=>'http://cancer.sanger.ac.uk/cancergenome/projects/cosmic',
+		cosmic=>'http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=',
+		clinvar_url=>'http://www.ncbi.nlm.nih.gov/clinvar',
+		clinvar=>'http://www.ncbi.nlm.nih.gov/clinvar?term=',
+
+		ftp_ext=>'ftp://ftp.nectarmutation.org/NECTAR',
+		ftp_int=>'ftp://cardiodb/NECTAR',
+
+		vcf=>'http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41',
+		blast=>'http://www.ncbi.nlm.nih.gov/books/NBK21097/',
+		evalue=>'http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=FAQ#expect',
+	};
+
+	ref={
+		doublemap=>'http://www.ploscompbiol.org/article/info:doi/10.1371/journal.pcbi.1000179',
+	};
+
+	ensembl={
+		location=>'http://www.ensembl.org/Homo_sapiens/Location/View?r=',
+		query=>'http://www.ensembl.org/Multi/Search/Results?species=all;idx=;q=',
+		hgmd=>'http://www.ensembl.org/Human/Search/Results?site=ensembl;facet_feature_type=;facet_species=Human;q=',
+		ensf=>'http://www.ensembl.org/Homo_sapiens/Search/Details?species=Homo_sapiens;idx=Family;end=1;q=',
+		gene=>'http://www.ensembl.org/Homo_sapiens/Search/Details?species=Homo_sapiens;idx=Gene;end=1;q=',
+	};
+	ncbi={
+		dbsnp=>'http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=',
+		ccds=>'http://www.ncbi.nlm.nih.gov/CCDS/CcdsBrowse.cgi?REQUEST=ALLFIELDS&DATA=',
+	};
+
+	gbrowse={
+		link=>'http://nectarmutation.org/gb2/gbrowse/nectar/?name=',
+		link_int=>'http://cardiodb/gb2/gbrowse/nectar/?name=',
+		img=>'http://nectarmutation.org/gb2/gbrowse_img/nectar/?name=',
+		img_int=>'http://cardiodb/gb2/gbrowse_img/nectar/?name=',
+		img_disease=>'http://nectarmutation.org/gb2/gbrowse_img/nectar/?label=PfamDomain-HUMSAVAR-HGMD-COSMIC-ClinVar;name=',
+		img_disease_int=>'http://cardiodb/gb2/gbrowse_img/nectar/?label=PfamDomain-HUMSAVAR-HGMD-COSMIC-ClinVar;name=',
+		img_ft=>'http://nectarmutation.org/gb2/gbrowse_img/nectar/?label=PfamDomain-Binding-Region-Site;name=',
+		img_ft_int=>'http://cardiodb/gb2/gbrowse_img/nectar/?label=PfamDomain-Binding-Region-Site;name=',
+		img_para=>'http://nectarmutation.org/gb2/gbrowse_img/nectar/?label=PfamDomain-ParaAnno;name=',
+		img_para_int=>'http://cardiodb/gb2/gbrowse_img/nectar/?label=PfamDomain-ParaAnno;name=',
+		das=>'http://nectarmutation.org/gb2/das',
+		das_int=>'http://cardiodb/gb2/das',
+	};
+
+	feeds={
+		NECTAR=>Catalyst.uri_for('/rss'),	#not working
+		RBH=>'http://www.rbht.nhs.uk/news.rss',
+		NIHR=>'https://twitter.com/statuses/user_timeline/OfficialNIHR.rss'
+
+		UniProt=>'http://www.uniprot.org/news/?format=rss',
+		Ensembl=>'http://www.ensembl.info/feed/rss',
+		PHGF=>'http://www.phgfoundation.org/rss/whats_new.xml',
+		NGSGL=>'http://news.google.com/news?q=next+generation+sequencing&hl=en&gl=uk&prmd=imvnsbl&bav=on.2,or.r_gc.r_pw.r_cp.,cf.osb&biw=1920&bih=1079&um=1&ie=UTF-8&output=rss',
+
+		ITFB=>'https://www.facebook.com/feeds/page.php?id=363820649112&format=rss20',
+		LTFB=>'https://www.facebook.com/feeds/page.php?id=100685839626&format=rss20',
+		ILFB=>'https://www.facebook.com/feeds/page.php?id=144013223969&format=rss20',
+		BGITW=>'https://twitter.com/statuses/user_timeline/BGI_Events.rss',
+
+		PDB=>'http://www.rcsb.org/pdb/rss/LastLoad',
+		EBI=>'http://www.ebi.ac.uk/Information/News/rss/ebinews.xml',
+		CREDO=>'http://www-cryst.bioc.cam.ac.uk/taxonomy/term/33/0/feed',
+		COSMIC=>'http://www.sanger.ac.uk/shared/news-report/atom/20031105161551',
+	};
+
+	mut_levels={
+		a=>['TRANSCRIPT_ABLATION', 'ESSENTIAL_SPLICE_SITE', 'STOP_GAINED', 'STOP_LOST', 'FRAMESHIFT_CODING'],
+		b=>['NON_SYNONYMOUS_CODING'],
+		c=>['SPLICE_SITE', 'TRANSCRIPT_AMPLIFICATION'],
+		d=>['PARTIAL_CODON', 'SYNONYMOUS_CODING', 'CODING_UNKNOWN', 'WITHIN_MATURE_miRNA', '5PRIME_UTR', '3PRIME_UTR', 'INTRONIC', 'NMD_TRANSCRIPT', 'WITHIN_NON_CODING_GENE', 'UPSTREAM', 'DOWNSTREAM', 'REGULATORY_REGION', 'TRANSCRIPTION_FACTOR_BINDING_MOTIF', 'INTERGENIC']
+	};
+	
+	chromosomes=>['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY'];
+
+   # load up any other configuration items
+   PROCESS config/col
+         + config/url;
+
+   # set defaults for variables, etc.
+   DEFAULT
+     message = 'There is no message';
+
+-%]

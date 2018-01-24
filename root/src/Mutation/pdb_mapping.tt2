@@ -1,0 +1,43 @@
+
+				[%# 3. PDB%]
+				<h2 class="title hidden">PDB</h2>
+				[%-UNLESS pdbs.size%]
+				No mapping to PDB
+				[%-ELSE%]
+				<script type="text/javascript" src="[%link.pdb_js%]"> </script>
+				<table class='general_list_table'>
+					<caption>Mapping to [%pdbs.size%] PDB residue[%IF pdbs.size>=2%]s[%END%] (from <span style="background-color:#fff;">canonical transcript [<a title="what's this" href="#" onClick='Boxy.load("[%c.uri_for('/static/site/canonical_transcript.html')%]", {title:"Canonical Transcript", modal:false})'>?</a>]</span> coloured in <span style="background-color:#fff;">white</span>)</caption>
+					<tr class='column'>
+						<th>Class</th>
+						<th>PDB</th>
+						<th>Chain</th>
+						<th>Res num</th>
+						<th>Res</th>
+						<th>ENV<a title="what is 'ENV'?" href="#" onClick='Boxy.load("[%c.uri_for('/static/site/env.html')%]", {title:"Definitions of Structural Envronment", modal:false})'>[?]</a></th>
+						<th>Annotation<a title="what are 'annotaions'?" href="#" onClick='Boxy.load("[%c.uri_for('/about/annotation')%]?id=all&boxy=1",{title:"List of Function Annotations"})'>[?]</a></th>
+						<th>Descriptions</th>
+						<th><a title="Environment Specific Substituion Table" class="external" href="[%ref.doublemap%]">ESST</a></th>
+					</tr>
+				[%-FOREACH p IN pdbs%]
+					<tr class='entry [%UNLESS p.get_column('is_canonical')%]non_canon[%END%]'>
+						<td class="[%p.get_column('class').chunk(2).first%]"><a title="[%p.get_column('ensts')%]">[%p.get_column('class')%]</a></td>	
+						<td><span class="rcsb_tag" title="id|[%p.pdb%]|">[%p.pdb%]</span></td>
+						<td>[%p.chain%]</td>
+						<td><a class="external" title="see in 3D" href='http://samul.org/main/pdb/[%p.pdb%]/jmol?hl=[%p.res_num%]:[%p.chain%]'>[%p.res_num%]</a></td>
+						<td>[%p.pdb_res%]</td>
+						<td>[%p.env%]</td>
+						<td>
+							<span class="[%FOREACH ft IN c.session.ft_tags %][%IF p.annotation==ft.feature%][%p.get_column('class').chunk(2).first%][%LAST%][%END%][%END%]">
+							<a title="click to see detail" href="#" onClick='Boxy.load("[%c.uri_for('/about/annotation')%]?id=[%p.annotation%]&boxy=1", {title:"Annotation: [%p.annotation%]"})'>[%p.annotation%]</a>
+							</span>
+						</td>
+						<td>[%p.des%]</td>
+						<td>
+							<span [%IF p.esst<0%]class="[%p.get_column('class').chunk(2).first%]"[%END%]>
+							[%p.esst%]
+							</span>
+						</td>
+					</tr>
+				[%-END%]
+				</table>
+				[%-END%]

@@ -1,0 +1,111 @@
+[% meta.title = total _ ' variants called by ' _ v_caller -%]
+
+[%#INCLUDE meta_ensembls.tt2%]
+
+[%PROCESS pager.tt2%]
+
+<div id='caller' class='x_scroll'>
+<table id='diBayes' class='general_list_table'>
+	<captioni>[%total%] variants in total</caption>
+	<a class="download" href='[%c.uri_for('/run')%]/[%run_name%]/[%sample_name%]/[%v_caller%]/download/csv'>[download csv]</a>
+	<tr class='column'>
+		<th>Type</th>
+		<th>Chr</th>
+		<th>Start</th>
+		<th>End</th>
+		<th>Allele</th>
+		[%-IF v_caller == 'diBayes'%]
+		<th>Score</th>
+		<th>Coverage</th>
+		<th>Reference<br/>Allele Counts</th>
+		<th>Reference<br/>Allele Starts</th>
+		<th>Reference<br/>Allele MeanQV</th>
+		<th>Novel<br/>Allele Counts</th>
+		<th>Novel<br/>Allele Starts</th>
+		<th>Novel<br/>Allele MeanQV</th>
+		<th>MAAD2</th>
+		<th>SAAD3</th>
+		<th>Het?</th>
+		[%-ELSIF v_caller == 'GATKs'%]
+		<th>Qual</th>
+		<th>Filter</th>
+		<th>dbSNP</th>
+		<th>Info</th>
+		<th>GT</th>
+		<th>AD</th>
+		<th>DP</th>
+		<th>GQ</th>
+		<th>PL</th>
+		[%-ELSIF v_caller == 'Samtools'%]
+		<th>Qual</th>
+		<th>Allele</th>
+		<th>GT</th>
+		<th>PL</th>
+		<th>GQ</th>
+		[%-ELSIF v_caller == 'SmallIndels'%]
+		<th>Allele<br/>Counts</th>
+		<th>Non-read<br/>Reads</th>
+		<th>Coverage<br/>Ratio</th>
+		<th>Zygosity</th>
+		<th>Zygosity<br/>Score</th>
+		<th>dbSNPs</th>
+		[%-ELSIF v_caller == 'CGA'%]
+		<th>Locus</th>
+		<th>VAF score</th>
+		<th>EAT score</th>
+		<th>Quality</th>
+		[%-END%]
+	</tr>
+[%-FOREACH v IN variations%]
+	<tr class='entry'>
+		<td>[%v.variant_type%]</td>
+		<td>[%v.chr%]</td>
+		<td>[%v.v_start%]</td>
+		<td>[%v.v_end%]</td>
+		<td>[%v.reference%]/[%v.genotype%]</td>
+		[%-IF v_caller == 'diBayes'%]
+		<td>[%v.score%]</td>
+		<td>[%v.coverage%]</td>
+		<td>[%v.ref_allele_counts%]</td>
+		<td>[%v.ref_allele_starts%]</td>
+		<td>[%v.ref_allele_meanqv%]</td>
+		<td>[%v.novel_allele_counts%]</td>
+		<td>[%v.novel_allele_starts%]</td>
+		<td>[%v.novel_allele_meanqv%]</td>
+		<td>[%v.maad2%]</td>
+		<td>[%v.saad3%]</td>
+		<td>[%v.het%]</td>
+		[%-ELSIF v_caller == 'GATKs'%]
+		<td>[%v.qual%]</td>
+		<td>[%v.filter%]</td>
+		<td>[%v.rs_id%]</td>
+		<td>[%v.info%]</td>
+		<td>[%v.gt%]</td>
+		<td>[%v.ad%]</td>
+		<td>[%v.f_dp%]</td>
+		<td>[%v.gq%]</td>
+		<td>[%v.pl%]</td>
+		[%-ELSIF v_caller == 'Samtools'%]
+		<td>[%v.qual%]</td>
+		<td>[%v.info%]</td>
+		<td>[%v.gt%]</td>
+		<td>[%v.pl%]</td>
+		<td>[%v.gq%]</td>
+		[%-ELSIF v_caller == 'SmallIndels'%]
+		<td>[%v.allele_count%]</td>
+		<td>[%v.no_nonred_reads%]</td>
+		<td>[%v.coverage_ratio%]</td>
+		<td>[%v.exp_zygosity%]</td>
+		<td>[%v.exp_zygosity_score%]</td>
+		<td>[%v.rs_ids%]</td>
+		[%-ELSIF v_caller == 'CGA'%]
+		<td>[%v.locus%]</td>
+		<td>[%v.vaf_score%]</td>
+		<td>[%v.eaf_score%]</td>
+		<td>[%v.qual%]</td>
+		[%-END%]
+	</tr>	
+[%-END%]
+</table>
+</div>
+[%PROCESS pager.tt2%]

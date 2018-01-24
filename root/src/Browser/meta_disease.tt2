@@ -1,0 +1,31 @@
+
+	<table class='general_list_table'>
+		[%IF diag_code%]
+		<caption>Brief stat. of mutations called within [%diag_code%] samples</caption>
+		[%-ELSE%]
+		<caption>List of [%meta_diseases.size%] disease types</caption>
+		[%-END%]
+		<tr class='column'>
+			<th rowspan=2>Code</th>
+			<th rowspan=2>Description</th>
+			<th colspan=5>Number of</th>
+		</tr>
+		<tr class='column'>
+			<th>Runs</th>
+			<th>Samples <a title="samples having at least one called varaint for [%IF diag_code%][%diag_code%][%ELSE%]the corresponding disease type[%END%]; total NO. of sample might be more than this number">[?]</a></th>
+			<th>Patients <a title="patients having at least one called varaint for [%IF diag_code%][%diag_code%][%ELSE%]the corresponding disease type[%END%]; total NO. of pateint might be more than this number">[?]</a></th>
+			<th>Unique calls <a title="distinct variant after merging samples/patient">[?]</a></th>
+			<th>Total calls <a title="same varaints are counted as many as the samples">[?]</a></th>
+		</tr>
+	[%FOREACH d IN meta_diseases%]
+		<tr class='entry'>
+			<td><a title="[%IF meta_diseases.size==1%]I am here[%ELSE%]click to see details of [%d.diag_code%][%END%]" href="[%c.uri_for('/disease')%]/[%d.diag_code%]">[%d.diag_code%]</a></td>
+			<td class='left'>[%d.des%]</td>	
+			<td>[%d.cnt_unique_run%]</td>	
+			<td><a title="[%d.cnt_unique_sample%] samples having at least one called varaint for [%d.diag_code%]" href='[%c.uri_for('/run/disease')%]/[%d.diag_code%]'>[%d.cnt_unique_sample%]</a></td>	
+			<td><a title="[%d.cnt_unique_sample%] samples are from [%d.cnt_unique_bru.chunk(-3).join(',')%] patients" href='[%c.uri_for('/patient/disease')%]/[%d.diag_code%]'>[%d.cnt_unique_bru.chunk(-3).join(',')%]</a></td>	
+			<td>[%d.cnt_unique_call.chunk(-3).join(',')%]</td>	
+			<td>[%d.cnt_call.chunk(-3).join(',')%]</td>	
+		</tr>
+	[%END%]
+	</table>

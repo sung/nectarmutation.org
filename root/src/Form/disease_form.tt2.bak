@@ -1,0 +1,27 @@
+[%UNLESS no_wrapper%]
+	[%meta.title='Search Disease'%]
+[%ELSE%]
+<html>
+	<head>
+		<script type="text/javascript" src="[%c.uri_for('/static/js/jquery-1.7.2.min.js')%]"></script>
+		<script type="text/javascript" src="[%c.uri_for('/static/js/jquery.autocomplete-min.js')%]"></script>
+	</head>
+	<body>
+[%END%]
+		<div id="main_search_boxy">
+			[%SET search_this='disease_keyword'%]
+			[%INCLUDE Site/sub_search.tt2%]
+		</div>
+	[%IF dummy_if%]
+	<div id="main_search_boxy">
+		<form id="ACform" method="get" action="[%c.uri_for('/search/disease')%]">
+			<input class="inputWithImge" type="text" name="id" size="30" value="cardiomyopathy"/>
+			<button type='submit'><img src="[%c.uri_for('/static/images/gvl3-5_search-icon.png')%]" alt="Click to search [%search_this%]" onClick="$('#my_activity').activity()"/></button>
+		</form>
+	</div>
+	[%END%]
+[%IF no_wrapper%]
+	</body>
+</html>
+[%END%]
+[% PROCESS js/inputWithImage.tt2%] [%# root/lib/js/inputWithImage.tt2%]

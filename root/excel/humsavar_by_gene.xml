@@ -1,0 +1,33 @@
+[%IF source=='humsavar'%]
+<workbook>
+	<worksheet name="UNIPROT">
+[%END%]
+		<row>
+			<bold><cell>UniProt: [%humsavars.0.sp_acc%]</cell></bold>
+		</row>
+		<row>
+			<bold><cell>Variant ID</cell></bold>
+			<bold><cell>Residue NO.</cell></bold>
+			<bold><cell>Allele</cell></bold>
+			<bold><cell>Type</cell></bold>
+			<bold><cell>dbsNP</cell></bold>
+			<bold><cell>Disease</cell></bold>
+			<bold><cell>OMIM</cell></bold>
+			<bold><cell>Nectar ID</cell></bold>
+		</row>
+		[%-FOREACH h IN humsavars%]
+		<row>
+			<cell>[%h.variant_id%]</cell>
+			<cell>[%h.res_num%]</cell>
+			<cell>[%h.aa_original%]/[%h.aa_variation%]</cell>	
+			<cell>[%h.type%]</cell>	
+			<cell>[%h.rs_id%]</cell>
+			<cell>[%h.disease_name%]</cell>
+			<cell>[%h.mim%]</cell>
+			<cell>[%h.get_column('uid')%]</cell>
+		</row>
+		[% END %]
+[%IF source=='humsavar'%]
+	</worksheet>
+</workbook>
+[%END%]

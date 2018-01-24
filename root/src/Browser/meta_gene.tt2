@@ -1,0 +1,29 @@
+
+		<table class='general_list_table'>
+			[%IF total%]
+			<caption>There are [%total%] human gene[%IF total>=2%]s[%END%] in Nectar</caption>
+			[%-ELSE%]
+			<caption>Brief stat. of mutations called within <a title="go to Ensembl for this gene" class="external" href="[%ensembl.gene%][%hgnc%]">[%hgnc%]</a></caption>
+			[%-END%]
+			<tr class='column'>
+				<th rowspan=2>Gene</th>
+				<th colspan=5>Number of</th>
+			</tr>
+			<tr class='column'>
+				<th>Runs</th>
+				<th>Samples <a title="samples having at least one called varaint for [%IF hgnc%][%hgnc%][%ELSE%]the corresponding gene[%END%]; total NO. of sample might be more than this number">[?]</a></th>
+				<th>Patients <a title="patients having at least one called varaint for [%IF hgnc%][%hgnc%][%ELSE%]the corresponding gene[%END%]; total NO. of pateint might be more than this number">[?]</a></th>
+				<th>Unique calls <a title="distinct variant after merging samples/patient">[?]</a></th>
+				<th>Total calls <a title="same varaints are counted as many as the samples">[?]</a></th>
+			</tr>
+			[%-FOREACH g IN meta_genes%]
+			<tr class='entry'>
+				<td><a title="[%IF meta_genes.size==1%]I am here[%ELSE%]click to see details of [%g.hgnc%][%END%]" href="[%c.uri_for('/gene')%]/[%g.hgnc%]">[%g.hgnc%]</a></td>
+				<td>[%g.cnt_unique_run%]</td>	
+				<td><a title="[%g.cnt_unique_sample%] sample(s) having at least one called varaint for [%g.hgnc%]" href='[%c.uri_for('/run/gene')%]/[%g.hgnc%]'>[%g.cnt_unique_sample%]</a></td>	
+				<td><a title="[%g.cnt_unique_sample%] samples are from [%g.cnt_unique_bru.chunk(-3).join(',')%] patients" href='[%c.uri_for('/patient/gene')%]/[%g.hgnc%]'>[%g.cnt_unique_bru.chunk(-3).join(',')%]</a></td>	
+				<td>[%g.cnt_unique_call.chunk(-3).join(',')%]</td>	
+				<td>[%g.cnt_call.chunk(-3).join(',')%]</td>	
+			[%-END%]
+			</tr>
+		</table>

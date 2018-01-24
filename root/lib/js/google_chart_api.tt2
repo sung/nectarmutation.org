@@ -1,0 +1,31 @@
+	<!-- google chart api -->
+	<script type="text/javascript">
+		google.load("visualization", "1", {packages:["corechart"]});
+		google.setOnLoadCallback(drawChart);
+		function drawChart() {
+			var data = google.visualization.arrayToDataTable([
+				[%chart_data%]
+			]);
+			var options = {
+				title: '[%chart_title%]',
+				titleTextStyle: {fontSize: 15},
+				// width: '[%width%]',
+				// height: '[%height%]',
+				backgroundColor: '[%bgcolor%]',
+			};
+
+			var chart = new google.visualization.PieChart(document.getElementById('[%chart_div%]'));
+
+			function myClickHandler(){
+				var selectedItem = chart.getSelection()[0];
+				if (selectedItem) {
+					var topping = data.getValue(selectedItem.row, 0);
+					// alert('The user selected ' + topping);
+					window.location="[%link_url%]" + topping
+				}
+			}
+
+			google.visualization.events.addListener(chart, 'select', myClickHandler);
+			chart.draw(data, options);
+		}
+    </script>

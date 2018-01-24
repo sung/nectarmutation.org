@@ -1,0 +1,22 @@
+		<script src="http://www.google.com/jsapi?key=[%google.ajax_api_key%]" type="text/javascript"></script>
+		<script language="Javascript" type="text/javascript">google.load("jquery", "[%jquery.ver%]");google.load("jqueryui", "[%jquery.ui_ver%]");</script>
+
+		[%-IF template.name=='about.tt2'%]
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=[%google.map_api_key%]&sensor=false"></script>
+		[%-END%]
+		[%-#IF template.name=='about_schema.tt2'%]
+		[%-IF template.name.match(_schema.tt2)%]
+		<script type="text/javascript" src="[%c.uri_for('/static/js/arbor/lib/arbor.js')%]"></script>
+		<script type="text/javascript" src="[%c.uri_for('/static/js/arbor/lib/arbor-tween.js')%]"></script>
+		<script type="text/javascript" src="[%c.uri_for('/static/js/arbor/demos/_/graphics.js')%]"></script>
+		<!--<script type="text/javascript" src="[%c.uri_for('/static/js/arbor/demos/halfviz/src/renderer.js')%]"></script>-->
+		<script type="text/javascript" src="[%c.uri_for('/static/js/schema.js')%]"></script>
+		[%-END%]
+
+		<script type="text/javascript" src="[%c.uri_for('/static/js/nectar.js')%]"></script>
+		<script type="text/javascript" src="[%c.uri_for('/static/js/jquery.boxy.js')%]"></script>
+		<script type="text/javascript" src="[%c.uri_for('/static/js/jquery.tipsy.js')%]"></script>
+		<script type="text/javascript" src="[%c.uri_for('/static/js/jquery.autocomplete-min.js')%]"></script>
+		<script type="text/javascript" src="[%c.uri_for('/static/js/jquery.activity-indicator-1.0.0.js')%]"></script>
+		<script type="text/javascript" src="[%c.uri_for('/static/js/superfish.js')%]"></script>
+		<script type="text/javascript" src="[%c.uri_for('/static/js/jquery.easytabs.min.js')%]"></script>

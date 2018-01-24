@@ -1,0 +1,20 @@
+[%- meta.title='News'%]
+
+		[%-#load google feeds control (float right) -%]
+		[%-SET div_tag="ngs_news"-%] 
+		[%-# root/lib/js/google_feeds.tt2%]
+		[%PROCESS google_feeds.tt2 dom="$div_tag" title="NGS News" stacked="true" horizontal="false" is_nectar="1" is_rbh="1" is_nihr="1" is_phgf='1' is_ensembl="1" is_uniprot="1" is_gl="1"-%] 
+
+		<div id="[%div_tag%]" class="rfloat google_api">Loading NGS news...</div>
+
+		[%SET first_news=news_id - 1%][%# first news%]
+		[%SET last_news=news_id - 7%][%# last news%]
+		[%SET news_range =[last_news .. first_news] %][%# first news .. last news%]
+		[%FOREACH n IN news_range.reverse%]
+		<div id="headline_news" class="nectar_panel">
+			<h2 class="main_title">[%news.$n.title%]
+				<a href="[%c.uri_for('/rss')%]" title="RSS feeder"><img src="[%c.uri_for('/static/images/rss/feed-icon-14x14.png')%]" alt="RSS logo"/></a>
+			</h2>	
+			<p class='desc'>[%news.$n.issued.ymd%]<br/>[%news.$n.content%]</p>	
+		</div>
+		[%END%]

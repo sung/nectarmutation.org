@@ -1,0 +1,14 @@
+	[% title = 'NO. of mutation from the patient ' _ bru_code _ ' by its targeted genes'-%]
+
+	[%search_this%]
+	[%-SET myList="bru_hgnc_list"%]
+	[%PROCESS ListNav.tt2 myList="$myList"%] [%# root/lib/js/ListNav.tt2%]
+
+	<div id="gene_index" style="margin:20px auto; width: 800px; background: #fff;">
+		<div id="[%myList%]-nav" class="listNav"></div>
+		<ul id="[%myList%]" class="demo">
+			[%-FOREACH g IN meta_patients%]
+			<li><a href="[%c.uri_for('/patient')%]/[%g.bru_code%]/gene/[%g.hgnc%]">[%g.hgnc%]</a></li>
+			[%END%]
+		</ul>
+	</div>

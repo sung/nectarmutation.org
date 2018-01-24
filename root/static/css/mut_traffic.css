@@ -1,0 +1,149 @@
+/* Mutation Traffic */
+/* red-ish
+.a3 {
+	background-color: #FF0000;
+}
+.a2 {
+	background-color: #FF3300;
+}
+.a1 {
+	background-color: #FF6600;
+}
+.a0 {
+	background-color: #FF9900;
+}*/
+.a0{background-color: #FF0000;} /*a3*/
+
+/* yellow-ish 
+.b3 {
+	background-color: #FFCC00;
+}
+.b2 {
+	background-color: #FFE500;
+}
+.b1 {
+	background-color: #FFFF00;
+}
+.b0 {
+	background-color: #CCFF00;
+}*/
+.b3{background-color: #FF6600;} /*a1*/
+.b2{background-color: #FF9900;} /*a0*/
+.b1{background-color: #FFCC00;} /*b3*/
+.b0{background-color: #FFE500;} /*b2*/
+
+/* green-ish
+.c3 {
+	background-color: #99FF00; 
+}
+.c2 {
+	background-color: #33FF00;
+}
+.c1 {
+	background-color: #00CC00;
+}
+.c0 {
+	background-color: #00B366; 
+}*/
+.c0{background-color: #CCFF00;} /*b0*/
+.d0{background-color: #33FF00;} /*c2*/
+
+/* protein member having mutations */
+.mut_mem {
+	background-color: #f9df6b; /*light yellow*/
+}
+.mut_pos{
+	background: #000; color: #fff; font-weight: bold;
+}
+
+.mutation_profile{
+	color: #12127D;
+	font-size: 13px;
+	line-height: 140%;
+	padding: 20px; 
+}
+
+.mut_category {
+	margin: 10px;
+	clear:both;
+}
+.mut_category img{
+	margin:10px;
+}
+.mut_category h2{
+	background: #f9df6b; /*light yellow*/
+}
+
+#mutation_signal{
+    background-color: #ccc; /* a bit of dark gray*/
+	margin:10px;
+	padding: 10px;
+	border: 1px dotted #aaa;
+	overflow:hidden;
+}
+	
+.alignment {
+	font-family: "Courier New", courier, monospace;
+	white-space: nowrap;
+}
+
+/* Table */
+table.msa{
+	font-size: 12px;
+	margin: 0 auto;
+	position: relative;
+	background: #fff;
+	border-collapse: collapse;
+}
+table.msa caption{
+	text-align: left;
+	font-size: 14px;
+	/*font-size: 110%;*/
+	font-weight: bold;
+	color: #12127D;
+	padding-bottom: 5px;
+}
+table.msa tr.bold{
+	font-weight: bold;
+}
+table.msa td.fixed{
+	position: fixed; 
+	z-index:300;
+}
+table.msa td{
+ 	color: #669;
+	padding-left:2px;
+}
+
+table.mut_signal_table{
+	text-align: center;
+	margin: 5px auto;
+	border: 1px dotted #aaa;
+}
+table.mut_signal_table caption{
+	font-size: 15px;
+}
+table.mut_signal_table th{
+	color: #039;
+	padding: 5px;
+}
+table.mut_signal_table th.column{
+	border-bottom: 1px solid #6678b1;
+}
+table.mut_signal_table th.right{
+	border-right: 1px solid #6678b1;
+}
+
+table.mut_signal_table td{
+	padding 7px;
+}
+
+.mut, .class_one{
+	list-style:		none;
+	margin: 10px;
+}
+.class_one li{
+	padding: 5px;
+	float:			left;
+	position:		relative;
+}

@@ -1,0 +1,38 @@
+[%IF hgnc and diag_code%][%# Run.pm by_gene_and_disease%]
+[%title='Samples targeting gene: ' _ hgnc _ ' & from disease: ' _ diag_code %]
+[%-END%]
+[%IF hgnc and !diag_code%][%# Run.pm by_gene%]
+[%title='Samples targeting gene: ' _ hgnc%]
+[%-END%]
+
+[%IF target_name and diag_code%]
+[%title='Samples targeting ' _ target_name _ ' & from disease: ' _ diag_code %]
+[%END%]
+[%IF target_name and !diag_code%]
+[%title='Samples targeting ' _ target_name %]
+[%END%]
+
+[%IF diag_code and !hgnc and !target_name%][%# Run.pm by_disease%]
+[%title='Samples from disease type: ' _ diag_code %]
+[%-END%]
+
+
+[%IF run_name%][%# Run.pm by_run_name%]
+[%title='Run name: ' _ run_name%]
+[%-END%]
+
+[%IF bru_code%][%# Run.pm by_bru_code%]
+[%title='Samples from the patient: ' _ bru_code%]
+[%-END%]
+
+[%IF platform%]
+[%title='Samples from the platform: ' _ platform%]
+[%-END%]
+
+[% meta.title = title-%]
+
+[%PROCESS run_index.tt2 IF index%]
+
+<div id='list_sample'>
+	[%PROCESS meta_samples.tt2%]	
+</div>

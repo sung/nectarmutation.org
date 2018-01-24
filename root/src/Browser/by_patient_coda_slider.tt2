@@ -1,0 +1,65 @@
+[%-IF hgnc%]
+	[% meta.title = 'Patient code: ' _ bru_code _ ' (Gene: ' _ hgnc _ ')'-%]
+[%-ELSE%]
+	[% meta.title = 'Patient code: ' _ bru_code-%]
+[%-END%]
+
+	[%-SET caller="patient"%]
+
+	[%-SET slider_id="by_patient"%]
+	[%-SET dynamicArrows=1%]
+	[%-SET dynamicTabs=1%]
+	[%INCLUDE no_js_warning.tt2 -%]
+	[%PROCESS coda_slider.tt2 slider_id="$slider_id" dynamicArrows="$dynamicArrows" dynamicTabs="$dynamicTabs"%] [%# root/lib/js/coda_slider.tt2%]
+
+	<div class="coda-slider-wrapper">
+		<div class="coda-slider preload" id="[%slider_id%]">
+
+			[%# 1. Mutation info%]
+			<div class="panel">
+				<div class="panel-wrapper">
+					<h2 title="positively calls of mutations" class="title hidden">Mutations</h2>
+					<div id="meta_patient">
+						[%PROCESS meta_patient.tt2%]
+					</div>
+
+					<div id="classifed_patient">
+						[%PROCESS classified_calls.tt2 caller="$caller"%]	
+					</div>
+				</div><!-- end of panel-wrapper-->
+			</div><!-- end of panel-->
+
+			[%IF hgnc%]
+			[%# 2. Variant Calling%]
+			<div class="panel">
+				<div class="panel-wrapper">
+					<h2 class="title hidden">[%hgnc%]</h2>
+					<div id="diseae_annotation">
+						[%PROCESS disease_annotations.tt2%]
+					</div>
+				</div><!-- end of panel-wrapper-->
+			</div><!-- end of panel-->
+			[%END%]
+
+			[%IF hgmds%]
+			[%# 3. HGMD mutations%]
+			<div class="panel">
+				<div class="panel-wrapper">
+					<h2 class="title hidden">HGMD</h2>
+						[%PROCESS cleaned_hgmds.tt2%]
+				</div><!-- end of panel-wrapper-->
+			</div><!-- end of panel-->
+			[%END%]
+
+			[%IF humsavars%]
+			[%# 3. SwissVariant mutations%]
+			<div class="panel">
+				<div class="panel-wrapper">
+					<h2 class="title hidden">HUMSAVAR</h2>
+						[%PROCESS humsavar.tt2%]
+				</div><!-- end of panel-wrapper-->
+			</div><!-- end of panel-->
+			[%END%]
+
+		</div><!-- end of coda-slider preload -->
+	</div><!-- end of coda-slider wrapper -->

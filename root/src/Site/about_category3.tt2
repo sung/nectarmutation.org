@@ -1,0 +1,8 @@
+			Finally, NECTAR tells you whether the mutation has been reported previously based on dbSNP and HGMD.
+			It is encoded <b>1</b> for novel (not reported) and <b>0</b> for seen, which is added as the last digit to the mutation code.
+			For example, a mutaion of '<b>a11</b>' stands for: 
+			<pre>
+	<b>a</b> for category I
+	<b>1</b> for category II
+	<b>1</b> for category III (novel)
+			</pre>

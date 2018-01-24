@@ -1,0 +1,7 @@
+	<script language="JavaScript">
+		function [%checkbox_name%]_toggle_all(source) {
+		checkboxes = document.getElementsByName('[%checkbox_name%]');
+		for(var i in checkboxes)
+    		checkboxes[i].checked = source.checked;
+		}
+	</script>

@@ -1,0 +1,47 @@
+		[%-# google map API v3 %]
+		<script type="text/javascript">
+			// plain map 
+			function initialize() {
+				var myLatlng = new google.maps.LatLng([%lat%], [%lon%]);
+				var mapOptions = {
+					center: myLatlng,
+					zoom: 16,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+				var map = new google.maps.Map(document.getElementById("[%dom2%]"),
+					mapOptions);
+				[%-IF address%]
+				var marker=new google.maps.Marker({
+					position: myLatlng,
+					map: map,
+				});
+				var infoWindow = new google.maps.InfoWindow({
+					position: myLatlng,
+					content: "[%address_html%]"
+				});
+				infoWindow.open(map);
+				[%END-%]
+
+				// street view
+				var panoramaOptions = {
+					position: myLatlng,
+					map: map,
+				    pov: {
+				      heading: 255,
+				      pitch: 7 
+				    }
+				  };
+			  	var panorama = new  google.maps.StreetViewPanorama(document.getElementById('[%dom1%]'),panoramaOptions);
+				map.setStreetView(panorama);
+
+      		}
+
+			google.maps.event.addDomListener(window, 'load', initialize);
+
+			function handleNoFlash(errorCode) {
+			  if (errorCode == 603) {
+				alert("Error: Flash doesn't appear to be supported by your browser");
+				return;
+			  }
+			}  
+		</script>

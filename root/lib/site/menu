@@ -1,0 +1,45 @@
+		[%PROCESS Browser/set_gbrowse.tt2%] [%# root/src/Browser/set_gbrowse.tt2%]
+
+		<ul class="sf-menu">
+			<li><a href="[%c.uri_for('/')%]" title="home">Home</a></li>
+			<li><a href="#">Search</a>
+				<ul>
+					<li class='hidden'><a title="Search by disease keywords" href="#" class="search_keyword">by disease</a></li>
+					<li><a href='#' title="Search by disease keywords" onClick='Boxy.load("[%c.uri_for('/boxy/disease_form')%]?boxy=1",{title:"Search by disease keywords", modal:true})'>by disease</a></li>
+					<li><a href='#' title="search your gene" onClick='Boxy.load("[%c.uri_for('/boxy/gene_form')%]?boxy=1", {title:"Search your gene", modal:true})'>by gene name</a></li>
+					<!--<li><a href="[%c.uri_for('/vcf')%]" title="using your VCF">by your VCF</a></li>-->
+					<li><a href="#" title="Upload VCF" onClick='Boxy.load("[%c.uri_for('/boxy/file_upload')%]?boxy=1", {title:"Upload VCF", modal:true})'>by your VCF</a></li>
+					<li class='hidden'><a title="Google Custom Search" class='boxy' href="[%c.uri_for('/static/site/cse.html')%]">Feeling Lucky</a></li>
+					<li><a title="Google Custom Search" class='cse' href="#">by Google CSE</a></li> [%# root/static/js/nectar.js%]
+				</ul>
+			</li>
+			[%-IF c.user.get('active')%]
+			<li><a href="#" title="browse contexts of CardioDB">CardioDB</a>
+				<ul>
+					<li><a href="[%c.uri_for('/gene')%]" title="by gene">Genes</a></li>
+					<li><a href="[%c.uri_for('/disease')%]" title="by disease">Diseases</a></li>
+					[%-UNLESS c.user.get('roles')=='guest'%]
+					<li><a href="[%c.uri_for('/target')%]" title="by target">Targets</a></li>
+					<li><a href="[%c.uri_for('/patient')%]" title="by BRU code">Patients</a></li>
+					<li><a href="[%c.uri_for('/run')%]" title="by run">Sequencing runs</a></li>
+					<li><a href="#" id="ask-mutation" title="search mutations">Mutation</a></li>
+					<li class='hidden'><a href="#" title="by chromosome:start-end" onClick='Boxy.load("[%c.uri_for('/boxy/locus_form')%]?boxy=1", {title:"Search Locus", modal:true})'>Locus</a></li>
+					[%-END%]
+				</ul>
+			</li>
+			[%-END%]
+			<li class="hidden"><a title="NECTAR schema" href="[%c.uri_for('/schema')%]">Schema</a></li>
+			<li><a title="Want to know about NECTAR?" href="[%c.uri_for('/about')%]">About</a></li>
+			<li><a title="NECTAR News" href="[%c.uri_for('/news')%]">News</a></li>
+			<li><a title="NECTAR FTP" href="[%nectar_ftp%]" target='_blink'>Download</a></li>
+			[%-IF c.user.get('active')%]
+			<li class='hidden'><a title="Hello [%c.user.username%]" href="[%c.uri_for('/user')%]">[%c.user.username%]</a></li>
+			<li><a title="Please have your say" href="#" class="contact_us">Contact</a></li>
+			<li class="last"><a title="logout [%c.user.get('username')%]" href="[%c.uri_for('/logout')%]">Logout</a></li>
+			[%-ELSE%]
+			<li class="last"><a title="Please have your say" href="#" class="contact_us">Contact</a></li>
+			<li class="hidden"><a title="Please Login" href="#" class="login_boxy">Login</a></li>
+			[%-END%]
+		</ul>
+
+		[%INCLUDE js/boxy_search_popup.tt2%] [%# for ask-mutation root/lib/js/boxy_search_popup.tt2%]

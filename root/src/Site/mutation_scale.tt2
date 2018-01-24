@@ -1,0 +1,12 @@
+			<table class='mut_signal_table'>
+				<tr>
+					<td colspan=3>deleterious</td>
+					<td colspan=2></td>
+					<td colspan=2>benign</td>
+				</tr>
+				<tr>
+					[%FOREACH mut_type = ['a0' 'b3' 'b2' 'b1' 'b0' 'c0' 'd0']%]
+					<td class='[%mut_type%]'>[%IF caller%]<input type='checkbox' name='mut_type' value='[%mut_type%]'>[%END%][%mut_type%]</td>
+					[%END%]
+				</tr>
+			</table>

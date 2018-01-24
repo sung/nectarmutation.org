@@ -1,0 +1,22 @@
+
+	<div id="mutation_info" class="x_scroll">
+		<table class='general_list_table'>
+			<caption>Meta Information</caption>
+			<tr class='column'>
+				<th>Mutation ID</th>
+				<th>Chr</th>
+				<th>Start</th>
+				<th>End</th>
+				<th><a title="reference/genotype">Allele</a></th>
+				<th>Is novel?</th>
+			</tr>
+			<tr class='entry'>
+				<td>[%meta_mut.id%]</td>
+				<td>[%meta_mut.chr%]</td>
+				<td><a title="go to Ensembl" class="external" href="[%ensembl.location%][%meta_mut.chr.remove('chr')%]:[%meta_mut.v_start%]-[%meta_mut.v_end%]">[%meta_mut.v_start%]</a></td>
+				<td><a title="go to Ensembl" class="external" href="[%ensembl.location%][%meta_mut.chr.remove('chr')%]:[%meta_mut.v_start%]-[%meta_mut.v_end%]">[%meta_mut.v_end%]</a></td>
+				<td>[%meta_mut.reference%]/[%meta_mut.genotype%]</td>
+				<td>[%IF meta_mut.get_column('sum_is_novel')%]Yes[%ELSE%]No[%END%]</td>		
+			</tr>
+		</table>
+	</div>

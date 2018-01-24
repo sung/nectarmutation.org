@@ -1,0 +1,25 @@
+
+	<table class='general_list_table'>
+		<caption>Brief stat of mutations called within [%locus%]</caption>
+		<tr class='column'>
+			<th rowspan=2>Locus</th>
+			<th colspan=5>Number of</th>
+		</tr>
+		<tr class='column'>
+			<th>Runs</th>
+			<th>Samples <a title="samples having at least one called varaint for [%IF diag_code%][%diag_code%][%ELSE%]the corresponding disease type[%END%]; total NO. of sample might be more than this number">[?]</a></th>
+			<th>Patients <a title="patients having at least one called varaint for [%IF diag_code%][%diag_code%][%ELSE%]the corresponding disease type[%END%]; total NO. of pateint might be more than this number">[?]</a></th>
+			<th>Unique calls <a title="distinct variant after merging samples/patient">[?]</a></th>
+			<th>Total calls <a title="same varaints are counted as many as the samples">[?]</a></th>
+		</tr>
+	[%FOREACH d IN meta_locus_calls%]
+		<tr class='entry'>
+			<td>[%locus%]</td>
+			<td>[%d.get_column('cnt_unique_run')%]</td>	
+			<td><a title="[%d.get_column('cnt_unique_sample')%] samples having at least one called varaint">[%d.get_column('cnt_unique_sample')%]</a></td>	
+			<td><a title="[%d.get_column('cnt_unique_sample')%] samples are from [%d.get_column('cnt_unique_bru').chunk(-3).join(',')%] patients">[%d.get_column('cnt_unique_bru').chunk(-3).join(',')%]</a></td>	
+			<td>[%d.get_column('cnt_unique_call').chunk(-3).join(',')%]</td>	
+			<td>[%d.get_column('cnt_call').chunk(-3).join(',')%]</td>	
+		</tr>
+	[%END%]
+	</table>

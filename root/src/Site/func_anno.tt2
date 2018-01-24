@@ -1,0 +1,14 @@
+[%-meta.title = 'List of Function Annotations' UNLESS is_wrapper%]
+	<div class='desc'>
+		<table class='general_list_table'>
+			<tr class='column'>
+				<th>Feature</th><th>Category</th><th>Description</th></tr>
+				[%FOREACH fd IN featuredef%]
+				<tr class='entry'>
+					<td><a class='external' href='[%fd.url%]' target='_BLANK'>[%fd.feature%]</a></td>
+					<td>[%fd.category%]</td>
+					<td>[%fd.des%]</td>
+				</tr>
+				[%END%]
+		</table>
+	</div>

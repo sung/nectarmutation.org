@@ -1,0 +1,15 @@
+
+	<script type="text/javascript" charset="utf-8">
+		$(function() {
+			$('#[%myList%]').listnav(
+				{
+				// includeAll: false,  
+				noMatchText: 'There are no matching entries.', 
+				initLetter: 'a',
+				showCounts: true,
+				includeOther: true,
+				}
+			);
+		});
+	</script>
+

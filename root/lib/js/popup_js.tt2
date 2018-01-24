@@ -1,0 +1,10 @@
+
+	[%-IF enabled %]
+	<script type="text/javascript">
+				$('#popup').ready(function() { 
+					Boxy.load("[%c.uri_for(url_link)%]?boxy=1[%IF msg%]&msg=[%msg%][%END%]", {title:"[%popup_title%]", modal:true});
+				});
+	</script>
+
+	<div id="popup"></div>
+	[%-END%]

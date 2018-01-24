@@ -1,0 +1,43 @@
+[%title= 'Mutations for ' %]
+
+[%-IF diag_code%]
+	[%UNLESS diag_code=='any'%]
+	[%disease_link=BLOCK%]<a title="go to disease:[%diag_code%]" href="[%c.uri_for('/disease')%]/[%diag_code%]">[%diag_code%]</a>[%END%]
+	[%title= title _ ' disease:' _ disease_link%]
+	[%END%]
+[%-END%]
+[%-IF hgnc%]
+	[%gene_link=BLOCK%]<a title="go to gene:[%hgnc%]" href="[%c.uri_for('/gene')%]/[%hgnc%]">[%hgnc%]</a>[%END%]
+	[%title= title _ ' gene:' _ gene_link%]
+[%END%]
+[%-IF target_name%]
+	[%UNLESS target_name=='any'%]
+	[%target_link=BLOCK%]<a title="go to target:[%target_name%]" href="[%c.uri_for('/target')%]/[%target_name%]">[%target_name%]</a>[%END%]
+	[%title= title _ ' target:' _ target_link%]
+	[%END%]
+[%END%]
+[%-IF sample_id%]
+	[%sample_link=BLOCK%]<a title="go to sample:[%sample_id%]" href="[%c.uri_for('/run/sample_id')%]/[%sample_id%]">[%sample_id%]</a>[%END%]
+	[%title= title _ ' sample id:' _ sample_link%]
+[%END%]
+[%-IF bru_code%]
+	[%patient_link=BLOCK%]<a title="go to patient:[%bru_code%]" href="[%c.uri_for('/patient')%]/[%bru_code%]">[%bru_code%]</a>[%END%]
+	[%title= title _ ' patient:' _ patient_link%]
+[%END%]
+[%-IF chr and v_start and v_end%][%title= title _ ' ' _ chr _ ':' _ v_start _ '-' _ v_end%][%-END%]
+
+[%- meta.title = title -%]
+
+				<script type="text/javascript" src="[%link.pdb_js%]"> </script>
+
+		[%PROCESS Browser/classified_calls_without_submit.tt2%]	
+
+		[%PROCESS pager.tt2%]
+
+		[%PROCESS list_of_mutation.tt2%]
+
+		[%PROCESS pager.tt2%]
+
+		<div id="canonical" class="hidden">
+			[%INCLUDE Site/canonical_transcript.tt2%][%# src/Site/canonical_transcript.tt2%]
+		</div>

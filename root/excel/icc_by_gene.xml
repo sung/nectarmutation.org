@@ -1,0 +1,27 @@
+[%IF source=='icc'%]
+<workbook>
+	<worksheet name="ICC_MUTATION">
+[%END%]
+		<row>
+			<bold><cell>ID</cell></bold>
+			<bold><cell>HGVS</cell></bold>
+			<bold><cell>Disease</cell></bold>
+			<bold><cell>Sources</cell></bold>
+			<bold><cell>PubMed</cell></bold>
+			<bold><cell>Nectar ID</cell></bold>
+		</row>
+		[%-FOREACH h IN iccs%]
+		<row>
+			<cell>[%h.mut_id%]</cell>
+			<cell>[%h.hgvs_coding%]</cell>
+			<cell>[%h.diseases%]</cell>
+			<cell>[%h.exrefs%]</cell>
+			<cell>[%h.pubmeds%]</cell>
+			<cell>[%h.get_column('uid')%]</cell>
+		</row>
+		[% END %]
+
+[%IF source=='icc'%]
+	</worksheet>
+</workbook>
+[%END%]

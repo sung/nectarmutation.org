@@ -1,0 +1,56 @@
+
+	<div id="classified_mutations">
+		<table class='general_list_table'>
+			<caption>[%cmuts.size%] Mutation Profiles</caption>
+			<tr class='column'>
+				<th rowspan=2>Class <a title="What is mutation profile?" href="#" onClick='Boxy.load("[%c.uri_for('/about/mutation_profile')%]?boxy=1", {title:"Mutation Profile", modal:false})'>[?]</a></th>
+				<th rowspan=2>Level</th>
+				<th class='right' colspan=3>Degree of damaging effect[<a title="sum of c1, c2 and c3">?</a>]</th>
+				<th class='right' colspan=3>Number of</th>
+			[%UNLESS any_novel%]
+				<th colspan=3><a title="Known mutations">Known Mutations</a></th>
+			[%END%]
+			</tr>
+			<tr class='column'>
+				<th>c1[<a title="predicted as 'damaging' or 'deleterious' by any of the following prediction software: SIFT, PolyPhen and Condel" href='#' onClick='Boxy.load("/static/site/prediction_software.html", {title:"Prediction Software", modal:false})'>?</a>]</th>
+				<th>c2[<a title="evolutionary information: negative substituion scores or sequence conservation <=0.172" href='#' onClick='Boxy.load("/static/site/evol_info.html", {title:"Evolutionary Information", modal:false})'>?</a>]</th>
+				<th class='right'>c3[<a title="mutations located at the functional annotation" href='#' onClick='Boxy.load("[%c.uri_for('/about/annotation')%]?id=all&boxy=1",{title:"List of Function Annotations"})'>?</a>]</th>
+				
+				<th>Total calls</th>
+				<th>Unique samples</th>
+				<th class='right'>Unique patients</th>
+			[%UNLESS any_novel%]
+				<th>HGMD</th>
+				<th>dbSNP</th>
+				<th>ICC</th>
+			[%END%]
+			</tr>
+			[%FOREACH cl IN cmuts%]
+			<tr class='entry'>
+				[%-SET level=cl.get_column('which_level')%]
+				<td class="[%cl.get_column('category')%]">[%cl.get_column('class')%]</a></td>
+				<td><a title="[%mut_levels.$level.join(' or ')%]" href="#" id="subselect_mapping">[%level%]</a></td>
+				<td>
+					[%IF cl.get_column('is_c1')%]<a title="click for details" href="#" onClick='Boxy.load("[%c.uri_for('/mutation/annotation')%]?q=V2Ensembl&id=[%uid%]&class=[%cl.get_column('class')%]", {title:"Ensembl Annotation"})'>[%END%]
+					[%cl.get_column('is_c1')%]
+					[%IF cl.get_column('is_c1')%]</a>[%END%]
+				</td>
+				<td>[%cl.get_column('is_c2')%]</td>
+				<td>
+					[%IF cl.get_column('is_c3')%]<a title="click for details" href="#" onClick='Boxy.load("[%c.uri_for('/mutation/annotation')%]?q=2UniProt&id=[%uid%]&class=[%cl.get_column('class')%]", {title:"UniProt Annotation"})'>[%END%]
+					[%cl.get_column('is_c3')%]
+					[%IF cl.get_column('is_c3')%]</a>[%END%]
+				</td>
+				<td>[%cl.get_column('cnt_call')%]</td>
+				<td>[%cl.get_column('cnt_unique_sample')%]</td>
+				<td>[%cl.get_column('cnt_unique_bru')%]</td>
+			[%UNLESS any_novel%]
+				<td>[%cl.get_column('cnt_unique_hgmd')%]</td>
+				<td>[%cl.get_column('cnt_unique_dbsnp')%]</td>
+				<td>[%cl.get_column('cnt_unique_icc')%]</td>
+			[%END%]
+			</tr>
+			[%END%]
+		</table>
+	</div>
+

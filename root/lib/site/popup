@@ -1,0 +1,8 @@
+[%# this is deprectaed. Use root/lib/js/popup_js.tt2 indstead%]
+	[%-IF enabled %]
+		[%SET url=url_link%]
+		[%PROCESS 'js/popup_js.tt2'-%]
+
+		<div id="popup">
+		</div>
+	[%-END%]

@@ -1,0 +1,13 @@
+<workbook>
+	<worksheet name="HGMD">
+		[%INCLUDE hgmd_by_gene.xml%]
+	</worksheet>
+	<worksheet name="UNIPROT">
+		[%INCLUDE humsavar_by_gene.xml%]
+	</worksheet>
+	[%IF iccs.size%]
+	<worksheet name="ICC_MUTATION">
+		[%INCLUDE icc_by_gene.xml%]
+	</worksheet>
+	[%END%]
+</workbook>

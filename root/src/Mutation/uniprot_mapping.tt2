@@ -1,0 +1,51 @@
+
+				[%# 2. UNIPROT %]
+				<h2 class="title hidden">UniProt</h2>
+				[%-UNLESS uniprots.size%]
+				No mapping to UniProt protein
+				[%-ELSE%]
+				<table class='general_list_table'>
+					<caption>Mapping to [%uniprots.size%] UniProt residue[%IF uniprots.size>=2%]s[%END%] (from <span style="background-color:#fff;">canonical transcript [<a class="boxy" title="what's this" href="#" onClick='Boxy.load("[%c.uri_for('/static/site/canonical_transcript.html')%]", {title:"Canonical Transcript", modal:false})'>?</a>]</span> coloured in <span style="background-color:#fff;">white</span>)</caption>
+					<tr class='column'>
+						<th>Class</th>
+						<th>UniProt</th>
+						<th>Residue NO.</th>
+						<th>Allele</th>
+						<th>Annotation<a title="what are 'annotaions'?" href="#" onClick='Boxy.load("[%c.uri_for('/about/annotation')%]?id=all&boxy=1",{title:"List of Function Annotations"})'>[?]</a></th>
+						<th>Descriptions</th>
+						<th><a class="external" title="Block Subsititution Matrix" href="[%link.blosum%]">BLOSUM</a></th>
+						<th><a class="external" title="Point Accepted Mutation" href="[%link.pam%]">PAM</a></th>
+					</tr>
+				[%-FOREACH u IN uniprots%]
+					<tr class='entry [%UNLESS u.get_column('is_canonical')%]non_canon[%END%]'>
+						<td class="[%u.get_column('class').chunk(2).first%]"><a title="[%u.get_column('ensts')%]">[%u.get_column('class')%]</a></td>	
+						<td><a class="external" title="go to UniProt" href="[%link.uniprot%]/uniprot/[%u.uniprot%]#section_features">[%u.uniprot%]</td>
+						<td><a onClick="$('#my_activity').activity()" title="browse in 2D via Gbrowse" href="
+					[%-IF c.req.address.match('192.168.\d+.\d+')%]
+							[%gbrowse.link_int%]
+					[%-ELSE%]
+							[%gbrowse.link%]
+					[%END-%]
+						[%u.uniprot%];h_feat=[%uid%]@yellow;h_region=[%u.uniprot%]:[%u.res_num%]..[%u.res_num+1%]@red">[%u.res_num%]</a>
+						</td>
+						<td>[%u.p_ref%]/[%u.p_mut%]</td>
+						<td>
+							<span class="[%FOREACH ft IN c.session.ft_tags %][%IF u.annotation==ft.feature%][%u.get_column('class').chunk(2).first%][%LAST%][%END%][%END%]">
+							<a title="click for details" href="#" onClick='Boxy.load("[%c.uri_for('/about/annotation')%]?id=[%u.annotation%]&boxy=1", {title:"Annotation: [%u.annotation%]"})'>[%u.annotation%]</a>
+							</span>
+						</td>
+						<td>[%u.des%]</td>
+						<td>
+							<span [%IF u.blosum62<0%]class="[%u.get_column('class').chunk(2).first%]"[%END%]>
+							[%u.blosum62%]
+							</span>
+						</td>
+						<td>
+							<span [%IF u.pam70<0%]class="[%u.get_column('class').chunk(2).first%]"[%END%]>
+							[%u.pam70%]
+							</span>
+						</td>
+					</tr>
+				[%-END%]
+				</table>
+				[%-END%]

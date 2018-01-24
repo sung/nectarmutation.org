@@ -1,0 +1,107 @@
+		<div id="list_of_para_anno">
+			<a title="Click to see in the Gbrowse mode" href="[%gb_link%][%ensx.0.ensp%]" target="_blank"><img src="[%gb_para_img%][%ensx.0.ensp%]" border=0></a>
+			<table class="general_list_table">
+				<caption>
+					Annotations transferred from the paralogues of [%hgnc%]
+					<a class='text rfloat' href='[%nectar_ftp%]/EnrichedAnnotations/Paralogues/[%hgnc%]_para_enriched_anno.txt' title='download enriched annotations at the chromosome coordinate level' target='_blank'>&nbsp;</a>
+					<a class='text rfloat' href='[%nectar_ftp%]/ProteinAnnotations/Paralogues/[%hgnc%]_para_anno.txt' title='download at the protein sequence level' target='_blank'>&nbsp;</a>
+				</caption>
+				<tr class='column'>
+					<th class="right">[%hgnc%]</th>
+					<th colspan=2 class="right">Paralogue(s)</th>
+					<!--<th colspan=2 class="right">Alignment info</th>-->
+					<th rowspan=2 class="right">Percentage Identity</th>
+					<th rowspan=2>NO. of annotated residues</th>
+				</tr>
+				<tr class='column'>
+					<th class="right">ENSP [<a title='Ensembl protein'>?</a>]</th>
+					<th>Gene</th>
+					<th class="right">ENSP [<a title="click below to see the alignment">?</a>]</th>
+					<!--<th>E-value</th>-->
+					<!--<th class="right">Pid [<a title="percentage identity">?</a>]</th>-->
+				</tr>
+				[%-FOREACH p IN para_stats%]
+				<tr class='entry'>
+					<td class="right_border">[%p.get_column('ensp')%]</td>
+					<td><a title="click to see details below" href="#" id="subselect_[%p.get_column('para_hgnc')%]">[%p.get_column('para_hgnc')%]</a></td>
+					<td class="right_border"><a title="alignment between [%hgnc%] and [%p.get_column('para_hgnc')%]" href="#" onClick='Boxy.load("[%c.uri_for('/get_alignments')%]?query=[%p.get_column('ensp')%]&hit=[%p.get_column('para_ensp')%]&boxy=1", {title:"Alignments between [%p.get_column('ensp')%] and [%p.get_column('para_ensp')%]"})'>[%p.get_column('para_ensp')%]</a></td>
+					<!--<td>[%p.get_column('evalue')%]</td>-->
+					<td class="right_border">[%p.get_column('pid')%]</td>
+					<td>[%p.get_column('cnt')%]</td>
+				</tr>
+				[%END%]
+			</table>
+		</div>
+
+		[%-SET sub_tab_container="para_subtab"%]
+		<script type="text/javascript">
+		[%-FOREACH d IN para_stats%]
+			$('#subselect_[%d.get_column('para_hgnc')%]').click( function() {
+				$('#[%sub_tab_container%]').easytabs('select', '#[%d.get_column('para_hgnc')%]');
+			});
+		[%END-%]
+		</script>
+
+		[%PROCESS easy_tab.tt2 tab_container="$sub_tab_container"%] [%# root/lib/js/easy_tab.tt2%]
+		<div id="[%sub_tab_container%]" class='tab-container sub_container'>
+			<ul class='etabs'>
+			[%-FOREACH d IN para_stats%]
+				<li class='tab'><a href="#[%d.get_column('para_hgnc')%]" title="paralogue annotations from [%d.get_column('para_hgnc')%]">[%d.get_column('para_hgnc')%]</a></li>
+			[%END-%]
+			</ul>
+
+			<div class='easytab-panel-container'>
+			[%-FOREACH d IN para_stats%]
+				<div id="[%d.get_column('para_hgnc')%]">
+					<table class="general_list_table">
+						<caption>Annotations transferred from <a href="[%c.uri_for('/gene')%]/[%d.get_column('para_hgnc')%]">[%d.get_column('para_hgnc')%]</a></caption>
+						<tr class='column'>
+							<th colspan=3 class='right'>Gene Product of [%hgnc%]</th>
+							<th colspan=5>Gene Product of [%d.get_column('para_hgnc')%]</th>
+						</tr>
+						<tr class='column'>
+							<th>ENSP [<a title='Ensembl protein'>?</a>]</th>
+							<th>Position [<a title="click to see the genomic locations">?</a>]</th>
+							<th class='right'>Residue</th>
+							<th>ENSP [<a title='Ensembl protein'>?</a>]</th>
+							<th>Position [<a title="click to see the genomic locations">?</a>]</th>
+							<th>Residue</th>
+							<th>Feature</th>
+							<th>Xref</th>
+						</tr>
+					[%-FOREACH p IN para_annos%]
+						[%IF p.get_column('para_feature')=='HUMSAVAR'%]
+							[%-SET alink=link.humsavar title='go to expasy'%]
+						[%ELSIF p.get_column('para_feature')=='HGMD-PUBLIC'%]
+							[%-SET alink=ensembl.hgmd title='to go ensembl'%]
+						[%ELSIF p.get_column('para_feature')=='COSMIC'%]
+							[%-SET alink=link.cosmic title='go to cosmic'%]
+						[%ELSIF p.get_column('para_feature')=='ClinVar'%]
+							[%-SET alink=link.clinvar title='go to clinvar'%]
+						[%END%]
+						[%IF d.get_column('para_hgnc') == p.get_column('para_hgnc')%]
+						<tr class='entry'>
+							<td>[%p.get_column('ensp')%]</td>
+							<td><a href="#" onClick='Boxy.load("[%c.uri_for('/get_colocated_mutations')%]?hgnc=[%hgnc%]&ensp=[%p.get_column('ensp')%]&res_num=[%p.get_column('res_num')%][%IF p.get_column('para_feature') != 'HGMD-PUBLIC' and p.get_column('res')==p.get_column('para_p_ref')%]&mut_aa=[%p.get_column('para_p_mut')%][%END%]&boxy=1", {title:"List of possible non-synonymous mutations where [%p.get_column('ensp')%]:[%p.get_column('res_num')%] occurs"})'>[%p.get_column('res_num')%]</a></td>
+							<td class='right_border'>[%p.get_column('res')%]</td>
+							<td>[%p.get_column('para_ensp')%]</td>
+							<td><a href="#" onClick='Boxy.load("[%c.uri_for('/get_colocated_mutations')%]?hgnc=[%p.get_column('para_hgnc')%]&feature=[%p.get_column('para_feature')%]&xref=[%p.get_column('para_xref')%]&ensp=[%p.get_column('para_ensp')%]&res_num=[%p.get_column('para_res_num')%]&boxy=1", {title:"List of possible non-synonymous mutations where [%p.get_column('para_ensp')%]:[%p.get_column('para_res_num')%] occurs"})'>[%p.get_column('para_res_num')%]</a></td>
+							<td>[%p.get_column('para_p_ref')%][%IF p.get_column('para_p_mut') and p.get_column('para_feature') !='HGMD-PUBLIC'%]/[%p.get_column('para_p_mut')%][%END%]</td>
+							<td>
+								<a title="click for details" href="#" onClick='Boxy.load("[%c.uri_for('/about/annotation')%]?id=[%p.get_column('para_feature')%]&boxy=1", {title:"Annotation: [%p.get_column('para_feature')%]"})'>[%p.get_column('para_feature')%]</a>
+							</td>
+							[%IF p.get_column('para_feature')=='HUMSAVAR' or p.get_column('para_feature')=='HGMD-PUBLIC' or p.get_column('para_feature')=='COSMIC'%]
+							<td><a class="external" href="[%alink%][%p.get_column('para_xref')%]" target="_blank">[%p.get_column('para_xref')%]</a></td>
+							[%ELSIF p.get_column('para_feature')=='ClinVar'%]
+							<td><a class="external" href="[%alink%][%p.get_column('para_xref').substr(2)%][varid]" target="_blank">[%p.get_column('para_xref')%]</a></td>
+							[%ELSE%]
+							<td>[%p.get_column('para_xref')%]</td>
+							[%END%]
+						</tr>
+						[%END%]
+					[%END%]
+					</table>
+				</div>
+			[%END-%]
+			</div>
+		</div>

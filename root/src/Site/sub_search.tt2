@@ -1,0 +1,44 @@
+	[%- SET my_ac="my_query"%]
+	[%- SET form_size=23%]
+	[%- SET ac_width=200%]
+
+	[%-IF search_this=='gene'%]
+		[%- SET min_char=2%]
+		[%- SET eg=hgnc%]
+	[%-ELSIF search_this=='disease'%]
+		[%- SET min_char=1%]
+		[%- SET eg="DCM"%]
+	[%-ELSIF search_this=='target'%]
+		[%- SET min_char=1%]
+		[%- SET eg="ICC"%]
+	[%-ELSIF search_this=='patient'%]
+		[%- SET min_char=2%]
+		[%- SET eg="10AC00242"%]
+	[%-ELSIF search_this=='patient_gene'%]
+		[%- SET min_char=1%]
+		[%- SET eg="search gene within $bru_code"%]
+	[%-ELSIF search_this=='run'%]
+		[%- SET min_char=1%]
+		[%- SET eg="CMR000070_20120327_Singapore"%]
+		[%- SET form_size=40%]
+		[%- SET ac_width=450%]
+	[%-ELSIF search_this=='disease_keyword'%]
+		[%- SET min_char=4%] 
+		[%- SET ac_width=350%]
+		[%-IF keyword%][%SET eg=keyword%][%ELSE%][%SET eg='cardiomyopathy'%][%END-%]
+	[%-END%]
+	[% ac_url=BLOCK%][%c.uri_for("/service/auto")%][%END%] [%# Controller/Util/Service.pm%]
+
+	<form id="ACform" method="get" action="[%ac_url%]">
+		[%-IF search_this=='patient_gene'%]
+		<input type="hidden" name="bru_code" value="[%bru_code%]" />
+		[%END-%]
+		<input type="hidden" name="target" value="[%search_this%]">
+		<input class="inputWithImge" type="text" name="query" id="[%my_ac%]" size=[%form_size%] value="[%eg%]"/>
+		<button class="qi" type='submit'>
+			<span><img src="[%c.uri_for('/static/images/gvl3-5_search-icon.png')%]" alt="Click to search [%search_this%]" onClick="$('#my_activity').activity()"/></span>
+		</button>
+	</form>
+
+	[%- PROCESS js/jquery_autocomplete.tt2%] [%# root/lib/js/jquery_autocomplete.tt2 (inpupt: ac_url min_char my_ac)%]
+	[%- PROCESS js/inputWithImage.tt2%] [%# root/lib/js/inputWithImage.tt2%]

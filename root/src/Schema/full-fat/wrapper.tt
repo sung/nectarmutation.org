@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=[% cpac_config.html_charset OR 'utf-8' | html %]" />
+<title>[% cpac_title %][% ' - Powered by ' IF cpac_title %][% cpac_version %]</title>
+
+[% IF NOT cpac_config.extjs2 %]
+<link rel="stylesheet" type="text/css" href="http://extjs.cachefly.net/ext-2.2/resources/css/ext-all.css" />
+[% ELSE %]
+<link rel="stylesheet" type="text/css" href="[% cpac_config.extjs2 %]/resources/css/ext-all.css" />
+[% END %]
+
+<link rel="stylesheet" type="text/css" href="[% c.uri_for( c.controller('AutoCRUD::Static').action_for('static'), "body.css" ) %]" />
+<link rel="stylesheet" type="text/css" href="[% c.uri_for( c.controller('AutoCRUD::Static').action_for('static'), "cpac.css" ) %]" />
+[% IF c.req.user_agent.match('\.NET CLR') %]
+<link rel="stylesheet" type="text/css" href="[% c.uri_for( c.controller('AutoCRUD::Static').action_for('static'), "iefix.css" ) %]" />
+[% END %]
+
+[% IF NOT cpac_config.extjs2 %]
+<script type="text/javascript" src="http://extjs.cachefly.net/ext-2.2/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="http://extjs.cachefly.net/ext-2.2/ext-all.js"></script>
+[% ELSE %]
+<script type="text/javascript" src="[% cpac_config.extjs2 %]/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="[% cpac_config.extjs2 %]/ext-all.js"></script>
+[% END %]
+
+<script type="text/javascript" src="[% c.uri_for( c.controller('AutoCRUD::Static').action_for('static'), "xdatetime.js" ) %]"></script>
+</head>
+<body onresize="Ext.getCmp('search-grid').view.refresh(true)">
+
+	<div id="cpac_banner">Welcome to Nectar: the NGS data navigator for the genetics lab of Brompton and Hammersmith Hospital</div>
+
+<div id="cpac_outer" class="cpac_box">
+    <noscript>
+        <div id="cpac_warning">
+            <h3>Javascript disabled ?</h3>
+            <br />
+            <p>It seems your web browser has not started the Javascript components which are required to view this site.</p>
+            <br />
+            <p>If you have Javascript disabled, please enable it and reload this page.</p>
+            <p>Otherwise, there could be a problem on the web server, so please contact this site's administrator.</p>
+        </div>
+    </noscript>
+
+    <div id="cpac_header">
+        [% IF cpac_title %]
+        <div class="cpac_top">
+            <div class="cpac_left">
+                [% IF cpac_site == 'default' %]
+                    <a href="[% c.uri_for( c.controller('AutoCRUD::Root').action_for('no_db') ) %]">Home</a> &gt;
+                    <a href="[% c.uri_for( c.controller('AutoCRUD::Root').action_for('no_table'), [cpac_db] ) %]">[% cpac_dbtitle %]</a> &gt;
+                [% ELSE %]
+                    <a href="[% c.uri_for( c.controller('AutoCRUD::Root').action_for('no_schema'), [cpac_site] ) %]">Home</a> &gt;
+                    <a href="[% c.uri_for( c.controller('AutoCRUD::Root').action_for('no_source'), [cpac_site,cpac_db] ) %]">[% cpac_dbtitle %]</a> &gt;
+                [% END %]
+                [% IF cpac_meta.table2path.$cpac_db.keys.size == 1 %]
+                    [% cpac_meta.main.title %]
+                [% ELSE %]
+                    <select id="cpac_picker" onchange="window.location = document.getElementById(this.id).value">
+                      [% FOREACH tbl IN cpac_meta.table2path.$cpac_db.keys.sort %]
+                        [% SET tpath = cpac_meta.table2path.$cpac_db.item(tbl) %]
+                        [% NEXT IF site_conf.$cpac_db.$tpath.hidden == 'yes' %]
+                        [% IF cpac_site == 'default' %]
+                            <option value="[% c.uri_for( c.controller('AutoCRUD::Root').action_for('table'), [cpac_db], tpath ) %]"
+                        [% ELSE %]
+                            <option value="[% c.uri_for( c.controller('AutoCRUD::Root').action_for('source'), [cpac_site,cpac_db], tpath ) %]"
+                        [% END %]
+                                [% ' selected="selected"' IF tbl == cpac_meta.main.title %]>[% tbl %]</option>
+                      [% END %]
+                    </select>
+                [% END %]
+            </div>
+            <div class="cpac_right">
+              [% IF cpac_site == 'default' %]
+                <a href="[% c.uri_for( c.controller('AutoCRUD::Root').action_for('table'), [cpac_db], cpac_meta.main.path, 'browse' ) %]"
+              [% ELSE %]
+                <a href="[% c.uri_for( c.controller('AutoCRUD::Root').action_for('source'), [cpac_site,cpac_db], cpac_meta.main.path, 'browse' ) %]"
+              [% END %]
+                    title="Skinny (non-JS) Browser">
+                    <img src="[% c.uri_for( c.controller('AutoCRUD::Static').action_for('static'), "application_view_detail.png" ) %]"
+                        alt="Skinny (non-JS) Browser" />
+                </a>
+            </div>
+        </div>
+
+        [% ELSE %]
+            [% content %]
+        [% END %]
+    </div>
+    
+    <div id="cpac_content">
+        [% IF cpac_title %]
+            [% content %]
+        [% END %]
+    </div>
+    
+    <div id="cpac_footer">
+        Powered by [% cpac_version %]
+    </div>
+</div> <!-- box -->
+
+</body>
+</html>

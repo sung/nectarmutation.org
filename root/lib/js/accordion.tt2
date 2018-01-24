@@ -1,0 +1,6 @@
+	<script type="text/javascript">
+	// this java script is based on jquery.tools.min.js
+		$(function(){
+			$("#[%accordion_id%]").tabs("#[%accordion_id%] div.pane", {tabs: 'h2', effect: 'slide', initialIndex:null});
+		});
+	</script>

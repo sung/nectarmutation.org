@@ -1,0 +1,36 @@
+[%# this is called by Browser/by_gene_name.tt2 or Browser/by_target_name.tt2 -%]
+
+		[%-IF caller=='gene'%]
+			[%SET this='hgnc' which='disease' Which='Diseases' to='diag_code'%]
+		[%ELSIF caller=='target'%]
+			[%SET this='target_name' which='disease' Which='Diseases' to='diag_code'%]
+		[%ELSIF caller=='disease'%]
+			[%SET this='diag_code' which='target' Which='Targets' to='target_name'%]
+		[%END%] 
+        <table id='by_disease' class='general_list_table'>
+            <caption>Breakdowns of [%$this%] samples by [%meta_x_diseases.size%] [%which%] type[%-IF meta_x_diseases.size>=2%]s[%-END%]</caption>
+            <tr class='column'>
+                <th rowspan=2>[%Which%]</th>
+                <th rowspan=2>Description</th>
+                <th colspan=5>Number of</th>
+            </tr>
+            <tr class='column'>
+                <th>Runs</th>
+                <th>Samples <a title="this sums up the sample number shown above">[?]</a></th>
+                <th>Patients <a title="this sums up the patient number shown above">[?]</a></th>
+                <th>Unique calls <a title="distinct variant after merging samples/patient">[?]</a></th>
+                <th>Total calls <a title="same varaints are counted as many as the samples">[?]</a></th>
+            </tr>
+        [%-FOREACH d IN meta_x_diseases%]
+            <tr class='entry'>
+                <td class='wide'><a title="show [%d.$to%] below!" href="#" id="subselect_[%d.$to%]">[%d.$to%]</a></td>
+                <td class='left'>[%d.$Which.des%]</td>
+                <td>[%d.cnt_unique_run%]</td>   
+                <td><a title="get [%d.cnt_unique_sample%] [%d.diag_code%] samples of [%$this%]" href='[%c.uri_for('/run')%]/[%caller%]/[%d.$this%]/[%which%]/[%d.$to%]'>[%d.cnt_unique_sample%]</a></td>   
+                <td><a title="get [%d.cnt_unique_bru.chunk(-3).join(',')%] patients of [%$this%]" href='[%c.uri_for('/patient')%]/[%caller%]/[%d.$this%]/[%which%]/[%d.$to%]'>[%d.cnt_unique_bru.chunk(-3).join(',')%]</a></td>    
+                <td>[%d.cnt_unique_call.chunk(-3).join(',')%]</td>  
+                <td>[%d.cnt_call.chunk(-3).join(',')%]</td> 
+            </tr>
+        [%-END%]
+        </table>
+

@@ -1,0 +1,7 @@
+[% meta.title = 'Diseases'-%]
+
+	[%PROCESS patient_percentage_chart.tt2 source_data=meta_diseases my_type='disease' print_this='diag_code' link_this='/disease/'%]
+
+	<div id='disease_list'>
+		[%INCLUDE meta_disease.tt2 %]
+	</div>

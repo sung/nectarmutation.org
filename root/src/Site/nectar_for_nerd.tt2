@@ -1,0 +1,19 @@
+
+				<p class='desc'>
+					Perl, of course, is the great do-everything of scripting languages. It is not exactly elegant, but it is supremely powerful in qualified hands.
+				</p>
+				<p class='desc'>
+					MySQL is a modern, easy-to-use and free or very inexpensive (depending on how you use it) relational database. It is very reliable, and very fast. I'm not saying that you should take your gigantic multi-site global banking system and port it to use MySQL, but for maintaining data about all the genetic mutations in genome, it's just fine.
+				</p>
+				<p class='desc'>
+					Memcached is a distributed memory cache. It works for many languages, but we use it for Perl ORM (DBIx::Class). It is a magic bullet that lets you scale up massively without buying massive, expensive, complex database hardware. 
+				<p class='desc'>
+					Modern Javacript is a 'must-have' item for modern web site development to make it fancier and user-friendlier. We are using jQuery and lots of its plugins. This pop-up diaglog is implemented by the boxy jquery plugin.
+				</p>
+				<p class='desc'>
+					We run the NECTAR web site on Linux because it is free and it works.
+				</p>
+				<p class="desc">
+					Cheers,<br/>
+					Sungsam Gong, the developer of NECTAR
+				</p>

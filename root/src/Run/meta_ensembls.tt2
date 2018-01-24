@@ -1,0 +1,17 @@
+<table class='general_list_table'>
+	<caption>NO. of variants by their types</caption>
+		<tr class='column'>
+			<th>Variants Caller</th>
+			<th>Types of Variants</th>
+			<th>Number</th>
+		</tr>
+
+[%-FOREACH m IN meta_ensembls.first.MetaEnsembls%]
+	<tr class='entry'>
+		<td>[%m.source%]</td>
+		<td>[%m.snp_type%]</td>
+		<td><a href='[%c.uri_for('/run')%]/[%run_name%]/[%sample_name%]/[%m.source%]/Ensembl?[%m.snp_type%]'>[%m.num%]</a> 
+	</tr>	
+[%-END%]
+</table>
+	

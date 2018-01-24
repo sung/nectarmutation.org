@@ -1,0 +1,12 @@
+	<div id="indicatorBar">
+		<div id="indicatorHead">
+			<div class="lfloat">
+				<h2 class="navi">[% meta.title or site.title %]</h2>
+			</div>
+			[%-IF sub_search%] [%# initialise at Browser/XX.pm%]
+			<div id="subSearch" class="rfloat">
+				[% PROCESS sub_search.tt2%][%#/src/Site/sub_search.tt2%]
+			</div>
+			[%-END%]
+		</div>
+	</div>

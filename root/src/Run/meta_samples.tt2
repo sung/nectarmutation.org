@@ -1,0 +1,120 @@
+		[%FOREACH ca IN callers%] [%# Controller/Browser/Run/by_run_name %]
+			[%IF ca.caller =='LifeScope'%]
+				[%ls_ver=ca.ver%][%ls_config=ca.config%]
+				<div id="dibayes_config" class='hidden' style="width:1000px">
+				<pre>[%ls_config.split('----').0%]</pre>
+				</div>
+				<div id="smallindel_config" class='hidden' style="width:1000px">
+				<pre>[%ls_config.split('----').1%]</pre>
+				</div>
+			[%END%]
+			[%IF ca.caller =='GATK'%]
+				[%gatk_ver=ca.ver%][%gatk_config=ca.config%]
+				<div id="gatk_config" class='hidden' style="width:850px">
+				<pre>[%gatk_config%]</pre>
+				</div>
+			[%END%]
+			[%IF ca.caller =='Samtools'%]
+				[%samtool_ver=ca.ver%][%samtool_config=ca.config%]
+				<div id="samtool_config" class='hidden' style="width:800px">
+				<pre>[%samtool_config%]</pre>
+				</div>
+			[%END%]
+			[%IF ca.caller =='cgatools'%]
+				[%cga_ver=ca.ver%][%cga_config=ca.config%]
+				<div id="cga_config" class='hidden' style="width:800px">
+				<pre>[%cga_config%]</pre>
+				</div>
+			[%END%]
+		[%END%]
+
+		<table class='general_list_table'>
+			<caption>
+					[%-IF sample_name%]Mutations called for this[%ELSE%][%runs.size%][%END%]
+					sample[%IF runs.size>=2%]s [%IF is_merged.size%](of which [%is_merged.size%] [%IF is_merged.size>=2%]are[%ELSE%]is[%END%] merged) [%END%][%END%]
+					[%-IF hgnc%]targeting <a title="go to [%hgnc%]" href="[%c.uri_for('/gene')%]/[%hgnc%]">[%hgnc%]</a>[%END%] 
+					[%-IF target_name%]targeting <a title="browse [%target_name%]" href="[%c.uri_for('/target')%]/[%target_name%]">[%target_name%]</a>[%END%] 
+					[%-IF diag_code%]from the disease type <a title="browse [%diag_code%]" href="[%c.uri_for('/disease')%]/[%diag_code%]">[%diag_code%]</a>[%END%] 
+					[%-IF bru_code%]were run from '<a title="browse [%bru_code%]" href="[%c.uri_for('/patient')%]/[%bru_code%]">[%bru_code%]</a>'[%END%]
+			</caption>
+				<tr class='column'>
+					<th rowspan=3>Run ID</th>
+					<th rowspan=3>Sample ID</th>
+					[%IF is_merged.size%]<th rowspan=3>Merged to</th>[%END%]
+					<th rowspan=3><a title="click to browse all patients" href="[%c.uri_for('/patient')%]">Patient</a></th>
+					<th rowspan=3><a title="click to browse all targets" href="[%c.uri_for('/target')%]">Target</a></th>
+					<th rowspan=3><a title="click to browse all diagnostic codes" href="[%c.uri_for('/disease')%]">Diagnostic<br/>code</a></th>
+					<th rowspan=3>Barcode</th>
+					<th colspan=6>NO. of varaints called by</th>
+				</tr>
+				<tr class='column'>
+					<th colspan=2><a title=[%-IF ls_ver %]"Ver [%ls_ver%]" >[%-ELSE%]"go to LifeScope" class="external" href="[%link.lifescope%]">[%END%]LifeScope</a></th>
+					<th rowspan=2><a title=[%-IF gatk_ver %]"[%gatk_ver%]" class='boxy' href="[%c.uri_for('/run')%]/[%run_name%]#gatk_config" >[%-ELSE%]"go to GATK" class="external" href="[%link.gatk%]">[%END%]GATKs</a></th>
+					<th rowspan=2><a title=[%-IF samtool_ver %]"[%samtool_ver%]" class='boxy' href="[%c.uri_for('/run')%]/[%run_name%]#samtool_config">[%-ELSE%]"go to Samtools" class="external" href="[%link.samtool%]">[%END%]Samtools</a></th>
+					<th rowspan=2><a title=[%-IF cga_ver %]"Complete Genomics Analysis Toolkit [%cga_ver%]" class='boxy' href="[%c.uri_for('/run')%]/[%run_name%]#cga_config">[%-ELSE%]"go to Complete Genomics Analysis Toolkit" class="external" href="[%link.cga%]">[%END%]CGA</a></th>
+					<th rowspan=2>Unique calls<a title="Union of LifeScope, GATK and Samtools; this is distinct count of calls for [%IF sample_name%]this[%ELSE%]the corresponding[%END%] sample" >[?]</a></th>
+				</tr>
+				<tr class='column'>
+					<th><a title="SNP caller" [%-IF ls_ver%]class='boxy' href="[%c.uri_for('/run')%]/[%run_name%]#dibayes_config"[%END%]>diBayes</a></th>
+					<th><a title="Small-indel caller" [%-IF ls_ver%]class='boxy' href="[%c.uri_for('/run')%]/[%run_name%]#smallindel_config"[%END%] >SmallIndels</a></th>
+				</tr>
+		[%-FOREACH r IN runs%]
+			<tr class='entry [%IF r.MergedSamples.merged_to%]merged[%END%]'>
+				<td><a title="[%r.run_name%]" href='[%c.uri_for('/run')%]/[%r.run_name%]'>[%r.run_id%]</a></td>
+				<td><a title="[%IF sample_name%]It's me[%ELSE%]browse [%r.sample_name%][%END%]" href='[%c.uri_for('/run')%]/[%r.run_name%]/[%r.sample_name%]'>[%r.id%]</a></td>
+				[%IF is_merged.size%]<td><a href='[%c.uri_for('/run/sample_id')%]/[%r.MergedSamples.merged_to%]'>[%r.MergedSamples.merged_to%]</a></td>[%END%]
+				<td><a title="browse [%r.bru_code%]" href='[%c.uri_for('/patient')%]/[%r.bru_code%]'>[%r.bru_code%]</a></td>
+				<td><a title="browse [%r.Targets.target_name%]" href="[%c.uri_for('/target')%]/[%r.Targets.target_name%]">[%r.Targets.target_name%]</a></td>
+				<td><a title="browse [%r.Diseases.des%]" href='[%c.uri_for('/disease')%]/[%r.diag_code%]'>[%r.diag_code%]</td>
+				<td>[%r.barcode%]</td>
+				<td>
+					[%IF r.MetaSamples.dibayes%]
+					<a title="click to see [%r.MetaSamples.dibayes.chunk(-3).join(',')%] variants" href='[%c.uri_for('/run')%]/[%r.run_name%]/[%r.sample_name%]/diBayes'>
+						[%r.MetaSamples.dibayes.chunk(-3).join(',')%]
+					</a>
+					[%ELSE%]
+						[%r.MetaSamples.dibayes.chunk(-3).join(',')%]
+					[%END%]
+				</td>
+				<td>
+					[%IF r.MetaSamples.indels%]
+					<a title="click to see [%r.MetaSamples.indels.chunk(-3).join(',')%] variants" href='[%c.uri_for('/run')%]/[%r.run_name%]/[%r.sample_name%]/SmallIndels'>
+						[%r.MetaSamples.indels.chunk(-3).join(',')%]
+					</a>
+					[%ELSE%]
+						[%r.MetaSamples.indels.chunk(-3).join(',')%]
+					[%END%]
+				</td>
+				<td>
+					[%IF r.MetaSamples.gatks%]
+					<a title="click to see [%r.MetaSamples.gatks.chunk(-3).join(',')%] variants" href='[%c.uri_for('/run')%]/[%r.run_name%]/[%r.sample_name%]/GATKs'>
+						[%r.MetaSamples.gatks.chunk(-3).join(',')%]
+					</a>
+					[%ELSE%]
+						[%r.MetaSamples.gatks.chunk(-3).join(',')%]
+					[%END%]
+				</td>
+				<td>
+					[%IF r.MetaSamples.samtools%]
+					<a title="click to see [%r.MetaSamples.samtools.chunk(-3).join(',')%] variant" href='[%c.uri_for('/run')%]/[%r.run_name%]/[%r.sample_name%]/Samtools'>
+						[%r.MetaSamples.samtools.chunk(-3).join(',')%]
+					</a>
+					[%ELSE%]
+						[%r.MetaSamples.samtools.chunk(-3).join(',')%]
+					[%END%]
+				</td>
+				<td>
+					[%IF r.MetaSamples.cg%]
+					<a title="click to see [%r.MetaSamples.cg.chunk(-3).join(',')%] variant" href='[%c.uri_for('/run')%]/[%r.run_name%]/[%r.sample_name%]/CGA'>
+						[%r.MetaSamples.cg.chunk(-3).join(',')%]
+					</a>
+					[%ELSE%]
+						[%r.MetaSamples.cg.chunk(-3).join(',')%]
+					[%END%]
+				</td>
+				<td>
+					[%r.MetaSamples.cnt_unique_call.chunk(-3).join(',')%]
+				</td>
+			</tr>	
+		[%-END%]
+		</table>

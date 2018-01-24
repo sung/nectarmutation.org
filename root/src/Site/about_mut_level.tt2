@@ -1,0 +1,30 @@
+				[%#this is called by about_mutation_profile.tt2%]
+				[%# only when /about/mutation_profile?boxy=1%]
+				There are <b>four</b> levels:
+				<ul class="class_one">
+					<li><b>a</b>: any from
+						<ul class="mut">
+							<li>ESSENTIAL_SPLICE_SITE</li>
+							<li>FRAMESHIFT_CODING</li>
+							<li>STOP_GAINED</li>
+							<li>STOP_LOST</li>
+							<li>TRANSCRIPT_ABLATION</li>
+						</ul>
+					</li>
+					<li><b>b</b>: any from
+						<ul class="mut">
+							<li>NON_SYNONYMOUS_CODING</li>
+						</ul>
+					</li>
+					<li><b>c</b>: any from  
+						<ul class="mut">
+							<li>SPLICE_SITE</li>
+							<li>TRANSCRIPT_AMPLIFICATION</li>	
+						</ul>
+					</li> 
+					<li><b>d</b>: none of above</li> 
+				</ul>
+
+			<div style="clear:both">
+				<a title="mutation consequence type" href='#' onClick='Boxy.load("[%c.uri_for('/about/so_terms')%]?boxy=1", {title:"Mutation Consequence Types", modal:false})'>Click</a> to see in details.
+			</div>

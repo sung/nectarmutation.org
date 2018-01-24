@@ -1,0 +1,41 @@
+<workbook>
+	<worksheet name="VEP">
+		<row>
+			<bold><cell>g.HGVS</cell></bold>
+			<bold><cell>Biotype</cell></bold>
+			<bold><cell>Gene</cell></bold>
+			<bold><cell>ENSG</cell></bold>
+			<bold><cell>ENST</cell></bold>
+			<bold><cell>canonical?</cell></bold>
+			<bold><cell>SO terms</cell></bold>
+			<bold><cell>t.HGVS</cell></bold>
+			<bold><cell>CCDS</cell></bold>
+			<bold><cell>p.HGVS</cell></bold>
+			<bold><cell>SIFT</cell></bold>
+			<bold><cell>PolyPhen</cell></bold>
+		</row>
+		[%-FOREACH v IN veps%]
+			[%SET alt=v.alt%]
+			[%FOREACH t IN v.transcripts%]
+				[%FOREACH a IN t.alleles%]
+					[%FOREACH a IN t.alleles%]
+		<row>
+			<cell>[%v.hgvs.$alt%]</cell>
+			<cell>[%t.biotype%]</cell>
+			<cell>[%t.name%]</cell>
+			<cell>[%t.gene_id%]</cell>
+			<cell>[%t.transcript_id%]</cell>
+			<cell>[%t.is_canonical%]</cell>
+			<cell>[%a.consequence_terms.join(', ')%]</cell>
+			<cell>[%a.hgvs_transcript%]</cell>
+			<cell>[%t.ccds%]</cell>
+			<cell>[%a.hgvs_protein%]</cell>
+			<cell>[%a.sift_prediction%]</cell>
+			<cell>[%a.polyphen_prediction%]</cell>
+		</row>
+					[%END-%]
+				[%END-%]
+			[%END-%]
+		[%END-%]
+	</worksheet>
+</workbook>

@@ -1,0 +1,14 @@
+	<div id="yellowBar" class="fixed_elem">
+		<div id="pageHead">
+			<a title="Version [%site.version%]" href="[%c.uri_for('/')%]"><h1 class="title lfloat">NECTAR</h1></a>
+			<!--<a title="London 2012" href="http://london2012.com"><img style="padding: 3px 3px;margin: 2px;" class="lfloat" src="http://www.london2012.com/imgml/menulev0/icon_olympicgames.png" alt="LDN2012 logo" /></a>-->
+			<div id="cse" class="hidden lfloat" style="width:300px">
+				[%#INCLUDE js/google_cse.tt2%] [%#root/lib/js/google_cse.tt2%]
+			</div>
+			<div id="headNav" class="rfloat">
+				<div id="menu">
+					[%-INCLUDE site/menu%] 
+				</div>
+			</div>
+		</div>
+	</div>

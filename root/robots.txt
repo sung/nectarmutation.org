@@ -1,0 +1,2159 @@
+User-agent: *
+Disallow: /main/search/disease/3-methylglutaconic aciduria type 1
+Disallow: /main/search/disease/3-methylglutaconic aciduria type 3
+Disallow: /main/search/disease/3-methylglutaconic aciduria type 5
+Disallow: /main/search/disease/3M syndrome type 1
+Disallow: /main/search/disease/3M syndrome type 2
+Disallow: /main/search/disease/3M syndrome type 3
+Disallow: /main/search/disease/3MC syndrome type 1
+Disallow: /main/search/disease/3MC syndrome type 2
+Disallow: /main/search/disease/46,XX sex reversal type 1
+Disallow: /main/search/disease/46,XX sex reversal type 2
+Disallow: /main/search/disease/46,XX sex reversal type 3
+Disallow: /main/search/disease/46,XY sex reversal type 1
+Disallow: /main/search/disease/46,XY sex reversal type 2
+Disallow: /main/search/disease/46,XY sex reversal type 3
+Disallow: /main/search/disease/46,XY sex reversal type 4
+Disallow: /main/search/disease/46,XY sex reversal type 5
+Disallow: /main/search/disease/46,XY sex reversal type 6
+Disallow: /main/search/disease/46,XY sex reversal type 8
+Disallow: /main/search/disease/a canine form of megaloblastic anemia 1
+Disallow: /main/search/disease/a congenital myasthenic syndrome acetazolamide-responsive
+Disallow: /main/search/disease/a form of extraskeletal myxoid chondrosarcomas
+Disallow: /main/search/disease/a form of T-cell acute lymphoblastic leukemia
+Disallow: /main/search/disease/a form of T-cell acute lymphoblastic leukemia
+Disallow: /main/search/disease/a form of T-cell acute lymphoblastic leukemia
+Disallow: /main/search/disease/a phenotype resembling human spondyloepiphyseal dysplasia congenita
+Disallow: /main/search/disease/achondrogenesis type 1A
+Disallow: /main/search/disease/achondrogenesis type 1B
+Disallow: /main/search/disease/achondrogenesis type 2
+Disallow: /main/search/disease/achromatopsia type 2
+Disallow: /main/search/disease/achromatopsia type 3
+Disallow: /main/search/disease/achromatopsia type 4
+Disallow: /main/search/disease/acrodermatitis enteropathica zinc-deficiency type
+Disallow: /main/search/disease/acrodysostosis type 1, with or without hormone resistance
+Disallow: /main/search/disease/acrodysostosis type 2, with or without hormone resistance
+Disallow: /main/search/disease/acrofacial dysostosis type 1
+Disallow: /main/search/disease/acrofacial dysostosis Weyers type
+Disallow: /main/search/disease/acromesomelic chondrodysplasia Grebe type
+Disallow: /main/search/disease/acromesomelic chondrodysplasia Hunter-Thompson type
+Disallow: /main/search/disease/acromesomelic chondrodysplasia with genital anomalies
+Disallow: /main/search/disease/acromesomelic dysplasia Maroteaux type
+Disallow: /main/search/disease/ACSL4 are involved in Alport syndrome with mental retardation midface hypoplasia and elliptocytosis
+Disallow: /main/search/disease/ACTH deficiency isolated
+Disallow: /main/search/disease/acute eosinophilic leukemia
+Disallow: /main/search/disease/acute lymphoblastic leukemia
+Disallow: /main/search/disease/acute myelogenous leukemia
+Disallow: /main/search/disease/acute myelogenous leukemia
+Disallow: /main/search/disease/acute myelogenous leukemia
+Disallow: /main/search/disease/acute myelogenous leukemia
+Disallow: /main/search/disease/acute promyelocytic leukemia
+Disallow: /main/search/disease/acute promyelocytic leukemia
+Disallow: /main/search/disease/acyl-CoA dehydrogenase family member type 9 deficiency
+Disallow: /main/search/disease/acyl-CoA dehydrogenase very long chain deficiency
+Disallow: /main/search/disease/Adams-Oliver syndrome type 1
+Disallow: /main/search/disease/Adams-Oliver syndrome type 2
+Disallow: /main/search/disease/adrenal hyperplasia type 1
+Disallow: /main/search/disease/adrenal hyperplasia type 2
+Disallow: /main/search/disease/adrenal hyperplasia type 3
+Disallow: /main/search/disease/adrenal hyperplasia type 4
+Disallow: /main/search/disease/adrenal hyperplasia type 5
+Disallow: /main/search/disease/adrenal insufficiency congenital with 46,XY sex reversal
+Disallow: /main/search/disease/adrenocortical insufficiency without ovarian defect
+Disallow: /main/search/disease/adrenoleukodystrophy pseudoneonatal
+Disallow: /main/search/disease/adrenoleukodystrophy X-linked
+Disallow: /main/search/disease/agammaglobulinemia type 1
+Disallow: /main/search/disease/agammaglobulinemia type 2
+Disallow: /main/search/disease/agammaglobulinemia type 3
+Disallow: /main/search/disease/agammaglobulinemia type 4
+Disallow: /main/search/disease/agammaglobulinemia type 5
+Disallow: /main/search/disease/agammaglobulinemia type 6
+Disallow: /main/search/disease/age-related macular degeneration type 1
+Disallow: /main/search/disease/age-related macular degeneration type 10
+Disallow: /main/search/disease/age-related macular degeneration type 11
+Disallow: /main/search/disease/age-related macular degeneration type 12
+Disallow: /main/search/disease/age-related macular degeneration type 2
+Disallow: /main/search/disease/age-related macular degeneration type 3
+Disallow: /main/search/disease/age-related macular degeneration type 4
+Disallow: /main/search/disease/age-related macular degeneration type 5
+Disallow: /main/search/disease/age-related macular degeneration type 6
+Disallow: /main/search/disease/age-related macular degeneration type 7
+Disallow: /main/search/disease/age-related macular degeneration type 9
+Disallow: /main/search/disease/agenesis of the corpus callosum with abnormal genitalia
+Disallow: /main/search/disease/agenesis of the corpus callosum with peripheral neuropathy
+Disallow: /main/search/disease/aggressive periodontititis type 1
+Disallow: /main/search/disease/Aicardi-Goutieres syndrome type 1
+Disallow: /main/search/disease/Aicardi-Goutieres syndrome type 2
+Disallow: /main/search/disease/Aicardi-Goutieres syndrome type 3
+Disallow: /main/search/disease/Aicardi-Goutieres syndrome type 4
+Disallow: /main/search/disease/Aicardi-Goutieres syndrome type 5
+Disallow: /main/search/disease/Alagille syndrome type 1
+Disallow: /main/search/disease/Alagille syndrome type 2
+Disallow: /main/search/disease/albinism ocular type 1
+Disallow: /main/search/disease/albinism oculocutaneous type 1A
+Disallow: /main/search/disease/albinism oculocutaneous type 1B
+Disallow: /main/search/disease/albinism oculocutaneous type 2
+Disallow: /main/search/disease/albinism oculocutaneous type 3
+Disallow: /main/search/disease/albinism oculocutaneous type 4
+Disallow: /main/search/disease/alopecia neurologic defects and endocrinopathy syndrome
+Disallow: /main/search/disease/alpha-thalassemia mental retardation syndrome X-linked
+Disallow: /main/search/disease/alpha/beta T-cell lymphopenia with gamma/delta T-cell expansion severe cytomegalovirus infection and autoimmunity
+Disallow: /main/search/disease/Alport syndrome autosomal dominant
+Disallow: /main/search/disease/Alport syndrome autosomal recessive
+Disallow: /main/search/disease/Alport syndrome with macrothrombocytopenia
+Disallow: /main/search/disease/Alport syndrome X-linked
+Disallow: /main/search/disease/Alzheimer disease type 1
+Disallow: /main/search/disease/Alzheimer disease type 2
+Disallow: /main/search/disease/Alzheimer disease type 3
+Disallow: /main/search/disease/Alzheimer disease type 4
+Disallow: /main/search/disease/amelogenesis imperfecta hypomaturation type 2A1
+Disallow: /main/search/disease/amelogenesis imperfecta hypomaturation type 2A2
+Disallow: /main/search/disease/amelogenesis imperfecta hypomaturation type 2A3
+Disallow: /main/search/disease/amelogenesis imperfecta type 1B
+Disallow: /main/search/disease/amelogenesis imperfecta type 1C
+Disallow: /main/search/disease/amelogenesis imperfecta type 1E
+Disallow: /main/search/disease/amelogenesis imperfecta type 3
+Disallow: /main/search/disease/amelogenesis imperfecta type 4
+Disallow: /main/search/disease/AMMECR1 are involved in Alport syndrome with mental retardation midface hypoplasia and elliptocytosis
+Disallow: /main/search/disease/amyloidosis primary localized cutaneous type 1
+Disallow: /main/search/disease/amyloidosis primary localized cutaneous type 2
+Disallow: /main/search/disease/amyloidosis transthyretin-related
+Disallow: /main/search/disease/amyloidosis type 5
+Disallow: /main/search/disease/amyloidosis type 6
+Disallow: /main/search/disease/amyloidosis type 8
+Disallow: /main/search/disease/amyotrophic lateral sclerosis type 1
+Disallow: /main/search/disease/amyotrophic lateral sclerosis type 10
+Disallow: /main/search/disease/amyotrophic lateral sclerosis type 11
+Disallow: /main/search/disease/amyotrophic lateral sclerosis type 12
+Disallow: /main/search/disease/amyotrophic lateral sclerosis type 13
+Disallow: /main/search/disease/amyotrophic lateral sclerosis type 14 with or without frontotemporal dementia
+Disallow: /main/search/disease/amyotrophic lateral sclerosis type 15 with or without frontotemporal dementia
+Disallow: /main/search/disease/amyotrophic lateral sclerosis type 16, juvenile
+Disallow: /main/search/disease/amyotrophic lateral sclerosis type 17
+Disallow: /main/search/disease/amyotrophic lateral sclerosis type 2
+Disallow: /main/search/disease/amyotrophic lateral sclerosis type 4
+Disallow: /main/search/disease/amyotrophic lateral sclerosis type 6
+Disallow: /main/search/disease/amyotrophic lateral sclerosis type 8
+Disallow: /main/search/disease/amyotrophic lateral sclerosis type 9
+Disallow: /main/search/disease/amyotrophic lateral sclerosis-parkinsonism/dementia complex type 1
+Disallow: /main/search/disease/androgen insensitivity syndrome partial
+Disallow: /main/search/disease/anemia sideroblastic pyridoxine-refractory autosomal recessive
+Disallow: /main/search/disease/anemia sideroblastic X-linked
+Disallow: /main/search/disease/anemia without thrombocytopenia X-linked
+Disallow: /main/search/disease/anhidrotic ectodermal dysplasia. The disease is characterized by sparse hair
+Disallow: /main/search/disease/aniridia cerebellar ataxia and mental deficiency
+Disallow: /main/search/disease/Antley-Bixler syndrome with genital anomalies and disordered steroidogenesis
+Disallow: /main/search/disease/Antley-Bixler syndrome without genital anomalies or disordered steroidogenesis
+Disallow: /main/search/disease/arginosuccinic aciduria
+Disallow: /main/search/disease/ARMS2 influence age-related macular degeneration type 8
+Disallow: /main/search/disease/arterial calcification of infancy, generalized, type 1
+Disallow: /main/search/disease/arterial calcification of infancy, generalized, type 2
+Disallow: /main/search/disease/arthrogryposis, distal, type 1B
+Disallow: /main/search/disease/arthrogryposis-renal dysfunction-cholestasis syndrome type 1
+Disallow: /main/search/disease/arthrogryposis-renal dysfunction-cholestasis syndrome type 2
+Disallow: /main/search/disease/asphyxiating thoracic dystrophy type 2
+Disallow: /main/search/disease/asphyxiating thoracic dystrophy type 3
+Disallow: /main/search/disease/asphyxiating thoracic dystrophy type 4
+Disallow: /main/search/disease/asphyxiating thoracic dystrophy type 5
+Disallow: /main/search/disease/asthma with nasal polyps and aspirin intolerance
+Disallow: /main/search/disease/asthma-related traits type 1
+Disallow: /main/search/disease/asthma-related traits type 2
+Disallow: /main/search/disease/asthma-related traits type 5
+Disallow: /main/search/disease/asthma-related traits type 7
+Disallow: /main/search/disease/ataxia telangiectasia-like disorder
+Disallow: /main/search/disease/ataxia, sensory, type 1, autosomal dominant
+Disallow: /main/search/disease/ataxia-oculomotor apraxia syndrome
+Disallow: /main/search/disease/atelosteogenesis type 1
+Disallow: /main/search/disease/atelosteogenesis type 2
+Disallow: /main/search/disease/atelosteogenesis type 3
+Disallow: /main/search/disease/atrial septal defect type 2
+Disallow: /main/search/disease/atrial septal defect type 3
+Disallow: /main/search/disease/atrial septal defect type 4
+Disallow: /main/search/disease/atrial septal defect type 5
+Disallow: /main/search/disease/atrial septal defect type 6
+Disallow: /main/search/disease/atrial septal defect type 7 with or without atrioventricular conduction defects
+Disallow: /main/search/disease/atrial septal defect type 8
+Disallow: /main/search/disease/atrial septal defect type 9
+Disallow: /main/search/disease/atrichia with papular lesions
+Disallow: /main/search/disease/atrioventricular septal defect type 2
+Disallow: /main/search/disease/atrioventricular septal defect type 3
+Disallow: /main/search/disease/atrioventricular septal defect type 4
+Disallow: /main/search/disease/atrioventricular septal defect type 5
+Disallow: /main/search/disease/attention deficit-hyperactivity disorder type 7
+Disallow: /main/search/disease/atypical Gaucher disease
+Disallow: /main/search/disease/atypical Krabbe disease
+Disallow: /main/search/disease/auditory neuropathy, autosomal dominant, type 1
+Disallow: /main/search/disease/auditory neuropathy, autosomal recessive, type 1
+Disallow: /main/search/disease/auriculocondylar syndrome type 2
+Disallow: /main/search/disease/autism type 16
+Disallow: /main/search/disease/autism type 17
+Disallow: /main/search/disease/autism X-linked type 1
+Disallow: /main/search/disease/autism X-linked type 2
+Disallow: /main/search/disease/autism X-linked type 5
+Disallow: /main/search/disease/autoimmune disease type 1
+Disallow: /main/search/disease/autoimmune disease type 6
+Disallow: /main/search/disease/autoimmune lymphoproliferative syndrome type 1A
+Disallow: /main/search/disease/autoimmune lymphoproliferative syndrome type 1B
+Disallow: /main/search/disease/autoimmune lymphoproliferative syndrome type 2A
+Disallow: /main/search/disease/autoimmune lymphoproliferative syndrome type 4
+Disallow: /main/search/disease/autoimmune poly-endocrinopathy candidiasis ectodermal dystrophy
+Disallow: /main/search/disease/autoimmune thyroid disease type 3
+Disallow: /main/search/disease/autosomal dominant aplasia of lacrimal and salivary glands
+Disallow: /main/search/disease/autosomal dominant hypercarotenemia and vitamin A deficiency
+Disallow: /main/search/disease/autosomal dominant hypophosphataemic rickets
+Disallow: /main/search/disease/autosomal dominant retinitis pigmentosa with choroidal involvement
+Disallow: /main/search/disease/autosomal recessive acute recurrent myoglobinuria
+Disallow: /main/search/disease/autosomal recessive ataxia with oculomotor apraxia
+Disallow: /main/search/disease/autosomal recessive ataxia with oculomotor apraxia
+Disallow: /main/search/disease/autosomal recessive hypercholesterolemia
+Disallow: /main/search/disease/autosomal recessive myotonia congenita
+Disallow: /main/search/disease/autosomal recessive otospondylomegaepiphyseal dysplasia
+Disallow: /main/search/disease/autosomal recessive periventricular nodular heterotopia type 2
+Disallow: /main/search/disease/autosomal recessive tetra-amelia
+Disallow: /main/search/disease/Axenfeld-Rieger syndrome type 1
+Disallow: /main/search/disease/Axenfeld-Rieger syndrome type 3
+Disallow: /main/search/disease/AXIN1 are involved in hepatocellular carcinoma
+Disallow: /main/search/disease/AXIN2 are involved in colorectal cancer
+Disallow: /main/search/disease/BAAT are involved in familial hypercholanemia
+Disallow: /main/search/disease/BANK1 influence systemic lupus erythematosus
+Disallow: /main/search/disease/Baraitser-Winter syndrome type 1
+Disallow: /main/search/disease/Baraitser-Winter syndrome type 2
+Disallow: /main/search/disease/Bardet-Biedl syndrome type 1
+Disallow: /main/search/disease/Bardet-Biedl syndrome type 10
+Disallow: /main/search/disease/Bardet-Biedl syndrome type 11
+Disallow: /main/search/disease/Bardet-Biedl syndrome type 12
+Disallow: /main/search/disease/Bardet-Biedl syndrome type 13
+Disallow: /main/search/disease/Bardet-Biedl syndrome type 14
+Disallow: /main/search/disease/Bardet-Biedl syndrome type 15
+Disallow: /main/search/disease/Bardet-Biedl syndrome type 2
+Disallow: /main/search/disease/Bardet-Biedl syndrome type 3
+Disallow: /main/search/disease/Bardet-Biedl syndrome type 4
+Disallow: /main/search/disease/Bardet-Biedl syndrome type 5
+Disallow: /main/search/disease/Bardet-Biedl syndrome type 6
+Disallow: /main/search/disease/Bardet-Biedl syndrome type 7
+Disallow: /main/search/disease/Bardet-Biedl syndrome type 8
+Disallow: /main/search/disease/Bardet-Biedl syndrome type 9
+Disallow: /main/search/disease/bare lymphocyte syndrome type 1
+Disallow: /main/search/disease/bare lymphocyte syndrome type 2
+Disallow: /main/search/disease/Bartter syndrome type 1
+Disallow: /main/search/disease/Bartter syndrome type 2
+Disallow: /main/search/disease/Bartter syndrome type 3
+Disallow: /main/search/disease/Bartter syndrome type 4A
+Disallow: /main/search/disease/Bartter syndrome type 4B
+Disallow: /main/search/disease/basal ganglia calcification, idiopathic, type 3
+Disallow: /main/search/disease/benign familial hematuria
+Disallow: /main/search/disease/benign familial neonatal seizures type 1
+Disallow: /main/search/disease/benign familial neonatal seizures type 2
+Disallow: /main/search/disease/benign hereditary chorea
+Disallow: /main/search/disease/benign recurrent intrahepatic cholestasis type 1
+Disallow: /main/search/disease/benign recurrent intrahepatic cholestasis type 2
+Disallow: /main/search/disease/bestrophinopathy autosomal recessive
+Disallow: /main/search/disease/beta-thalassemia dominant inclusion body type
+Disallow: /main/search/disease/BH4-deficient hyperphenylalaninemia type A
+Disallow: /main/search/disease/BH4-deficient hyperphenylalaninemia type C
+Disallow: /main/search/disease/BH4-deficient hyperphenylalaninemia type D
+Disallow: /main/search/disease/bifid nose with or without anorectal and renal anomalies
+Disallow: /main/search/disease/bilateral frontoparietal polymicrogyria
+Disallow: /main/search/disease/blebbed
+Disallow: /main/search/disease/bleeding disorder platelet-type 11
+Disallow: /main/search/disease/bleeding disorder platelet-type 13
+Disallow: /main/search/disease/bleeding disorder platelet-type 8
+Disallow: /main/search/disease/bovine chondrodysplastic dwarfism
+Disallow: /main/search/disease/brachydactyly type A1
+Disallow: /main/search/disease/brachydactyly type A2
+Disallow: /main/search/disease/brachydactyly type B1
+Disallow: /main/search/disease/brachydactyly type B2
+Disallow: /main/search/disease/brachydactyly type C
+Disallow: /main/search/disease/brachydactyly type D
+Disallow: /main/search/disease/brachydactyly type E
+Disallow: /main/search/disease/brachydactyly type E2
+Disallow: /main/search/disease/brachymorphism
+Disallow: /main/search/disease/brachyolmia type 3
+Disallow: /main/search/disease/BRAF are involved in lung cancer
+Disallow: /main/search/disease/BRAF are involved in non-Hodgkin lymphoma
+Disallow: /main/search/disease/branchiootic syndrome type 1
+Disallow: /main/search/disease/branchiootic syndrome type 3
+Disallow: /main/search/disease/branchiootorenal syndrome type 1
+Disallow: /main/search/disease/branchiootorenal syndrome type 2
+Disallow: /main/search/disease/breast cancer
+Disallow: /main/search/disease/brittle cornea syndrome type 1
+Disallow: /main/search/disease/Brittle cornea syndrome type 2
+Disallow: /main/search/disease/bronchiectasis with or without elevated sweat chloride type 1
+Disallow: /main/search/disease/bronchiectasis with or without elevated sweat chloride type 2
+Disallow: /main/search/disease/bronchiectasis with or without elevated sweat chloride type 3
+Disallow: /main/search/disease/Brown-Vialetto-Van Laere syndrome type 1
+Disallow: /main/search/disease/Brown-Vialetto-Van Laere syndrome type 2
+Disallow: /main/search/disease/Bruck syndrome type 2
+Disallow: /main/search/disease/Brugada syndrome type 1
+Disallow: /main/search/disease/Brugada syndrome type 2
+Disallow: /main/search/disease/Brugada syndrome type 3
+Disallow: /main/search/disease/Brugada syndrome type 4
+Disallow: /main/search/disease/Brugada syndrome type 5
+Disallow: /main/search/disease/Brugada syndrome type 6
+Disallow: /main/search/disease/Brugada syndrome type 7
+Disallow: /main/search/disease/Brugada syndrome type 8
+Disallow: /main/search/disease/cardiomyopathy dilated type 1A
+Disallow: /main/search/disease/cardiomyopathy dilated type 1AA
+Disallow: /main/search/disease/cardiomyopathy dilated type 1BB
+Disallow: /main/search/disease/cardiomyopathy dilated type 1C
+Disallow: /main/search/disease/cardiomyopathy dilated type 1CC
+Disallow: /main/search/disease/cardiomyopathy dilated type 1D
+Disallow: /main/search/disease/cardiomyopathy dilated type 1DD
+Disallow: /main/search/disease/cardiomyopathy dilated type 1E
+Disallow: /main/search/disease/cardiomyopathy dilated type 1EE
+Disallow: /main/search/disease/cardiomyopathy dilated type 1FF
+Disallow: /main/search/disease/cardiomyopathy dilated type 1G
+Disallow: /main/search/disease/cardiomyopathy dilated type 1GG
+Disallow: /main/search/disease/cardiomyopathy dilated type 1HH
+Disallow: /main/search/disease/cardiomyopathy dilated type 1I
+Disallow: /main/search/disease/cardiomyopathy dilated type 1J
+Disallow: /main/search/disease/cardiomyopathy dilated type 1L
+Disallow: /main/search/disease/cardiomyopathy dilated type 1M
+Disallow: /main/search/disease/cardiomyopathy dilated type 1N
+Disallow: /main/search/disease/cardiomyopathy dilated type 1O
+Disallow: /main/search/disease/cardiomyopathy dilated type 1P
+Disallow: /main/search/disease/cardiomyopathy dilated type 1R
+Disallow: /main/search/disease/cardiomyopathy dilated type 1S
+Disallow: /main/search/disease/cardiomyopathy dilated type 1T
+Disallow: /main/search/disease/cardiomyopathy dilated type 1U
+Disallow: /main/search/disease/cardiomyopathy dilated type 1V
+Disallow: /main/search/disease/cardiomyopathy dilated type 1W
+Disallow: /main/search/disease/cardiomyopathy dilated type 1X
+Disallow: /main/search/disease/cardiomyopathy dilated type 1Y
+Disallow: /main/search/disease/cardiomyopathy dilated type 1Z
+Disallow: /main/search/disease/cardiomyopathy dilated type 2A
+Disallow: /main/search/disease/cardiomyopathy dilated with hypergonadotropic hypogonadism
+Disallow: /main/search/disease/cardiomyopathy dilated with woolly hair and keratoderma
+Disallow: /main/search/disease/cardiomyopathy dilated X-linked type 3B
+Disallow: /main/search/disease/cardiomyopathy infantile histiocytoid
+Disallow: /main/search/disease/cardiomyopathy, dilated type 2B
+Disallow: /main/search/disease/cardiomyopathy, familial hypertrophic type 6
+Disallow: /main/search/disease/Carney complex type 1
+Disallow: /main/search/disease/carpal tunnel syndrome type 1
+Disallow: /main/search/disease/cataract congenital autosomal recessive type 2
+Disallow: /main/search/disease/cataract congenital autosomal recessive type 4
+Disallow: /main/search/disease/cataract congenital cerulean type 4
+Disallow: /main/search/disease/cataract congenital nuclear autosomal recessive type 2
+Disallow: /main/search/disease/cataract congenital nuclear autosomal recessive type 3
+Disallow: /main/search/disease/cataract congenital X-linked
+Disallow: /main/search/disease/cataract cortical juvenile-onset
+Disallow: /main/search/disease/cataract juvenile with microcornea and glucosuria
+Disallow: /main/search/disease/cataract posterior polar type 2
+Disallow: /main/search/disease/cataract posterior polar type 3
+Disallow: /main/search/disease/cataract pulverulent juvenile-onset MAF-related
+Disallow: /main/search/disease/cataract zonular pulverulent cataract type 3
+Disallow: /main/search/disease/cataract zonular type 2
+Disallow: /main/search/disease/cataract, congenital, autosomal recessive type 5
+Disallow: /main/search/disease/catecholaminergic polymorphic ventricular tachycardia type 1
+Disallow: /main/search/disease/catecholaminergic polymorphic ventricular tachycardia type 2
+Disallow: /main/search/disease/CDKN3 are found in patients with hepatocellular carcinoma
+Disallow: /main/search/disease/CEDNIK syndrome
+Disallow: /main/search/disease/celiac disease type 13
+Disallow: /main/search/disease/celiac disease type 3
+Disallow: /main/search/disease/celiac disease type 4
+Disallow: /main/search/disease/centronuclear myopathy type 1
+Disallow: /main/search/disease/centronuclear myopathy type 2
+Disallow: /main/search/disease/centronuclear myopathy type 3
+Disallow: /main/search/disease/centronuclear myopathy X-linked
+Disallow: /main/search/disease/cerebellar ataxia mental retardation and dysequilibrium syndrome type 1
+Disallow: /main/search/disease/cerebellar ataxia mental retardation and dysequilibrium syndrome type 3
+Disallow: /main/search/disease/cerebellar ataxia, mental retardation, and dysequilibrium syndrome type 2
+Disallow: /main/search/disease/cerebral amyloid angiopathy APP-related
+Disallow: /main/search/disease/cerebral amyloid angiopathy ITM2B-related type 1
+Disallow: /main/search/disease/cerebral amyloid angiopathy ITM2B-related type 2
+Disallow: /main/search/disease/cerebral autosomal dominant arteriopathy with subcortical infarcts and leukoencephalopathy
+Disallow: /main/search/disease/cerebral autosomal recessive arteriopathy with subcortical infarcts and leukoencephalopathy
+Disallow: /main/search/disease/cerebral cavernous malformations type 1
+Disallow: /main/search/disease/cerebral cavernous malformations type 2
+Disallow: /main/search/disease/cerebral cavernous malformations type 3
+Disallow: /main/search/disease/cerebral palsy spastic quadriplegic type 1
+Disallow: /main/search/disease/cerebral palsy spastic quadriplegic type 2
+Disallow: /main/search/disease/cerebral palsy spastic quadriplegic type 3
+Disallow: /main/search/disease/cerebral palsy spastic quadriplegic type 4
+Disallow: /main/search/disease/cerebral palsy spastic quadriplegic type 5
+Disallow: /main/search/disease/cerebral palsy spastic quadriplegic type 6
+Disallow: /main/search/disease/cerebro-oculo-facio-skeletal syndrome type 1
+Disallow: /main/search/disease/cerebro-oculo-facio-skeletal syndrome type 2
+Disallow: /main/search/disease/cerebro-oculo-facio-skeletal syndrome type 4
+Disallow: /main/search/disease/certain post-receptor defects in non-insulin-dependent diabetes mellitus
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease axonal recessive with vocal cord paresis
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease dominant intermediate type B
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease dominant intermediate type C
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease dominant intermediate type D
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease recessive intermediate type A
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease recessive intermediate type B
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 1A
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 1B
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 1C
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 1D
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 1E
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 1F
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 2A1
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 2A2
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 2B
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 2B1
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 2B2
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 2C
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 2D
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 2E
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 2F
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 2I
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 2J
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 2K
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 2L
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 2M
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 2N
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 2O
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 2P
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 4A
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 4B1
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 4B2
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 4C
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 4D
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 4H
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 4J
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease type 6
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease X-linked recessive type 5
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease X-linked type 1
+Disallow: /main/search/disease/Charcot-Marie-Tooth disease, dominant intermediate type E
+Disallow: /main/search/disease/Chediak-Higashi syndrome of cattle
+Disallow: /main/search/disease/CHEK2 are found in some patients with osteogenic sarcoma
+Disallow: /main/search/disease/chilblain lupus type 1
+Disallow: /main/search/disease/chilblain lupus type 2
+Disallow: /main/search/disease/childhood absence epilepsy type 2
+Disallow: /main/search/disease/childhood absence epilepsy type 4
+Disallow: /main/search/disease/childhood absence epilepsy type 5
+Disallow: /main/search/disease/chondrodysplasia punctata X-linked dominant type 2
+Disallow: /main/search/disease/chondrodysplasia punctata X-linked recessive type 1
+Disallow: /main/search/disease/chondrodysplasia with joint dislocations GPAPP type
+Disallow: /main/search/disease/chorea-acanthocytosis
+Disallow: /main/search/disease/choroidal dystrophy central areolar type 2
+Disallow: /main/search/disease/CHRM2 can influence major depressive disorder
+Disallow: /main/search/disease/chronic granulomatous disease autosomal recessive cytochrome-b-negative
+Disallow: /main/search/disease/chronic granulomatous disease autosomal recessive cytochrome-b-positive type 1
+Disallow: /main/search/disease/chronic granulomatous disease autosomal recessive cytochrome-b-positive type 2
+Disallow: /main/search/disease/chronic granulomatous disease autosomal recessive cytochrome-b-positive type 3
+Disallow: /main/search/disease/chronic lymphocytic leukemia
+Disallow: /main/search/disease/chronic myelogenous leukemia
+Disallow: /main/search/disease/citrullinemia type 1
+Disallow: /main/search/disease/citrullinemia type 2
+Disallow: /main/search/disease/CNTNAP2 influences autism type 15
+Disallow: /main/search/disease/Cockayne syndrome type A
+Disallow: /main/search/disease/Cockayne syndrome type B
+Disallow: /main/search/disease/coenzyme Q10 deficiency, primary, type 1
+Disallow: /main/search/disease/coenzyme Q10 deficiency, primary, type 2
+Disallow: /main/search/disease/coenzyme Q10 deficiency, primary, type 3
+Disallow: /main/search/disease/coenzyme Q10 deficiency, primary, type 4
+Disallow: /main/search/disease/coenzyme Q10 deficiency, primary, type 5
+Disallow: /main/search/disease/coenzyme Q10 deficiency, primary, type 6
+Disallow: /main/search/disease/cold-induced sweating syndrome type 1
+Disallow: /main/search/disease/cold-induced sweating syndrome type 2
+Disallow: /main/search/disease/colorectal cancer type 1
+Disallow: /main/search/disease/combined deficiency of vitamin K-dependent clotting factors type 1
+Disallow: /main/search/disease/combined deficiency of vitamin K-dependent clotting factors type 2
+Disallow: /main/search/disease/combined oxidative phosphorylation deficiency type 1
+Disallow: /main/search/disease/combined oxidative phosphorylation deficiency type 10
+Disallow: /main/search/disease/combined oxidative phosphorylation deficiency type 2
+Disallow: /main/search/disease/combined oxidative phosphorylation deficiency type 3
+Disallow: /main/search/disease/combined oxidative phosphorylation deficiency type 4
+Disallow: /main/search/disease/combined oxidative phosphorylation deficiency type 5
+Disallow: /main/search/disease/combined oxidative phosphorylation deficiency type 6
+Disallow: /main/search/disease/combined oxidative phosphorylation deficiency type 7
+Disallow: /main/search/disease/combined oxidative phosphorylation deficiency type 8
+Disallow: /main/search/disease/combined oxidative phosphorylation deficiency type 9
+Disallow: /main/search/disease/complement component 8 deficiency type 1
+Disallow: /main/search/disease/complement component 8 deficiency type 2
+Disallow: /main/search/disease/cone dystrophy retinal type 3A
+Disallow: /main/search/disease/cone dystrophy retinal type 3B
+Disallow: /main/search/disease/cone dystrophy type 3
+Disallow: /main/search/disease/cone dystrophy type 4
+Disallow: /main/search/disease/cone dystrophy type 5
+Disallow: /main/search/disease/cone-rod dystrophy type 10
+Disallow: /main/search/disease/cone-rod dystrophy type 11
+Disallow: /main/search/disease/cone-rod dystrophy type 12
+Disallow: /main/search/disease/cone-rod dystrophy type 13
+Disallow: /main/search/disease/cone-rod dystrophy type 15
+Disallow: /main/search/disease/cone-rod dystrophy type 16
+Disallow: /main/search/disease/cone-rod dystrophy type 2
+Disallow: /main/search/disease/cone-rod dystrophy type 3
+Disallow: /main/search/disease/cone-rod dystrophy type 5
+Disallow: /main/search/disease/cone-rod dystrophy type 6
+Disallow: /main/search/disease/cone-rod dystrophy type 7
+Disallow: /main/search/disease/cone-rod dystrophy type 9
+Disallow: /main/search/disease/cone-rod dystrophy X-linked type 1
+Disallow: /main/search/disease/cone-rod dystrophy X-linked type 3
+Disallow: /main/search/disease/congenital aural atresia
+Disallow: /main/search/disease/congenital bile acid synthesis defect type 1
+Disallow: /main/search/disease/congenital bile acid synthesis defect type 2
+Disallow: /main/search/disease/congenital bile acid synthesis defect type 3
+Disallow: /main/search/disease/congenital bile acid synthesis defect type 4
+Disallow: /main/search/disease/congenital cataracts facial dysmorphism and neuropathy syndrome
+Disallow: /main/search/disease/congenital clubfoot
+Disallow: /main/search/disease/congenital disorder of glycosylation type 1A
+Disallow: /main/search/disease/congenital disorder of glycosylation type 1B
+Disallow: /main/search/disease/congenital disorder of glycosylation type 1C
+Disallow: /main/search/disease/congenital disorder of glycosylation type 1D
+Disallow: /main/search/disease/congenital disorder of glycosylation type 1E
+Disallow: /main/search/disease/congenital disorder of glycosylation type 1F
+Disallow: /main/search/disease/congenital disorder of glycosylation type 1G
+Disallow: /main/search/disease/congenital disorder of glycosylation type 1H
+Disallow: /main/search/disease/congenital disorder of glycosylation type 1I
+Disallow: /main/search/disease/congenital disorder of glycosylation type 1J
+Disallow: /main/search/disease/congenital disorder of glycosylation type 1K
+Disallow: /main/search/disease/congenital disorder of glycosylation type 1L
+Disallow: /main/search/disease/congenital disorder of glycosylation type 1M
+Disallow: /main/search/disease/congenital disorder of glycosylation type 1N
+Disallow: /main/search/disease/congenital disorder of glycosylation type 1O
+Disallow: /main/search/disease/congenital disorder of glycosylation type 1P
+Disallow: /main/search/disease/congenital disorder of glycosylation type 1Q
+Disallow: /main/search/disease/congenital disorder of glycosylation type 1R
+Disallow: /main/search/disease/congenital disorder of glycosylation type 2A
+Disallow: /main/search/disease/congenital disorder of glycosylation type 2C
+Disallow: /main/search/disease/congenital disorder of glycosylation type 2D
+Disallow: /main/search/disease/congenital disorder of glycosylation type 2E
+Disallow: /main/search/disease/congenital disorder of glycosylation type 2F
+Disallow: /main/search/disease/congenital disorder of glycosylation type 2G
+Disallow: /main/search/disease/congenital disorder of glycosylation type 2H
+Disallow: /main/search/disease/congenital disorder of glycosylation type 2I
+Disallow: /main/search/disease/congenital disorder of glycosylation type 2J
+Disallow: /main/search/disease/congenital disorder of glycosylation type 2K
+Disallow: /main/search/disease/congenital disorder of glycosylation type 2L
+Disallow: /main/search/disease/congenital dyserythropoietic anemia type 1
+Disallow: /main/search/disease/congenital dyserythropoietic anemia type 2
+Disallow: /main/search/disease/congenital dyserythropoietic anemia type 4
+Disallow: /main/search/disease/congenital fibrosis of extraocular muscles type 1
+Disallow: /main/search/disease/congenital fibrosis of extraocular muscles type 2
+Disallow: /main/search/disease/congenital fibrosis of extraocular muscles type 3A
+Disallow: /main/search/disease/congenital generalized lipodystrophy type 1
+Disallow: /main/search/disease/congenital generalized lipodystrophy type 2
+Disallow: /main/search/disease/congenital generalized lipodystrophy type 3
+Disallow: /main/search/disease/congenital generalized lipodystrophy type 4
+Disallow: /main/search/disease/congenital heart disease non-syndromic type 2
+Disallow: /main/search/disease/congenital hypomyelination neuropathy
+Disallow: /main/search/disease/congenital hypothyroidism non-goitrous type 1
+Disallow: /main/search/disease/congenital hypothyroidism non-goitrous type 2
+Disallow: /main/search/disease/congenital hypothyroidism non-goitrous type 5
+Disallow: /main/search/disease/congenital hypothyroidism non-goitrous type 6
+Disallow: /main/search/disease/congenital myasthenic syndrome Engel type
+Disallow: /main/search/disease/congenital myasthenic syndrome fast-channel type
+Disallow: /main/search/disease/congenital myasthenic syndrome slow-channel type
+Disallow: /main/search/disease/congenital myasthenic syndrome with acetylcholine receptor deficiency
+Disallow: /main/search/disease/congenital myasthenic syndrome with episodic apnea
+Disallow: /main/search/disease/congenital stationary night blindness autosomal dominant type 1
+Disallow: /main/search/disease/congenital stationary night blindness autosomal dominant type 2
+Disallow: /main/search/disease/congenital stationary night blindness autosomal dominant type 3
+Disallow: /main/search/disease/congenital stationary night blindness Oguchi type 1
+Disallow: /main/search/disease/congenital stationary night blindness Oguchi type 2
+Disallow: /main/search/disease/congenital stationary night blindness type 1A
+Disallow: /main/search/disease/congenital stationary night blindness type 1B
+Disallow: /main/search/disease/congenital stationary night blindness type 1C
+Disallow: /main/search/disease/congenital stationary night blindness type 1D
+Disallow: /main/search/disease/congenital stationary night blindness type 1E
+Disallow: /main/search/disease/congenital stationary night blindness type 2A
+Disallow: /main/search/disease/congenital stationary night blindness type 2B
+Disallow: /main/search/disease/congenital stromal corneal dystrophy
+Disallow: /main/search/disease/congenital variant of Rett syndrome
+Disallow: /main/search/disease/congenital vertical talus
+Disallow: /main/search/disease/corneal dystrophy Fuchs endothelial type 1
+Disallow: /main/search/disease/corneal dystrophy Fuchs endothelial type 4
+Disallow: /main/search/disease/corneal dystrophy Fuchs endothelial type 6
+Disallow: /main/search/disease/corneal dystrophy Groenouw type 1
+Disallow: /main/search/disease/corneal dystrophy lattice type 1
+Disallow: /main/search/disease/corneal dystrophy Thiel-Behnke type
+Disallow: /main/search/disease/corneal endothelial dystrophy type 2
+Disallow: /main/search/disease/corneal fleck dystrophy
+Disallow: /main/search/disease/Cornelia de Lange syndrome type 1
+Disallow: /main/search/disease/Cornelia de Lange syndrome type 2
+Disallow: /main/search/disease/Cornelia de Lange syndrome type 3
+Disallow: /main/search/disease/Cornelia de Lange syndrome type 4
+Disallow: /main/search/disease/coronary artery disease, autosomal dominant, type 1
+Disallow: /main/search/disease/coronary artery disease, autosomal dominant, type 2
+Disallow: /main/search/disease/coronary heart disease type 5
+Disallow: /main/search/disease/coronary heart disease type 6
+Disallow: /main/search/disease/coronary heart disease type 7
+Disallow: /main/search/disease/corticobasal degeneration
+Disallow: /main/search/disease/corticosterone methyloxidase type 1 deficiency
+Disallow: /main/search/disease/corticosterone methyloxidase type 2 deficiency
+Disallow: /main/search/disease/cranioectodermal dysplasia type 1
+Disallow: /main/search/disease/cranioectodermal dysplasia type 2
+Disallow: /main/search/disease/cranioectodermal dysplasia type 3
+Disallow: /main/search/disease/cranioectodermal dysplasia type 4
+Disallow: /main/search/disease/craniofacial dysmorphism skeletal anomalies and mental retardation syndrome
+Disallow: /main/search/disease/craniosynostosis type 1
+Disallow: /main/search/disease/craniosynostosis type 2
+Disallow: /main/search/disease/Crigler-Najjar syndrome type 1
+Disallow: /main/search/disease/Crigler-Najjar syndrome type 2
+Disallow: /main/search/disease/crystalline corneal dystrophy of Schnyder
+Disallow: /main/search/disease/CTLA4 influences systemic lupus erythematosus
+Disallow: /main/search/disease/cutaneous malignant melanoma type 2
+Disallow: /main/search/disease/cutaneous malignant melanoma type 3
+Disallow: /main/search/disease/cutaneous malignant melanoma type 5
+Disallow: /main/search/disease/cutaneous malignant melanoma type 6
+Disallow: /main/search/disease/cutaneous malignant melanoma type 8
+Disallow: /main/search/disease/cutis laxa autosomal recessive type 2A
+Disallow: /main/search/disease/cutis laxa autosomal recessive type 2B
+Disallow: /main/search/disease/cutis laxa, autosomal dominant, type 1
+Disallow: /main/search/disease/cutis laxa, autosomal dominant, type 2
+Disallow: /main/search/disease/cutis laxa, autosomal recessive, type 1A
+Disallow: /main/search/disease/cutis laxa, autosomal recessive, type 1B
+Disallow: /main/search/disease/cutis laxa, autosomal recessive, type 3A
+Disallow: /main/search/disease/cutis laxa, autosomal recessive, type 3B
+Disallow: /main/search/disease/cystinosis adult non-nephropathic type
+Disallow: /main/search/disease/cystinosis late-onset juvenile or adolescent nephropathic type
+Disallow: /main/search/disease/cystinosis nephropathic type
+Disallow: /main/search/disease/D-2-hydroxyglutaric aciduria type 1
+Disallow: /main/search/disease/D-2-hydroxyglutaric aciduria type 2
+Disallow: /main/search/disease/deafness autosomal dominant type 1
+Disallow: /main/search/disease/deafness autosomal dominant type 10
+Disallow: /main/search/disease/deafness autosomal dominant type 11
+Disallow: /main/search/disease/deafness autosomal dominant type 12
+Disallow: /main/search/disease/deafness autosomal dominant type 13
+Disallow: /main/search/disease/deafness autosomal dominant type 15
+Disallow: /main/search/disease/deafness autosomal dominant type 17
+Disallow: /main/search/disease/deafness autosomal dominant type 20
+Disallow: /main/search/disease/deafness autosomal dominant type 22
+Disallow: /main/search/disease/deafness autosomal dominant type 23
+Disallow: /main/search/disease/deafness autosomal dominant type 25
+Disallow: /main/search/disease/deafness autosomal dominant type 28
+Disallow: /main/search/disease/deafness autosomal dominant type 2A
+Disallow: /main/search/disease/deafness autosomal dominant type 2B
+Disallow: /main/search/disease/deafness autosomal dominant type 36
+Disallow: /main/search/disease/deafness autosomal dominant type 39 with dentinogenesis imperfecta 1
+Disallow: /main/search/disease/deafness autosomal dominant type 3A
+Disallow: /main/search/disease/deafness autosomal dominant type 3B
+Disallow: /main/search/disease/deafness autosomal dominant type 44
+Disallow: /main/search/disease/deafness autosomal dominant type 48
+Disallow: /main/search/disease/deafness autosomal dominant type 4A
+Disallow: /main/search/disease/deafness autosomal dominant type 4B
+Disallow: /main/search/disease/deafness autosomal dominant type 5
+Disallow: /main/search/disease/deafness autosomal dominant type 6
+Disallow: /main/search/disease/deafness autosomal dominant type 64
+Disallow: /main/search/disease/deafness autosomal dominant type 9
+Disallow: /main/search/disease/deafness autosomal recessive type 12
+Disallow: /main/search/disease/deafness autosomal recessive type 15
+Disallow: /main/search/disease/deafness autosomal recessive type 16
+Disallow: /main/search/disease/deafness autosomal recessive type 1A
+Disallow: /main/search/disease/deafness autosomal recessive type 1B
+Disallow: /main/search/disease/deafness autosomal recessive type 2
+Disallow: /main/search/disease/deafness autosomal recessive type 21
+Disallow: /main/search/disease/deafness autosomal recessive type 22
+Disallow: /main/search/disease/deafness autosomal recessive type 23
+Disallow: /main/search/disease/deafness autosomal recessive type 24
+Disallow: /main/search/disease/deafness autosomal recessive type 25
+Disallow: /main/search/disease/deafness autosomal recessive type 28
+Disallow: /main/search/disease/deafness autosomal recessive type 29
+Disallow: /main/search/disease/deafness autosomal recessive type 3
+Disallow: /main/search/disease/deafness autosomal recessive type 30
+Disallow: /main/search/disease/deafness autosomal recessive type 31
+Disallow: /main/search/disease/deafness autosomal recessive type 35
+Disallow: /main/search/disease/deafness autosomal recessive type 36 with or without vestibular involvement
+Disallow: /main/search/disease/deafness autosomal recessive type 37
+Disallow: /main/search/disease/deafness autosomal recessive type 39
+Disallow: /main/search/disease/deafness autosomal recessive type 4
+Disallow: /main/search/disease/deafness autosomal recessive type 42
+Disallow: /main/search/disease/deafness autosomal recessive type 49
+Disallow: /main/search/disease/deafness autosomal recessive type 53
+Disallow: /main/search/disease/deafness autosomal recessive type 59
+Disallow: /main/search/disease/deafness autosomal recessive type 6
+Disallow: /main/search/disease/deafness autosomal recessive type 61
+Disallow: /main/search/disease/deafness autosomal recessive type 63
+Disallow: /main/search/disease/deafness autosomal recessive type 67
+Disallow: /main/search/disease/deafness autosomal recessive type 7
+Disallow: /main/search/disease/deafness autosomal recessive type 74
+Disallow: /main/search/disease/deafness autosomal recessive type 77
+Disallow: /main/search/disease/deafness autosomal recessive type 79
+Disallow: /main/search/disease/deafness autosomal recessive type 8
+Disallow: /main/search/disease/deafness autosomal recessive type 9
+Disallow: /main/search/disease/deafness autosomal recessive type 91
+Disallow: /main/search/disease/deafness sensorineural mitochondrial
+Disallow: /main/search/disease/deafness sensorineural with hypertrophic cardiomyopathy
+Disallow: /main/search/disease/deafness X-linked type 1
+Disallow: /main/search/disease/deafness X-linked type 2
+Disallow: /main/search/disease/deafness X-linked type 4
+Disallow: /main/search/disease/Dent disease type 2
+Disallow: /main/search/disease/dentin dysplasia typ1
+Disallow: /main/search/disease/dentin dysplasia type 2
+Disallow: /main/search/disease/dentinogenesis imperfecta type 1
+Disallow: /main/search/disease/dermatitis atopic type 2
+Disallow: /main/search/disease/diabetes insipidus nephrogenic autosomal
+Disallow: /main/search/disease/diabetes insipidus nephrogenic X-linked
+Disallow: /main/search/disease/diabetes mellitus insulin-dependent type 10
+Disallow: /main/search/disease/diabetes mellitus insulin-dependent type 12
+Disallow: /main/search/disease/diabetes mellitus insulin-dependent type 19
+Disallow: /main/search/disease/diabetes mellitus insulin-dependent type 2
+Disallow: /main/search/disease/diabetes mellitus insulin-dependent type 20
+Disallow: /main/search/disease/diabetes mellitus insulin-dependent type 22
+Disallow: /main/search/disease/diabetes mellitus ketosis-prone
+Disallow: /main/search/disease/diabetes mellitus neonatal with congenital hypothyroidism
+Disallow: /main/search/disease/diabetes mellitus non-insulin-dependent type 1
+Disallow: /main/search/disease/diabetes mellitus permanent neonatal
+Disallow: /main/search/disease/Diamond-Blackfan anemia type 1
+Disallow: /main/search/disease/Diamond-Blackfan anemia type 10
+Disallow: /main/search/disease/Diamond-Blackfan anemia type 3
+Disallow: /main/search/disease/Diamond-Blackfan anemia type 4
+Disallow: /main/search/disease/Diamond-Blackfan anemia type 5
+Disallow: /main/search/disease/Diamond-Blackfan anemia type 6
+Disallow: /main/search/disease/Diamond-Blackfan anemia type 7
+Disallow: /main/search/disease/Diamond-Blackfan anemia type 8
+Disallow: /main/search/disease/Diamond-Blackfan anemia type 9
+Disallow: /main/search/disease/diarrhea type 1
+Disallow: /main/search/disease/diarrhea type 2
+Disallow: /main/search/disease/diarrhea type 3
+Disallow: /main/search/disease/diarrhea type 4
+Disallow: /main/search/disease/diarrhea type 6
+Disallow: /main/search/disease/disseminated superficial actinic porokeratosis type 1
+Disallow: /main/search/disease/distal arthrogryposis type
+Disallow: /main/search/disease/distal arthrogryposis type 1A
+Disallow: /main/search/disease/distal arthrogryposis type 2A
+Disallow: /main/search/disease/distal arthrogryposis type 2B
+Disallow: /main/search/disease/distal arthrogryposis type 9
+Disallow: /main/search/disease/distal hereditary motor neuronopathy 5B
+Disallow: /main/search/disease/distal hereditary motor neuronopathy type 2A
+Disallow: /main/search/disease/distal hereditary motor neuronopathy type 2B
+Disallow: /main/search/disease/distal hereditary motor neuronopathy type 2C
+Disallow: /main/search/disease/distal hereditary motor neuronopathy type 5A
+Disallow: /main/search/disease/distal hereditary motor neuronopathy type 6
+Disallow: /main/search/disease/distal hereditary motor neuronopathy type 7B
+Disallow: /main/search/disease/distal renal tubular acidosis with deafness
+Disallow: /main/search/disease/distal renal tubular acidosis with preserved hearing
+Disallow: /main/search/disease/distal spinal muscular atrophy autosomal recessive type 4
+Disallow: /main/search/disease/distal spinal muscular atrophy congenital non-progressive
+Disallow: /main/search/disease/distal spinal muscular atrophy X-linked type 3
+Disallow: /main/search/disease/DMBT1 are involved in the development of glioma
+Disallow: /main/search/disease/Duane retraction syndrome type 2
+Disallow: /main/search/disease/dyskeratosis congenita autosomal dominant type 2
+Disallow: /main/search/disease/dyskeratosis congenita autosomal dominant type 3
+Disallow: /main/search/disease/dyskeratosis congenita autosomal recessive type 1
+Disallow: /main/search/disease/dyskeratosis congenita autosomal recessive type 2
+Disallow: /main/search/disease/dyskeratosis congenita autosomal recessive type 3
+Disallow: /main/search/disease/dyskeratosis congenita autosomal recessive type 4
+Disallow: /main/search/disease/dyskeratosis congenita X-linked recessive
+Disallow: /main/search/disease/dyslexia type 1
+Disallow: /main/search/disease/dyslexia type 2
+Disallow: /main/search/disease/dystonia DOPA-responsive due to sepiapterin reductase deficiency
+Disallow: /main/search/disease/dystonia juvenile-onset
+Disallow: /main/search/disease/dystonia type 1
+Disallow: /main/search/disease/dystonia type 11
+Disallow: /main/search/disease/dystonia type 12
+Disallow: /main/search/disease/dystonia type 16
+Disallow: /main/search/disease/dystonia type 3
+Disallow: /main/search/disease/dystonia type 5
+Disallow: /main/search/disease/dystonia type 6
+Disallow: /main/search/disease/dystonia type 8
+Disallow: /main/search/disease/dystrophia myotonica type 1
+Disallow: /main/search/disease/dystrophia myotonica type 2
+Disallow: /main/search/disease/ectodermal dysplasia anhidrotic with immunodeficiency X-linked
+Disallow: /main/search/disease/ectodermal dysplasia anhidrotic with immunodeficiency-osteopetrosis-lymphedema
+Disallow: /main/search/disease/ectodermal dysplasia anhidrotic with T-cell immunodeficiency autosomal dominant
+Disallow: /main/search/disease/ectodermal dysplasia Margarita Island type
+Disallow: /main/search/disease/ectodermal dysplasia Rapp-Hodgkin type
+Disallow: /main/search/disease/ectodermal dysplasia with ectrodactyly and macular dystrophy
+Disallow: /main/search/disease/ectodermal dysplasia-syndactyly syndrome type 1
+Disallow: /main/search/disease/ectopia lentis, isolated, autosomal dominant
+Disallow: /main/search/disease/ectopia lentis, isolated, autosomal recessive
+Disallow: /main/search/disease/ectrodactyly-ectodermal dysplasia-cleft lip/palate syndrome type 3
+Disallow: /main/search/disease/Ehlers-Danlos syndrome autosomal recessive cardiac valvular form
+Disallow: /main/search/disease/Ehlers-Danlos syndrome musculocontractural type
+Disallow: /main/search/disease/Ehlers-Danlos syndrome progeroid type
+Disallow: /main/search/disease/Ehlers-Danlos syndrome type 1
+Disallow: /main/search/disease/Ehlers-Danlos syndrome type 2
+Disallow: /main/search/disease/Ehlers-Danlos syndrome type 3
+Disallow: /main/search/disease/Ehlers-Danlos syndrome type 4
+Disallow: /main/search/disease/Ehlers-Danlos syndrome type 6
+Disallow: /main/search/disease/Ehlers-Danlos syndrome type 7A
+Disallow: /main/search/disease/Ehlers-Danlos syndrome type 7B
+Disallow: /main/search/disease/Ehlers-Danlos syndrome type 7C
+Disallow: /main/search/disease/Ehlers-Danlos syndrome with progressive kyphoscoliosis, myopathy, and hearing loss
+Disallow: /main/search/disease/elliptocytosis type 1
+Disallow: /main/search/disease/elliptocytosis type 2
+Disallow: /main/search/disease/elliptocytosis type 3
+Disallow: /main/search/disease/elliptocytosis type 4
+Disallow: /main/search/disease/Emery-Dreifuss muscular dystrophy type 1
+Disallow: /main/search/disease/Emery-Dreifuss muscular dystrophy type 2, autosomal dominant
+Disallow: /main/search/disease/Emery-Dreifuss muscular dystrophy type 3, autosomal recessive
+Disallow: /main/search/disease/Emery-Dreifuss muscular dystrophy type 4
+Disallow: /main/search/disease/Emery-Dreifuss muscular dystrophy type 5
+Disallow: /main/search/disease/encephalopathy acute infection-induced type 3
+Disallow: /main/search/disease/encephalopathy acute infection-induced type 4
+Disallow: /main/search/disease/encephalopathy neonatal severe due to MECP2 mutations
+Disallow: /main/search/disease/endosteal hyperostosis Worth type
+Disallow: /main/search/disease/epidermolysis bullosa dystrophica autosomal dominant
+Disallow: /main/search/disease/epidermolysis bullosa dystrophica autosomal recessive
+Disallow: /main/search/disease/epidermolysis bullosa dystrophica Bart type
+Disallow: /main/search/disease/epidermolysis bullosa dystrophica Hallopeau-Siemens type
+Disallow: /main/search/disease/epidermolysis bullosa dystrophica Pasini type
+Disallow: /main/search/disease/epidermolysis bullosa dystrophica pretibial type
+Disallow: /main/search/disease/epidermolysis bullosa dystrophica with subcorneal cleavage
+Disallow: /main/search/disease/epidermolysis bullosa junctional Herlitz type
+Disallow: /main/search/disease/epidermolysis bullosa letalis with pyloric atresia
+Disallow: /main/search/disease/epidermolysis bullosa lethal acantholytic
+Disallow: /main/search/disease/epidermolysis bullosa simplex autosomal recessive
+Disallow: /main/search/disease/epidermolysis bullosa simplex Dowling-Meara type
+Disallow: /main/search/disease/epidermolysis bullosa simplex Koebner type
+Disallow: /main/search/disease/epidermolysis bullosa simplex Ogna type
+Disallow: /main/search/disease/epidermolysis bullosa simplex Weber-Cockayne type
+Disallow: /main/search/disease/epidermolysis bullosa simplex with migratory circinate erythema
+Disallow: /main/search/disease/epidermolysis bullosa simplex with mottled pigmentation
+Disallow: /main/search/disease/epidermolysis bullosa simplex with muscular dystrophy
+Disallow: /main/search/disease/epilepsy X-linked with variable learning disabilities and behavior disorders
+Disallow: /main/search/disease/epilepsy, childhood absence type 6
+Disallow: /main/search/disease/epilepsy, familial temporal lobe, type 1
+Disallow: /main/search/disease/epilepsy, familial temporal lobe, type 5
+Disallow: /main/search/disease/epilepsy, idiopathic generalized type 10
+Disallow: /main/search/disease/epilepsy, idiopathic generalized type 11
+Disallow: /main/search/disease/epilepsy, idiopathic generalized type 6
+Disallow: /main/search/disease/epilepsy, idiopathic generalized type 8
+Disallow: /main/search/disease/epilepsy, idiopathic generalized type 9
+Disallow: /main/search/disease/epileptic encephalopathy early infantile type 1
+Disallow: /main/search/disease/epileptic encephalopathy early infantile type 11
+Disallow: /main/search/disease/epileptic encephalopathy early infantile type 12
+Disallow: /main/search/disease/epileptic encephalopathy early infantile type 2
+Disallow: /main/search/disease/epileptic encephalopathy early infantile type 3
+Disallow: /main/search/disease/epileptic encephalopathy early infantile type 4
+Disallow: /main/search/disease/epileptic encephalopathy early infantile type 5
+Disallow: /main/search/disease/epileptic encephalopathy early infantile type 7
+Disallow: /main/search/disease/epileptic encephalopathy early infantile type 9
+Disallow: /main/search/disease/epileptic encephalopathy Lennox-Gastaut type
+Disallow: /main/search/disease/epileptic encephalopathy, early infantile, type 10
+Disallow: /main/search/disease/epileptic encephalopathy, early infantile, type 13
+Disallow: /main/search/disease/episodic ataxia type 1
+Disallow: /main/search/disease/episodic ataxia type 2
+Disallow: /main/search/disease/episodic ataxia type 5
+Disallow: /main/search/disease/episodic ataxia type 6
+Disallow: /main/search/disease/episodic kinesigenic dyskinesia type 1
+Disallow: /main/search/disease/epithelial basement membrane corneal dystrophy
+Disallow: /main/search/disease/ERBB2 are involved in the development of glioma
+Disallow: /main/search/disease/erythropoietic protoporphyria X-linked dominant
+Disallow: /main/search/disease/essential tremor hereditary type 1
+Disallow: /main/search/disease/facial clefting oblique type 1
+Disallow: /main/search/disease/factor V and factor VIII combined deficiency type 2
+Disallow: /main/search/disease/familial acne inversa type 1
+Disallow: /main/search/disease/familial acne inversa type 2
+Disallow: /main/search/disease/familial acne inversa type 3
+Disallow: /main/search/disease/familial adenomatous polyposis type 2
+Disallow: /main/search/disease/familial aortic aneurysm thoracic type 4
+Disallow: /main/search/disease/familial aortic aneurysm thoracic type 6
+Disallow: /main/search/disease/familial aortic aneurysm thoracic type 7
+Disallow: /main/search/disease/familial arrhythmogenic right ventricular dysplasia type 1
+Disallow: /main/search/disease/familial arrhythmogenic right ventricular dysplasia type 10
+Disallow: /main/search/disease/familial arrhythmogenic right ventricular dysplasia type 11
+Disallow: /main/search/disease/familial arrhythmogenic right ventricular dysplasia type 12
+Disallow: /main/search/disease/familial arrhythmogenic right ventricular dysplasia type 2
+Disallow: /main/search/disease/familial arrhythmogenic right ventricular dysplasia type 5
+Disallow: /main/search/disease/familial arrhythmogenic right ventricular dysplasia type 8
+Disallow: /main/search/disease/familial arrhythmogenic right ventricular dysplasia type 9
+Disallow: /main/search/disease/familial atrial fibrillation type 10
+Disallow: /main/search/disease/familial atrial fibrillation type 11
+Disallow: /main/search/disease/familial atrial fibrillation type 12
+Disallow: /main/search/disease/familial atrial fibrillation type 3
+Disallow: /main/search/disease/familial atrial fibrillation type 4
+Disallow: /main/search/disease/familial atrial fibrillation type 6
+Disallow: /main/search/disease/familial atrial fibrillation type 7
+Disallow: /main/search/disease/familial atrial fibrillation type 9
+Disallow: /main/search/disease/familial breast-ovarian cancer type 1
+Disallow: /main/search/disease/familial breast-ovarian cancer type 2
+Disallow: /main/search/disease/familial breast-ovarian cancer type 3
+Disallow: /main/search/disease/familial breast-ovarian cancer type 4
+Disallow: /main/search/disease/familial candidiasis type 2
+Disallow: /main/search/disease/familial candidiasis type 4
+Disallow: /main/search/disease/familial candidiasis type 5
+Disallow: /main/search/disease/familial candidiasis type 6
+Disallow: /main/search/disease/familial candidiasis type 7
+Disallow: /main/search/disease/familial cold autoinflammatory syndrome type 1
+Disallow: /main/search/disease/familial cold autoinflammatory syndrome type 2
+Disallow: /main/search/disease/familial cold autoinflammatory syndrome type 3
+Disallow: /main/search/disease/familial erythrocytosis type 1
+Disallow: /main/search/disease/familial erythrocytosis type 2
+Disallow: /main/search/disease/familial erythrocytosis type 3
+Disallow: /main/search/disease/familial erythrocytosis type 4
+Disallow: /main/search/disease/familial febrile convulsions type 11
+Disallow: /main/search/disease/familial febrile convulsions type 3A
+Disallow: /main/search/disease/familial febrile convulsions type 3B
+Disallow: /main/search/disease/familial febrile convulsions type 4
+Disallow: /main/search/disease/familial febrile convulsions type 8
+Disallow: /main/search/disease/familial hemiplegic migraine type 1
+Disallow: /main/search/disease/familial hemiplegic migraine type 2
+Disallow: /main/search/disease/familial hemiplegic migraine type 3
+Disallow: /main/search/disease/familial hemophagocytic lymphohistiocytosis type 2
+Disallow: /main/search/disease/familial hemophagocytic lymphohistiocytosis type 3
+Disallow: /main/search/disease/familial hemophagocytic lymphohistiocytosis type 4
+Disallow: /main/search/disease/familial hemophagocytic lymphohistiocytosis type 5
+Disallow: /main/search/disease/familial hyperaldosteronism type 1
+Disallow: /main/search/disease/familial hyperaldosteronism type 3
+Disallow: /main/search/disease/familial hyperinsulinemic hypoglycemia type 1
+Disallow: /main/search/disease/familial hyperinsulinemic hypoglycemia type 2
+Disallow: /main/search/disease/familial hyperinsulinemic hypoglycemia type 3
+Disallow: /main/search/disease/familial hyperinsulinemic hypoglycemia type 4
+Disallow: /main/search/disease/familial hyperinsulinemic hypoglycemia type 5
+Disallow: /main/search/disease/familial hyperinsulinemic hypoglycemia type 6
+Disallow: /main/search/disease/familial hyperinsulinemic hypoglycemia type 7
+Disallow: /main/search/disease/familial hyperproinsulinemia
+Disallow: /main/search/disease/familial hypertriglyceridemia
+Disallow: /main/search/disease/familial hypertrophic cardiomyopathy
+Disallow: /main/search/disease/familial hypertrophic cardiomyopathy type 1
+Disallow: /main/search/disease/familial hypertrophic cardiomyopathy type 10
+Disallow: /main/search/disease/familial hypertrophic cardiomyopathy type 11
+Disallow: /main/search/disease/familial hypertrophic cardiomyopathy type 12
+Disallow: /main/search/disease/familial hypertrophic cardiomyopathy type 13
+Disallow: /main/search/disease/familial hypertrophic cardiomyopathy type 14
+Disallow: /main/search/disease/familial hypertrophic cardiomyopathy type 15
+Disallow: /main/search/disease/familial hypertrophic cardiomyopathy type 16
+Disallow: /main/search/disease/familial hypertrophic cardiomyopathy type 17
+Disallow: /main/search/disease/familial hypertrophic cardiomyopathy type 18
+Disallow: /main/search/disease/familial hypertrophic cardiomyopathy type 19
+Disallow: /main/search/disease/familial hypertrophic cardiomyopathy type 2
+Disallow: /main/search/disease/familial hypertrophic cardiomyopathy type 20
+Disallow: /main/search/disease/familial hypertrophic cardiomyopathy type 3
+Disallow: /main/search/disease/familial hypertrophic cardiomyopathy type 4
+Disallow: /main/search/disease/familial hypertrophic cardiomyopathy type 7
+Disallow: /main/search/disease/familial hypertrophic cardiomyopathy type 8
+Disallow: /main/search/disease/familial hypertrophic cardiomyopathy type 9
+Disallow: /main/search/disease/familial hypobetalipoproteinemia type 1
+Disallow: /main/search/disease/familial hypobetalipoproteinemia type 2
+Disallow: /main/search/disease/familial juvenile hyperuricemic nephropathy type 1
+Disallow: /main/search/disease/familial juvenile hyperuricemic nephropathy type 2
+Disallow: /main/search/disease/familial Mediterranean fever autosomal dominant
+Disallow: /main/search/disease/familial Mediterranean fever autosomal recessive
+Disallow: /main/search/disease/familial paroxysmal ventricular fibrillation type 1
+Disallow: /main/search/disease/familial paroxysmal ventricular fibrillation type 2
+Disallow: /main/search/disease/familial partial lipodystrophy type 2
+Disallow: /main/search/disease/familial partial lipodystrophy type 3
+Disallow: /main/search/disease/familial partial lipodystrophy type 4
+Disallow: /main/search/disease/familial porencephaly
+Disallow: /main/search/disease/familial restrictive cardiomyopathy type 1
+Disallow: /main/search/disease/familial restrictive cardiomyopathy type 3
+Disallow: /main/search/disease/Fanconi anemia complementation group D type 1
+Disallow: /main/search/disease/Fanconi anemia complementation group D type 2
+Disallow: /main/search/disease/Fanconi renotubular syndrome type 2
+Disallow: /main/search/disease/Feingold syndrome type 1
+Disallow: /main/search/disease/Feingold syndrome type 2
+Disallow: /main/search/disease/female sex reversal with dysgenesis of kidneys, adrenals, and lungs
+Disallow: /main/search/disease/FG syndrome type 2
+Disallow: /main/search/disease/FG syndrome type 4
+Disallow: /main/search/disease/fibrochondrogenesis type 1
+Disallow: /main/search/disease/fibrochondrogenesis type 2
+Disallow: /main/search/disease/focal segmental glomerulosclerosis type 1
+Disallow: /main/search/disease/focal segmental glomerulosclerosis type 2
+Disallow: /main/search/disease/focal segmental glomerulosclerosis type 3
+Disallow: /main/search/disease/focal segmental glomerulosclerosis type 4
+Disallow: /main/search/disease/focal segmental glomerulosclerosis type 5
+Disallow: /main/search/disease/focal segmental glomerulosclerosis type 6
+Disallow: /main/search/disease/frontonasal dysplasia type 1
+Disallow: /main/search/disease/frontonasal dysplasia type 2
+Disallow: /main/search/disease/frontonasal dysplasia type 3
+Disallow: /main/search/disease/gallbladder disease type 1
+Disallow: /main/search/disease/gallbladder disease type 4
+Disallow: /main/search/disease/Gaucher disease type 1
+Disallow: /main/search/disease/Gaucher disease type 2
+Disallow: /main/search/disease/Gaucher disease type 3
+Disallow: /main/search/disease/Gaucher disease type 3C
+Disallow: /main/search/disease/GBA contribute to Parkinson disease
+Disallow: /main/search/disease/gelatinous drop-like corneal dystrophy
+Disallow: /main/search/disease/geleophysic dysplasia type 1
+Disallow: /main/search/disease/geleophysic dysplasia type 2
+Disallow: /main/search/disease/generalized epilepsy with febrile seizures plus type 1
+Disallow: /main/search/disease/generalized epilepsy with febrile seizures plus type 2
+Disallow: /main/search/disease/generalized epilepsy with febrile seizures plus type 3
+Disallow: /main/search/disease/generalized epilepsy with febrile seizures plus type 5
+Disallow: /main/search/disease/generalized epilepsy with febrile seizures plus type 7
+Disallow: /main/search/disease/generalized lymphoproliferation disease phenotype
+Disallow: /main/search/disease/GJB1 may contribute to the phenotype of Dejerine-Sottas syndrome
+Disallow: /main/search/disease/glioma type 1
+Disallow: /main/search/disease/glioma type 2
+Disallow: /main/search/disease/glioma type 3
+Disallow: /main/search/disease/globoid cell leukodystrophy
+Disallow: /main/search/disease/glomerulopathy with fibronectin deposits type 2
+Disallow: /main/search/disease/glucocorticoid deficiency type 1
+Disallow: /main/search/disease/glucocorticoid deficiency type 2
+Disallow: /main/search/disease/glucocorticoid deficiency type 4
+Disallow: /main/search/disease/GLUT1 deficiency syndrome type 1
+Disallow: /main/search/disease/GLUT1 deficiency syndrome type 2
+Disallow: /main/search/disease/glutaric aciduria type 1
+Disallow: /main/search/disease/glutaric aciduria type 2A
+Disallow: /main/search/disease/glutaric aciduria type 2B
+Disallow: /main/search/disease/glutaric aciduria type 2C
+Disallow: /main/search/disease/glutaric aciduria type 3
+Disallow: /main/search/disease/glycogen storage disease type 0
+Disallow: /main/search/disease/glycogen storage disease type 10
+Disallow: /main/search/disease/glycogen storage disease type 11
+Disallow: /main/search/disease/glycogen storage disease type 12
+Disallow: /main/search/disease/glycogen storage disease type 13
+Disallow: /main/search/disease/glycogen storage disease type 14
+Disallow: /main/search/disease/glycogen storage disease type 15
+Disallow: /main/search/disease/glycogen storage disease type 1A
+Disallow: /main/search/disease/glycogen storage disease type 1B
+Disallow: /main/search/disease/glycogen storage disease type 1C
+Disallow: /main/search/disease/glycogen storage disease type 1D
+Disallow: /main/search/disease/glycogen storage disease type 2
+Disallow: /main/search/disease/glycogen storage disease type 3
+Disallow: /main/search/disease/glycogen storage disease type 4
+Disallow: /main/search/disease/glycogen storage disease type 5
+Disallow: /main/search/disease/glycogen storage disease type 6
+Disallow: /main/search/disease/glycogen storage disease type 7
+Disallow: /main/search/disease/glycogen storage disease type 9A
+Disallow: /main/search/disease/glycogen storage disease type 9B
+Disallow: /main/search/disease/glycogen storage disease type 9C
+Disallow: /main/search/disease/glycogen storage disease type 9D
+Disallow: /main/search/disease/GM1-gangliosidosis type 1
+Disallow: /main/search/disease/GM1-gangliosidosis type 2
+Disallow: /main/search/disease/GM1-gangliosidosis type 3
+Disallow: /main/search/disease/GM2-gangliosidosis type 1
+Disallow: /main/search/disease/GM2-gangliosidosis type 2
+Disallow: /main/search/disease/GM2-gangliosidosis type AB
+Disallow: /main/search/disease/goiter multinodular type 1 with or without Sertoli-Leydig cell tumors
+Disallow: /main/search/disease/granulomatous disease,chronic, X-linked
+Disallow: /main/search/disease/Griscelli syndrome type 1
+Disallow: /main/search/disease/Griscelli syndrome type 2
+Disallow: /main/search/disease/Griscelli syndrome type 3
+Disallow: /main/search/disease/growth hormone deficiency isolated type 1A
+Disallow: /main/search/disease/growth hormone deficiency isolated type 1B
+Disallow: /main/search/disease/growth hormone deficiency isolated type 2
+Disallow: /main/search/disease/growth retardation developmental delay coarse facies and early death
+Disallow: /main/search/disease/head and neck squamous cell carcinomas
+Disallow: /main/search/disease/helper deficient disease
+Disallow: /main/search/disease/hemangioma capillary infantile
+Disallow: /main/search/disease/hemochromatosis type 2A
+Disallow: /main/search/disease/hemochromatosis type 2B
+Disallow: /main/search/disease/hemochromatosis type 3
+Disallow: /main/search/disease/hemochromatosis type 4
+Disallow: /main/search/disease/hemolytic anemia
+Disallow: /main/search/disease/hemolytic anemia non-spherocytic due to glucose phosphate isomerase deficiency
+Disallow: /main/search/disease/hemolytic uremic syndrome atypical type 1
+Disallow: /main/search/disease/hemolytic uremic syndrome atypical type 2
+Disallow: /main/search/disease/hemolytic uremic syndrome atypical type 3
+Disallow: /main/search/disease/hemolytic uremic syndrome atypical type 4
+Disallow: /main/search/disease/hemolytic uremic syndrome atypical type 5
+Disallow: /main/search/disease/hemolytic uremic syndrome atypical type 6
+Disallow: /main/search/disease/hereditary angioedema type 3
+Disallow: /main/search/disease/hereditary hemorrhagic telangiectasia type 1
+Disallow: /main/search/disease/hereditary hemorrhagic telangiectasia type 2
+Disallow: /main/search/disease/hereditary mixed polyposis syndrome 2
+Disallow: /main/search/disease/hereditary multiple exostoses type 1
+Disallow: /main/search/disease/hereditary multiple exostoses type 2
+Disallow: /main/search/disease/hereditary non-polyposis colorectal cancer type 1
+Disallow: /main/search/disease/hereditary non-polyposis colorectal cancer type 2
+Disallow: /main/search/disease/hereditary non-polyposis colorectal cancer type 4
+Disallow: /main/search/disease/hereditary non-polyposis colorectal cancer type 5
+Disallow: /main/search/disease/hereditary non-polyposis colorectal cancer type 6
+Disallow: /main/search/disease/hereditary non-polyposis colorectal cancer type 7
+Disallow: /main/search/disease/hereditary non-polyposis colorectal cancer type 8
+Disallow: /main/search/disease/hereditary sensory and autonomic neuropathy type 1A
+Disallow: /main/search/disease/hereditary sensory and autonomic neuropathy type 1C
+Disallow: /main/search/disease/hereditary sensory and autonomic neuropathy type 2A
+Disallow: /main/search/disease/hereditary sensory and autonomic neuropathy type 2B
+Disallow: /main/search/disease/hereditary sensory and autonomic neuropathy type 3
+Disallow: /main/search/disease/hereditary sensory and autonomic neuropathy type 5
+Disallow: /main/search/disease/hereditary sensory and autonomic neuropathy type 6
+Disallow: /main/search/disease/hereditary sensory neuropathy autosomal recessive with spastic paraplegia
+Disallow: /main/search/disease/hereditary sensory neuropathy type 1D
+Disallow: /main/search/disease/hereditary sensory neuropathy type 1E
+Disallow: /main/search/disease/hereditary sensory neuropathy type 2C
+Disallow: /main/search/disease/hereditary Wilms tumor 5
+Disallow: /main/search/disease/Hermansky-Pudlak syndrome type 1
+Disallow: /main/search/disease/Hermansky-Pudlak syndrome type 2
+Disallow: /main/search/disease/Hermansky-Pudlak syndrome type 3
+Disallow: /main/search/disease/Hermansky-Pudlak syndrome type 4
+Disallow: /main/search/disease/Hermansky-Pudlak syndrome type 5
+Disallow: /main/search/disease/Hermansky-Pudlak syndrome type 6
+Disallow: /main/search/disease/Hermansky-Pudlak syndrome type 7
+Disallow: /main/search/disease/Hermansky-Pudlak syndrome type 8
+Disallow: /main/search/disease/Hermansky-Pudlak syndrome type 9
+Disallow: /main/search/disease/herpes simplex encephalitis type 1
+Disallow: /main/search/disease/herpes simplex encephalitis type 2
+Disallow: /main/search/disease/heterotaxy, visceral, type 6, autosomal
+Disallow: /main/search/disease/high density lipoprotein deficiency type 1
+Disallow: /main/search/disease/high density lipoprotein deficiency type 2
+Disallow: /main/search/disease/Hirschsprung disease type 1
+Disallow: /main/search/disease/Hirschsprung disease type 2
+Disallow: /main/search/disease/Hirschsprung disease type 3
+Disallow: /main/search/disease/Hirschsprung disease type 4
+Disallow: /main/search/disease/HNF1B may be rare genetic risk factor contributing to the development of non-insulin-dependent diabetes mellitus
+Disallow: /main/search/disease/holoprosencephaly type 11
+Disallow: /main/search/disease/holoprosencephaly type 2
+Disallow: /main/search/disease/holoprosencephaly type 3
+Disallow: /main/search/disease/holoprosencephaly type 4
+Disallow: /main/search/disease/holoprosencephaly type 5
+Disallow: /main/search/disease/holoprosencephaly type 7
+Disallow: /main/search/disease/holoprosencephaly type 9
+Disallow: /main/search/disease/Huntington disease-like type 1
+Disallow: /main/search/disease/Huntington disease-like type 2
+Disallow: /main/search/disease/hydatidiform mole recurrent type 1
+Disallow: /main/search/disease/hydatidiform mole recurrent type 2
+Disallow: /main/search/disease/hydrolethalus syndrome type 1
+Disallow: /main/search/disease/hydrolethalus syndrome type 2
+Disallow: /main/search/disease/hyperalphalipoproteinemia type 1
+Disallow: /main/search/disease/hyperalphalipoproteinemia type 2
+Disallow: /main/search/disease/hypercalciuria absorptive type 2
+Disallow: /main/search/disease/hyperchlorhidrosis isolated
+Disallow: /main/search/disease/hypercholesterolemia autosomal dominant type 3
+Disallow: /main/search/disease/hyperekplexia type 2
+Disallow: /main/search/disease/hyperekplexia type 3
+Disallow: /main/search/disease/hyperekplexia, hereditary, type 1
+Disallow: /main/search/disease/hyperimmunoglobulin E recurrent infection syndrome autosomal dominant
+Disallow: /main/search/disease/hyperimmunoglobulin E recurrent infection syndrome autosomal recessive
+Disallow: /main/search/disease/hyperlipidemia combined type 1
+Disallow: /main/search/disease/hyperlipoproteinemia type 1B
+Disallow: /main/search/disease/hyperlipoproteinemia type 3
+Disallow: /main/search/disease/hyperlipoproteinemia type 5
+Disallow: /main/search/disease/hyperoxaluria primary type 1
+Disallow: /main/search/disease/hyperoxaluria primary type 2
+Disallow: /main/search/disease/hyperoxaluria primary type 3
+Disallow: /main/search/disease/hyperphosphatasia with mental retardation 2
+Disallow: /main/search/disease/hyperphosphatasia with mental retardation type 1
+Disallow: /main/search/disease/hyperphosphatemic familial tumoral calcinosis
+Disallow: /main/search/disease/hyperprolinemia type 1
+Disallow: /main/search/disease/hyperprolinemia type 2
+Disallow: /main/search/disease/hyperthyroidism non-autoimmune
+Disallow: /main/search/disease/hypertrophic osteoarthropathy, primary, autosomal recessive, type 1
+Disallow: /main/search/disease/hypertrophic osteoarthropathy, primary, autosomal recessive, type 2
+Disallow: /main/search/disease/hypodactyly
+Disallow: /main/search/disease/hypomagnesemia renal with ocular involvement
+Disallow: /main/search/disease/hypomagnesemia type 1
+Disallow: /main/search/disease/hypomagnesemia type 2
+Disallow: /main/search/disease/hypomagnesemia type 3
+Disallow: /main/search/disease/hypomagnesemia type 4
+Disallow: /main/search/disease/hypomagnesemia type 6
+Disallow: /main/search/disease/hypoparathyroidism with sensorineural deafness and renal dysplasia
+Disallow: /main/search/disease/hypophosphatemic nephrolithiasis/osteoporosis type 1
+Disallow: /main/search/disease/hypophosphatemic nephrolithiasis/osteoporosis type 2
+Disallow: /main/search/disease/hypoplastic left heart syndrome type 1
+Disallow: /main/search/disease/hypoplastic left heart syndrome type 2
+Disallow: /main/search/disease/hypotrichosis type 1
+Disallow: /main/search/disease/hypotrichosis type 2
+Disallow: /main/search/disease/hypotrichosis type 3
+Disallow: /main/search/disease/hypotrichosis type 4
+Disallow: /main/search/disease/hypotrichosis type 6
+Disallow: /main/search/disease/hypotrichosis type 7
+Disallow: /main/search/disease/hypotrichosis type 8
+Disallow: /main/search/disease/hypotrichosis with juvenile macular dystrophy
+Disallow: /main/search/disease/hypouricemia renal type 1
+Disallow: /main/search/disease/hypouricemia renal type 2
+Disallow: /main/search/disease/ichthyosis autosomal recessive with hypotrichosis
+Disallow: /main/search/disease/ichthyosis exfoliative autosomal recessive ichthyosis bullosa of Siemens-like
+Disallow: /main/search/disease/ichthyosis follicularis-atrichia-photophobia syndrome
+Disallow: /main/search/disease/ichthyosis hystrix Curth-Macklin type
+Disallow: /main/search/disease/ichthyosis X-linked
+Disallow: /main/search/disease/IDH1 are involved in the development of glioma
+Disallow: /main/search/disease/idiopathic scoliosis type 3
+Disallow: /main/search/disease/idiopathic short stature
+Disallow: /main/search/disease/idiopathic short stature autosomal
+Disallow: /main/search/disease/immune dysfunction with T-cell inactivation due to calcium entry defect type 1
+Disallow: /main/search/disease/immune dysfunction with T-cell inactivation due to calcium entry defect type 2
+Disallow: /main/search/disease/immunodeficiency common variable type 1
+Disallow: /main/search/disease/immunodeficiency common variable type 2
+Disallow: /main/search/disease/immunodeficiency common variable type 3
+Disallow: /main/search/disease/immunodeficiency common variable type 4
+Disallow: /main/search/disease/immunodeficiency common variable type 5
+Disallow: /main/search/disease/immunodeficiency common variable type 6
+Disallow: /main/search/disease/immunodeficiency NEMO-related without anhidrotic ectodermal dysplasia
+Disallow: /main/search/disease/immunodeficiency with hyper-IgM type 2
+Disallow: /main/search/disease/immunodeficiency with hyper-IgM type 3
+Disallow: /main/search/disease/immunodeficiency with hyper-IgM type 5
+Disallow: /main/search/disease/immunodeficiency X-linked with magnesium defect Epstein-Barr virus infection and neoplasia
+Disallow: /main/search/disease/immunodeficiency, common variable, type 7
+Disallow: /main/search/disease/immunodeficiency, common variable, type 8, with autoimmunity
+Disallow: /main/search/disease/immunodeficiency-centromeric instability-facial anomalies syndrome type 1
+Disallow: /main/search/disease/immunodeficiency-centromeric instability-facial anomalies syndrome type 2
+Disallow: /main/search/disease/inclusion body myopathy type 2
+Disallow: /main/search/disease/inclusion body myopathy type 3
+Disallow: /main/search/disease/increased susceptibility for ossification of the posterior longitudinal ligament of the spine
+Disallow: /main/search/disease/infections recurrent associated with encephalopathy hepatic dysfunction and cardiovascular malformations
+Disallow: /main/search/disease/inflammatory bowel disease type 1
+Disallow: /main/search/disease/inflammatory bowel disease type 10
+Disallow: /main/search/disease/inflammatory bowel disease type 13
+Disallow: /main/search/disease/inflammatory bowel disease type 14
+Disallow: /main/search/disease/inflammatory bowel disease type 17
+Disallow: /main/search/disease/inflammatory bowel disease type 19
+Disallow: /main/search/disease/inflammatory bowel disease type 25
+Disallow: /main/search/disease/inflammatory bowel disease type 28
+Disallow: /main/search/disease/insulin-dependent diabetes mellitus
+Disallow: /main/search/disease/intervertebral disk disease
+Disallow: /main/search/disease/iridogoniodysgenesis type 2
+Disallow: /main/search/disease/IRS1 may be involved in the etiology of non-insulin-dependent diabetes mellitus
+Disallow: /main/search/disease/Jawad disease
+Disallow: /main/search/disease/Jervell and Lange-Nielsen syndrome type 1
+Disallow: /main/search/disease/Jervell and Lange-Nielsen syndrome type 2
+Disallow: /main/search/disease/Joubert syndrome type 1
+Disallow: /main/search/disease/Joubert syndrome type 10
+Disallow: /main/search/disease/Joubert syndrome type 12
+Disallow: /main/search/disease/Joubert syndrome type 13
+Disallow: /main/search/disease/Joubert syndrome type 14
+Disallow: /main/search/disease/Joubert syndrome type 15
+Disallow: /main/search/disease/Joubert syndrome type 16
+Disallow: /main/search/disease/Joubert syndrome type 17
+Disallow: /main/search/disease/Joubert syndrome type 2
+Disallow: /main/search/disease/Joubert syndrome type 3
+Disallow: /main/search/disease/Joubert syndrome type 4
+Disallow: /main/search/disease/Joubert syndrome type 5
+Disallow: /main/search/disease/Joubert syndrome type 6
+Disallow: /main/search/disease/Joubert syndrome type 7
+Disallow: /main/search/disease/Joubert syndrome type 8
+Disallow: /main/search/disease/Joubert syndrome type 9
+Disallow: /main/search/disease/juvenile absence epilepsy type 1
+Disallow: /main/search/disease/juvenile absence epilepsy type 2
+Disallow: /main/search/disease/juvenile myelomonocytic leukemia
+Disallow: /main/search/disease/juvenile myoclonic epilepsy type 1
+Disallow: /main/search/disease/juvenile myoclonic epilepsy type 5
+Disallow: /main/search/disease/juvenile myoclonic epilepsy type 6
+Disallow: /main/search/disease/juvenile myoclonic epilepsy type 7
+Disallow: /main/search/disease/juvenile myoclonic epilepsy type 8
+Disallow: /main/search/disease/Kabuki syndrome type 1
+Disallow: /main/search/disease/Kabuki syndrome type 2
+Disallow: /main/search/disease/KCNE1L are involved in Alport syndrome with mental retardation midface hypoplasia and elliptocytosis
+Disallow: /main/search/disease/Kenny-Caffey syndrome type 1
+Disallow: /main/search/disease/keratoconus type 1
+Disallow: /main/search/disease/keratosis seborrheic
+Disallow: /main/search/disease/Klippel-Feil syndrome type 1
+Disallow: /main/search/disease/Klippel-Feil syndrome type 3
+Disallow: /main/search/disease/Knobloch syndrome type 1
+Disallow: /main/search/disease/Knobloch syndrome type 2
+Disallow: /main/search/disease/lattice corneal dystrophy type 3A
+Disallow: /main/search/disease/Leber congenital amaurosis type 1
+Disallow: /main/search/disease/Leber congenital amaurosis type 10
+Disallow: /main/search/disease/Leber congenital amaurosis type 11
+Disallow: /main/search/disease/Leber congenital amaurosis type 12
+Disallow: /main/search/disease/Leber congenital amaurosis type 13
+Disallow: /main/search/disease/Leber congenital amaurosis type 14
+Disallow: /main/search/disease/Leber congenital amaurosis type 15
+Disallow: /main/search/disease/Leber congenital amaurosis type 16
+Disallow: /main/search/disease/Leber congenital amaurosis type 2
+Disallow: /main/search/disease/Leber congenital amaurosis type 3
+Disallow: /main/search/disease/Leber congenital amaurosis type 4
+Disallow: /main/search/disease/Leber congenital amaurosis type 5
+Disallow: /main/search/disease/Leber congenital amaurosis type 6
+Disallow: /main/search/disease/Leber congenital amaurosis type 7
+Disallow: /main/search/disease/Leber congenital amaurosis type 8
+Disallow: /main/search/disease/left ventricular non-compaction type 1
+Disallow: /main/search/disease/left ventricular non-compaction type 3
+Disallow: /main/search/disease/LEOPARD syndrome type 1
+Disallow: /main/search/disease/LEOPARD syndrome type 2
+Disallow: /main/search/disease/LEOPARD syndrome type 3
+Disallow: /main/search/disease/lethal congenital contracture syndrome type 1
+Disallow: /main/search/disease/lethal congenital contracture syndrome type 2
+Disallow: /main/search/disease/lethal congenital contracture syndrome type 3
+Disallow: /main/search/disease/leukocyte adhesion deficiency type 1
+Disallow: /main/search/disease/leukocyte adhesion deficiency type 3
+Disallow: /main/search/disease/leukodystrophy demyelinating autosomal dominant adult-onset
+Disallow: /main/search/disease/leukodystrophy globoid cell
+Disallow: /main/search/disease/leukodystrophy hypomyelinating type 1
+Disallow: /main/search/disease/leukodystrophy hypomyelinating type 2
+Disallow: /main/search/disease/leukodystrophy hypomyelinating type 3
+Disallow: /main/search/disease/leukodystrophy hypomyelinating type 4
+Disallow: /main/search/disease/leukodystrophy hypomyelinating type 5
+Disallow: /main/search/disease/leukodystrophy hypomyelinating type 7 with or without oligodontia and/or hypogonadotropic hypogonadism
+Disallow: /main/search/disease/leukodystrophy, hypomyelinating, type 8, with or without oligodontia and/or hypogonadotropic hypogonadism
+Disallow: /main/search/disease/leukoencephalopathy cystic without megalencephaly
+Disallow: /main/search/disease/leukoencephalopathy megalencephalic with subcortical cysts type 1
+Disallow: /main/search/disease/leukoencephalopathy megalencephalic with subcortical cysts type 2A
+Disallow: /main/search/disease/leukoencephalopathy megalencephalic with subcortical cysts type 2B
+Disallow: /main/search/disease/leukoencephalopathy with dystonia and motor neuropathy
+Disallow: /main/search/disease/limb-girdle muscular dystrophy type 1A
+Disallow: /main/search/disease/limb-girdle muscular dystrophy type 1B
+Disallow: /main/search/disease/limb-girdle muscular dystrophy type 1C
+Disallow: /main/search/disease/limb-girdle muscular dystrophy type 1E
+Disallow: /main/search/disease/limb-girdle muscular dystrophy type 2A
+Disallow: /main/search/disease/limb-girdle muscular dystrophy type 2B
+Disallow: /main/search/disease/limb-girdle muscular dystrophy type 2C
+Disallow: /main/search/disease/limb-girdle muscular dystrophy type 2D
+Disallow: /main/search/disease/limb-girdle muscular dystrophy type 2E
+Disallow: /main/search/disease/limb-girdle muscular dystrophy type 2F
+Disallow: /main/search/disease/limb-girdle muscular dystrophy type 2G
+Disallow: /main/search/disease/limb-girdle muscular dystrophy type 2H
+Disallow: /main/search/disease/limb-girdle muscular dystrophy type 2J
+Disallow: /main/search/disease/limb-girdle muscular dystrophy type 2L
+Disallow: /main/search/disease/limb-girdle muscular dystrophy type 2Q
+Disallow: /main/search/disease/lissencephaly type 1
+Disallow: /main/search/disease/lissencephaly type 2
+Disallow: /main/search/disease/lissencephaly type 3
+Disallow: /main/search/disease/lissencephaly type 4
+Disallow: /main/search/disease/lissencephaly X-linked type 1
+Disallow: /main/search/disease/lissencephaly X-linked type 2
+Disallow: /main/search/disease/LMAN1 are THE cause of factor V and factor VIII combined deficiency type 1
+Disallow: /main/search/disease/Loeys-Dietz syndrome type 1A
+Disallow: /main/search/disease/Loeys-Dietz syndrome type 1B
+Disallow: /main/search/disease/Loeys-Dietz syndrome type 2A
+Disallow: /main/search/disease/Loeys-Dietz syndrome type 2B
+Disallow: /main/search/disease/long QT syndrome type 1
+Disallow: /main/search/disease/long QT syndrome type 10
+Disallow: /main/search/disease/long QT syndrome type 11
+Disallow: /main/search/disease/long QT syndrome type 12
+Disallow: /main/search/disease/long QT syndrome type 13
+Disallow: /main/search/disease/long QT syndrome type 2
+Disallow: /main/search/disease/long QT syndrome type 3
+Disallow: /main/search/disease/long QT syndrome type 4
+Disallow: /main/search/disease/long QT syndrome type 5
+Disallow: /main/search/disease/long QT syndrome type 6
+Disallow: /main/search/disease/long QT syndrome type 7
+Disallow: /main/search/disease/long QT syndrome type 9
+Disallow: /main/search/disease/lymphedema hereditary type 1A
+Disallow: /main/search/disease/lymphedema hereditary type 1C
+Disallow: /main/search/disease/lymphedema hereditary type 2
+Disallow: /main/search/disease/lymphedema primary with myelodysplasia
+Disallow: /main/search/disease/lymphoproliferative syndrome X-linked type 1
+Disallow: /main/search/disease/lymphoproliferative syndrome X-linked type 2
+Disallow: /main/search/disease/macrocephaly macrosomia facial dysmorphism syndrome
+Disallow: /main/search/disease/macrothrombocytopenia autosomal dominant TUBB1-related
+Disallow: /main/search/disease/macrothrombocytopenia with progressive sensorineural deafness
+Disallow: /main/search/disease/macular degeneration X-linked atrophic
+Disallow: /main/search/disease/maculopathy IMPG2-related
+Disallow: /main/search/disease/major affective disorder type 7
+Disallow: /main/search/disease/malignant hyperthermia susceptibility type 1
+Disallow: /main/search/disease/maple syrup urine disease type 2
+Disallow: /main/search/disease/maple syrup urine disease type IA
+Disallow: /main/search/disease/maple syrup urine disease type IB
+Disallow: /main/search/disease/maturity-onset diabetes of the young type 1
+Disallow: /main/search/disease/maturity-onset diabetes of the young type 10
+Disallow: /main/search/disease/maturity-onset diabetes of the young type 11
+Disallow: /main/search/disease/maturity-onset diabetes of the young type 2
+Disallow: /main/search/disease/maturity-onset diabetes of the young type 3
+Disallow: /main/search/disease/maturity-onset diabetes of the young type 4
+Disallow: /main/search/disease/maturity-onset diabetes of the young type 6
+Disallow: /main/search/disease/maturity-onset diabetes of the young type 7
+Disallow: /main/search/disease/maturity-onset diabetes of the young type 8 with exocrine dysfunction
+Disallow: /main/search/disease/maturity-onset diabetes of the young type 9
+Disallow: /main/search/disease/Meckel syndrome type 1
+Disallow: /main/search/disease/Meckel syndrome type 10
+Disallow: /main/search/disease/Meckel syndrome type 2
+Disallow: /main/search/disease/Meckel syndrome type 3
+Disallow: /main/search/disease/Meckel syndrome type 4
+Disallow: /main/search/disease/Meckel syndrome type 5
+Disallow: /main/search/disease/Meckel syndrome type 6
+Disallow: /main/search/disease/Meckel syndrome type 7
+Disallow: /main/search/disease/Meckel syndrome type 8
+Disallow: /main/search/disease/Meckel syndrome type 9
+Disallow: /main/search/disease/medullary cystic kidney disease type 2
+Disallow: /main/search/disease/Meesmann corneal dystrophy
+Disallow: /main/search/disease/megalocornea type 1, X-linked
+Disallow: /main/search/disease/Meier-Gorlin syndrome type 1
+Disallow: /main/search/disease/Meier-Gorlin syndrome type 2
+Disallow: /main/search/disease/Meier-Gorlin syndrome type 3
+Disallow: /main/search/disease/Meier-Gorlin syndrome type 4
+Disallow: /main/search/disease/Meier-Gorlin syndrome type 5
+Disallow: /main/search/disease/mendelian mycobacterial disease
+Disallow: /main/search/disease/mental retardation autosomal dominant type 1
+Disallow: /main/search/disease/mental retardation autosomal dominant type 10
+Disallow: /main/search/disease/mental retardation autosomal dominant type 11
+Disallow: /main/search/disease/mental retardation autosomal dominant type 12
+Disallow: /main/search/disease/mental retardation autosomal dominant type 13
+Disallow: /main/search/disease/mental retardation autosomal dominant type 14
+Disallow: /main/search/disease/mental retardation autosomal dominant type 15
+Disallow: /main/search/disease/mental retardation autosomal dominant type 16
+Disallow: /main/search/disease/mental retardation autosomal dominant type 2
+Disallow: /main/search/disease/mental retardation autosomal dominant type 3
+Disallow: /main/search/disease/mental retardation autosomal dominant type 4
+Disallow: /main/search/disease/mental retardation autosomal dominant type 5
+Disallow: /main/search/disease/mental retardation autosomal dominant type 6
+Disallow: /main/search/disease/mental retardation autosomal dominant type 7
+Disallow: /main/search/disease/mental retardation autosomal dominant type 8
+Disallow: /main/search/disease/mental retardation autosomal dominant type 9
+Disallow: /main/search/disease/mental retardation autosomal recessive type 1
+Disallow: /main/search/disease/mental retardation autosomal recessive type 12
+Disallow: /main/search/disease/mental retardation autosomal recessive type 13
+Disallow: /main/search/disease/mental retardation autosomal recessive type 14
+Disallow: /main/search/disease/mental retardation autosomal recessive type 15
+Disallow: /main/search/disease/mental retardation autosomal recessive type 18
+Disallow: /main/search/disease/mental retardation autosomal recessive type 2A
+Disallow: /main/search/disease/mental retardation autosomal recessive type 3
+Disallow: /main/search/disease/mental retardation autosomal recessive type 34
+Disallow: /main/search/disease/mental retardation autosomal recessive type 5
+Disallow: /main/search/disease/mental retardation autosomal recessive type 6
+Disallow: /main/search/disease/mental retardation autosomal recessive type 7
+Disallow: /main/search/disease/mental retardation syndromic X-linked Lubs type
+Disallow: /main/search/disease/mental retardation syndromic X-linked Nascimento-type
+Disallow: /main/search/disease/mental retardation syndromic X-linked Siderius type
+Disallow: /main/search/disease/mental retardation syndromic X-linked Stocco dos Santos type
+Disallow: /main/search/disease/mental retardation syndromic X-linked Turner type
+Disallow: /main/search/disease/mental retardation syndromic X-linked type 10
+Disallow: /main/search/disease/mental retardation syndromic X-linked type 13
+Disallow: /main/search/disease/mental retardation syndromic X-linked type 14
+Disallow: /main/search/disease/mental retardation syndromic X-linked type 28
+Disallow: /main/search/disease/mental retardation syndromic X-linked with hypotonic facies syndrome type 1
+Disallow: /main/search/disease/mental retardation syndromic X-linked ZDHHC9-related
+Disallow: /main/search/disease/mental retardation X-linked ARX-related
+Disallow: /main/search/disease/mental retardation X-linked associated with fragile site FRAXE
+Disallow: /main/search/disease/mental retardation X-linked OPHN1-related
+Disallow: /main/search/disease/mental retardation X-linked SYP-related
+Disallow: /main/search/disease/mental retardation X-linked type 1
+Disallow: /main/search/disease/mental retardation X-linked type 19
+Disallow: /main/search/disease/mental retardation X-linked type 21
+Disallow: /main/search/disease/mental retardation X-linked type 30
+Disallow: /main/search/disease/mental retardation X-linked type 41
+Disallow: /main/search/disease/mental retardation X-linked type 44
+Disallow: /main/search/disease/mental retardation X-linked type 45
+Disallow: /main/search/disease/mental retardation X-linked type 46
+Disallow: /main/search/disease/mental retardation X-linked type 58
+Disallow: /main/search/disease/mental retardation X-linked type 59
+Disallow: /main/search/disease/mental retardation X-linked type 63
+Disallow: /main/search/disease/mental retardation X-linked type 72
+Disallow: /main/search/disease/mental retardation X-linked type 88
+Disallow: /main/search/disease/mental retardation X-linked type 89
+Disallow: /main/search/disease/mental retardation X-linked type 90
+Disallow: /main/search/disease/mental retardation X-linked type 91
+Disallow: /main/search/disease/mental retardation X-linked type 92
+Disallow: /main/search/disease/mental retardation X-linked type 93
+Disallow: /main/search/disease/mental retardation X-linked type 94
+Disallow: /main/search/disease/mental retardation X-linked type 95
+Disallow: /main/search/disease/mental retardation X-linked with epilepsy
+Disallow: /main/search/disease/mental retardation X-linked with isolated growth hormone deficiency
+Disallow: /main/search/disease/mental retardation X-linked ZNF711-related
+Disallow: /main/search/disease/mental retardation-anterior maxillary protrusion-strabismus
+Disallow: /main/search/disease/mental retardation-aphasia-shuffling gait-adducted thumbs syndrome
+Disallow: /main/search/disease/mental retardation-truncal obesity-retinal dystrophy-micropenis
+Disallow: /main/search/disease/merosin-deficient congenital muscular dystrophy type 1A
+Disallow: /main/search/disease/mesothelioma malignant
+Disallow: /main/search/disease/metaphyseal anadysplasia type 1
+Disallow: /main/search/disease/metaphyseal anadysplasia type 2
+Disallow: /main/search/disease/microcephalic osteodysplastic primordial dwarfism type 2
+Disallow: /main/search/disease/microcephaly Amish type
+Disallow: /main/search/disease/microcephaly epilepsy and diabetes syndrome
+Disallow: /main/search/disease/microcephaly postnatal progressive with seizures and brain atrophy
+Disallow: /main/search/disease/microcephaly primary type 1
+Disallow: /main/search/disease/microcephaly primary type 2
+Disallow: /main/search/disease/microcephaly primary type 3
+Disallow: /main/search/disease/microcephaly primary type 4
+Disallow: /main/search/disease/microcephaly primary type 5
+Disallow: /main/search/disease/microcephaly primary type 6
+Disallow: /main/search/disease/microcephaly primary type 7
+Disallow: /main/search/disease/microcephaly with chorioretinopathy, autosomal recessive
+Disallow: /main/search/disease/microcephaly, primary, type 8
+Disallow: /main/search/disease/microphthalmia isolated type 2
+Disallow: /main/search/disease/microphthalmia isolated type 3
+Disallow: /main/search/disease/microphthalmia isolated type 4
+Disallow: /main/search/disease/microphthalmia isolated type 5
+Disallow: /main/search/disease/microphthalmia isolated type 6
+Disallow: /main/search/disease/microphthalmia isolated type 7
+Disallow: /main/search/disease/microphthalmia isolated with cataract type 2
+Disallow: /main/search/disease/microphthalmia isolated with cataract type 4
+Disallow: /main/search/disease/microphthalmia isolated with coloboma type 3
+Disallow: /main/search/disease/microphthalmia isolated with coloboma type 5
+Disallow: /main/search/disease/microphthalmia isolated with coloboma type 6
+Disallow: /main/search/disease/microphthalmia syndromic type 2
+Disallow: /main/search/disease/microphthalmia syndromic type 3
+Disallow: /main/search/disease/microphthalmia syndromic type 5
+Disallow: /main/search/disease/microphthalmia syndromic type 6
+Disallow: /main/search/disease/microphthalmia syndromic type 7
+Disallow: /main/search/disease/microphthalmia syndromic type 9
+Disallow: /main/search/disease/microphthalmia, isolated, with coloboma, type 7
+Disallow: /main/search/disease/microphthalmia, syndromic, type 11
+Disallow: /main/search/disease/microtia hearing impairment and cleft palate
+Disallow: /main/search/disease/microvascular complications of diabetes type 1
+Disallow: /main/search/disease/microvascular complications of diabetes type 3
+Disallow: /main/search/disease/microvascular complications of diabetes type 4
+Disallow: /main/search/disease/microvascular complications of diabetes type 5
+Disallow: /main/search/disease/microvascular complications of diabetes type 6
+Disallow: /main/search/disease/microvascular complications of diabetes type 7
+Disallow: /main/search/disease/migraine with or without aura type 13
+Disallow: /main/search/disease/mirror movements type 1
+Disallow: /main/search/disease/mirror movements type 2
+Disallow: /main/search/disease/mitochondrial complex V deficiency nuclear type 1
+Disallow: /main/search/disease/mitochondrial complex V deficiency nuclear type 2
+Disallow: /main/search/disease/mitochondrial complex V deficiency nuclear type 3
+Disallow: /main/search/disease/mitochondrial DNA depletion syndrome type 1
+Disallow: /main/search/disease/mitochondrial DNA depletion syndrome type 10
+Disallow: /main/search/disease/mitochondrial DNA depletion syndrome type 2
+Disallow: /main/search/disease/mitochondrial DNA depletion syndrome type 3
+Disallow: /main/search/disease/mitochondrial DNA depletion syndrome type 4A
+Disallow: /main/search/disease/mitochondrial DNA depletion syndrome type 4B
+Disallow: /main/search/disease/mitochondrial DNA depletion syndrome type 5
+Disallow: /main/search/disease/mitochondrial DNA depletion syndrome type 6
+Disallow: /main/search/disease/mitochondrial DNA depletion syndrome type 7
+Disallow: /main/search/disease/mitochondrial DNA depletion syndrome type 8A
+Disallow: /main/search/disease/mitochondrial DNA depletion syndrome type 8B
+Disallow: /main/search/disease/mitochondrial DNA depletion syndrome type 9
+Disallow: /main/search/disease/mitochondrial progressive myopathy with congenital cataract hearing loss and developmental delay
+Disallow: /main/search/disease/Miyoshi muscular dystrophy type 1
+Disallow: /main/search/disease/miyoshi muscular dystrophy type 3
+Disallow: /main/search/disease/mosaic variegated aneuploidy syndrome type 1
+Disallow: /main/search/disease/mosaic variegated aneuploidy syndrome type 2
+Disallow: /main/search/disease/Moyamoya disease type 2
+Disallow: /main/search/disease/Moyamoya disease type 5
+Disallow: /main/search/disease/MT-CYB contribute to Leber hereditary optic neuropathy
+Disallow: /main/search/disease/mucopolysaccharidosis type 1H
+Disallow: /main/search/disease/mucopolysaccharidosis type 1H/S
+Disallow: /main/search/disease/mucopolysaccharidosis type 1S
+Disallow: /main/search/disease/mucopolysaccharidosis type 2
+Disallow: /main/search/disease/mucopolysaccharidosis type 3A
+Disallow: /main/search/disease/mucopolysaccharidosis type 3B
+Disallow: /main/search/disease/mucopolysaccharidosis type 3C
+Disallow: /main/search/disease/mucopolysaccharidosis type 3D
+Disallow: /main/search/disease/mucopolysaccharidosis type 4A
+Disallow: /main/search/disease/mucopolysaccharidosis type 4B
+Disallow: /main/search/disease/mucopolysaccharidosis type 6
+Disallow: /main/search/disease/mucopolysaccharidosis type 7
+Disallow: /main/search/disease/mucopolysaccharidosis type 9
+Disallow: /main/search/disease/Muellerian aplasia
+Disallow: /main/search/disease/multiple congenital anomalies-hypotonia-seizures syndrome type 1
+Disallow: /main/search/disease/multiple congenital anomalies-hypotonia-seizures syndrome type 2
+Disallow: /main/search/disease/multiple endocrine neoplasia type 4
+Disallow: /main/search/disease/multiple epiphyseal dysplasia type 1
+Disallow: /main/search/disease/multiple epiphyseal dysplasia type 2
+Disallow: /main/search/disease/multiple epiphyseal dysplasia type 3
+Disallow: /main/search/disease/multiple epiphyseal dysplasia type 4
+Disallow: /main/search/disease/multiple epiphyseal dysplasia type 5
+Disallow: /main/search/disease/multiple epiphyseal dysplasia type 6
+Disallow: /main/search/disease/multiple familial trichoepithelioma type 1
+Disallow: /main/search/disease/multiple mitochondrial dysfunctions syndrome type 1
+Disallow: /main/search/disease/multiple mitochondrial dysfunctions syndrome type 2
+Disallow: /main/search/disease/multiple neoplasia type 2A
+Disallow: /main/search/disease/multiple neoplasia type 2B
+Disallow: /main/search/disease/multiple sclerosis type 3
+Disallow: /main/search/disease/multiple synostoses syndrome type 1
+Disallow: /main/search/disease/multiple synostoses syndrome type 2
+Disallow: /main/search/disease/multiple synostoses syndrome type 3
+Disallow: /main/search/disease/muscle glycogen storage disease type 0
+Disallow: /main/search/disease/muscular dystrophy-dystroglycanopathy congenital with brain and eye anomalies type A1
+Disallow: /main/search/disease/muscular dystrophy-dystroglycanopathy congenital with brain and eye anomalies type A2
+Disallow: /main/search/disease/muscular dystrophy-dystroglycanopathy congenital with brain and eye anomalies type A3
+Disallow: /main/search/disease/muscular dystrophy-dystroglycanopathy congenital with brain and eye anomalies type A4
+Disallow: /main/search/disease/muscular dystrophy-dystroglycanopathy congenital with brain and eye anomalies type A5
+Disallow: /main/search/disease/muscular dystrophy-dystroglycanopathy congenital with brain and eye anomalies type A6
+Disallow: /main/search/disease/muscular dystrophy-dystroglycanopathy congenital with brain and eye anomalies type A7
+Disallow: /main/search/disease/muscular dystrophy-dystroglycanopathy congenital with mental retardation type B1
+Disallow: /main/search/disease/muscular dystrophy-dystroglycanopathy congenital with mental retardation type B2
+Disallow: /main/search/disease/muscular dystrophy-dystroglycanopathy congenital with mental retardation type B3
+Disallow: /main/search/disease/muscular dystrophy-dystroglycanopathy congenital with mental retardation type B6
+Disallow: /main/search/disease/muscular dystrophy-dystroglycanopathy congenital with or without mental retardation type B5
+Disallow: /main/search/disease/muscular dystrophy-dystroglycanopathy congenital without mental retardation type B4
+Disallow: /main/search/disease/muscular dystrophy-dystroglycanopathy limb-girdle type C1
+Disallow: /main/search/disease/muscular dystrophy-dystroglycanopathy limb-girdle type C2
+Disallow: /main/search/disease/muscular dystrophy-dystroglycanopathy limb-girdle type C3
+Disallow: /main/search/disease/muscular dystrophy-dystroglycanopathy limb-girdle type C4
+Disallow: /main/search/disease/muscular dystrophy-dystroglycanopathy limb-girdle type C5
+Disallow: /main/search/disease/muscular dystrophy-dystroglycanopathy limb-girdle type C7
+Disallow: /main/search/disease/myasthenia, congenital, with tubular aggregates, type 1
+Disallow: /main/search/disease/mycobacteriosis atypical X-linked type 2
+Disallow: /main/search/disease/myocardial infarction type 1
+Disallow: /main/search/disease/myokymia isolated type 1
+Disallow: /main/search/disease/myopathy distal Tateyama type
+Disallow: /main/search/disease/myopathy distal type 1
+Disallow: /main/search/disease/myopathy distal type 2
+Disallow: /main/search/disease/myopathy distal type 4
+Disallow: /main/search/disease/myopathy myofibrillar fatal infantile hypertonic alpha-B crystallin-related
+Disallow: /main/search/disease/myopathy myofibrillar type 1
+Disallow: /main/search/disease/myopathy myofibrillar type 2
+Disallow: /main/search/disease/myopathy myofibrillar type 3
+Disallow: /main/search/disease/myopathy myofibrillar type 4
+Disallow: /main/search/disease/myopathy myofibrillar type 5
+Disallow: /main/search/disease/myopathy myofibrillar type 6
+Disallow: /main/search/disease/myopathy myosin storage
+Disallow: /main/search/disease/myopathy with lactic acidosis and sideroblastic anemia type 1
+Disallow: /main/search/disease/myopathy with lactic acidosis and sideroblastic anemia type 2
+Disallow: /main/search/disease/myopia high with cataract and vitreoretinal degeneration
+Disallow: /main/search/disease/myopia type 21
+Disallow: /main/search/disease/nail disorder non-syndromic congenital type 10
+Disallow: /main/search/disease/nail disorder non-syndromic congenital type 3
+Disallow: /main/search/disease/nail disorder non-syndromic congenital type 4
+Disallow: /main/search/disease/nail disorder non-syndromic congenital type 8
+Disallow: /main/search/disease/narcolepsy type 1
+Disallow: /main/search/disease/narcolepsy type 7
+Disallow: /main/search/disease/nemaline myopathy type 1
+Disallow: /main/search/disease/nemaline myopathy type 2
+Disallow: /main/search/disease/nemaline myopathy type 3
+Disallow: /main/search/disease/nemaline myopathy type 4
+Disallow: /main/search/disease/nemaline myopathy type 5
+Disallow: /main/search/disease/nemaline myopathy type 6
+Disallow: /main/search/disease/nemaline myopathy type 7
+Disallow: /main/search/disease/neonatal intrahepatic cholestasis due to citrin deficiency
+Disallow: /main/search/disease/nephrolithiasis type 1
+Disallow: /main/search/disease/nephrolithiasis type 2
+Disallow: /main/search/disease/nephronophthisis type 1
+Disallow: /main/search/disease/nephronophthisis type 11
+Disallow: /main/search/disease/nephronophthisis type 12
+Disallow: /main/search/disease/nephronophthisis type 13
+Disallow: /main/search/disease/nephronophthisis type 2
+Disallow: /main/search/disease/nephronophthisis type 3
+Disallow: /main/search/disease/nephronophthisis type 4
+Disallow: /main/search/disease/nephronophthisis type 7
+Disallow: /main/search/disease/nephronophthisis type 9
+Disallow: /main/search/disease/nephronophthisis-like nephropathy type 1
+Disallow: /main/search/disease/nephrotic syndrome type 1
+Disallow: /main/search/disease/nephrotic syndrome type 2
+Disallow: /main/search/disease/nephrotic syndrome type 3
+Disallow: /main/search/disease/nephrotic syndrome type 4
+Disallow: /main/search/disease/nephrotic syndrome type 5 with or without ocular abnormalities
+Disallow: /main/search/disease/nephrotic syndrome type 6
+Disallow: /main/search/disease/neuroblastoma type 1
+Disallow: /main/search/disease/neuroblastoma type 2
+Disallow: /main/search/disease/neuroblastoma type 3
+Disallow: /main/search/disease/neurodegeneration with brain iron accumulation type 1
+Disallow: /main/search/disease/neurodegeneration with brain iron accumulation type 2A
+Disallow: /main/search/disease/neurodegeneration with brain iron accumulation type 2B
+Disallow: /main/search/disease/neurodegeneration with brain iron accumulation type 3
+Disallow: /main/search/disease/neurodegeneration with brain iron accumulation type 4
+Disallow: /main/search/disease/neurofibromatosis type 1
+Disallow: /main/search/disease/neurofibromatosis type 1-like syndrome
+Disallow: /main/search/disease/neurogenic muscle weakness, ataxia, and retinitis pigmentosa
+Disallow: /main/search/disease/neuronal ceroid lipofuscinosis type 1
+Disallow: /main/search/disease/neuronal ceroid lipofuscinosis type 10
+Disallow: /main/search/disease/neuronal ceroid lipofuscinosis type 11
+Disallow: /main/search/disease/neuronal ceroid lipofuscinosis type 2
+Disallow: /main/search/disease/neuronal ceroid lipofuscinosis type 3
+Disallow: /main/search/disease/neuronal ceroid lipofuscinosis type 4A
+Disallow: /main/search/disease/neuronal ceroid lipofuscinosis type 4B
+Disallow: /main/search/disease/neuronal ceroid lipofuscinosis type 5
+Disallow: /main/search/disease/neuronal ceroid lipofuscinosis type 6
+Disallow: /main/search/disease/neuronal ceroid lipofuscinosis type 7
+Disallow: /main/search/disease/neuronal ceroid lipofuscinosis type 8
+Disallow: /main/search/disease/neuronal ceroid lipofuscinosis type 8 Northern epilepsy variant
+Disallow: /main/search/disease/neutropenia severe congenital autosomal dominant type 1
+Disallow: /main/search/disease/neutropenia severe congenital autosomal dominant type 2
+Disallow: /main/search/disease/neutropenia severe congenital autosomal recessive type 3
+Disallow: /main/search/disease/neutropenia severe congenital autosomal recessive type 4
+Disallow: /main/search/disease/Niemann-Pick disease type A
+Disallow: /main/search/disease/Niemann-Pick disease type B
+Disallow: /main/search/disease/Niemann-Pick disease type C1
+Disallow: /main/search/disease/Niemann-Pick disease type C2
+Disallow: /main/search/disease/nocturnal frontal lobe epilepsy type 1
+Disallow: /main/search/disease/nocturnal frontal lobe epilepsy type 3
+Disallow: /main/search/disease/nocturnal frontal lobe epilepsy type 4
+Disallow: /main/search/disease/non-alcoholic fatty liver disease type 1
+Disallow: /main/search/disease/non-insulin-dependent diabetes mellitus
+Disallow: /main/search/disease/non-syndromic orofacial cleft type 10
+Disallow: /main/search/disease/non-syndromic orofacial cleft type 11
+Disallow: /main/search/disease/non-syndromic orofacial cleft type 5
+Disallow: /main/search/disease/non-syndromic orofacial cleft type 6
+Disallow: /main/search/disease/non-syndromic orofacial cleft type 7
+Disallow: /main/search/disease/non-syndromic orofacial cleft type 8
+Disallow: /main/search/disease/non-type I cystinuria
+Disallow: /main/search/disease/noninsulin-dependent diabetes mellitus
+Disallow: /main/search/disease/Noonan syndrome type 1
+Disallow: /main/search/disease/Noonan syndrome type 3
+Disallow: /main/search/disease/Noonan syndrome type 4
+Disallow: /main/search/disease/Noonan syndrome type 5
+Disallow: /main/search/disease/Noonan syndrome type 6
+Disallow: /main/search/disease/Noonan syndrome type 7
+Disallow: /main/search/disease/normal pressure glaucoma
+Disallow: /main/search/disease/nystagmus congenital X-linked type 1
+Disallow: /main/search/disease/Nystagmus congenital X-linked type 6
+Disallow: /main/search/disease/obesity, glucose intolerance, and type II diabetes non-insulin dependent
+Disallow: /main/search/disease/omodysplasia type 1
+Disallow: /main/search/disease/optic atrophy type 1
+Disallow: /main/search/disease/optic atrophy type 3
+Disallow: /main/search/disease/optic atrophy type 7
+Disallow: /main/search/disease/oral-facial-digital syndrome type 1
+Disallow: /main/search/disease/orotic aciduria type 1
+Disallow: /main/search/disease/osteoarthritis type 2
+Disallow: /main/search/disease/osteoarthritis type 3
+Disallow: /main/search/disease/osteoarthritis type 5
+Disallow: /main/search/disease/osteogenesis imperfecta
+Disallow: /main/search/disease/osteogenesis imperfecta type 1
+Disallow: /main/search/disease/osteogenesis imperfecta type 10
+Disallow: /main/search/disease/osteogenesis imperfecta type 11
+Disallow: /main/search/disease/osteogenesis imperfecta type 12
+Disallow: /main/search/disease/osteogenesis imperfecta type 2
+Disallow: /main/search/disease/osteogenesis imperfecta type 3
+Disallow: /main/search/disease/osteogenesis imperfecta type 4
+Disallow: /main/search/disease/osteogenesis imperfecta type 6
+Disallow: /main/search/disease/osteogenesis imperfecta type 7
+Disallow: /main/search/disease/osteogenesis imperfecta type 8
+Disallow: /main/search/disease/osteogenesis imperfecta type 9
+Disallow: /main/search/disease/osteopetrosis autosomal dominant type 1
+Disallow: /main/search/disease/osteopetrosis autosomal dominant type 2
+Disallow: /main/search/disease/osteopetrosis autosomal recessive type 1
+Disallow: /main/search/disease/osteopetrosis autosomal recessive type 2
+Disallow: /main/search/disease/osteopetrosis autosomal recessive type 3
+Disallow: /main/search/disease/osteopetrosis autosomal recessive type 4
+Disallow: /main/search/disease/osteopetrosis autosomal recessive type 5
+Disallow: /main/search/disease/osteopetrosis autosomal recessive type 6
+Disallow: /main/search/disease/osteopetrosis autosomal recessive type 7
+Disallow: /main/search/disease/otopalatodigital syndrome type 1
+Disallow: /main/search/disease/otopalatodigital syndrome type 2
+Disallow: /main/search/disease/ovarian dysgenesis type 1
+Disallow: /main/search/disease/ovarian dysgenesis type 2
+Disallow: /main/search/disease/ovarian dysgenesis type 3
+Disallow: /main/search/disease/pachyonychia congenita type 1
+Disallow: /main/search/disease/pachyonychia congenita type 2
+Disallow: /main/search/disease/Paget disease of bone type 2
+Disallow: /main/search/disease/palmoplantar keratoderma epidermolytic
+Disallow: /main/search/disease/palmoplantar keratoderma non-epidermolytic
+Disallow: /main/search/disease/palmoplantar keratoderma non-epidermolytic focal
+Disallow: /main/search/disease/palmoplantar keratoderma striate type 1
+Disallow: /main/search/disease/palmoplantar keratoderma striate type 2
+Disallow: /main/search/disease/palmoplantar keratoderma striate type 3
+Disallow: /main/search/disease/palmoplantar keratoderma with deafness
+Disallow: /main/search/disease/palmoplantar keratoderma with squamous cell carcinoma of skin and sex reversal
+Disallow: /main/search/disease/pancreatic cancer type 1
+Disallow: /main/search/disease/pancreatic cancer type 2
+Disallow: /main/search/disease/pancreatic cancer type 3
+Disallow: /main/search/disease/pancreatic cancer type 4
+Disallow: /main/search/disease/paragangliomas type 1
+Disallow: /main/search/disease/paragangliomas type 2
+Disallow: /main/search/disease/paragangliomas type 3
+Disallow: /main/search/disease/paragangliomas type 4
+Disallow: /main/search/disease/paragangliomas type 5
+Disallow: /main/search/disease/Parkinson disease type 1
+Disallow: /main/search/disease/Parkinson disease type 11
+Disallow: /main/search/disease/Parkinson disease type 13
+Disallow: /main/search/disease/Parkinson disease type 14
+Disallow: /main/search/disease/Parkinson disease type 15
+Disallow: /main/search/disease/Parkinson disease type 17
+Disallow: /main/search/disease/Parkinson disease type 18
+Disallow: /main/search/disease/Parkinson disease type 2
+Disallow: /main/search/disease/Parkinson disease type 4
+Disallow: /main/search/disease/Parkinson disease type 5
+Disallow: /main/search/disease/Parkinson disease type 6
+Disallow: /main/search/disease/Parkinson disease type 7
+Disallow: /main/search/disease/Parkinson disease type 8
+Disallow: /main/search/disease/partial agenesis of the corpus callosum
+Disallow: /main/search/disease/partial colorblindness deutan series
+Disallow: /main/search/disease/partial colorblindness deutan series
+Disallow: /main/search/disease/partial colorblindness protan series
+Disallow: /main/search/disease/peeling skin syndrome type A
+Disallow: /main/search/disease/periodic paralysis hypokalemic type 1
+Disallow: /main/search/disease/periodic paralysis hypokalemic type 2
+Disallow: /main/search/disease/peripheral demyelinating neuropathy, central dysmyelinating leukodystrophy, Waardenburg syndrome, and Hirschsprung disease
+Disallow: /main/search/disease/periventricular nodular heterotopia type 1
+Disallow: /main/search/disease/periventricular nodular heterotopia type 4
+Disallow: /main/search/disease/persistent Muellerian duct syndrome type 1
+Disallow: /main/search/disease/persistent Muellerian duct syndrome type 2
+Disallow: /main/search/disease/Peters-plus syndrome
+Disallow: /main/search/disease/photoreceptor dysplasia
+Disallow: /main/search/disease/PIK3CA may underlie hepatocellular carcinoma
+Disallow: /main/search/disease/pileptic encephalopathy, early infantile, type 8
+Disallow: /main/search/disease/pituitary hormone deficiency combined type 1
+Disallow: /main/search/disease/pituitary hormone deficiency combined type 2
+Disallow: /main/search/disease/pituitary hormone deficiency combined type 3
+Disallow: /main/search/disease/pituitary hormone deficiency combined type 4
+Disallow: /main/search/disease/pituitary hormone deficiency combined type 5
+Disallow: /main/search/disease/pituitary hormone deficiency combined type 6
+Disallow: /main/search/disease/polycystic kidney disease autosomal recessive
+Disallow: /main/search/disease/polydactyly postaxial type A1
+Disallow: /main/search/disease/polydactyly postaxial type B polydactyly
+Disallow: /main/search/disease/polydactyly preaxial type 4
+Disallow: /main/search/disease/polymicrogyria with optic nerve hypoplasia
+Disallow: /main/search/disease/polyneuropathy hearing loss ataxia retinitis pigmentosa and cataract
+Disallow: /main/search/disease/polyposis syndrome, mixed hereditary type 1
+Disallow: /main/search/disease/pontocerebellar hypoplasia type 1A
+Disallow: /main/search/disease/pontocerebellar hypoplasia type 1B
+Disallow: /main/search/disease/pontocerebellar hypoplasia type 2A
+Disallow: /main/search/disease/pontocerebellar hypoplasia type 2B
+Disallow: /main/search/disease/pontocerebellar hypoplasia type 2C
+Disallow: /main/search/disease/pontocerebellar hypoplasia type 2D
+Disallow: /main/search/disease/pontocerebellar hypoplasia type 4
+Disallow: /main/search/disease/pontocerebellar hypoplasia type 6
+Disallow: /main/search/disease/popliteal pterygium syndrome
+Disallow: /main/search/disease/porencephaly type 2
+Disallow: /main/search/disease/posterior polymorphous corneal dystrophy type 1
+Disallow: /main/search/disease/posterior polymorphous corneal dystrophy type 2
+Disallow: /main/search/disease/posterior polymorphous corneal dystrophy type 3
+Disallow: /main/search/disease/preaxial polydactyly type 2
+Disallow: /main/search/disease/pregnancy loss, recurrent, type 1
+Disallow: /main/search/disease/pregnancy loss, recurrent, type 2
+Disallow: /main/search/disease/pregnancy loss, recurrent, type 3
+Disallow: /main/search/disease/premature ovarian failure syndrome type 1
+Disallow: /main/search/disease/premature ovarian failure type 2A
+Disallow: /main/search/disease/premature ovarian failure type 2B
+Disallow: /main/search/disease/premature ovarian failure type 3
+Disallow: /main/search/disease/premature ovarian failure type 4
+Disallow: /main/search/disease/premature ovarian failure type 5
+Disallow: /main/search/disease/premature ovarian failure type 6
+Disallow: /main/search/disease/premature ovarian failure type 7
+Disallow: /main/search/disease/primary ciliary dyskinesia type 1
+Disallow: /main/search/disease/primary ciliary dyskinesia type 10
+Disallow: /main/search/disease/primary ciliary dyskinesia type 11
+Disallow: /main/search/disease/primary ciliary dyskinesia type 12
+Disallow: /main/search/disease/primary ciliary dyskinesia type 13
+Disallow: /main/search/disease/primary ciliary dyskinesia type 14
+Disallow: /main/search/disease/primary ciliary dyskinesia type 15
+Disallow: /main/search/disease/primary ciliary dyskinesia type 16
+Disallow: /main/search/disease/primary ciliary dyskinesia type 17
+Disallow: /main/search/disease/primary ciliary dyskinesia type 2
+Disallow: /main/search/disease/primary ciliary dyskinesia type 3
+Disallow: /main/search/disease/primary ciliary dyskinesia type 6
+Disallow: /main/search/disease/primary ciliary dyskinesia type 7
+Disallow: /main/search/disease/primary ciliary dyskinesia type 9
+Disallow: /main/search/disease/primary congenital glaucoma type 3A
+Disallow: /main/search/disease/primary congenital glaucoma type 3D
+Disallow: /main/search/disease/primary open angle glaucoma
+Disallow: /main/search/disease/primary open angle glaucoma type 1A
+Disallow: /main/search/disease/primary open angle glaucoma type 1E
+Disallow: /main/search/disease/primary open angle glaucoma type 1G
+Disallow: /main/search/disease/primary open angle glaucoma type 1O
+Disallow: /main/search/disease/primary pigmented nodular adrenocortical disease type 1
+Disallow: /main/search/disease/primary pigmented nodular adrenocortical disease type 2
+Disallow: /main/search/disease/primary pigmented nodular adrenocortical disease type 3
+Disallow: /main/search/disease/progressive external ophthalmoplegia with mitochondrial DNA deletions autosomal dominant type 1
+Disallow: /main/search/disease/progressive external ophthalmoplegia with mitochondrial DNA deletions autosomal dominant type 2
+Disallow: /main/search/disease/progressive external ophthalmoplegia with mitochondrial DNA deletions autosomal dominant type 3
+Disallow: /main/search/disease/progressive external ophthalmoplegia with mitochondrial DNA deletions autosomal dominant type 4
+Disallow: /main/search/disease/progressive external ophthalmoplegia with mitochondrial DNA deletions autosomal dominant type 5
+Disallow: /main/search/disease/progressive familial heart block type 1A
+Disallow: /main/search/disease/progressive familial heart block type 1B
+Disallow: /main/search/disease/progressive familial intrahepatic cholestasis type 1
+Disallow: /main/search/disease/progressive familial intrahepatic cholestasis type 2
+Disallow: /main/search/disease/progressive familial intrahepatic cholestasis type 3
+Disallow: /main/search/disease/progressive myoclonic epilepsy type 1
+Disallow: /main/search/disease/progressive myoclonic epilepsy type 1B
+Disallow: /main/search/disease/progressive myoclonic epilepsy type 2
+Disallow: /main/search/disease/progressive myoclonic epilepsy type 4 with or without renal failure
+Disallow: /main/search/disease/progressive myoclonic epilepsy type 5
+Disallow: /main/search/disease/progressive myoclonic epilepsy type 6
+Disallow: /main/search/disease/progressive supranuclear palsy type 1
+Disallow: /main/search/disease/prostate cancer hereditary type 1
+Disallow: /main/search/disease/prostate cancer hereditary type 11
+Disallow: /main/search/disease/prostate cancer hereditary type 12
+Disallow: /main/search/disease/prostate cancer hereditary type 13
+Disallow: /main/search/disease/prostate cancer, hereditary, type 2
+Disallow: /main/search/disease/proximal renal tubular acidosis with ocular abnormalities
+Disallow: /main/search/disease/pseudohypoaldosteronism type 2B
+Disallow: /main/search/disease/pseudohypoaldosteronism type 2C
+Disallow: /main/search/disease/Pseudohypoaldosteronism type 2D
+Disallow: /main/search/disease/Pseudohypoaldosteronism type 2E
+Disallow: /main/search/disease/pseudohypoparathyroidism type 1A
+Disallow: /main/search/disease/pseudohypoparathyroidism type 1B
+Disallow: /main/search/disease/pseudohypoparathyroidism type 1C
+Disallow: /main/search/disease/psoriasis type 1
+Disallow: /main/search/disease/psoriasis type 11
+Disallow: /main/search/disease/psoriasis type 13
+Disallow: /main/search/disease/psoriasis type 2
+Disallow: /main/search/disease/psoriasis type 7
+Disallow: /main/search/disease/PTPRC are involved in multiple sclerosis susceptibility
+Disallow: /main/search/disease/pulmonary fibrosis idiopathic
+Disallow: /main/search/disease/pulmonary fibrosis, and/or bone marrow failure, telomere-related, type 1
+Disallow: /main/search/disease/pulmonary surfactant metabolism dysfunction type 1
+Disallow: /main/search/disease/pulmonary surfactant metabolism dysfunction type 2
+Disallow: /main/search/disease/pulmonary surfactant metabolism dysfunction type 3
+Disallow: /main/search/disease/pulmonary surfactant metabolism dysfunction type 4
+Disallow: /main/search/disease/pulmonary surfactant metabolism dysfunction type 5
+Disallow: /main/search/disease/RASGRP1 may contribute to systemic lupus erythematosus
+Disallow: /main/search/disease/recessive X-linked hemophilia B
+Disallow: /main/search/disease/recurrent isolated invasive pneumococcal disease type 1
+Disallow: /main/search/disease/recurrent isolated invasive pneumococcal disease type 2
+Disallow: /main/search/disease/Reis-Buecklers corneal dystrophy
+Disallow: /main/search/disease/resistance to systemic lupus erythematosus type 1
+Disallow: /main/search/disease/restless legs syndrome type 6
+Disallow: /main/search/disease/restless legs syndrome type 7
+Disallow: /main/search/disease/reticular congenital ichthyosiform erythroderma
+Disallow: /main/search/disease/retinal macular dystrophy type 2
+Disallow: /main/search/disease/retinal non-attachment congenital non-syndromic
+Disallow: /main/search/disease/retinitis pigmentosa type 1
+Disallow: /main/search/disease/retinitis pigmentosa type 10
+Disallow: /main/search/disease/retinitis pigmentosa type 11
+Disallow: /main/search/disease/retinitis pigmentosa type 12
+Disallow: /main/search/disease/retinitis pigmentosa type 13
+Disallow: /main/search/disease/retinitis pigmentosa type 14
+Disallow: /main/search/disease/retinitis pigmentosa type 17
+Disallow: /main/search/disease/retinitis pigmentosa type 18
+Disallow: /main/search/disease/retinitis pigmentosa type 19
+Disallow: /main/search/disease/retinitis pigmentosa type 2
+Disallow: /main/search/disease/retinitis pigmentosa type 20
+Disallow: /main/search/disease/retinitis pigmentosa type 25
+Disallow: /main/search/disease/retinitis pigmentosa type 26
+Disallow: /main/search/disease/retinitis pigmentosa type 27
+Disallow: /main/search/disease/retinitis pigmentosa type 28
+Disallow: /main/search/disease/retinitis pigmentosa type 3
+Disallow: /main/search/disease/retinitis pigmentosa type 30
+Disallow: /main/search/disease/retinitis pigmentosa type 31
+Disallow: /main/search/disease/retinitis pigmentosa type 33
+Disallow: /main/search/disease/retinitis pigmentosa type 35
+Disallow: /main/search/disease/retinitis pigmentosa type 36
+Disallow: /main/search/disease/retinitis pigmentosa type 37
+Disallow: /main/search/disease/retinitis pigmentosa type 38
+Disallow: /main/search/disease/retinitis pigmentosa type 39
+Disallow: /main/search/disease/retinitis pigmentosa type 4
+Disallow: /main/search/disease/retinitis pigmentosa type 40
+Disallow: /main/search/disease/retinitis pigmentosa type 41
+Disallow: /main/search/disease/retinitis pigmentosa type 42
+Disallow: /main/search/disease/retinitis pigmentosa type 43
+Disallow: /main/search/disease/retinitis pigmentosa type 44
+Disallow: /main/search/disease/retinitis pigmentosa type 45
+Disallow: /main/search/disease/retinitis pigmentosa type 46
+Disallow: /main/search/disease/retinitis pigmentosa type 47
+Disallow: /main/search/disease/retinitis pigmentosa type 48
+Disallow: /main/search/disease/retinitis pigmentosa type 49
+Disallow: /main/search/disease/retinitis pigmentosa type 50
+Disallow: /main/search/disease/retinitis pigmentosa type 51
+Disallow: /main/search/disease/retinitis pigmentosa type 53
+Disallow: /main/search/disease/retinitis pigmentosa type 54
+Disallow: /main/search/disease/retinitis pigmentosa type 55
+Disallow: /main/search/disease/retinitis pigmentosa type 56
+Disallow: /main/search/disease/retinitis pigmentosa type 57
+Disallow: /main/search/disease/retinitis pigmentosa type 58
+Disallow: /main/search/disease/retinitis pigmentosa type 59
+Disallow: /main/search/disease/retinitis pigmentosa type 60
+Disallow: /main/search/disease/retinitis pigmentosa type 61
+Disallow: /main/search/disease/retinitis pigmentosa type 62
+Disallow: /main/search/disease/retinitis pigmentosa type 64
+Disallow: /main/search/disease/retinitis pigmentosa type 7
+Disallow: /main/search/disease/retinitis pigmentosa type 9
+Disallow: /main/search/disease/retinoschisis juvenile X-linked type 1
+Disallow: /main/search/disease/rhabdoid tumor predisposition syndrome type 1
+Disallow: /main/search/disease/rhabdoid tumor predisposition syndrome type 2
+Disallow: /main/search/disease/rhabdomyosarcoma type 1
+Disallow: /main/search/disease/rhabdomyosarcoma type 2
+Disallow: /main/search/disease/rhizomelic chondrodysplasia punctata type 1
+Disallow: /main/search/disease/rhizomelic chondrodysplasia punctata type 2
+Disallow: /main/search/disease/rhizomelic chondrodysplasia punctata type 3
+Disallow: /main/search/disease/rickets hypophosphatemic autosomal recessive type 1
+Disallow: /main/search/disease/rickets hypophosphatemic autosomal recessive type 2
+Disallow: /main/search/disease/rickets vitamin D-dependent type 1A
+Disallow: /main/search/disease/rickets vitamin D-dependent type 1B
+Disallow: /main/search/disease/rickets vitamin D-dependent type 2A
+Disallow: /main/search/disease/ROM1 may cause retinitis pigmentosa
+Disallow: /main/search/disease/rostrocaudal muscular dystrophy
+Disallow: /main/search/disease/Rubinstein-Taybi syndrome type 1
+Disallow: /main/search/disease/Rubinstein-Taybi syndrome type 2
+Disallow: /main/search/disease/salivary gland pleiomorphic adenomas
+Disallow: /main/search/disease/sarcoidosis type 1
+Disallow: /main/search/disease/sarcoidosis type 2
+Disallow: /main/search/disease/schizophrenia type 15
+Disallow: /main/search/disease/schizophrenia type 2
+Disallow: /main/search/disease/schizophrenia type 4
+Disallow: /main/search/disease/schizophrenia type 9
+Disallow: /main/search/disease/sclerosteosis type 1
+Disallow: /main/search/disease/sclerosteosis type 2
+Disallow: /main/search/disease/Seborrhea-like dermatitis with psoriasiform
+Disallow: /main/search/disease/Seckel syndrome type 1
+Disallow: /main/search/disease/Seckel syndrome type 2
+Disallow: /main/search/disease/Seckel syndrome type 4
+Disallow: /main/search/disease/Seckel syndrome type 5
+Disallow: /main/search/disease/Seckel syndrome type 6
+Disallow: /main/search/disease/seizures, benign familial infantile type 2
+Disallow: /main/search/disease/seizures, benign familial infantile type 3
+Disallow: /main/search/disease/Senior-Loken syndrome type 1
+Disallow: /main/search/disease/Senior-Loken syndrome type 4
+Disallow: /main/search/disease/Senior-Loken syndrome type 5
+Disallow: /main/search/disease/Senior-Loken syndrome type 6
+Disallow: /main/search/disease/Senior-Loken syndrome type 7
+Disallow: /main/search/disease/short QT syndrome type 1
+Disallow: /main/search/disease/short QT syndrome type 2
+Disallow: /main/search/disease/short QT syndrome type 3
+Disallow: /main/search/disease/short rib-polydactyly syndrome type 3
+Disallow: /main/search/disease/short rib-polydactyly syndrome type 5
+Disallow: /main/search/disease/sick sinus syndrome type 1
+Disallow: /main/search/disease/sick sinus syndrome type 2
+Disallow: /main/search/disease/sick sinus syndrome type 3
+Disallow: /main/search/disease/Simpson-Golabi-Behmel syndrome type 1
+Disallow: /main/search/disease/Simpson-Golabi-Behmel syndrome type 2
+Disallow: /main/search/disease/skeletal defects genital hypoplasia and mental retardation
+Disallow: /main/search/disease/SMAD7 influence colorectal cancer type 3
+Disallow: /main/search/disease/some T-cell acute lymphoblastic leukemia
+Disallow: /main/search/disease/some T-cell acute lymphoblastic leukemia
+Disallow: /main/search/disease/some T-cell acute lymphoblastic leukemias
+Disallow: /main/search/disease/some T-cell acute lymphoblastic leukemias
+Disallow: /main/search/disease/Sotos syndrome type 1
+Disallow: /main/search/disease/spastic ataxia autosomal recessive type 4
+Disallow: /main/search/disease/spastic ataxia autosomal recessive type 5
+Disallow: /main/search/disease/spastic paraplegia autosomal dominant type 10
+Disallow: /main/search/disease/spastic paraplegia autosomal dominant type 12
+Disallow: /main/search/disease/spastic paraplegia autosomal dominant type 13
+Disallow: /main/search/disease/spastic paraplegia autosomal dominant type 3
+Disallow: /main/search/disease/spastic paraplegia autosomal dominant type 31
+Disallow: /main/search/disease/spastic paraplegia autosomal dominant type 33
+Disallow: /main/search/disease/spastic paraplegia autosomal dominant type 4
+Disallow: /main/search/disease/spastic paraplegia autosomal dominant type 42
+Disallow: /main/search/disease/spastic paraplegia autosomal dominant type 6
+Disallow: /main/search/disease/spastic paraplegia autosomal dominant type 8
+Disallow: /main/search/disease/spastic paraplegia autosomal recessive type 11
+Disallow: /main/search/disease/spastic paraplegia autosomal recessive type 15
+Disallow: /main/search/disease/spastic paraplegia autosomal recessive type 18
+Disallow: /main/search/disease/spastic paraplegia autosomal recessive type 20
+Disallow: /main/search/disease/spastic paraplegia autosomal recessive type 21
+Disallow: /main/search/disease/spastic paraplegia autosomal recessive type 30
+Disallow: /main/search/disease/spastic paraplegia autosomal recessive type 35
+Disallow: /main/search/disease/spastic paraplegia autosomal recessive type 39
+Disallow: /main/search/disease/spastic paraplegia autosomal recessive type 44
+Disallow: /main/search/disease/spastic paraplegia autosomal recessive type 48
+Disallow: /main/search/disease/spastic paraplegia autosomal recessive type 5A
+Disallow: /main/search/disease/spastic paraplegia autosomal recessive type 7
+Disallow: /main/search/disease/spastic paraplegia type 17
+Disallow: /main/search/disease/spastic paraplegia X-linked type 1
+Disallow: /main/search/disease/spastic paraplegia X-linked type 2
+Disallow: /main/search/disease/spermatogenic failure type 4
+Disallow: /main/search/disease/spermatogenic failure type 5
+Disallow: /main/search/disease/spermatogenic failure type 6
+Disallow: /main/search/disease/spermatogenic failure type 7
+Disallow: /main/search/disease/spermatogenic failure type 8
+Disallow: /main/search/disease/spermatogenic failure type 9
+Disallow: /main/search/disease/spermatogenic failure Y-linked type 2
+Disallow: /main/search/disease/spherocytosis type 1
+Disallow: /main/search/disease/spherocytosis type 2
+Disallow: /main/search/disease/spherocytosis type 3
+Disallow: /main/search/disease/spherocytosis type 4
+Disallow: /main/search/disease/spherocytosis type 5
+Disallow: /main/search/disease/spinal and bulbar muscular atrophy X-linked type 1
+Disallow: /main/search/disease/spinal muscular atrophy autosomal recessive type 1
+Disallow: /main/search/disease/spinal muscular atrophy autosomal recessive type 2
+Disallow: /main/search/disease/spinal muscular atrophy autosomal recessive type 3
+Disallow: /main/search/disease/spinal muscular atrophy autosomal recessive type 4
+Disallow: /main/search/disease/spinal muscular atrophy proximal adult autosomal dominant
+Disallow: /main/search/disease/spinal muscular atrophy X-linked type 2
+Disallow: /main/search/disease/spinocerebellar ataxia autosomal recessive type 1
+Disallow: /main/search/disease/spinocerebellar ataxia autosomal recessive type 10
+Disallow: /main/search/disease/spinocerebellar ataxia autosomal recessive type 11
+Disallow: /main/search/disease/spinocerebellar ataxia autosomal recessive type 5
+Disallow: /main/search/disease/spinocerebellar ataxia autosomal recessive type 8
+Disallow: /main/search/disease/spinocerebellar ataxia autosomal recessive with axonal neuropathy
+Disallow: /main/search/disease/spinocerebellar ataxia type 1
+Disallow: /main/search/disease/spinocerebellar ataxia type 10
+Disallow: /main/search/disease/spinocerebellar ataxia type 11
+Disallow: /main/search/disease/spinocerebellar ataxia type 12
+Disallow: /main/search/disease/spinocerebellar ataxia type 13
+Disallow: /main/search/disease/spinocerebellar ataxia type 14
+Disallow: /main/search/disease/spinocerebellar ataxia type 15
+Disallow: /main/search/disease/spinocerebellar ataxia type 17
+Disallow: /main/search/disease/spinocerebellar ataxia type 2
+Disallow: /main/search/disease/spinocerebellar ataxia type 20
+Disallow: /main/search/disease/spinocerebellar ataxia type 23
+Disallow: /main/search/disease/spinocerebellar ataxia type 27
+Disallow: /main/search/disease/spinocerebellar ataxia type 28
+Disallow: /main/search/disease/spinocerebellar ataxia type 3
+Disallow: /main/search/disease/spinocerebellar ataxia type 31
+Disallow: /main/search/disease/spinocerebellar ataxia type 35
+Disallow: /main/search/disease/spinocerebellar ataxia type 36
+Disallow: /main/search/disease/spinocerebellar ataxia type 5
+Disallow: /main/search/disease/spinocerebellar ataxia type 6
+Disallow: /main/search/disease/spinocerebellar ataxia type 7
+Disallow: /main/search/disease/spinocerebellar ataxia type 8
+Disallow: /main/search/disease/split-hand/foot malformation type 1, with sensorineural hearing loss
+Disallow: /main/search/disease/split-hand/foot malformation type 3
+Disallow: /main/search/disease/split-hand/foot malformation type 4
+Disallow: /main/search/disease/split-hand/foot malformation type 6
+Disallow: /main/search/disease/spondyloarthropathy type 1
+Disallow: /main/search/disease/spondylocostal dysostosis type 1
+Disallow: /main/search/disease/spondylocostal dysostosis type 2
+Disallow: /main/search/disease/spondylocostal dysostosis type 3
+Disallow: /main/search/disease/spondylocostal dysostosis type 4
+Disallow: /main/search/disease/spondyloepimetaphyseal dysplasia with joint laxity, type 2
+Disallow: /main/search/disease/sporadic amyotrophic lateral sclerosis
+Disallow: /main/search/disease/sporadic basal cell carcinoma
+Disallow: /main/search/disease/Stargardt disease type 1
+Disallow: /main/search/disease/Stargardt disease type 3
+Disallow: /main/search/disease/Stargardt disease type 4
+Disallow: /main/search/disease/Stickler syndrome type 1
+Disallow: /main/search/disease/Stickler syndrome type 1 non-syndromic ocular
+Disallow: /main/search/disease/Stickler syndrome type 2
+Disallow: /main/search/disease/Stickler syndrome type 3
+Disallow: /main/search/disease/Stickler syndrome type 4
+Disallow: /main/search/disease/Stickler syndrome type 5
+Disallow: /main/search/disease/susceptbility to microvascular complications of diabetes type 2
+Disallow: /main/search/disease/susceptibility autism X-linked type 3
+Disallow: /main/search/disease/susceptibility psoriatic arthritis
+Disallow: /main/search/disease/susceptibilty to aplastic anemia
+Disallow: /main/search/disease/syndactyly type 3
+Disallow: /main/search/disease/syndactyly type 4
+Disallow: /main/search/disease/syndactyly type 5
+Disallow: /main/search/disease/systemic lupus erythematosus type 10
+Disallow: /main/search/disease/systemic lupus erythematosus type 11
+Disallow: /main/search/disease/systemic lupus erythematosus type 16
+Disallow: /main/search/disease/systemic lupus erythematosus type 2
+Disallow: /main/search/disease/systemic lupus erythematosus type 6
+Disallow: /main/search/disease/systemic lupus erythematosus type 9
+Disallow: /main/search/disease/T-cell immunodeficiency congenital alopecia and nail dystrophy
+Disallow: /main/search/disease/thanatophoric dysplasia type 1
+Disallow: /main/search/disease/thanatophoric dysplasia type 2
+Disallow: /main/search/disease/the cocoa
+Disallow: /main/search/disease/the development of chordoma
+Disallow: /main/search/disease/the low HDL levels observed in high density lipoprotein deficiency type 1
+Disallow: /main/search/disease/the Mitchell-Riley syndrome
+Disallow: /main/search/disease/the pallid
+Disallow: /main/search/disease/the pathogenesis of dystrophia myotonica type 1
+Disallow: /main/search/disease/the risk of aplastic anemia
+Disallow: /main/search/disease/the Smith-Magenis syndrome
+Disallow: /main/search/disease/the Ter mutation phenotype. Ter mice are characterized by primordial germ cell loss and spontaneous testicular germ cell tumors
+Disallow: /main/search/disease/thiamine metabolism dysfunction syndrome type 5, episodic encephalopathy type
+Disallow: /main/search/disease/thrombocythemia type 1
+Disallow: /main/search/disease/thrombocythemia type 2
+Disallow: /main/search/disease/thrombocythemia type 3
+Disallow: /main/search/disease/thrombocytopenia type 1
+Disallow: /main/search/disease/thrombocytopenia type 2
+Disallow: /main/search/disease/thrombocytopenia type 4
+Disallow: /main/search/disease/thrombophilia due to factor IX defect
+Disallow: /main/search/disease/thyrotoxic hypokalemic periodic paralysis
+Disallow: /main/search/disease/thyrotoxic periodic paralysis type 1
+Disallow: /main/search/disease/TJP2 are involved in familial hypercholanemia
+Disallow: /main/search/disease/TNFSF4 influence systemic lupus erythematosus
+Disallow: /main/search/disease/tooth agenesis selective type 1
+Disallow: /main/search/disease/tooth agenesis selective type 3
+Disallow: /main/search/disease/tooth agenesis selective type 6
+Disallow: /main/search/disease/tooth agenesis selective X-linked type 1
+Disallow: /main/search/disease/TP53 are involved in head and neck squamous cell carcinomas
+Disallow: /main/search/disease/TPH2 may influence major depressive disorder
+Disallow: /main/search/disease/transient neonatal diabetes mellitus type 1
+Disallow: /main/search/disease/transient neonatal diabetes mellitus type 2
+Disallow: /main/search/disease/transient neonatal diabetes mellitus type 3
+Disallow: /main/search/disease/transposition of the great arteries dextro-looped type 1
+Disallow: /main/search/disease/transposition of the great arteries dextro-looped type 2
+Disallow: /main/search/disease/transposition of the great arteries dextro-looped type 3
+Disallow: /main/search/disease/Treacher Collins syndrome type 1
+Disallow: /main/search/disease/Treacher Collins syndrome type 2
+Disallow: /main/search/disease/Treacher Collins syndrome type 3
+Disallow: /main/search/disease/tricho-rhino-phalangeal syndrome type 1
+Disallow: /main/search/disease/tricho-rhino-phalangeal syndrome type 2
+Disallow: /main/search/disease/tricho-rhino-phalangeal syndrome type 3
+Disallow: /main/search/disease/trichohepatoenteric syndrome type 1
+Disallow: /main/search/disease/trichohepatoenteric syndrome type 2
+Disallow: /main/search/disease/trichothiodystrophy non-photosensitive type 1
+Disallow: /main/search/disease/trigonocephaly type 1
+Disallow: /main/search/disease/trigonocephaly type 2
+Disallow: /main/search/disease/tuberous sclerosis type 1
+Disallow: /main/search/disease/tuberous sclerosis type 2
+Disallow: /main/search/disease/type 2 diabetes mellitus non-insulin dependent
+Disallow: /main/search/disease/tyrosinemia type 1
+Disallow: /main/search/disease/tyrosinemia type 2
+Disallow: /main/search/disease/tyrosinemia type 3
+Disallow: /main/search/disease/UCP3 may be involved in obesity
+Disallow: /main/search/disease/Usher syndrome type 1B
+Disallow: /main/search/disease/Usher syndrome type 1C
+Disallow: /main/search/disease/Usher syndrome type 1D
+Disallow: /main/search/disease/Usher syndrome type 1D/F
+Disallow: /main/search/disease/Usher syndrome type 1F
+Disallow: /main/search/disease/Usher syndrome type 1G
+Disallow: /main/search/disease/Usher syndrome type 2A
+Disallow: /main/search/disease/Usher syndrome type 2C
+Disallow: /main/search/disease/Usher syndrome type 2D
+Disallow: /main/search/disease/Usher syndrome type 3A
+Disallow: /main/search/disease/Usher syndrome type 3B
+Disallow: /main/search/disease/UV-sensitive syndrome type 1
+Disallow: /main/search/disease/UV-sensitive syndrome type 2
+Disallow: /main/search/disease/UV-sensitive syndrome type 3
+Disallow: /main/search/disease/van Buchem disease type 2
+Disallow: /main/search/disease/van der Woude syndrome type 1
+Disallow: /main/search/disease/van der Woude syndrome type 2
+Disallow: /main/search/disease/ventricular septal defect type 1
+Disallow: /main/search/disease/ventricular septal defect type 2
+Disallow: /main/search/disease/ventricular septal defect type 3
+Disallow: /main/search/disease/vesicoureteral reflux type 2
+Disallow: /main/search/disease/vesicoureteral reflux type 3
+Disallow: /main/search/disease/visceral heterotaxy autosomal type 2
+Disallow: /main/search/disease/visceral heterotaxy autosomal type 4
+Disallow: /main/search/disease/visceral heterotaxy autosomal type 5
+Disallow: /main/search/disease/visceral heterotaxy X-linked type 1
+Disallow: /main/search/disease/vitelliform macular dystrophy type 2
+Disallow: /main/search/disease/vitiligo-associated multiple autoimmune disease type 1
+Disallow: /main/search/disease/vitreoretinochoroidopathy autosomal dominant
+Disallow: /main/search/disease/vitreoretinopathy exudative type 1
+Disallow: /main/search/disease/vitreoretinopathy exudative type 2
+Disallow: /main/search/disease/vitreoretinopathy exudative type 4
+Disallow: /main/search/disease/vitreoretinopathy exudative type 5
+Disallow: /main/search/disease/von Willebrand disease type 1
+Disallow: /main/search/disease/von Willebrand disease type 2
+Disallow: /main/search/disease/von Willebrand disease type 3
+Disallow: /main/search/disease/Waardenburg syndrome type 1
+Disallow: /main/search/disease/Waardenburg syndrome type 2 with ocular albinism
+Disallow: /main/search/disease/Waardenburg syndrome type 2A
+Disallow: /main/search/disease/Waardenburg syndrome type 2D
+Disallow: /main/search/disease/Waardenburg syndrome type 2E
+Disallow: /main/search/disease/Waardenburg syndrome type 3
+Disallow: /main/search/disease/Waardenburg syndrome type 4
+Disallow: /main/search/disease/Waardenburg syndrome type 4A
+Disallow: /main/search/disease/Waardenburg syndrome type 4C
+Disallow: /main/search/disease/Warburg micro syndrome type 1
+Disallow: /main/search/disease/Warburg micro syndrome type 2
+Disallow: /main/search/disease/Warburg micro syndrome type 3
+Disallow: /main/search/disease/Wilms tumor 5
+Disallow: /main/search/disease/Wiskott-Aldrich syndrome type 2
+Disallow: /main/search/disease/Wolfram syndrome type 1
+Disallow: /main/search/disease/Wolfram syndrome type 2
+Disallow: /main/search/disease/woolly hair autosomal recessive type 1 with or without hypotrichosis
+Disallow: /main/search/disease/woolly hair autosomal recessive type 2
+Disallow: /main/search/disease/X-linked Asperger syndrome 1
+Disallow: /main/search/disease/X-linked Asperger syndrome 2
+Disallow: /main/search/disease/X-linked cleft palate with ankyloglossia
+Disallow: /main/search/disease/X-linked familial atypical micobacteriosis type 1
+Disallow: /main/search/disease/X-linked hypospadias type 2
+Disallow: /main/search/disease/X-linked immunodeficiency with hyper-IgM type 1
+Disallow: /main/search/disease/X-linked sideroblastic anemia with ataxia
+Disallow: /main/search/disease/X-linked thrombocytopenia with beta-thalassemia
+Disallow: /main/search/disease/xanthinuria type 1
+Disallow: /main/search/disease/xanthinuria type 2

@@ -1,0 +1,14 @@
+<workbook>
+	<worksheet name="Disease">
+		[%SET colocates=vcf_diseases%]
+		[%INCLUDE nectar_vcf.xml%]
+	</worksheet>
+	<worksheet name="Function">
+		[%SET colocates=vcf_func%]
+		[%INCLUDE nectar_vcf.xml%]
+	</worksheet>
+	<worksheet name="Para">
+		[%SET colocates=vcf_para%]
+		[%INCLUDE nectar_vcf.xml called_by="para"%]
+	</worksheet>
+</workbook>

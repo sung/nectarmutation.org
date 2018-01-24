@@ -1,0 +1,6 @@
+
+			The <a class='external' title="UniProt" href='[%link.uniprot%]' target='_blank'>UniProt</a> provides high quality resource of protein sequence and functional information. 
+			Especially <a class="external" title="what are the UniProt features?" href="[%link.uniprot_ft%]" target='_blank'>'sequence feature'</a> 
+			records can be harnessed to interprete the effects of non-synonymous mutations on their occurrences. 
+			NECTAR archives functional amino acid resiudes and their possible non-synonymous mutations from the following
+			<a title="12 functional annotations" href="#" onClick='Boxy.load("[%c.uri_for('/about/annotation')%]?id=all&uniprot=1&boxy=1", {title:"12 Function Annotation"})'>12 functional features</a>.

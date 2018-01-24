@@ -1,0 +1,5 @@
+[% meta.title = 'Captcha' %]
+
+<div id='captcha'>
+	[% form.render %]
+</div>

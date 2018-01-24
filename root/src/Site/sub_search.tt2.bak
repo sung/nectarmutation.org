@@ -1,0 +1,38 @@
+
+	[% SET my_ac="my_query"%]
+	[% SET form_size=20%]
+	[% SET ac_width=200%]
+
+	[%-IF template.name.match('gene')%]
+		[% SET search_this="gene"%]
+		[% SET min_char=2%]
+		[% SET eg="search gene e.g. TTN"%]
+	[%-ELSIF template.name.match('disease')%]
+		[% SET search_this="disease"%]
+		[% SET min_char=1%]
+		[% SET eg="search disease e.g. DCM"%]
+	[%-ELSIF template.name.match('target')%]
+		[% SET search_this="target"%]
+		[% SET min_char=1%]
+		[% SET eg="search target e.g. ICC"%]
+	[%-ELSIF template.name.match('patient')%]
+		[% SET search_this="patient"%]
+		[% SET min_char=2%]
+		[% SET eg="search patient e.g. 10AC00242"%]
+	[%-ELSIF template.name.match('run')%]
+		[% SET search_this="run"%]
+		[% SET min_char=1%]
+		[% SET eg="search run e.g. 20110606"%]
+		[% SET form_size=40%]
+		[% SET ac_width=450%]
+	[%-END%]
+	[% ac_url=BLOCK%][%c.uri_for("/service/$search_this")%][%END%]
+
+	<form id="ACform" method="get" action="[%ac_url%]">
+		<input class="inputWithImge" type="text" name="query" id="[%my_ac%]" size=[%form_size%] value="[%eg%]"/>
+		<button type='submit'><img src="[%c.uri_for('/static/images/gvl3-5_search-icon.png')%]" alt="Click to search [%search_this%]" onClick="$('#my_activity').activity()"/></button>
+		<input class="hidden" type="submit" name="find" value="Find"/>
+	</form>
+
+	[% PROCESS js/jquery_autocomplete.tt2%] 
+	[%# root/lib/js/jquery_autocomplete.tt2 (inpupt: ac_url min_char my_ac)%]

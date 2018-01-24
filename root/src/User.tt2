@@ -1,0 +1,42 @@
+[% meta.title = 'Hello ' _  c.user.username %]
+
+
+	[%-SET slider_id="user_config"%]
+	[%-SET dynamicArrows=1%]
+	[%-SET dynamicTabs=1%]
+	[%INCLUDE no_js_warning.tt2 -%]
+	[%PROCESS coda_slider.tt2 slider_id="$slider_id" dynamicArrows="$dynamicArrows" dynamicTabs="$dynamicTabs"%] [%# root/lib/js/coda_slider.tt2%]
+
+	<div class="coda-slider-wrapper">
+		<div class="coda-slider preload" id="[%slider_id%]">
+
+			[%# 1. User%]
+			<div class="panel">
+				<div class="panel-wrapper">
+					<h2 class="title hidden">Details</h2>
+					[%- IF user_form.validated%]
+					<p>Your user details are changed</p>
+					[%-ELSE%]
+					[% user_form.render %]
+					[%- END%]
+				</div><!-- end of panel-wrapper-->
+			</div><!-- end of panel-->
+
+			[%# 2. Variant Calling%]
+			<div class="panel">
+				<div class="panel-wrapper">
+					<h2 class="title hidden">Callers</h2>
+					<p>This is a place holder for user-defined calling options for the futher development</p>
+				</div><!-- end of panel-wrapper-->
+			</div><!-- end of panel-->
+
+			[%# 3. What?%]
+			<div class="panel">
+				<div class="panel-wrapper">
+					<h2 class="title hidden">Else</h2>
+					<p>This is a place holder for user-specific options for the futher development</p>
+				</div><!-- end of panel-wrapper-->
+			</div><!-- end of panel-->
+
+		</div><!-- end of coda-slider preload -->
+	</div><!-- end of coda-slider wrapper -->

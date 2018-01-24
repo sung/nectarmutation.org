@@ -1,0 +1,38 @@
+
+		<ul class="sf-menu">
+			<li><a href="[%c.uri_for('/')%]" title="home">Home</a>
+			[%-IF c.user.get('active')%]
+				[%-UNLESS c.user.get('roles')=='guest'%]
+				<li><a href="#" id="ask-mutation" title="search mutations">Search</a></li>
+				[%-END%]
+			[%-END%]
+				<li><a href="#" title="browse contexts of Nectar">Browse</a>
+					<ul>
+						<li><a href="[%c.uri_for('/gene')%]" title="by gene">Genes</a></li>
+					[%-IF c.user.get('active')%]
+						<li><a href="[%c.uri_for('/disease')%]" title="by disease">Diseases</a></li>
+						[%-UNLESS c.user.get('roles')=='guest'%]
+						<li><a href="[%c.uri_for('/target')%]" title="by target">Targets</a></li>
+						<li><a href="[%c.uri_for('/patient')%]" title="by BRU code">Patients</a></li>
+						<li><a href="[%c.uri_for('/run')%]" title="by run">Sequencing runs</a></li>
+						<li class='hidden'><a href="#" title="by chromosome:start-end" onClick='Boxy.load("[%c.uri_for('/boxy/locus_form')%]", {title:"Search Locus", modal:true})'>Locus</a></li>
+						[%-END%]
+					[%-END%]
+					</ul>
+				</li>
+			<li class="hidden"><a title="see CardioDB" href="[%c.uri_for('/schema')%]">Schema</a></li>
+			<li><a title="Want to know about NECTAR?" href="[%c.uri_for('/about')%]">About</a></li>
+			<li class="last"><a title="Please have your say" href="#" class="contact_us">Contacts</a></li>
+			[%-IF c.user.get('active')%]
+			<li class='hidden'>
+				<a title="Hello [%c.user.username%]" href="[%c.uri_for('/user')%]">[%c.user.username%]</a>
+			</li>
+			<li class="last">
+				<a title="logout [%c.user.get('username')%]" href="[%c.uri_for('/logout')%]">Logout</a>
+			</li>
+			[%-ELSE%]
+			<!--<li class="last"><a title="Please Login" href="#" class="login_boxy">Login</a></li>-->
+			[%-END%]
+		</ul>
+
+		[%INCLUDE js/boxy_ask_mutation.tt2%]

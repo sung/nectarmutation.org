@@ -1,0 +1,200 @@
+[%# this is called by Browser/classified_calls.tt2-%]
+[%# or called by Mutation/search_mutation.tt2-%]
+[%# or called by Mutation/by_mutation_id.tt2-%]
+
+		<div [%UNLESS any_novel%]class='desc x_scroll' style='width:850px'[%END%] id="mutation_search_result" >
+			<form name="refresh_mutations" onChange="$('#my_activity').activity()" method="get" action="[%c.req.uri_for('/mutation/search')%]">
+
+				[%IF caller%]
+				<input type="hidden" name="caller" value="[%caller%]" />
+				[%END%]
+				[%IF hgnc%]
+				<input type="hidden" name="hgnc" value="[%hgnc%]" />
+				[%END%]
+				[%IF diag_code%]
+				<input type="hidden" name="diag_code" value="[%diag_code%]" />
+				[%END%]
+				[%IF target_name%]
+				<input type="hidden" name="target_name" value="[%target_name%]" />
+				[%END%]
+				[%IF sample_id%]
+				<input type="hidden" name="sample_id" value="[%sample_id%]" />
+				[%END%]
+				[%IF bru_code%]
+				<input type="hidden" name="bru_code" value="[%bru_code%]" />
+				[%END%]
+				[%IF chr%]
+				<input type="hidden" name="chr" value="[%chr%]" />
+				<input type="hidden" name="v_start" value="[%v_start%]" />
+				<input type="hidden" name="v_end" value="[%v_end%]" />
+				[%END%]
+
+				[%IF caller=='gene' or caller=='target'%]
+					[%-FOREACH mt IN mut_type_string.split('/')%]
+				<input type="hidden" name="mut_type[%diag_code%]" value="[%mt%]" />
+					[%END%]
+				[%ELSIF caller=='disease'%]
+					[%-FOREACH mt IN mut_type_string.split('/')%]
+				<input type="hidden" name="mut_type[%target_name%]" value="[%mt%]" />
+					[%END%]
+				[%ELSIF caller=='form'%]
+					[%-FOREACH mt IN mut_type_string.split('/')%]
+				<input type="hidden" name="mut_type" value="[%mt%]" />
+					[%END%]
+					[%-FOREACH my_novel IN my_novels%]
+				<input type="hidden" name="is_novel" value="[%my_novel%]" />
+					[%END%]
+				[%ELSE%] [%# 'form', 'patient', 'sample', 'locus'%]
+					[%-FOREACH mt IN mut_type_string.split('/')%]
+				<input type="hidden" name="mut_type" value="[%mt%]" />
+					[%END%]
+				[%END%]
+
+				<table id='classified_calls' class='general_list_table'>
+					<caption>
+						[%UNLESS caller%]
+							Samples having this mutation
+						[%ELSE%]
+							Lists of mutations by different callers
+						[%END%]
+						(<span style="background-color:#fff;">canonical transcript [<a class="boxy" title="what's this" href="[%c.req.uri_with()%]#canonical">?</a>]</span> coloured in <span style="background-color:#fff;">white</span>)
+						<a class='excel rfloat' title='download in excel sheet' href="[%c.req.uri_with({download=>1})%]">&nbsp</a>
+					</caption>
+					<tr class='column'>
+						<th rowspan=3>Class
+							<a title="What is mutation profile?" href="#" onClick='Boxy.load("[%c.uri_for('/about/mutation_profile')%]?boxy=1", {title:"Mutation Profile", modal:false})'>[?]</a>
+						</th>
+						<th rowspan=3>Mutation ID</th>
+						<th rowspan=3>
+							Gene<br/>
+							<input title='check for protein coding gene only' type="checkbox" name="is_protein_coding" value="1" onClick="document.refresh_mutations.submit();$('#my_activity').activity();" [%IF is_protein_coding%]checked[%END%]>
+						</th>
+						[%UNLESS sample_id%]<th rowspan=3>Sample ID</th>[%END%]
+						[%UNLESS any_novel%]
+						<th class='right' colspan=4><a title="Known mutations">Known Mutations</a></th>
+						[%END%]
+						<th class='right' colspan=3>Annotations</th>
+						<th colspan=4>Callers
+							<select name="DP" onChange="document.refresh_mutations.submit();$('#my_activity').activity();">
+								<option value="1" [%IF DP==1%]selected[%END%] title="read-depth more than 1">DP>=1</option>
+								<option value="5" [%IF DP==5%]selected[%END%] title="read-depth more than 5">DP>=5</option>
+								<option value="10" [%IF DP==10%]selected[%END%] title="read-depth more than 10">DP>=10</option>
+								<option value="20" [%IF DP==20%]selected[%END%] title="read-depth more than 20">DP>=20</option>
+								<option value="50" [%IF DP==50%]selected[%END%] title="read-depth more than 50">DP>=50</option>
+								<option value="100" [%IF DP==100%]selected[%END%] title="read-depth more than 100">DP>=100</option>
+							</select>	
+						</th>
+					</tr>
+					<tr class='column'>
+						[%UNLESS any_novel%]
+						<th rowspan=2>HGMD<br/>
+							<select style="width:18px" name="hgmd_tag" onChange="document.refresh_mutations.submit();$('#my_activity').activity();">
+								<option value="zom" [%IF hgmd_tag=='zom'%]selected[%END%] title="Zero or more">>=0</option>
+								<option value="any" [%IF hgmd_tag=='any'%]selected[%END%] title="any types HGMD mutations">>=1</option>
+								[%FOREACH t IN c.session.tags%]
+								<option value="[%t.tag%]" [%IF hgmd_tag==t.tag%]selected[%END%] title="[%t.tag_name%]">[%t.tag%]</option>
+								[%END%]
+							</select>	
+						</th>
+						<th rowspan=2>
+							<a title="go to dbSNP" class="external" href="[%link.dbsnp%]">dbSNP</a><br/>
+							<input title='check for known dbSNP' type="checkbox" name="is_dbsnp" value="1" onClick="document.refresh_mutations.submit();$('#my_activity').activity();" [%IF is_dbsnp%]checked[%END%]>
+						</th>
+						<th rowspan=2>
+							<a title="go to ICC_Mutations" class="external" href="[%IF c.req.address.match('192.168.\d+.\d+')%][%link.icc_int%][%ELSE%][%link.icc_ext%][%END%]">ICC</a><br/>
+							<input title='check for known ICC mutations' type="checkbox" name="is_icc" value="1" onClick="document.refresh_mutations.submit();$('#my_activity').activity();" [%IF is_icc%]checked[%END%]>
+						</th>
+						<th class='right' rowspan=2>
+							<a title="click to see detail" href="#" onClick='Boxy.load("[%c.uri_for('/about/annotation')%]?id=HUMSAVAR&boxy=1", {title:"Annotation: HUMSAVAR"})'>UniProt</a><br/>
+							<select style="width:18px" name="var_type" onChange="document.refresh_mutations.submit();$('#my_activity').activity();">
+								<option value="zom" [%IF var_type=='zom'%]selected[%END%] title="Zero or more">>=0</option>
+								<option value="any" [%IF var_type=='any'%]selected[%END%] title="any types UniProt mutations">>=1</option>
+								<option value="Polymorphism" [%IF var_type=='Polymorphism'%]selected[%END%] title="Polymorphism">Polymorphism</option>
+								<option value="Disease" [%IF var_type=='Disease'%]selected[%END%] title="Disease">Disease</option>
+								<option value="Unclassified" [%IF var_type=='Unclassified'%]selected[%END%] title="Unclassified">Unclassified</option>
+							</select>	
+							<!--<input title='check for known UniProt human mutations' type="checkbox" name="is_humsavar" value="1" onClick="document.refresh_mutations.submit();$('#my_activity').activity();" [%IF is_humsavar%]checked[%END%]>-->
+						</th>
+						[%END%][%#end of unless any_novel%]
+						<th rowspan=2>
+							<a title="Ensembl Transcript; click to go to Ensembl" class="external" href="[%link.en_cons%]">ENST</a><br/>
+							<input title='check for canonical trascript only' type="checkbox" name="is_canon" value="1" onClick="document.refresh_mutations.submit();$('#my_activity').activity();" [%IF is_canon%]checked[%END%]>
+						</th>
+						<th rowspan=2><a title="go to UniProt" class="external" href="[%link.uniprot%]">UniProt</a><br/>
+							<select name="ft_tag" onChange="document.refresh_mutations.submit();$('#my_activity').activity();">
+								<option value="zom" [%IF ft_tag=='zom'%]selected[%END%] title="Zero or more">>=0</option>
+								<option value="any" [%IF ft_tag=='any'%]selected[%END%] title="any types UniProt annotations">>=1</option>
+								[%FOREACH t IN c.session.ft_tags%]
+								<option value="[%t.feature%]" [%IF ft_tag==t.feature%]selected[%END%] title="[%t.des%]">[%t.feature%]</option>
+								[%END%]
+							</select>	
+						</th>
+						<th class='right' rowspan=2>
+							<a title="go to PDB" class="external" href="[%link.pdb%]">PDB</a><br/>
+							<input title='check for mutations having 3D info' type="checkbox" name="is_pdb" value="1" onClick="document.refresh_mutations.submit();$('#my_activity').activity();" [%IF is_pdb%]checked[%END%]>
+						</th>
+						<th colspan=2>
+							<a title="go to LifeScope" class="external" href="[%link.lifescope%]">LifeScope</a>
+						</th>
+						<th rowspan=2>
+							<a title="go to GATK" class="external" href="[%link.gatk%]">GATKs</a>
+							<input title='check for mutations called by GATK' type="checkbox" name="gatk" value="1" onClick="document.refresh_mutations.submit();$('#my_activity').activity();" [%IF gatk%]checked[%END%]>
+						</th>
+						<th rowspan=2>
+							<a title="go to Samtools" class="external" href="[%link.samtool%]">Samtools</a>
+							<input title='check for mutations called by Samtools' type="checkbox" name="samtool" value="1" onClick="document.refresh_mutations.submit();$('#my_activity').activity();" [%IF samtool%]checked[%END%]>
+						</th>
+					</tr>
+					<tr class='column'>
+						<th>
+							<a title="SNP caller" >diBayes</a>
+							<input title='check for mutations called by diBayes' type="checkbox" name="dibayes" value="1" onClick="document.refresh_mutations.submit();$('#my_activity').activity();" [%IF dibayes%]checked[%END%]>
+						</th>
+						<th>
+							<a title="Small-indel caller" >Indels</a>
+							<input title='check for mutations called by SmallIndel' type="checkbox" name="smallindel" value="1" onClick="document.refresh_mutations.submit();$('#my_activity').activity();" [%IF smallindel%]checked[%END%]>
+						</th>
+					</tr>
+				[%-FOREACH m IN calls%]
+					<tr class='entry [%UNLESS m.get_column('is_canonical')%]non_canon[%END%]'>
+						<td class="[%m.get_column('class').chunk(2).first%]">[%m.get_column('class')%]</td>
+						<td><a title="[%IF uid%]I'm here[%ELSE%][%m.get_column('variant')%][%END%]" href="[%IF uid%]#[%ELSE%][%c.uri_for('/mutation')%]/[%m.uid%]?is_canon=1[%IF is_protein_coding%]&is_protein_coding=1[%END%][%END%]" [%UNLESS uid%]onClick="$('#my_activity').activity()"[%END%]>[%m.uid%]</td>
+						<td><a title="get this gene info" href="[%IF bru_code%][%c.uri_for('/patient')%]/[%bru_code%]/gene/[%m.get_column('hgnc')%][%ELSE%][%c.uri_for('/gene')%]/[%m.get_column('hgnc')%][%END%]" onClick="$('#my_activity').activity()">[%m.get_column('hgnc')%]</td>
+						[%UNLESS sample_id%]<td><a title="go to sample [%m.sample_id%]" href="[%c.uri_for("/run/sample_id")%]/[%m.sample_id%]">[%m.sample_id%]</td>[%END%]
+						[%UNLESS any_novel%]
+						<td>
+							<a title="[%m.get_column('acc_num')%]" href="#" onClick='Boxy.load("[%c.uri_for('/mutation')%]/exref?q=hgmd&id=[%m.get_column('acc_num')%]&uid=[%m.uid%]", {title:"HGMD: [%m.get_column('acc_num')%]"})'>
+							[%IF m.get_column('acc_num')%]1[%END%]
+							</a>
+						</td>
+						<td>
+							[%IF m.get_column('rs_id')%]
+							<a title="[%m.get_column('rs_id')%]" href="#" onClick='Boxy.load("[%c.uri_for('/mutation')%]/exref?q=dbsnp&id=[%m.get_column('rs_id')%]&uid=[%m.uid%]", {title:"dbSNP: [%m.get_column('rs_id')%]"})'>1</a>
+							[%END%]
+						</td>
+						[%SET mut_id=m.get_column('mut_id')%]
+						<!--<td>[%IF mut_id%]<a class="external" href="[%IF c.req.address.match('192.168.\d+.\d+')%][%link.icc_int%]icc_mutation.php?id=[%mut_id%][%ELSE%][%link.icc_ext%]icc_mutation.php?id=[%mut_id%][%END%]">[%mut_id%]</a>[%END%]</td>-->
+						<td>
+							<a title="[%m.get_column('mut_id')%]" href="#" onClick='Boxy.load("[%c.uri_for('/mutation')%]/exref?q=icc&id=[%m.get_column('mut_id')%]&uid=[%m.uid%]", {title:"ICC_Mutation: [%m.get_column('mut_id')%]"})'>
+							[%IF m.get_column('mut_id')%]1[%END%]
+							</a>
+						</td>
+						<td>
+							<a title="[%m.get_column('humsavar')%]" href="#" onClick='Boxy.load("[%c.uri_for('/mutation')%]/exref?q=swissvariant&id=[%m.get_column('humsavar')%]&uid=[%m.uid%]", {title:"SwissVariants: [%m.get_column('humsavar')%]"})'>
+							[%IF m.get_column('humsavar')%]1[%END%]
+							</a>
+						</td>
+						[%END%][%#end of unless any_novel%]
+						<td><a title="[%m.get_column('hgvs_coding')%]" href="#" onClick='Boxy.load("[%c.uri_for('/mutation/annotation')%]?q=V2Ensembl&id=[%m.uid%]&vid=[%m.get_column('vid')%]&class=[%m.get_column('class')%]", {title:"Ensembl Annotation"})'>[%m.get_column('hgvs_coding').split(':').0%]</a></td>
+						<td>[%IF m.get_column('uuid')%]<a title="click for details" href="#" onClick='Boxy.load("[%c.uri_for('/mutation/annotation')%]?q=2UniProt&id=[%m.uid%]&class=[%m.get_column('class')%]", {title:"UniProt Annotation for the mutation id:[%m.uid%]"})'>Yes</a>[%END%]</td>
+						<td>[%IF m.get_column('puid')%]<a title="click for details" href="#" onClick='Boxy.load("[%c.uri_for('/mutation/annotation')%]?q=2Pdb&id=[%m.uid%]&class=[%m.get_column('class')%]", {title:"PDB Annotation for the mutation id: [%m.uid%]"})'>Yes</a>[%END%]</td>
+						<td>[%IF m.dibayes%]<a title="DP:[%m.dp_dibayes%]" href='#' onClick='Boxy.load("[%c.uri_for('/mutation')%]?sample_id=[%m.sample_id%]&caller=diBayes&id=[%m.dibayes%]", {title:"diBayes details", modal:false})'>Yes</a>[%END%]</td>
+						<td>[%IF m.smallindel%]<a title="SmallIndel details" href='#' onClick='Boxy.load("[%c.uri_for('/mutation')%]?sample_id=[%m.sample_id%]&caller=SmallIndels&id=[%m.smallindel%]", {title:"SmallIndel details", modal:false})'>Yes</a>[%END%]</td>
+						<td>[%IF m.gatk%]<a title="DP:[%m.dp_gatk%]" href='#' onClick='Boxy.load("[%c.uri_for('/mutation')%]?sample_id=[%m.sample_id%]&caller=GATKs&id=[%m.gatk%]", {title:"GATK details", modal:false})'>Yes</a>[%END%]</td>
+						<td>[%IF m.samtool%]<a title="DP:[%m.dp_samtool%]" href='#' onClick='Boxy.load("[%c.uri_for('/mutation')%]?sample_id=[%m.sample_id%]&caller=Samtools&id=[%m.samtool%]", {title:"Samtools details", modal:false})'>Yes</a>[%END%]</td>
+					</tr>
+				[%-END%]
+				</table>
+			</form>
+		</div><!-- end of mutation_search_result -->
+

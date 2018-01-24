@@ -1,0 +1,44 @@
+
+	<div class='desc x_scroll' style='width:850px'>
+		<table class='general_list_table'>
+			<caption>VEP</caption>
+			<tr class='column'>
+				<th>g.HGVS</th>
+				<th>Biotype</th>
+				<th>Gene</th>
+				<th>ENSG</th>
+				<th>ENST</th>
+				<th>SO terms</th>
+				<th>t.HGVS</th>
+				<th>CCDS</th>
+				<th>p.HGVS</th>
+				<th>SIFT</th>
+				<th>PolyPhen</th>
+			</tr>
+			<tr>
+		
+			[%-FOREACH v IN veps%]
+				[%SET alt=v.alt%]
+				[%FOREACH t IN v.transcripts%]
+					[%FOREACH a IN t.alleles%]
+						[%FOREACH a IN t.alleles%]
+			<tr [%IF t.is_canonical==0%]class='non_canon'[%END%]>
+				<td>[%v.hgvs.$alt%]</td>
+				<td>[%t.biotype%]</td>
+				<td>[%t.name%]</td>
+				<td>[%t.gene_id%]</td>
+				<td>[%t.transcript_id%]</td>
+				<td>[%a.consequence_terms.join(', ')%]</td>
+				<td>[%a.hgvs_transcript%]</td>
+				<td>[%t.ccds%]</td>
+				<td>[%a.hgvs_protein%]</td>
+				<td>[%a.sift_prediction%]</td>
+				<td>[%a.polyphen_prediction%]</td>
+			</tr>
+						[%END-%]
+					[%END-%]
+				[%END-%]
+			[%END-%]
+		</table>
+
+	</div>

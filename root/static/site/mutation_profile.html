@@ -1,0 +1,95 @@
+<div>
+<script type="text/javascript" src="/static/js/nectar.js"></script>
+<script type="text/javascript" src="/static/js/jquery.boxy.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/static/css/nectar.css">
+<link rel="stylesheet" type="text/css" href="/static/css/mut_traffic.css">
+<link rel="stylesheet" type="text/css" href="/static/css/boxy.css">
+</div>
+
+<div class="mutation_profile" style="width:1000px">
+	NECTAR classifies genetic mutations into 14 classes based on the following three criteria:<br/>
+	<b>I)</b> consequence types
+	<b>II)</b> degree of damaging effect
+	<b>III)</b> is the mutation novel?
+
+	<div id='category1' class='mut_category'>
+		<h2>I. Mutation Consequence Types</h2>
+		This category is basically built on the basis of 'predicted variation consequences' of <a class="external" title="Go to Ensembl Variation" href="http://www.ensembl.org/info/docs/variation/index.html#consequences">Ensembl Variations</a> with the help of <a class="external" title="Go to Ensembl Variation API" href="http://www.ensembl.org/info/docs/api/index.html">Ensembl Variation API</a>.<br/>
+		There are <b>four</b> levels:
+		<ul class="class_one">
+			<li><b>a</b>: any from
+				<ul class="mut">
+					<li>ESSENTIAL_SPLICE_SITE</li>
+					<li>FRAMESHIFT_CODING</li>
+					<li>STOP_GAINED</li>
+					<li>STOP_LOST</li>
+					<li>TRANSCRIPT_ABLATION</li>
+				</ul>
+			</li>
+			<li><b>b</b>: any from
+				<ul class="mut">
+					<li>NON_SYNONYMOUS_CODING</li>
+				</ul>
+			</li>
+			<li><b>c</b>: any from  
+				<ul class="mut">
+					<li>SPLICE_SITE</li>
+					<li>TRANSCRIPT_AMPLIFICATION</li>	
+				</ul>
+			</li> 
+			<li><b>d</b>: none of above</li> 
+		</ul>
+		<div style="clear:both">
+			<a title="mutation consequence type" href='#' onClick='Boxy.load("/static/site/mutation_so_terms.html", {title:"Mutation Consequence Types", modal:false})'>Click</a> to see in details.
+		</div>
+	</div>
+
+	<div id='category2' >
+		<div id='category2-1' class='mut_category'>
+			<h2>II. Degree of Damaging Effects (level <b>b</b> only)</h2>
+			<img class="rfloat" src="http://chart.apis.google.com/chart?chs=320x185&cht=v&chco=FF6342,ADDE63,63C6DE&chds=0,1000&chd=t:100,100,100,40,40,40,20&chdl=Prediction+Software|Evolutionary+Information|Functional+Annotations&chma=10,10" width="320" height="185" alt="how to measure 'damaging effects'?" usemap="#damaging_effects"/>
+			<map name='damaging_effects'>
+				<area name='legend0' shape='RECT' coords='182,68,194,80' href='#'  title='Prediction Software'
+					onClick='Boxy.load("/static/site/prediction_software.html", {title:"Prediction Software", modal:false})'>
+				<area name='legend1' shape='RECT' coords='182,86,194,98' href='#'  title='Evolutionary Information'
+					onClick='Boxy.load("/static/site/evol_info.html", {title:"Evolutionary Information", modal:false})'>
+				<area name='legend2' shape='RECT' coords='182,104,194,116' href='#'  title='Functional Annotations'
+					onClick='Boxy.load("/static/site/func_anno.html", {title:"Functional Annotation", modal:false})'>
+				<area name='circle0' shape='CIRCLE' coords='91,69,53' href='#'  title='Prediction Software'
+					onClick='Boxy.load("/static/site/prediction_software.html", {title:"Prediction Software", modal:false})'>
+				<area name='circle1' shape='CIRCLE' coords='118,116,53' href='#'  title='Evolutionary Information'
+					onClick='Boxy.load("/static/site/evol_info.html", {title:"Evolutionary Information", modal:false})'>
+					<area name='circle2' shape='CIRCLE' coords='64,116,53' href='#'  title='Functional Annotations' 
+					onClick='Boxy.load("/static/site/func_anno.html", {title:"Functional Annotation", modal:false})'>
+			</map>
+			This category is for non-synonymous mutations (<b>b</b>) where amino acids are changed or deleted. This is to answer 'how deleterious those missense and inframe deletion mutations are' by investigating structural and functional effects based on the three criteria as shown in the Venn diagram.</br>
+			There are <b>four</b> classes:
+			<ul class="mut">
+				<li><b>3</b>: satisfying all the three coditions</li>
+				<li><b>2</b>: satisfying any of the two conditions</li>
+				<li><b>1</b>: satisfying any of one condition</li>
+				<li><b>0</b>: satysfying none</li>
+			</ul>
+		</div>
+
+		<div class='mut_category'>
+			Based on <b>I</b> and <b>II</b> above, there could be 7 possible combinations for a mutation class, which make the <a title="mutation signal system" href='#' onClick='Boxy.load("/static/site/mutation_signal_matrix.html", {title:"Mutation Signal System", modal:false})'>mutation signal system</a>.
+		</div>
+
+	</div><!-- end of category2-->
+
+	<div id='category3' class='mut_category'>
+		<h2>III. Is the Mutation Novel?</h2>
+		Finally, NECTAR tells you whether the mutation has been reported previously based on dbSNP and HGMD.
+		It is encoded <b>1</b> for novel (not reported) and <b>0</b> for seen, which is added as the last digit to the mutation code.
+		For example, a mutaion of '<b>a11</b>' stands for: 
+		<ul class="mut">
+			<li><b>a</b> for category I</li>
+			<li><b>1</b> for category II</li>
+			<li><b>1</b> for category III (novel)</li>
+		</ul>
+	</div>
+</div>

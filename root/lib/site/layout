@@ -1,0 +1,29 @@
+	[%-SET is_enabled=0%][%# by default%]	
+	[%-IF c.session.do_not_popup%][%# set within Nectar::Web::Controller::Auth::tnc%]	
+		[%-SET is_enabled=0%]	
+	[%END-%]
+	[%PROCESS popup_js.tt2 enabled="$is_enabled" popup_title="Notice" url_link="/static/site/warning.html"-%] [%# root/lib/site/popup -> root/lib/js/popup_js.tt2%]
+
+
+	<!-- BEGIN site/header -->
+	<div id="header">
+		[% INCLUDE site/header -%]
+	</div>
+	<!-- END site/header -->
+
+	<div id="wrapper">
+		<div id="indicator">
+		[% PROCESS site/indicator%]
+		</div><!-- end of indicator-->
+
+		<div id="my_activity">
+		</div>	
+
+		<div id="content">
+		[% content %]
+		</div><!-- end of content-->
+
+		<div id="footer">
+		[% PROCESS site/footer %]
+		</div><!-- end of site/footer -->
+	</div><!-- end of wrapper -->

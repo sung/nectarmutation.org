@@ -1,0 +1,36 @@
+
+		[%accordion_id="accordion"%]
+		[%my_entry=[] %]
+		[%-FOREACH f IN disease_annos%][% my_entry.push(f.disease_abr) %][%END%]
+		[%PROCESS toggle.tt2 entry=my_entry%] [%# root/lib/js/toggle.tt2%]
+
+		[%-UNLESS disease_annos.size%]
+		<h2 class="header">No disease involvement reported from UniProt for <a class="external" title="see the source" href="[%link.uniprot%]/uniprot/[%disease_annos.0.acc%]#section_comments" target='_blank'>[%hgnc%]</a></h2>
+		[%-ELSE%]
+		<div id="[%accordion_id%]">
+		<h2 class="header">Disease involvement of <a class="external" title="see the source" href="[%link.uniprot%]/uniprot/[%disease_annos.0.acc%]#section_comments" target='_blank'>[%hgnc%]</a></h2>
+			[%-FOREACH da IN disease_annos%]
+			<h2 id="[%da.disease_abr%]-toggle" title="[%da.disease%]">[%da.disease%]</h2>
+			<div id="[%da.disease_abr%]">
+				<table class='general_list_table'>
+					<tr class='column'>
+						<th>Disease</th>
+						<th>OMIM</th>
+						<th>Details</th>
+						<th>Sources</th>
+					</tr>
+					<tr class='entry'>
+						<td><a title="[%da.disease%]">[%da.disease_abr%]</a></td>	
+						<td>[%IF da.mim%]<a class="external" title="OMIM:[%da.mim%]" href="http://omim.org/entry/[%da.mim%]">[%da.mim%]</a>[%END%]</td>	
+						<td>[%da.des%]</td>	
+						<td>
+						[%-FOREACH r IN da.get_column('refs').split(',')%]
+							<a class="external" title="[%r%]" [%IF r.split(':').0=='PubMed'%]href="[%link.pubmed%]/[%r.split(':').1%]"[%END%]>[%r.split(':').1%]</a><br/>	
+						[%END%]
+						</td>	
+					</tr>
+				</table>
+			</div>
+			[%-END%]
+		</div>
+		[%END%]

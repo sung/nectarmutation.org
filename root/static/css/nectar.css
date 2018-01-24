@@ -1,0 +1,334 @@
+a{ /*color : #2F527B;*/ color: #33e; text-decoration: none;}
+a:hover { color: #FF7F00; }
+a.download { font-size: 9px; text-align: right; }
+a.external {background: url(../images/site/external.png) center right no-repeat;padding-right: 10px; target:_blank}
+/* a.xx formatting does not work */
+a.excel {background: url(../images/site/excel-icon-small.gif) center right no-repeat; text-align: right; padding-right: 15px; title: 'download as an excel sheet'; target:_blank}
+a.text {background: url(../images/site/textFileIcon.gif) center right no-repeat; text-align: right; padding-right: 15px; title: 'download as a text file'; target:_blank}
+.hidden{display:none;}
+.lfloat{float: left;}
+.rfloat{float: right;}
+.x_scroll{
+	margin: auto;
+	white-space: nowrap; 
+	overflow-x: scroll;
+}
+.y_scroll{
+	margin: auto;
+	/*white-space: nowrap; */
+	overflow-y: scroll;
+}
+
+html, body{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	/*font-family: "Baskerville", "Didot", "Cochin", "Georgia", serif;*/
+}
+
+#header {
+	height: 38px; /* facebook blueBarHonder size*/
+	clear:both;
+}
+
+#yellowBar{
+	height: 37px; /* facebook blueBarHonder size*/
+	background-color: #F3D550;	/*yellow*/
+	z-index:300;
+	position: relative;
+	min-width:1000px;width:100%;
+	border-bottom: 1px solid #e5c430; /*dark yellow*/
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .52); /*shadow bottom*/
+}
+
+#yellowBar.fixed_elem{
+	position: fixed !important;
+	left:0; top:0;
+}
+
+#pageHead {
+	margin: 0 auto;
+	width: 1000px;
+}
+
+#pageHead h1.title{
+    padding: 5px 3px;margin: 2px;
+	color: #788993 ; /*grey* color: #7f3f00; /*dark brown */
+	font-size: 18px; /* font-size: 100%; */
+}
+
+#pageHead h1:hover{
+	background: #f9df6b; /*light yellow*/
+	color: #000;
+}
+
+#pageHead a:visited {
+	color: #788993 ; /*grey* color: #7f3f00; /*dark brown */
+}
+
+
+#headNav{
+	margin-left:176px;
+}
+
+#mainSearch{
+	/*margin-top:2px;*/
+}
+
+/*see root/static/css/superfish.css for more detail*/
+#menu{
+	margin: 2px;
+    padding: 5px 3px;
+	color: #788993 ; /*grey* color: #7f3f00; /*dark brown */
+	font-size: 90%;
+}
+
+#indicator{
+	height: 35px;
+}
+
+#indicatorBar{
+	height: 34px;
+	/*color: #B26B00;*/
+	color: #F3D550; /*yellow*/
+	/*background: #483201; dark brown*/
+	/*background: #404040;*/
+	background: #595959;
+    /*background: #ccc; /* a bit of dark gray*/
+	border-bottom: 1px solid #000; /*black*/
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .52); /*shadow bottom*/
+}
+
+#indicatorHead h2.navi{
+	font-size: 15px;
+    padding: 5px 3px;margin: 2px;
+}
+
+#subSearch {
+	margin-right: 10px;
+    padding: 5px 3px;
+}
+
+#ACform input[type="text"] { border:none; height:20px; }
+#ACForm input.inputWithImge { border:none; }
+#ACform img { vertical-align:middle; cursor:pointer; }
+#ACform button { border: 0; background: transparent; }
+
+/*js effect wrapping inputWithImge and the following image together*/
+.imageInputWrapper{ border:solid 1px #000; background:#fff;} 
+.focusField{background-color: #ffffaa;	/*light yellow*/}
+.idleField{color: #6F6F6F;}
+
+#wrapper{
+	width: 1000px;
+	margin: 0 auto;
+	border-left: 1px solid #aaa;
+	border-right: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+}
+
+#my_activity{
+/*set the div in the center of the screen*/
+	position:absolute;
+	top:50%;
+	left:50%;
+	z-index:1000;
+}
+
+#content {
+    padding: 10px;
+	/*background-color: #e3e6ea; /* gray */
+	background-color: #ebebeb; /* light gray - same with coda-slider */
+	/*background-color: #fff; /* white*/
+	overflow:hidden; /* to cope with google search api*/
+	clear:right; /*what's relaition with overflow:hidden?*/
+	z-index:0;
+	/*font-size: 85%;*/
+	/*font-size:15px;*/ /* tables within '#content' are all relative size(%), be careful!*/
+	/*position: relative; */ /*don't do this. it makes tooltip crash*/
+}
+
+#viewport{
+	margin: 0 auto;
+}
+
+#hgnc_autocomplete{
+    padding: 10px;
+}
+
+#footer {
+	clear: both; /* to prevent crash against 'float'*/
+	/*font-size: 11px ;*/
+	font-size: 70%;
+	color: #788993 ; /*grey* color: #7f3f00; /*dark brown */
+	background-color: #F3D550;	/*yellow*/
+    border-top: 1px solid #f08900; /*orange*/
+	padding-top: 5px; padding-bottom: 5px;
+}
+
+#footer .limg {
+	margin: -3px 5px;
+}
+#footer .rimg {
+	margin: -4px 5px 0 0;
+}
+#footer p{
+	text-align: center;
+	margin: 5px;
+}
+
+#google_search_result .gsc-control{
+	width:350px;
+}
+
+.nectar_panel, .nectar_lpanel{
+	background: #fff;
+	border: 1px dotted #aaa;
+	margin: 7px;
+	padding: 5px;
+}
+.nectar_panel {
+	width: 590px;
+}
+.nectar_panel h2{
+	background: #ccc;
+	padding-left: 5px;
+    /*border-bottom: 1px solid #f08900; /*orange*/
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .70); /*shadow bottom*/
+}
+.nectar_lpanel h2{
+	background: #ccc;
+	padding-left: 5px;
+    /*border-bottom: 1px solid #f08900; /*orange*/
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .70); /*shadow bottom*/
+}
+
+.google_api{
+	width: 350px;
+	padding:5px;
+	margin-right: 5px;
+	font-size: 85%;
+}
+
+.main_title {
+	margin-bottom:5px;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.desc{
+	font-size: 85%;
+	text-indent:10pt;
+	text-align: justify;
+	margin-bottom:10px;
+}
+
+.schema_legend{
+	margin: 5px auto;
+	list-style:		none;
+	line-height:	1.0;
+	font-size: 14px;
+}
+.schema_legend ul li{
+	width:			100%;
+}
+.schema_legend li {
+	float:			left;
+	position:		relative;
+	padding: 10px;
+}
+
+/* http://nectarmutation.org/main/schema */
+.schema_legend li.core, li.disease {background: #b01700;}
+.schema_legend li.caller, li.function {background: green; }
+.schema_legend li.annotation, li.paralogue {background: #ffe35f; }
+.schema_legend li.classification, li.mapping {background: #db8e3c; }
+
+.warning {
+    padding: 3px 2px;
+	background-color: #F3D550;	/*yellow*/
+	/*font-weight: bold;*/
+}
+
+.sub_container{
+	width:900px;
+	margin:auto;
+}
+
+table.general_list_table{
+	width: 800px;
+	font-size: 12px;
+	/*font-size: 73%;*/
+	margin: 15px auto;
+	background: #fff; /*white*/
+	border-collapse: collapse;
+	text-align: center;
+	border: 1px dotted #aaa;
+}
+table.general_list_table caption{
+	text-align: left;
+	font-size: 14px;
+	/*font-size: 110%;*/
+	font-weight: bold;
+	color: #12127D;
+	padding: 5px;
+}
+table.general_list_table tr.column{
+ 	text-align: center;
+	border-bottom: 1px solid #6678b1;
+}
+table.general_list_table tr.entry{
+	border-bottom: 1px solid #ccc;
+}
+table.general_list_table tr.merged, tr.non_canon, tr.grey{
+	background-color: #ebebeb; /* grey*/
+}
+table.general_list_table th{
+	/*font-size: 12px;*/
+	font-weight: bold;
+	color: #039;
+	padding: 8px 6px;
+}
+table.general_list_table th.des{
+	width: 250px;
+}
+table.general_list_table th.dotted{
+ 	text-align: center;
+	border: 1px dotted #ccc;
+}
+table.general_list_table th.left{
+	text-align: center;
+ 	border-left: 1px solid #6678b1;
+}
+table.general_list_table th.right{
+	text-align: center;
+	width: 80px;
+	border-right: 1px solid #6678b1;
+}
+table.general_list_table td{
+ 	color: #669;
+	padding: 8px 6px;
+	border-bottom: 1px solid #ccc;
+}
+table.general_list_table td.yellow{
+	background: #f9df6b; /*light yellow*/
+}
+table.general_list_table td.disease{
+	background: #c2aa40; /*more dark yellow*/
+}
+table.general_list_table td.function{
+	background: #f3d550; /*dark yellow*/
+}
+table.general_list_table td.left{
+	text-align: left;
+}
+table.general_list_table td.right{
+	text-align: right;
+}
+table.general_list_table td.right_border{
+	border-right: 1px dotted #aaa;
+}
+table.general_list_table td.narrow{
+	padding: 2px 2px;
+}
+table.general_list_table tbody tr:hover td{
+ 	color: #009;
+}
+

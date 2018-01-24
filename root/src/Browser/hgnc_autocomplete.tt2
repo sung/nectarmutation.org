@@ -1,0 +1,13 @@
+	[% SET my_ac="hgnc_query"%]
+	[% SET min_char=2%]
+	[%#SET ac_url="/service/hgnc?output=json"%]
+	[% SET ac_url="/service/hgnc"%]
+
+	[% PROCESS jquery_autocomplete.tt2%] [%# root/lib/js/jquery_autocomplete.tt2%]
+
+	<div id='hgnc_autocomplete'>
+		<form >
+			<label for "gene">Search gene:</label>
+			<input type="text" name="query" id="[%my_ac%]" />
+		</form>
+	</div>

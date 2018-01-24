@@ -1,0 +1,25 @@
+	[%INCLUDE Site/pager.tt2%]
+
+	<table class='general_list_table'>
+		<caption>Target Region of [%target_name%]</caption>
+		<tr class='column'>
+			<th>Chr</th>
+			<th>Start</th>
+			<th>End</th>
+			<th>HGNC</th>
+			<th>ENSG</th>
+			<th>Strand</th>
+		</tr>
+		[%FOREACH r IN regions%]
+		<tr class='entry'>
+			<td>[%r.chr%]</td>
+			<td>[%r.g_start%]</td>
+			<td>[%r.g_end%]</td>
+			<td>[%r.hgnc%]</td>
+			<td>[%r.ensg%]</td>
+			<td>[%r.strand%]</td>
+		</tr>
+		[%END%]
+	</table>
+
+	[%INCLUDE Site/pager.tt2%]

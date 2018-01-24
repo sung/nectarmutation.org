@@ -1,0 +1,20 @@
+[%meta.title='Uploading your vcf'%]
+
+	[%# DO NOT USE THIS %]
+	[%# USE root/src/Form/vcf_formhandler.tt2%]
+	<div id='vcf_uploads'>
+		<form enctype="multipart/form-data" id="file_upload_form" action="[%c.uri_for('/vcf')%]">
+			<table class='general_list_table' [%IF no_wrapper%]style='width:300px'[%END%]>
+				<tr>
+					<th>File</th>
+					<td><input type="file" name="file" id="file" /></td>
+				<tr>
+				<tr>
+					<td>
+						<input type="submit" name="submit" id="btn_submit" value="Upload" onClick="$('#my_activity').activity()" />
+					</td>
+					<td> </td>
+				<tr>
+			</table>
+		</form>
+	</div>

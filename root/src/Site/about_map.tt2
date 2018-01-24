@@ -1,0 +1,12 @@
+		[%-#google map API%]
+		[%-SET dom1="st_view"%]
+		[%-SET dom2="plain_map"%]
+		[%-SET dept="$site.dept"%]
+		[%-SET address_html="<a href='$link.dept'>$site.dept</a><br>$site.ini<br>$address.street<br>$address.city, $address.postcode<br>$address.country"%]
+		[%-SET lati="51.48900" %]	
+		[%-SET long="-0.16991" %]	
+		[% PROCESS google_map_api.tt2 lat="$lati" lon="$long" address="$dept" -%] [%#root/lib/js/google_map_api.tt2%]	
+
+			<h2 class="main_title">Where we are</h2>
+			<div id="[%dom2%]" style="width:590px; height:400px; margin:auto;"></div>
+			<div id="[%dom1%]" style="width:590px; height:300px; margin:auto;"></div>

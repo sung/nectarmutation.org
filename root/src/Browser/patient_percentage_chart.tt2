@@ -1,0 +1,22 @@
+		<!-- format [%-BLOCK dummy_format%]['[%a%]: [%b%]',[%c%]][%END-%] -->
+		[%#dummy_header=INCLUDE dummy_format a='disease_type', b='dummy', c='\'cnt_unique_bru\''%]
+		[%-BLOCK dummy_format%]['[%a%]',[%c%]][%END-%]
+		[%dummy_header=INCLUDE dummy_format a='disease_type', c='\'cnt_unique_bru\''%]
+		[%dummy_list=[dummy_header]%] [%#defined an empty list%]	
+
+		[%-FOREACH g IN source_data%]
+			[%-dummy_item=INCLUDE dummy_format a=g.$print_this, b=g.des, c=g.cnt_unique_bru%]
+			[%-dummy_list.push(dummy_item)%]
+		[%-END%]
+
+		[%# set chart_title, chart_data, bgcolor, chart_div%]
+		[%-SET chart_data=dummy_list.join(', ')%]
+		[%-SET chart_title="NO. of patient by $my_type type"%]
+		[%-SET bgcolor="white"%] [%# #ebebeb % /* light gray - same with coda-slider */%]
+		[%-SET width="800" height="350"%] [%# #ebebeb % /* light gray - same with coda-slider */%]
+		[%-SET chart_div="patient_percentage"%]
+		[%-SET link_url=c.uri_for("$link_this")%]
+		[%PROCESS google_chart_api.tt2%] [%# root/lib/js/google_chart_api.tt2%]
+
+		<!-- <div id="[%chart_div%]" style="width: [%width%]px; height: [%height%]px; margin: auto;"></div>-->
+		<div id="[%chart_div%]" style="width: [%width%]px; height:[%height%]px; margin: auto;"></div>

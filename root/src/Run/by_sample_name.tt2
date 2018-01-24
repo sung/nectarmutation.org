@@ -1,0 +1,24 @@
+[% meta.title = 'Sample Name: ' _ sample_name-%]
+
+[%-IF reports.size%]
+<div id='enrichment_reports' class="x_scroll">
+	[%PROCESS enrichment_report.tt2%]	
+</div>
+[%ELSE%]
+<p class='desc'>No run report for this sample</p>
+[%END%]
+
+	[%PROCESS run_index.tt2%]	
+
+<div id='meta_samples'>
+	[%PROCESS meta_samples.tt2%]	
+</div>
+
+<div id='classified_sample'>
+	[%-SET caller="sample"%]
+	[%PROCESS Browser/classified_calls.tt2 caller="$caller"%]	
+</div>
+
+<div id='meta_ensembls'>
+	[%#PROCESS meta_ensembls.tt2%]	
+</div>

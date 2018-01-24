@@ -1,0 +1,29 @@
+				<img class="rfloat" src="http://chart.apis.google.com/chart?chs=320x185&cht=v&chco=FF6342,ADDE63,63C6DE&chds=0,1000&chd=t:100,100,100,40,40,40,20&chdl=Prediction+Software|Evolutionary+Information|Functional+Annotations&chma=10,10" width="320" height="185" alt="how to measure 'damaging effects'?" usemap="#damaging_effects"/>
+				<map name='damaging_effects'>
+					<area name='legend0' shape='RECT' coords='182,68,194,80' href='#'  title='Prediction Software'
+						onClick='Boxy.load("[%c.uri_for('/static/site/prediction_software.html')%]", {title:"Prediction Software", modal:false})'>
+					<area name='legend1' shape='RECT' coords='182,86,194,98' href='#'  title='Evolutionary Information'
+						onClick='Boxy.load("[%c.uri_for('/static/site/evol_info.html')%]", {title:"Evolutionary Information", modal:false})'>
+					<area name='legend2' shape='RECT' coords='182,104,194,116' href='#'  title='Function Annotations'
+						onClick='Boxy.load("[%c.uri_for('/about/annotation')%]?id=all&boxy=1",{title:"List of Function Annotations"})'>
+					<area name='circle0' shape='CIRCLE' coords='91,69,53' href='#'  title='Prediction Software'
+						onClick='Boxy.load("[%c.uri_for('/static/site/prediction_software.html')%]", {title:"Prediction Software", modal:false})'>
+					<area name='circle1' shape='CIRCLE' coords='118,116,53' href='#'  title='Evolutionary Information'
+						onClick='Boxy.load("[%c.uri_for('/static/site/evol_info.html')%]", {title:"Evolutionary Information", modal:false})'>
+						<area name='circle2' shape='CIRCLE' coords='64,116,53' href='#'  title='Function Annotations' 
+						onClick='Boxy.load("[%c.uri_for('/about/annotation')%]?id=all&boxy=1",{title:"List of Function Annotations"})'>
+				</map>
+				This category is for non-synonymous mutations (<b>b</b>) where amino acids are changed or deleted. This is to answer 'how deleterious those missense and inframe deletion mutations are' by investigating structural and functional effects based on the three criteria as shown in the Venn diagram.</br>
+				There are <b>four</b> classes:
+				<pre>
+		<b>3</b>: satisfying all the three coditions
+		<b>2</b>: satisfying any of the two conditions
+		<b>1</b>: satisfying any of one condition
+		<b>0</b>: satysfying none
+				</pre>
+			
+		[%IF no_wrapper%]
+		<div class='mut_category'>
+			Based on <b>I</b> and <b>II</b> above, there could be 7 possible combinations for a mutation class, which make the <a title="mutation signal system" href='#' onClick='Boxy.load("[%c.uri_for('/about/mutation_encoding')%]?boxy=1", {title:"Mutation Signal System", modal:false})'>mutation signal system</a>.
+		</div><!-- end of div class='mut_category' -->
+		[%END%]

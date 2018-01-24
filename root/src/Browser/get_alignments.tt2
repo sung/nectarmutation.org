@@ -1,0 +1,41 @@
+
+	<div class='desc x_scroll' style='width:850px'>
+		<div id="colocated_mutatins">
+			[%- FOREACH a IN alignments%]
+			<table class='msa'>
+				<!--<caption>HSP [%a.hsp_index%] (E-value:[%a.evalue%] PID:[%a.pid%])</caption>-->
+				<caption>HSP [%a.hsp_index%] (PID:[%a.pid%])</caption>
+				<tr class='column'>
+					<th> </th>
+					<th>ENSP</th>
+					<th>Start</th>
+					<th>End</th>
+					<th>Alignments</th>
+				</tr>
+				<tr class='entry'>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="alignment bold">
+						[%SET sp='&nbsp;' pin=10%][%WHILE pin<a.get_column('q_seq').length%][%IF pin==10%][%sp.repeat(10-pin.length+1)%][%ELSE%][%sp.repeat(10-pin.length-3)%][%END%][%pin%][%pin=pin+10%][%END%]</td>
+					</td>
+				</tr>
+				<tr class='entry'>
+					<td>Query [%b%]</td>
+					<td>[%query%]</td>
+					<td>[%a.q_start%]</td>
+					<td>[%a.q_end%]</td>
+					<td class="alignment">[%a.get_column('q_seq')%]</td>
+				</tr>
+				<tr class='entry'>
+					<td>Hit</td>
+					<td>[%hit%]</td>
+					<td>[%a.h_start%]</td>
+					<td>[%a.h_end%]</td>
+					<td class="alignment">[%a.get_column('h_seq')%]</td>
+				</tr>
+			[%END%]
+			</table>
+		</div>
+	</div>

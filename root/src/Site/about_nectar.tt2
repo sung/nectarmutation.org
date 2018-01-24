@@ -1,0 +1,56 @@
+			<h2 class="main_title">NECTAR?</h2>
+			<p class="desc">
+				So, what is 'NECTAR'? It stands for <strong>NECT</strong>ar is not <strong>AR</strong>chive.
+				Or more in science-wise, 
+				<!--<strong>NE</strong>xt generation <strong>C</strong>oding mu<strong>T</strong>ation <strong>AR</strong>chive-->
+				<strong>N</strong>on-synonymous <strong>E</strong>nriched <strong>C</strong>oding mu<strong>T</strong>ation <strong>AR</strong>chive
+				Yes, that's what I meant for this website.
+			</p>
+
+			<p class="desc">
+				If you are a scientist, you might be wondering what NECTAR is made with and how.
+				A schematic <a title="A schematic diagram of NECTAR" class='boxy' href="[%c.uri_for('/static/images/site/nectar_workflow_resized.jpg')%]">diagram</a> and a brief description of database 
+				<a title="NECTAR database schema" href="[%c.uri_for('/about/schema')%]">schema</a> of NECTAR are explained below.
+				<a class="hidden" title="failed! A schematic diagram of NECTAR" href="#" onClick='Boxy.load("[%c.uri_for('/static/images/site/nectar_workflow_resized.jpg')%]", {title:"NECTAR workflow", modal:true})'>NECTAR</a>
+				For more information, read the NECTAR <a class='external' href='http://nar.oxfordjournals.org/content/42/D1/D1013.full' title='NECTAR NAR paper' target='_blank'>paper</a>.
+			</p>
+
+			<p class="desc">
+				The short version: disease variants are compiled from following 
+				<a title="source of disease mutation" href="#" onClick='Boxy.load("[%c.uri_for('/about/annotation')%]?disease=1&boxy=1", {title:"Sources of Disease Mutations"})'>four</a>
+				databases: HGMD-PUBLIC, UniProt, COSMIC, and ClinVar.  
+				The Ensembl <a title="NECTAR is using version [%ensembl_ver%]" class="external" href="[%link.en_var_sources%]" target="_blank">variation database</a> is the main source of variants, 
+				except  <a title="ver.[%uniprot_ver%]" class="external" href="[%link.humsavar_url%]" target="_blank">UniProt</a>.
+
+				We only use non-synonymous mutations which substitute amino acid residues. 
+				The positions of non-synonymous mutations are mapped onto Ensembl proteins using <a class="boxy" title="what's this" href="[%c.uri_for('/about')%]#canonical">canonical transcripts</a>.
+				Then, each base of the corresponding codon is substituted with different nucleotide and check whether this leads to non-synonymous mutations. 
+				[<a title="NECTAR details for scientists" class='boxy' href=[%c.uri_for('/about')%]#nectar_details_for_scientist>details</a>]
+				<!--If this is not enough yet, read on for further <a title="NECTAR details for NGS scientists" class='boxy' href=[%c.uri_for('/about')%]#nectar_details_for_ngs_scientist>details</a>-->
+			</p>
+
+			<p class="desc">
+				If you are a geek, you might be wondering what NECTAR is based on.
+			</p>
+
+			<p class="desc">
+				The short version: it is developed on the basis of the Perl <a class="external" href="[%link.cat%]">Catalyst</a> 
+				web application framework and served by <a class="external" href="[%link.apache%]">Apache</a> with <a class="external" href="[%link.modperl%]">mod-perl</a> as a glue, 
+				all running on Linux and developed on <a class="external" href="[%link.centos%]">CentOS</a>. 
+				We use <a class="external" href="[%link.mysql%]">MySQL</a> as a back-end DBMS. 
+				We use <a class="external" href="[%link.memcached%]">memcached</a> to keep the database from getting crushed. 
+				[<a title="nector for nerds" class='boxy' href=[%c.uri_for('/about')%]#nectar_details_for_nerd>details</a>]
+			</p>
+
+			<div id="nectar_details_for_scientist" class='hidden' style="width:600px">
+				[%INCLUDE Site/nectar_for_scientist.tt2%]
+			</div>
+
+			<div id="nectar_details_for_nerd" class='hidden' style="width:600px">
+				[%INCLUDE Site/nectar_for_nerd.tt2%]
+			</div>
+
+			<div id="nectar_details_for_ngs_scientist" class='hidden' style="width:600px">
+				[%INCLUDE Site/nectar_for_ngs_scientist.tt2%]
+			</div>
+

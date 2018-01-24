@@ -1,0 +1,55 @@
+		<h2 class="main_title">What NECTAR provides</h2>
+		<p class="desc">
+			<strong>Disease mutation: </strong>
+			You can browse disease-related non-synonymous mutations from a gene of your interest. There are [%count_gene.chunk(-3).join(',')%] genes in NECTAR of which [%count_disease_gene.chunk(-3).join(',')%] genes have at least one non-synonymous disease mutations either from following 
+		<a title="source of disease mutation" href="#" onClick='Boxy.load("[%c.uri_for('/about/annotation')%]?disease=1&boxy=1", {title:"Sources of Disease Mutations"})'>four</a>
+		databases: HGMD-PUBLIC, UniProt, COSMIC, or ClinVar. 
+			[<a title="cardiomyopathy" href="[%c.uri_for('/search/disease/cardiomyopathy')%]">example</a>]. 
+		</p>
+
+		<p class="desc">
+			<strong>Function annotations: </strong>
+			[%INCLUDE uniprot_annotations.tt2%]
+			[<a title="MYL2" href="[%c.uri_for("/gene/MYL2")%]#func_anno">example</a>].
+		</p>
+
+		<p class="desc">
+			<strong>Paralogue annotations: </strong>
+			It is equally interesting to investigate the effect of non-synonymous variants at the equivalent amino acid positions between close homologues.
+			NECTAR identifies functionally equivalent amino acid residues in evolutionarily-related proteins (paralogues) and where appropriate transfers annotations between them 
+			[<a title='Tropomyosin alpha-4 chain' href='[%c.uri_for('gene/TPM4')%]#para_anno'>example</a>]
+		</p>
+
+		<p class="desc">
+			<strong>Enriched annotations: </strong>
+			Known non-synonymous disease mutations are extended to include the same or possible amino acid replacement at the same codon where the original mutations are reported.
+			Using <a class="external" title="Ensembl API" href="[%link.en_api%]">Ensembl API</a>, mutations are mapped to <a class="external" title="Ensembl Human" href="[%link.en_homo%]">Ensembl human</a> genome coordinate, transcripts and proteins with enriched annotations such as '<a class="external" href="[%link.en_cons%]" target="_blank">variation consequence types</a>' and '<a class="external" href="[%link.en_func%]" target="_blank">protein function predictions</a>'. 
+		</p>
+
+		[%# to set nectar_ftp and gb_link %]
+		[%PROCESS Browser/set_gbrowse.tt2%]
+		<p class="desc">
+			<strong>GBrowse: </strong>
+			Disease variants, function annotations, and paralogue annotations are graphically visualized and highlighted at the amino acid reisude level of Ensembl (or UniProt) protein sequence
+			by using <a class="external" title="Visit GBrowse home" href="[%link.gbrowse%]" target='_blank'>Generic Genome Browser</a>.
+			[<a title="GBrowse example with P24941" href="[%gb_link%]ENSP00000228841">example</a>]
+		</p>
+
+		<p class="desc">
+			<strong>DAS: </strong>
+			NECTAR is a <a class="external" title="Read more about Distributed Annotation System" href="[%link.das%]">DAS</a> server, which provides a XML-based web service to distribute annotations through the web.
+			[<a title="You might see an empty page, but it's alright" href="[%das_link%]/types/dsn">Database Source Name(DSN) of NECTAR</a>]
+			[<a title="DAS exmaple with P24941" href="[%das_link%]/nectar|ParaAnno/features?segment=ENSP00000228841">example</a>]
+		</p>
+
+		<p class="desc">
+			<strong>FTP: </strong>
+			Download (or mirror) NECTAR from <a class="external" title="NECTAR FTP site" href="[%nectar_ftp%]" target="_blank">here</a>
+		</p>
+
+		<p class="desc">
+			<strong>Annotation on the fly: </strong>
+			<a href="#" title="Upload VCF" onClick='Boxy.load("[%c.uri_for('/boxy/file_upload')%]?boxy=1", {title:"Upload VCF", modal:true})'>Upload</a>
+			your own <a class='external' title='Variant Call Format' href='[%link.vcf%]' target='_blank'>VCF</a> and have it annotated as demonstrated above.
+			Plus have a <a class="external" title="Variant Effect Predictor" href="[%link.vep%]" target="_blank">VEP</a> result at the same time.
+		</p>

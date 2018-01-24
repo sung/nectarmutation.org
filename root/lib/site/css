@@ -1,0 +1,10 @@
+		<link rel="stylesheet" type="text/css" href="[%c.uri_for('/static/css/reset.css')%]">
+		<link rel="stylesheet" type="text/css" href="[%c.uri_for('/static/css/nectar.css')%]">
+		<link rel="stylesheet" type="text/css" href="[%c.uri_for('/static/css/pager.css')%]" />
+		<link rel="stylesheet" type="text/css" href="[%c.uri_for('/static/css/mut_traffic.css')%]">
+		<link rel="stylesheet" type="text/css" href="[%c.uri_for('/static/css/boxy.css')%]">
+		<link rel="stylesheet" type="text/css" href="[%c.uri_for('/static/css/tipsy.css')%]">
+		<link rel="stylesheet" type="text/css" href="[%c.uri_for('/static/css/superfish.css')%]" />
+		<link rel="stylesheet" type="text/css" href="[%c.uri_for('/static/css/styles.css')%]" /><!-- auto complete-->
+		<link rel="stylesheet" type="text/css" href="[%c.uri_for('/static/css/easytabs.css')%]" />
+		<!--<link rel="stylesheet" type="text/css" href="[%c.uri_for('/static/css/jqtransform.css')%]" />-->

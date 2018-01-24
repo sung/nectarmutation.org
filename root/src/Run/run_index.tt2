@@ -1,0 +1,47 @@
+[% IF index %]
+	[%meta.title = 'Sequencing runs'-%]
+
+	[%#Google Chart API%]	
+	[%-BLOCK dummy_format%]['[%a%]',[%c%]][%END-%]
+	[%dummy_header=INCLUDE dummy_format a='platform', c='\'cnt_unique_sample\''%]
+	[%dummy_list=[dummy_header]%] [%#defined an empty list%]	
+
+	[%-FOREACH m IN meta_info%]
+		[%-dummy_item=INCLUDE dummy_format a=m.platform, c=m.get_column('sample_num')%]
+		[%-dummy_list.push(dummy_item)%]
+	[%-END%]
+
+	[%# set chart_title, chart_data, bgcolor, chart_div%]
+	[%-SET chart_data=dummy_list.join(', ')%]
+	[%-SET chart_title="NO. of sample by sequencing platform"%]
+	[%-SET bgcolor="white"%] [%# #ebebeb % /* light gray - same with coda-slider */%]
+	[%-SET width="800" height="350"%] [%# #ebebeb % /* light gray - same with coda-slider */%]
+	[%-SET chart_div="patient_percentage"%]
+	[%-SET link_url=c.uri_for('/run/platform/')%]
+	[%PROCESS google_chart_api.tt2%] [%# root/lib/js/google_chart_api.tt2%]
+[%END%]
+
+<!-- <div id="[%chart_div%]" style="width: [%width%]px; height: [%height%]px; margin: auto;"></div>-->
+<div id="[%chart_div%]" style="width: [%width%]px; height:[%height%]px; margin: auto;"></div>
+
+<div id='list_run'>
+	<table class='general_list_table'>
+		<caption>[% IF index%][%run_indices.size%] run[%IF run_indices.size>=2%]s[%END%] so far[%ELSE%]Run info[%END%]</caption>
+		<tr class='column'>
+			<th>Run ID</th>
+			<th>Created</th>
+			<th>Platform</th>
+			<th>Run Type</th>
+			<th class='des'>Description</th>
+		</tr>
+	[%-FOREACH r IN run_indices%]
+		<tr class='entry'>
+			<td><a title="browse [%r.run_name%]" href='[%c.uri_for('/run')%]/[%r.run_name%]'>[%r.id%]</a></td>
+			<td>[%r.created.ymd%]</td>[%#r.created is an instance of DataTime object%]
+			<td>[%r.platform%]</td>
+			<td>[%r.run_type%]</td>
+			<td>[%r.des%]</td>
+		</tr>	
+	[%-END%]
+	</table>
+</div>

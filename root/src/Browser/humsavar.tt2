@@ -1,0 +1,55 @@
+
+		[%-UNLESS humsavars.size%]
+		No UniProt mutations reported for [%hgnc%]
+		[%-ELSE%]
+			<table class='general_list_table'>
+				[%IF hgnc%]
+				<caption>
+					Reported [%hgnc%] (UniProt:<a class="external" title="go to UniProt" href="[%link.uniprot%]/uniprot/[%humsavars.0.sp_acc%]#section_features">[%humsavars.0.sp_acc%]</a>) mutations from <a title="click to see detail" href="#" onClick='Boxy.load("[%c.uri_for('/about/annotation')%]?id=HUMSAVAR&boxy=1", {title:"Annotation: HUMSAVAR"})'>HUMSAVAR</a>
+					<a class='excel rfloat' href='[%c.req.uri_with({download=>1,source=>'humsavar'})%]'>&nbsp;</a>
+				<caption>
+				[%END%]
+				<tr class='column'>
+					<th>ID [<a title="click to see possible non-synonymous mutations which occur at the same amino-acid position where this original mutation occurs">?</a>]</th>
+					<th>Residue NO.</th>
+					<th>Allele</th>
+					<th>Type</th>
+					<th>dbSNP</th>
+					<th>Disease</th>
+					<th>OMIM</th>
+					[%-IF hgnc && c.user.get('active') && c.user.get('role')!='guest'%]
+					<th>Has Found [<a title='mutation found at the same position in Nectar'>?</a>]</th>
+					[%END%]
+				</tr>
+				[%-FOREACH h IN humsavars%]
+				<tr class='entry'>
+					<td>
+						[%IF h.type=='Disease'%]
+						<a href="#" onClick='Boxy.load("[%c.uri_for('/get_colocated_mutations')%]?hgnc=[%hgnc%]&feature=HUMSAVAR&xref=[%h.variant_id%]&mut_aa=[%h.aa_variation%]&boxy=1", {title:"List of possible non-synonymous mutations where [%h.variant_id%] occurs"})' onClick="$('#my_activity').activity()">[%h.variant_id%]</a>
+						[%ELSE%]
+						<a title="go to expasy" class="external" href="http://web.expasy.org/cgi-bin/variant_pages/get-sprot-variant.pl?[%h.variant_id%]" target="_blank">[%h.variant_id%]</a>
+						[%END%]
+					</td>	
+					<td>[%h.res_num%]</td>
+					<td>[%h.aa_original%]/[%h.aa_variation%]</a></td>	
+					<td>[%h.type%]</a></td>	
+					<td>[%IF h.rs_id%]<a class="external" href="[%ncbi.dbsnp%]/[%h.rs_id%]">[%h.rs_id%]</a>[%END%]</td>	
+					<td>[%h.disease_name%]</a></td>	
+					<td>[%IF h.mim%]<a class="external" title="OMIM:[%h.mim%]" href="http://omim.org/entry/[%h.mim%]">[%h.mim%]</a>[%END%]</td>	
+					[%-IF hgnc && c.user.get('active') && c.user.get('role')!='guest'%]
+					<td>
+						[%UNLESS bru_code%][%# called by /gene/TTN#known_mutation%]
+						<a title='click to see this mutation' href='[%c.uri_for('/mutation')%]/[%h.get_column('uid')%]'>[%h.get_column('uid')%]
+						[%ELSE%][%# called by /10AT00324/gene/TTN#known_mutation%]
+							[%FOREACH m IN metacalls%]
+								[%IF h.get_column('uid')==m.uid%]
+						<a title='click to see this mutation' href='[%c.uri_for('/mutation')%]/[%h.get_column('uid')%]'>[%h.get_column('uid')%]
+								[%END%]
+							[%END%]
+						[%END%]
+					</td>	
+					[%END%]
+				</tr>
+				[%-END%]
+			</table>
+		[%END%]

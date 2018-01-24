@@ -1,0 +1,21 @@
+[% meta.title = 'Error caught' %]
+<div class='error'>
+	[%IF error_code=='not_logged_in'%]
+		[%PROCESS js/login_ready.tt2 -%] [%# root/lib/js/login_ready.tt2%]
+	[%ELSE%]
+		[%IF no_static%]
+			[%SET url_link=no_static%]
+		[%ELSE%]
+			[%SET url_link="/static/site/" _ error_code _ ".html"%]
+		[%END%]
+		[%SET popup_title=msg%]
+		[%PROCESS js/popup_js.tt2 enabled="1" -%] [%# root/lib/site/popup -> root/lib/js/popup_js.tt2%]
+		Error Code: [%error_code%]<br/>
+	[%END%]
+
+	[%IF msg%]
+		[%msg%]
+	[%ELSE%]
+		Unknown error found
+	[%END%]
+</div>

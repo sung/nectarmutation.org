@@ -1,0 +1,33 @@
+
+	<p class='desc'>
+		The main idea of NECTAR is to archive possible non-synonymous mutations which occur at the same amino acid residues (sharing the same codons) reported as either 1) disease related or 2) functionally important. NECTAR extends further to include those amino acid residues within the close sequence homologues. In other words, disease related or functionally important residues are transferred from one protein to its close homolouges where no such residues are reported. Then possible non-synonymous mutations are compiled at the equivalent aligned positions while retaining the original information from the sequence homologues for a reference.
+	</p>
+
+	<p class='desc'>
+		<strong>Sources of Mutation</strong>:
+		Non-synonymous disease mutations are from the following 
+		<a title="source of disease mutation" href="#" onClick='Boxy.load("[%c.uri_for('/about/annotation')%]?disease=1&boxy=1", {title:"Sources of Disease Mutations"})'>four</a> 
+		sources: HGMD-PUBLIC, UniProt, COSMIC, and ClinVar.  
+		From ClinVar, variants annotated as 'pathogenic' or 'probable-pathogenic' were used and from UniProt, only 'disease' variants were used.
+		Note that NECTAR annotates non-synonymous mutations only.
+	</p>
+
+	<p class='desc'>
+		<strong>Functional Residues</strong>:
+		[%INCLUDE uniprot_annotations.tt2%]
+	</p>
+
+	<p class='desc'>
+		<strong>Mapping</strong>:
+		Disease-related and functional residues are mapped onto Ensembl <a class="boxy" title="what's this" href="[%c.uri_for('/about')%]#canonical">canonical transcripts</a> and further to their proteins.
+		We installed local version of Ensembl human databases and APIs to make the whole process faster. They serve as a backbone for mapping the locations of mutations acrsss genome-transcriptome-proteome and also for the prediction of mutation effect (AKA. <a class="external" href="[%link.vep%]" target="_blank">VEP</a>).
+	</p>
+
+	<p class='desc'>
+		<strong>Sequence Homologues</strong>:
+		The amino acid positions of disease variants and functional residues were transferred and marked to their equivalent positions of their paralogues using the gene paralogy definition adopted 
+		from the EnsemblCompara <a class="external" href="[%link.en_homology%]" target="_blank">GeneTree</a>. 
+		They are annotated as ‘Para-disease’ and ‘Para-function’ as shown 
+		<a title="A schematic diagram of NECTAR" class='boxy' href="[%c.uri_for('/static/images/site/nectar_workflow_resized.jpg')%]">here</a>.
+	</p>
+

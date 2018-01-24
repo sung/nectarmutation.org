@@ -1,0 +1,31 @@
+				[%# - NB $to is defined within Browser/meta_x_disease.tt2%]
+				[%-SET sub_tab_container="by_subtab"%]
+				<script type="text/javascript">
+					[%-FOREACH gd IN meta_x_diseases%]
+					$('#subselect_[%gd.$to%]').click( function() {
+						$('#[%sub_tab_container%]').easytabs('select', '#[%gd.$to%]');
+					});
+					[%END%]
+				</script>
+
+				[%PROCESS easy_tab.tt2 tab_container="$sub_tab_container"%] [%# root/lib/js/easy_tab.tt2%]
+				[%-IF meta_x_diseases.size%]
+				<div id="[%sub_tab_container%]" class='tab-container sub_container'>
+					<ul class='etabs'>
+						[%-FOREACH gd IN meta_x_diseases%]
+						<li class='tab'><a href="#[%gd.$to%]" title="genetic vairations called within [%$this%] for [%gd.$to%] samples">[%gd.$to%]</a></li>
+						[%END%]
+					</ul>
+
+					<div class='easytab-panel-container'>
+						[%-FOREACH gd IN meta_x_diseases%]
+						[%-SET checkbox_name="mut_type"_ gd.$to%]
+						[%PROCESS select_all.tt2 checkbox_name="$checkbox_name"-%] [%# javascirpt to check all. see root/lib/js/select_all.tt2%]
+						[%PROCESS select_novel.tt2 checkbox_name="$checkbox_name"-%] [%# javascirpt to check all. see root/lib/js/select_all.tt2%]
+						<div id="[%gd.$to%]">
+							[%PROCESS classified_calls.tt2 caller="$caller"%]	
+						</div><!-- end of div [%gd.$to%]-->
+						[%-END%]
+					</div> <!-- end of  class='easytab-panel-container' -->
+				</div> <!-- end of id="[%sub_tab_container%]" class='tab-container' -->
+				[%-END%]

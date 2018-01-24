@@ -1,0 +1,57 @@
+		[%accordion_id="accordion"%]
+		[%#PROCESS accordion.tt2 %] [%# root/lib/js/accordion.tt2%]
+		[%my_entry=[] %]
+		[%-FOREACH f IN families%][% my_entry.push(f.get_column('fam_name')) %][%END%]
+		[%PROCESS toggle.tt2 entry=my_entry%] [%# root/lib/js/toggle.tt2%]
+
+		[%-UNLESS families.size%]
+		<h2 class="header">No protein family for this mutation</h2>
+		[%-ELSE%]
+		<div id="[%accordion_id%]">
+		<h2 class="header">Multiple Sequence Alignments</h2>
+		[%-FOREACH f IN families%]
+			[%SET fam_name=f.get_column('fam_name')%][%#distinct families having mut_id%]
+			[%SET des=f.get_column('des')%]
+			[%SET mem_cnt=f.get_column('mem_cnt')%]
+			<h2 id="[%fam_name%]-toggle" title="[%des%]">[%fam_name%]</h2>
+			<div id="[%fam_name%]" class="x_scroll panel">
+			[%-UNLESS msa.$fam_name%]
+				No MSA for [%fam_name%]
+			[%-ELSE%]
+				<table class="msa">
+					<caption><a title="go to" href="#[%mut_mem.$fam_name.first.mem_name%]">[%mut_mem.$fam_name.size%]</a> protein[%IF mut_mem.$fam_name.size>=2%]s[%END%] having the mutation out of [%mem_cnt%] members within <a class="external" href="[%ensembl.ensf%][%fam_name%]" title="[%des%]">[%fam_name%]</a></caption>
+					<tr class="bold alignment">
+						<td>Member protein</td>
+						<td>[%SET sp='&nbsp;' pin=10%][%WHILE pin<msa.$fam_name.first.aln.length%][%IF pin==10%][%sp.repeat(10-pin.length+1)%][%ELSE%][%sp.repeat(10-pin.length-3)%][%END%][%pin%][%pin=pin+10%][%END%]</td>
+					</tr>
+				[%-FOREACH m IN msa.$fam_name%][%-#print out each member protein name and its alignment %]
+					<tr [%-FOREACH mm IN mut_mem.$fam_name-%][%-#highlight member proteins having the mutation-%][%-IF m.mem_name==mm.mem_name-%]class="mut_mem" style="background-color:#f9df6b;"[%-END-%][%-END-%]>
+						<td><a title="Species: [%m.sn%], Length: [%m.len%]" >
+							[%-FOREACH mm IN mut_mem.$fam_name-%][%-IF m.mem_name==mm.mem_name-%]<span id="[%m.mem_name%]">[%-END-%][%-END-%]
+							[%-m.mem_name%]
+							[%-FOREACH mm IN mut_mem.$fam_name-%][%-IF m.mem_name==mm.mem_name-%]</span>[%-END-%][%-END-%]
+						</a></td>
+						<td class="alignment">
+						[%-SET has_mut=0%][%#a flag for a member to tell it's a mutation-containing member%]
+						[%-FOREACH al IN mut_pos.$fam_name%][%# aln pos and entorpy for each member of the corresponding family%]
+							[%-IF m.mem_name==al.mem_name%][%# if it's the same member protein%]
+								[%-SET has_mut=1%][%-SET cnt_pos=0%]
+								[%-FOREACH aa IN m.aln.split('')%]
+									[%-cnt_pos=cnt_pos+1%]
+									[%-IF cnt_pos==al.aln_pos%]<a class="mut_pos" title="Entropy:[%al.entropy%], Gap frequency:[%al.gap_freq%]">[%-END-%]
+									[%-aa-%]
+									[%-IF cnt_pos==al.aln_pos%]</a>[%-END-%]
+								[%-END%]
+							[%-END%]
+						[%-END%]
+						[%-UNLESS has_mut%][%m.aln%][%-END%]
+						</td>
+					</tr>
+				[%-END%]
+				</table>
+			[%-END%]
+			</div><!-- end of fam_name-->
+		[%-END%]
+		</div><!-- end of accordion-->
+		[%-END%]
+

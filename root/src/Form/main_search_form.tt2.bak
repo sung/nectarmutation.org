@@ -1,0 +1,95 @@
+[%UNLESS no_wrapper%]
+	[%meta.title='Search Nectar'%]
+[%ELSE%]
+<html>
+	<head>
+		<script type="text/javascript" src="[%c.uri_for('/static/js/jquery-1.7.2.min.js')%]"></script>
+		<script type="text/javascript" src="[%c.uri_for('/static/js/jquery.autocomplete-min.js')%]"></script>
+	</head>
+	<body>
+[%END%]
+
+	[%SET caller='form'%][%# this flag also used in Site/mutation_scale.tt2%]
+	[%# this form will be shown within boxy popup window%]
+		<div id="main_search_boxy">
+			[%IF c.req.params.msg%]
+			<p class="warning">[%c.req.params.msg%]</p>	
+			[%END%]
+			<form id="main_search" action="[%c.uri_for('/mutation/search')%]">
+				<input type="hidden" name="caller" value="[%caller%]">
+				<table class='general_list_table' [%IF no_wrapper%]style='width:300px'[%END%]>
+					<tr>
+						<th class='dotted'>[%search_mode%]</th>
+						<td class='left'>
+							[%IF search_mode == 'Gene'%]
+								[%-# auto-complete%]
+								[% ac_url=BLOCK%][%c.uri_for("/service/auto")%][%END%] [%# Controller/Util/Service.pm%]
+								[% SET min_char=2 ac_width=150 search_this='gene' my_ac='my_query'%]
+								<form id="ACform" method="get" action="[%ac_url%]">
+									<input type="hidden" name="target" value="gene">
+									<input type="text" name="query" id="[%my_ac%]" value="TTN"  ONFOCUS="clearDefault(this)"/> 
+									[<a title="leave empty to search all">?</a>]
+								</form>
+							[%ELSIF search_mode=='Locus'%]
+								<select name='chr'>
+									[%FOREACH ch IN [1 .. 22] %]
+									<option value='chr[%ch%]' [%IF ch==2%]selected[%END%]>chr[%ch%]</option>
+									[%END%]
+									[%FOREACH ch IN ['chrX' 'chrY']%]
+									<option value='[%ch%]'>[%ch%]</option>
+									[%END%]
+								</select>
+								<input type="text" name="v_start" size=8 value="179390617"  ONFOCUS="clearDefault(this)"/> 
+								<input type="text" name="v_end" size=8 value="179682384"  ONFOCUS="clearDefault(this)"/> 
+							[%END%]
+						</td>
+					</tr>
+					<tr>
+						<th class='dotted'>Disease</th>
+						<td class='left'>
+							<select name='diag_code'>
+							[%FOREACH d IN diseases%]
+							<option title='[%d.des%]' value='[%d.diag_code%]' [%IF d.diag_code=='DCM'%]selected[%END%]>[%d.diag_code%]</option>
+							[%END%]
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th class='dotted'>Target</th>
+						<td class='left'>	
+							<select name='target_name'>
+							[%FOREACH t IN targets%]
+							<option title='[%t.des%]' value='[%t.target_name%]' [%IF t.target_name=='ICCv4'%]selected[%END%]>[%t.target_name%]</option>
+							[%END%]
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th class='dotted'>Level [<a title="mutation consequence type" href='#' onClick='Boxy.load("[%c.uri_for('/about/mutation_profile')%]?boxy=1", {title:"Mutation Consequence Types", modal:false})'>?</a>]</th>
+						<td class='left'>
+							[%INCLUDE Site/mutation_scale.tt2%]
+						</td>
+					</tr>
+					<tr>
+						<th class='dotted'>Seen before</th>
+						<td class='left'>
+							<input type='checkbox' name='is_novel' value='1'>novel [<a title='no known co-located mutations'>?</a>]
+							<input type='checkbox' name='is_novel' value='0'>known [<a title='co-located mutations fround by HGMD, dbSNP or ICC_Mutations'>?</a>]
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="submit" value="Search" onClick="$('#my_activity').activity()">
+						</td>
+						<td colspan=1></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	[%-# root/lib/js/jquery_autocomplete.tt2 (inpupt: ac_url min_char my_ac)%]
+	[%PROCESS js/jquery_autocomplete.tt2 IF search_mode=='Gene'%] 
+
+[%IF no_wrapper%]
+	</body>
+</html>
+[%END%]

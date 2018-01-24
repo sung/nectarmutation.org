@@ -1,0 +1,47 @@
+	[%# this script is called by Messenger/customed_err.tt2%]
+	[%# with an error_code 'not_logged_in'%]
+	<script type="text/javascript">
+		/* login Boxy trigger by 'ready (onload popup)' 
+		*/
+		var loginBoxy = null;
+		$('#[%error_code%]').ready(function(){
+			var boxy_content;
+			boxy_content +="<div id=\"login_box\" style=\"margin: 10px;\"><form id=\"login\">";
+			boxy_content +="<p>User name:<br/>";
+			boxy_content +="<input type=\"text\" name=\"username\" id=\"username\" size=\"15\"/ title=\"your account\"/></p>";
+			boxy_content +="<p>Password:<br/>";
+			boxy_content +="<input type=\"password\" name=\"password\" id=\"password\" size=\"15\"/ title=\"your password\"/></p>";
+			boxy_content +="<input type=\"submit\" value=\"Login\"/>";
+			boxy_content +="<a style=\"font-size: 10px; text-align: right;\" title=\"create account\" href=\"/main/register\">need an account?</a><br/>";
+			boxy_content +="</form></div>";
+
+			loginBoxy = new Boxy(boxy_content, {
+				title: "Login to Nectar",
+				draggable: false,
+				modal: true,
+				behaviours: function(c) {
+					c.find('#login').submit(function() {
+						Boxy.get(this).setContent("<div>Logging you in...</div>");
+						// submit form by ajax using post and send two values: 'username' and 'password' 
+						$.post("[%c.uri_for('/login')%]", { username: c.find("input[name='username']").val(), password: c.find("input[name='password']").val()},
+							function(data){
+								/*set boxy content to data from ajax call back*/
+								if(data == "auth_ok"){
+									loginBoxy.hideAndUnload(window.location = "[%uri%]");
+								}else{
+									//loginBoxy.setContent("<div style=\"width: 300px; margin: 20px auto;\">"+data+"</div>");
+									loginBoxy.setContent("<div id=\"login_box\" style=\"margin: 10px;\"><form id=\"login\"><p class=\"warning\">"+data+"</p><p>User name:<br/><input type=\"text\" name=\"username\" id=\"username\" size=\"15\"/ title=\"your account\"/></p><p>Password:<br/><input type=\"password\" name=\"password\" id=\"password\" size=\"15\"/ title=\"your password\"/></p><input type=\"submit\" value=\"Login\"/></form></div>");
+								};
+							}
+						); // end of $.post()
+						return false;
+					}); // end of c.find().submit
+				} //end of behaviours
+			});
+			return false;
+		});
+
+	</script>
+
+	<div id="[%error_code%]">
+	</div>

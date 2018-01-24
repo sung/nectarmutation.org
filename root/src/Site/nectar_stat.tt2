@@ -1,0 +1,51 @@
+
+			<h2 class="main_title">NECTAR Statistics</h2>
+				<table class='general_list_table' style="width: 350px">
+					<caption>Disease and Function Enrichment</caption>
+					<tr class='column'>
+						<th rowspan='2'>Feature</th>
+						<th rowspan='2'>Gene</th>
+						<th colspan='2'>Number of</th>
+					</tr>
+					<tr class='column'>
+						<th>Amino Acid Replacements</th>
+						<th>Variants</th>
+					</tr>
+					[% FOREACH st IN stats%]
+					<tr class='entry'>
+						<td class="[%IF st.featureDef.category=='Disease variants'%]disease[%ELSE%]function[%END%]">
+							<a title="[%st.featureDef.des%]">[%st.featureDef.feature%]</a>
+						</td>
+						<td>[%st.cnt_gene.chunk(-3).join(',')%]</td>
+						<td>[%st.cnt_nectar_sap.chunk(-3).join(',')%]</td>
+						<td>[%st.cnt_nectar_var.chunk(-3).join(',')%]</td>
+					</tr>
+					[%END%]
+					<tr>
+						<td colspan='4' class='left'>
+							features related with <span style="background-color:#f3d550">function</span> and  
+							<span style="background-color:#c2aa40">disease</span> 
+						</td>
+					</tr>
+				</table>
+				
+				<table class='general_list_table' style="width: 350px">
+					<caption>Paralogue Enrichment</caption>
+					<tr class='column'>
+						<th colspan=2 class='right'><a title='new annotations made via homology information'>Paralogue Annotations</a></th>
+						<th colspan=2><a title='disease and function annotatins as shown above'>Sources of Reported Annotations</a></th>
+					</tr>
+					<tr class='column'>
+						<th>Amino Acids</th>
+						<th class='right'>Gene</th>
+						<th>Amino Acids</th>
+						<th>Gene</th>
+					</tr>
+					<tr class='entry'>
+						<td>[%para_stat.cnt_sap.chunk(-3).join(',')%]</td>
+						<td>[%para_stat.cnt_gene.chunk(-3).join(',')%]</td>
+						<td>[%para_stat.cnt_nectar_var.chunk(-3).join(',')%]</td>
+						<td>[%para_stat.cnt_nectar_sap.chunk(-3).join(',')%]</td>
+						</td>
+					</tr>
+				</table>

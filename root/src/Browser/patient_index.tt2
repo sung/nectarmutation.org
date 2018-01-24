@@ -1,0 +1,38 @@
+[% title = 'List of Patient'-%]
+[%IF hgnc%]
+	[%IF diag_code%]
+		[% title = diag_code _ ' Patients having ' _ hgnc _ ' mutation'-%]
+	[%ELSE%]
+		[%IF hgnc=='all'%]
+			[% title = 'NO. of mutation from the patient ' _ bru_code _ ' by its targeted genes'-%]
+		[%-ELSE%]
+			[% title = 'Patient code: ' _ bru_code _ ' having ' _ hgnc _ ' mutation'-%]
+		[%END%]
+	[%END%]
+[%ELSE%]
+	[%IF diag_code%]
+		[% title = diag_code _ ' Patients'-%]
+	[%END%]
+	[%IF target_name%]
+		[% title = 'Patients targeting ' _ target_name-%]
+	[%END%]
+	[%IF target_name and diag_code%]
+		[% title = diag_code _ ' Patients targeting ' _ target_name -%]
+	[%END%]
+[%END%]
+
+[% meta.title = title-%]
+
+	<!-- google chart api for /patient -->
+	[%-UNLESS bru_code or diag_code or target_name or hgnc%]
+		<!-- /patient -->
+		[%PROCESS patient_percentage_chart.tt2 source_data=meta_info my_type='disease' print_this='diag_code' link_this='/patient/disease/'%]
+	[%END-%]
+
+	[%PROCESS pager.tt2%]
+
+	<div id="patient_index">
+		[%PROCESS meta_patient.tt2%]
+	</div>
+
+	[%PROCESS pager.tt2%]

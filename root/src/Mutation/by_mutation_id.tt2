@@ -1,0 +1,55 @@
+[%-meta.title = 'Mutation ID:' _ uid -%]
+
+	[%# test<a title="test" href="#" id="subselect_mapping">mapping</a>%]
+
+	[%-SET tab_container="by_mutation_id"%]
+	[%-#SET default_tab="default_tab"%]
+	[%INCLUDE no_js_warning.tt2 -%]
+	<script type="text/javascript">
+		$('#subselect_meta_info').click( function() {
+			$('#[%tab_container%]').easytabs('select', '#meta_info');
+		});
+		$('#subselect_mapping').click( function() {
+			$('#[%tab_container%]').easytabs('select', '#mapping');
+		});
+		$('#subselect_msa').click( function() {
+			$('#[%tab_container%]').easytabs('select', '#msa');
+		});
+	</script>
+	[%PROCESS easy_tab.tt2 tab_container="$tab_container"%] [%# root/lib/js/easy_tab.tt2%]
+
+	<div id="[%tab_container%]" class='tab-container'>
+		<ul class='etabs'>
+			<li class='tab'><a href="#meta_info" title="Meta information of mutation:[%uid%]">Meta Info</a></li>
+			<li class='tab' [%IF default_tab%]id="[%default_tab%]"[%END%]><a href="#mapping" title="mapping of this mutation to Ensembl, UniProt and PDB">Mapping</a></li>
+			[%IF families.size%]<li class='tab'><a href="#msa" title="Multiple Sequence Alignment">MSA</a></li>[%END%]
+		</ul>
+
+ 		<div class='easytab-panel-container'>
+			[%# Tab 1. Mutation info%]
+			<div id="meta_info">
+				[%PROCESS mutation_coord_info.tt2%]
+				[%PROCESS classified_mutations.tt2%]	
+				[%PROCESS list_of_mutation.tt2%]
+			</div>
+
+			[%# Tab 2. Mapping%]
+			<div id="mapping">
+				[%#PROCESS mutation_mapping_coda_slider.tt2%]
+				[%PROCESS mutation_mapping_easy_slider.tt2%]
+			</div>
+
+			[%# Tab 3. MSA%]
+			[%IF families.size%]
+			<div id="msa">
+				[%#PROCESS msa_by_mutation_id.tt2%] [%# accordion%]
+				[%PROCESS msa_by_mutation_id_easy_slider.tt2%]
+			</div>
+			[%END%]
+
+ 		</div> 
+	</div> 
+
+	<div id="canonical" class="hidden">
+		[%INCLUDE canonical_transcript.tt2%][%# src/Site/canonical_transcript.tt2%]
+	</div>

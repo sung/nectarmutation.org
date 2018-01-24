@@ -1,0 +1,20 @@
+[% meta.title = 'User registration' %]
+
+	[%-UNLESS c.user_exists%]
+		<div id='user_reg'>
+			[%# [todo] a boxy pop-up message for this?-%]
+			[%# note that a default user role is 'guest'-%]
+			[%- IF form.validated%]
+				<p>Thanks for your registration.</p>
+				<p>An Email has been delivered to you for a confirmation, so please have a look.</p>
+				<p>If you cannot find any, check you inbox later as the system might be busy.</p>
+			[%-ELSE%]
+				[%UNLESS c.session.agree%][%# set within Nectar::Web::Controller::Auth::tnc%]	
+					[%PROCESS js/popup_js.tt2 enabled="1" popup_title="Disclaimer" url_link="/static/site/reg_warning.html"-%] [%# root/lib/site/popup -> root/lib/js/popup_js.tt2%]
+				[%END%]
+				[% form.render %]
+			[%- END%]
+		</div>
+	[%-ELSE%]
+		<p>Hello [%c.user.username%]! You're already logged in and you're (a) [%c.user.roles%]</p>
+	[%-END%]

@@ -1,0 +1,14 @@
+			<h2 class="main_title">External Sources</h2>
+				<table class='general_list_table' style="width: 350px">
+					<tr class='column'>
+						<th>Source</th>
+						<th>Version</th>
+					</tr>
+					[% FOREACH sr IN sources%]
+					<tr>
+						<td>[%sr.source%]</td>
+						<td>[%sr.ver%]</td>
+					</tr>
+					[%END%]
+				</table>
+

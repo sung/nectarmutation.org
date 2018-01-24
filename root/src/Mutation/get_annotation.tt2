@@ -1,0 +1,10 @@
+
+	<div class='desc x_scroll' style='width:850px'>
+		[%IF c.req.params.q=='2UniProt'%]
+			[%PROCESS uniprot_mapping.tt2%]
+		[%ELSIF c.req.params.q=='2Pdb'%]
+			[%PROCESS pdb_mapping.tt2%]
+		[%ELSIF c.req.params.q=='V2Ensembl'%]
+			[%PROCESS ensembl_mapping.tt2%]
+		[%END%]
+	</div>

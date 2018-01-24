@@ -1,0 +1,16 @@
+
+	<script type='text/javascript'>
+		$(function() {
+			$('#ask-mutation').click(function() {
+				Boxy.ask("Search by gene or locus?", ["Gene", "Locus"], function(val) {
+					//alert("You chose: " + val);
+					if(val=='Gene'){
+						Boxy.load("[%c.uri_for('/boxy/main_search_form')%]?boxy=1&search_mode=Gene", {title:"Search Mutations", modal:true});
+					}else{
+						Boxy.load("[%c.uri_for('/boxy/main_search_form')%]?boxy=1&search_mode=Locus", {title:"Search Mutations", modal:true});
+					}
+				}, {title: "Searching mode"});
+				return false;
+			});
+		});
+	</script>

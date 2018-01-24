@@ -1,0 +1,37 @@
+[% meta.title = 'Target: ' _ target_name-%]
+
+	[%-SET caller="target"%]
+	[%-SET tab_container="by_target_name"%]
+	[%INCLUDE no_js_warning.tt2 -%]
+	[%PROCESS easy_tab.tt2 tab_container="$tab_container"%] [%# root/lib/js/easy_tab.tt2%]
+
+	[%SET anchor='target_info'%]
+	<div id="[%tab_container%]" class='tab-container'>
+		<ul class='etabs'>
+			<li class='tab'><a href="#mutation" title="genetic vairations called within [%target_name%]">Mutation Calls</a></li>
+			<li class='tab'><a href="#[%anchor%]" title="Target information of [%target_name%]">Target Regions</a></li>
+		</ul>
+
+ 		<div class='easytab-panel-container'>
+			[%# Tab 1. Mutation info%]
+			<div id="mutation">
+				<div id="meta_target">
+					[%INCLUDE meta_target.tt2 caller="$caller"%]
+				</div>
+
+				<div id="meta_target_disease">
+					[%PROCESS meta_x_disease.tt2%]	
+				</div>
+
+				<div id="meta_x_disease_slider">
+					[%PROCESS classified_x_disease_easy_slider.tt2%]
+				</div>
+			</div>
+
+			[%# Tab 2. Target info%]
+			<div id="[%anchor%]">
+				[%PROCESS Browser/target_regions.tt2%]
+			</div>
+
+ 		</div> <!-- end of  class='easytab-panel-container' -->
+	</div> <!-- end of id="[%tab_container%]" class='tab-container' -->

@@ -1,0 +1,44 @@
+<workbook>
+	<worksheet name="Mutations">
+		<row>
+			<bold><cell>Mutation ID</cell></bold>
+			<bold><cell>Mutation Info</cell></bold>
+			<bold><cell>Class</cell></bold>
+			<bold><cell>Consequence Type</cell></bold>
+			<bold><cell>Sample ID</cell></bold>
+			<bold><cell>Gene</cell></bold>
+			<bold><cell>ENST</cell></bold>
+			[%UNLESS any_novel%]
+			<bold><cell>HGMD</cell></bold>
+			<bold><cell>dbSNP</cell></bold>
+			<bold><cell>ICC Mutation</cell></bold>
+			[%END%]
+			<bold><cell>UniProt mapping?</cell></bold>
+			<bold><cell>PDB mapping?</cell></bold>
+			<bold><cell>dp(diBayes)</cell></bold>
+			<bold><cell>dp(GATK)</cell></bold>
+			<bold><cell>dp(Samtool)</cell></bold>
+		</row>
+		[%-FOREACH m IN calls%]
+		<row>
+			<cell>[%m.uid%]</cell>
+			<cell>[%m.get_column('variant')%]</cell>
+			<cell>[%m.get_column('class')%]</cell>
+			<cell>[%m.get_column('so_terms')%]</cell>
+			<cell>[%m.sample_id%]</cell>
+			<cell>[%m.get_column('hgnc')%]</cell>
+			<cell>[%m.get_column('hgvs_coding')%]</cell>
+			[%UNLESS any_novel%]
+			<cell>[%m.get_column('acc_num')%]</cell>
+			<cell>[%m.get_column('rs_id')%]</cell>
+			<cell>[%m.get_column('mut_id')%]</cell>
+			[% END %]
+			<cell>[%IF m.get_column('uuid')%]1[%ELSE%]0[%END%]</cell>
+			<cell>[%IF m.get_column('puid')%]1[%ELSE%]0[%END%]</cell>
+			<cell>[%m.dp_dibayes%]</cell>
+			<cell>[%m.dp_gatk%]</cell>
+			<cell>[%m.dp_samtool%]</cell>
+		</row>
+		[% END %]
+	</worksheet>
+</workbook>

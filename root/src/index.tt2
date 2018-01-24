@@ -1,0 +1,28 @@
+[%-meta.title = 'NECTAR intro'-%]
+
+	<div id="main_right" " class="rfloat">
+		<div id="nectar_sources" class="nectar_panel google_api">
+			[%INCLUDE Site/nectar_sources.tt2%]
+		</div>
+		<div id="nectar_stat" class="nectar_panel google_api">
+			[%INCLUDE Site/nectar_stat.tt2%]
+		</div>
+	</div>
+
+	<div id="main_left">
+		<div id="welcome" class="nectar_panel">
+			[%-IF c.user.get('active') && c.user.get('role')!='guest'%]
+				[%INCLUDE Site/welcome_nectar_member_only.tt2 -%]
+			[%ELSE%]
+				[%INCLUDE Site/welcome_nectar.tt2 -%]
+			[%END-%]
+		</div>
+
+		<div id="functionality" class="nectar_panel">
+			[%-IF c.user.get('active') && c.user.get('role')!='guest'%]
+				[%INCLUDE Site/nectar_feature_member_only.tt2 -%]
+			[%ELSE%]
+				[%INCLUDE Site/nectar_feature.tt2 -%]
+			[%END-%]
+		</div>
+	</div>

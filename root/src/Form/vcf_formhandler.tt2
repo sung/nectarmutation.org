@@ -1,0 +1,82 @@
+[% meta.title = 'Searching Nectar using your VCF' %]
+
+	[%- IF form.validated%]
+		[%-SET tab_container="vcf_annotations"%]
+		[%INCLUDE no_js_warning.tt2 -%]
+		[%PROCESS easy_tab.tt2 tab_container="$tab_container"%] [%# root/lib/js/easy_tab.tt2%]
+
+		[%PROCESS Browser/set_gbrowse.tt2%] [%# root/src/Browser/set_gbrowse.tt2%]
+		
+		[%# Uploaded file info%]
+		<div id='your_vcf_summary'>
+			<table class='general_list_table'>
+				<tr class='column'>
+					<th rowspan=2>Filename</th>
+					<th rowspan=2>Size (bytes)</th>
+					<th colspan=2>Results</th>
+				</tr>
+				<tr class='column'>
+					<th>Nectar</th>
+					<th><a title="Varaint Effect Predictor" class="external" href="[%link.vep%]" target="_blank">VEP</a></th>
+				</tr>
+				<tr>
+					<td>[%c.req.upload('file').filename%]</td>
+					<td>[%c.req.upload('file').size.chunk(-3).join(',')%]</td>
+					<td>
+						[%IF vcf_diseases.size or vcf_func.size or vcf_para.size%]
+						<a class='excel' title='download Nectar result in excel sheet' href="[%c.req.uri_with({nectar_download=>1,target_file=>c.req.upload('file').filename})%]">&nbsp</a>
+						[%ELSE%]
+						No NECTAR results
+						[%END%]
+					</td>
+					<td>
+						<a class='excel' onClick="$('#my_activity').activity()" title='download VEP results in excel sheet' href="[%c.req.uri_with({vep_download=>1,target_file=>c.req.upload('file').filename})%]">&nbsp</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="[%tab_container%]" class='tab-container'>
+			<ul class='etabs'>
+				<li class='tab'><a href="#vcf_disease_anno" title="Known disease annotations">Disease Variants</a></li>
+				<li class='tab'><a href="#vcf_func_anno" title="Known functional annotations">Function Annotations</a></li>
+				<li class='tab'><a href="#vcf_para_anno" title="Mutation annotations from the paralogues">Paralogue Annotations</a></li>
+			</ul>
+
+			<div class='easytab-panel-container'>
+				[%# Tab 0. Disease/Function annotation%]
+					[%#INCLUDE Mutation/vep.tt2%]
+
+				[%# Tab 1. Disease annotation%]
+				<div id="vcf_disease_anno">
+					[%SET colocates=vcf_diseases%]
+					[%IF colocates.0%]
+						[%INCLUDE Browser/get_colocated_mutations.tt2 called_by="vcf_disease_anno"%]
+					[%ELSE%]
+						No disease annotations found 
+					[%END%]
+				</div>
+				[%# Tab 2. Function annotation%]
+				<div id="vcf_func_anno">
+					[%SET colocates=vcf_func%]
+					[%IF colocates.0%]
+						[%INCLUDE Browser/get_colocated_mutations.tt2 called_by="vcf_func_anno"%]
+					[%ELSE%]
+						No functional annotations found 
+					[%END%]
+				</div>
+
+				[%# Tab 3. Paralogue Annotations%]
+				<div id="vcf_para_anno">
+					[%SET colocates=vcf_para%]
+					[%IF colocates.0%]
+						[%INCLUDE Browser/get_colocated_mutations.tt2 called_by="vcf_para_anno"%]
+					[%ELSE%]
+						No paralogue annotations found 
+					[%END%]
+				</div>
+			</div> <!-- end of  class='easytab-panel-container' -->
+		</div> <!-- end of id="[%tab_container%]" class='tab-container' -->
+	[%-ELSE%]
+		[%INCLUDE Form/vcf_file_upload.tt2%]
+	[%- END%]

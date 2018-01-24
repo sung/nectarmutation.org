@@ -1,0 +1,31 @@
+
+	<table class='general_list_table'>
+		[%UNLESS target_name%]
+		<caption>List of [%meta_targets.size%] targets</caption>
+		[%-ELSE%]
+		<caption>Brief stat. of calls</caption>
+		[%-END%]
+		<tr class='column'>
+			<th rowspan=2>Target</th>
+			<th rowspan=2>Description</th>
+			<th colspan=5>Number of</th>
+		</tr>
+		<tr class='column'>
+			<th>Runs</th>
+			<th>Samples <a title="samples having at least one called varaint for [%IF target%][%target%][%ELSE%]the corresponding target[%END%]; total NO. of sample might be more than this number">[?]</a></th>
+			<th>Patients <a title="patients having at least one called varaint for [%IF target%][%target%][%ELSE%]the corresponding target[%END%]; total NO. of pateint might be more than this number">[?]</a></th>
+			<th>Unique calls <a title="distinct variant after merging samples/patient">[?]</a></th>
+			<th>Total calls <a title="same varaints are counted as many as the samples">[?]</a></th>
+		</tr>
+	[%FOREACH d IN meta_targets%]
+		<tr class='entry'>
+			<td><a title="[%IF target_name%]It's me[%ELSE%]browse [%d.target_name%][%END%]" href='[%c.uri_for('/target')%]/[%d.target_name%]'>[%d.target_name%]</a></td>	
+			<td class='left'>[%d.des%]</td>	
+			<td>[%d.cnt_unique_run%]</td>	
+			<td><a title="browse [%d.cnt_unique_sample%] sample(s)" href='[%c.uri_for('/run/target')%]/[%d.target_name%]'>[%d.cnt_unique_sample%]</a></td>	
+			<td><a title="browse [%d.cnt_unique_bru%] patient(s)" href='[%c.uri_for('/patient/target')%]/[%d.target_name%]'>[%d.cnt_unique_bru.chunk(-3).join(',')%]</a></td>	
+			<td>[%d.cnt_unique_call.chunk(-3).join(',')%]</td>	
+			<td>[%d.cnt_call.chunk(-3).join(',')%]</td>	
+		</tr>
+	[%END%]
+	</table>

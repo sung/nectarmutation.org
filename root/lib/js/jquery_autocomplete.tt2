@@ -1,0 +1,26 @@
+	[%# http://www.devbridge.com/projects/autocomplete/jquery/ %]
+	<script type="text/javascript">
+		var aTarget;
+
+		jQuery(function () {
+			var onAutocompleteSelect = function(value, data) {
+				$('#selection').html('<img src="\/global\/flags\/small\/' + data + '.png" alt="" \/> ' + value);
+				//alert(data);
+			};
+
+			var options = {
+				serviceUrl:'[%ac_url%]',
+				minChars:[%min_char%], 
+				width: [%ac_width%],
+				zIndex: 9999,
+				delimiter: /(,|;)\s*/, // regex or character
+				onSelect: onAutocompleteSelect,
+				deferRequestBy: 0, //miliseconds
+				params: { output:'json', target:'[%search_this%]' [%IF search_this=='patient_gene'%],bru_code:'[%bru_code%]'[%END%] }, //aditional parameters
+				noCache: false //set to true, to disable caching
+			};
+
+			aTarget= $('#[%my_ac%]').autocomplete(options);
+	    });
+
+	</script>

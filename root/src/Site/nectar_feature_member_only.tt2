@@ -1,0 +1,45 @@
+		<h2 class="main_title">What NECTAR provides</h2>
+		<p class="hidden">
+			<strong>Mutations behind Cardiovascular Diseases: </strong>
+			You can browse genetic mutations of cardiovascular diseases such as <a title="Hypertrophic Cardio Myopathy" href="[%c.uri_for('/disease/hcm')%]">HCM</a> and <a title="Dilated Cardio Myopathy" href="[%c.uri_for('/disease/dcm')%]">DCM</a>.
+			NECTAR also hosts genetic variations from healthy voluneers to contrast the difference of genetic-makeup between patients and control groups and to better interrogate genetic mutations behind cardiovascular diseases. 
+		</p>
+
+		<p class="desc">
+			You can browse genetic mutations by a specific gene of your interest. Then those mutations in the selected gene are further broken down by disease types to which the patients belong (e.g. <a title="myosin heavy chain1" href="[%c.uri_for('/gene/MYH1')%]">MYH1)</a>. 
+		</p>
+
+		<p class="desc">
+			In NECTAR, there are [%count_mutation%] mutations and <a title="show all genes" href="[%c.uri_for('/gene')%]">[%count_gene%]</a> genes from <a title="patients" href="[%c.uri_for('/patient')%]">[%count_patient%]</a> patients (of which [%count_nad%] are healthy volunteers) of <a title="disease" href="[%c.uri_for('/disease')%]">[%count_disease%]</a> cardiovascular disease types, including two control groups - <a title="control group" href="[%c.uri_for('/disease/NAD')%]">NAD</a> and <a title="control group (familial screened)" href="[%c.uri_for('/disease/FS-NAD')%]">FS-NAD</a>, based on <a title="run" href="[%c.uri_for('/run')%]">[%count_run%]</a> sequencing runs in total. 
+		</p>
+
+		<p class="desc">
+			<strong>Rich Annotations: </strong>
+			Thanks to <a class="external" title="Ensembl API" href="[%link.en_api%]">Ensembl API</a>, mutations are mapped to <a class="external" title="Ensembl Human" href="[%link.en_homo%]">Ensembl human</a> genome coordinate, transcripts and proteins with enriched annotations such as <a class="external" title="Go to Ensembl variation" href="[%link.en_cons%]">'variantion consequence types'</a> and <a class="external" title="Go to Ensembl variation" href="[%link.en_func%]">'protein function predictions'</a>. 
+		</p>
+
+		<p class="desc">
+			Also, with the help of Ensembl Compara API, proteins of a same family are aligned together 
+			and then the Shannon's sequence <a class="external" title="read more" href="[%link.entropy%]">entropies</a> are calculated at each amino acid positions where nsSNPs occur.
+			This can be a mearsurement to tell 'how deleterious the mutations are' based on the amino acid sequence conservation 
+			whereby most of the important residues are highly conserved across homologous proteins throughout prtein evolution [<a title="an example of a mutation" href="[%c.uri_for('/mutation/38934')%]">example</a>]
+		</p>
+			
+		<p class="desc">
+			NECTAR even takes one step further to nourish structural and functional annotations of mutations by using 
+			<a class="external" title="Go to UniProt" href="[%link.uniprot%]">UniProt</a> and <a class="external" title="Go to PDB" href="[%link.pdb%]">PDB</a>. 
+			The UniProt website provides high quality resource of protein sequence and functional information. 
+			Especially <a class="external" title="what are the UniProt features?" href="[%link.uniprot_ft%]">'sequence feature'</a> 
+			records can be harnessed to interprete the effects of nsSNPs on their occurrences. 
+			In addition, nsSNPs that occur at protein coding regions are mapped onto their corresponding amino acids in the context of 3D structure if avaible from the PDB.
+		</p>
+
+		<p class="hidden">
+			<strong>Mutation Classification: </strong>
+			NECTAR classifes genetic mutations into 24 classes based on three criteria;
+			[<a title="What is mutation profile?" href="[%c.uri_for('/about/mutation_profile')%]"'>read more</a>]<br/>
+			<a title="What is mutation profile?" class='hidden boxy' href="[%c.uri_for('/static/site/mutation_profile.html')%]">read html more</a>
+			I) consequence types (3 categories), 
+			II) degree of damaging effect (4 categories), 
+			III) is the mutation novel? (2 categories) 
+		</p>

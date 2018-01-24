@@ -1,0 +1,12 @@
+	[%meta.title= keyword%]
+	[% meta.title = 'Disease: ' _ keyword -%]
+
+	[%-IF disease_annos.size%]
+	[%INCLUDE pager.tt2%]
+	[%END-%]
+
+	[%INCLUDE Browser/disease_annotations.tt2%]
+
+	[%-IF disease_annos.size%]
+	[%INCLUDE pager.tt2%]
+	[%END-%]

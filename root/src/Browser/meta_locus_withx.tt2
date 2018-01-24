@@ -1,0 +1,33 @@
+[%# this is called by Browser/by_locus.tt2 -%]
+
+        <table class='general_list_table'>
+            <caption>Breakdowns by [%meta_locus.size%] [%which%] type[%-IF meta_locus.size>=2%]s[%-END%]</caption>
+            <tr class='column'>
+                <th rowspan=2>[%Which%]</th>
+				[%UNLESS which=='gene'%]
+                <th rowspan=2>Description</th>
+				[%END%]
+                <th colspan=5>Number of</th>
+            </tr>
+            <tr class='column'>
+                <th>Runs</th>
+                <th>Samples <a title="this sums up the sample number shown above">[?]</a></th>
+                <th>Patients <a title="this sums up the patient number shown above">[?]</a></th>
+                <th>Unique calls <a title="distinct variant after merging samples/patient">[?]</a></th>
+                <th>Total calls <a title="same varaints are counted as many as the samples">[?]</a></th>
+            </tr>
+        [%-FOREACH d IN meta_locus%]
+            <tr class='entry'>
+                <td class='wide'><a title="show [%d.get_column("$to")%] below!" href="#" id="subselect_[%d.get_column("$to")%]">[%d.get_column("$to")%]</a></td>
+				[%UNLESS which=='gene'%]
+                <td class='left'>[%d.get_column('des')%]</td>
+				[%END%]
+                <td>[%d.get_column('cnt_unique_run')%]</td>   
+                <td><a title="get [%d.get_column('cnt_unique_sample')%] [%d.get_column("$to")%] samples">[%d.get_column('cnt_unique_sample')%]</a></td>   
+                <td><a title="get [%d.get_column('cnt_unique_bru').chunk(-3).join(',')%] patients">[%d.get_column('cnt_unique_bru').chunk(-3).join(',')%]</a></td>    
+                <td>[%d.get_column('cnt_unique_call').chunk(-3).join(',')%]</td>  
+                <td>[%d.get_column('cnt_call').chunk(-3).join(',')%]</td> 
+            </tr>
+        [%-END%]
+        </table>
+

@@ -1,0 +1,38 @@
+
+		[%-UNLESS cosmics.size%]
+		No COSMIC mutations reported for [%hgnc%]
+		[%-ELSE%]
+			<table class='general_list_table'>
+				[%IF hgnc%]
+				<caption>
+					Reported somatic mutations from <a class="external" title="go to COSMIC" href="http://cancer.sanger.ac.uk/cosmic/gene/overview?ln=[%hgnc%]">COSMIC</a>
+				<caption>
+				[%END%]
+				<tr class='column'>
+					<th>ID</th>
+					<th>Histology</th>
+					<th>Mutation CDS</th>
+					<th>Mutation Residue</th>
+					<th>Mutation Type</th>
+					<th>Zygosity</th>
+					<th>Chr</th>
+					<th>Start</th>
+					<th>End</th>
+					<th>PubMed</th>
+				</tr>
+				[%-FOREACH h IN cosmics%]
+				<tr class='entry'>
+					<td><a class="external" href="http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=[%h.mutation_id%]">[%h.mutation_id%]</a></td>	
+					<td>[%h.primary_histology%]</td>
+					<td>[%h.mutation_cds%]</td>
+					<td>[%h.mutation_aa%]</td>
+					<td>[%h.mut_type%]</td>
+					<td>[%h.zygosity%]</td>
+					<td>[%h.chr%]</td>
+					<td>[%h.chr_start%]</td>
+					<td>[%h.chr_end%]</td>
+					<td>[%IF h.pubmed%]<a class="external" title="PubMed:[%h.pubmed%]" href="[%link.pubmed%]/[%h.pubmed%]">[%h.pubmed%]</a>[%END%]</td>
+				</tr>
+				[%-END%]
+			</table>
+		[%END%]

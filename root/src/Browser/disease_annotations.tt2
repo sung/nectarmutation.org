@@ -1,0 +1,49 @@
+		[%-UNLESS disease_annos.size%]
+			[%UNLESS keyword%]
+			No disease involvement reported from UniProt for <a class="external" title="see the source" href="[%link.uniprot%]/uniprot/[%uniprot_seq.0.acc%]#section_comments" target='_blank'>[%hgnc%]</a>
+			[%ELSE%]
+			No result found for [%keyword%]
+			[%END%]
+		[%-ELSE%]
+			<table class='general_list_table'>
+				<caption>
+				[%IF hgnc%]
+				Disease involvement of <a class="external" title="see the source" href="[%link.uniprot%]/uniprot/[%disease_annos.0.acc%]#section_comments" target="_blank">[%hgnc%]</a>
+				[%END%]
+				</caption>
+				<tr class='column'>
+					[%IF keyword%]
+					<th>Gene</th>
+					[%END%]
+					<th>Role</th>
+					<th>Disease</th>
+					<th>OMIM</th>
+					<th>Descriptions</th>
+					<th>Sources</th>
+				</tr>
+				[%-FOREACH da IN disease_annos%]
+				<tr class='entry'>
+					[%IF keyword%]
+					<td><a title="[%da.get_column('name')%]" href="[%c.uri_for('/gene')%]/[%da.gene%]">[%da.gene%]</a></td>	
+					[%END%]
+					<td>[%da.type%]</td>
+					<td>[%IF da.disease_abr%]<a class="external" title="[%da.disease_name%]" href="[%link.uniprot_disease%]/[%da.disease_id%]" target="_blank">[%da.disease_abr%]</a>[%END%]</td>	
+					<td>[%IF da.mim%]<a class="external" title="OMIM:[%da.mim%]" href="http://omim.org/entry/[%da.mim%]" target='_blank'>[%da.mim%]</a>[%END%]</td>	
+					[%IF keyword %]
+					<td>[%da.des.replace(keyword, "<font color='red'>$keyword</font>").replace('caused by mutations',"<b>caused by mutations</b>").replace('susceptibility is associated with variations','<b>susceptibility is associated with variations</b>').replace('acts as a disease modifier','<b>acts as a disease modifier</b>')%]
+					[<a class="external" title="read the source" href="[%link.uniprot%]/uniprot/[%da.acc%]#section_comments" target='_blank'>read more</a>]
+					</td>
+					[%ELSE%]
+					<td>[%da.des.replace(hgnc, "<font color='red'>$hgnc</font>").replace('caused by mutations',"<b>caused by mutations</b>").replace('susceptibility is associated with variations','<b>susceptibility is associated with variations</b>').replace('acts as a disease modifier','<b>acts as a disease modifier</b>')%]</td>
+					[%END%]
+					<td>
+					[%-FOREACH r IN da.get_column('refs').split(',')%]
+						[%IF r.split(':').0=='PubMed'%]
+						<a class="external" title="[%r%]" href="[%link.pubmed%]/[%r.split(':').1%]" target='_blank'>[%r.split(':').1%]</a><br/>	
+						[%END%]
+					[%END%]
+					</td>	
+				</tr>
+				[%-END%]
+			</table>
+		[%END%]

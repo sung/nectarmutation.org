@@ -1,0 +1,98 @@
+[%meta.title='Database Schema of NECTAR'%]
+
+<div id="schema">
+	<ul class="schema_legend">
+		<li class="disease">Disease</li>
+		<li class="function">Function</li>
+		<li class="paralogue">Paralogue</li>
+		<li class="mapping">Mapping/Annotation</li>
+	</ul>
+	<canvas id="viewport" style="background-color:#fff;" width="980" height="850"></canvas>
+	[%-#this javascript is using root/static/js/schema.js%]
+	<script language="javascript" type="text/javascript">
+
+		var theUI = {
+			nodes:{
+				// disease 
+				disease:{'color':'#b01700','shape':'dot','label':'Disease variants', alpha:1 },
+				hgmd:{'color':'#b01700','shape':'dot','label':'HGMD', alpha:1, link:'[%link.hgmd%]'},
+				cosmic:{'color':'#b01700','shape':'dot','label':'COSMIC', alpha:1, link:'[%link.cosmic_url%]'},
+				clinvar:{'color':'#b01700','shape':'dot','label':'ClinVar', alpha:1, link:'[%link.clinvar_url%]'},
+				humsavar:{'color':'#b01700','shape':'dot','label':'HUMSAVAR', alpha:1, link:'[%link.humsavar_url%]'},
+
+				// function 
+				uniprot:{'color':'green','shape':'dot','label':'Functional residues', alpha:1, link:'[%link.uniprot_ft%]' },
+				[%FOREACH fd IN featuredef%]
+				[%fd.feature%]:{'color':'green','shape':'dot','label':'[%fd.feature%]', alpha:1, link:'[%fd.url%]' },
+				[%END%]
+
+				// paralogue 
+				para:{'color':'#ffe35f','shape':'dot','label':'Ensembl Compara', alpha:1, link:'[%link.en_homology%]' },
+				paraD:{'color':'#ffe35f','shape':'dot','label':'Para-Disease', alpha:1},
+				paraF:{'color':'#ffe35f','shape':'dot','label':'Para-Function', alpha:1},
+
+				// mapping 
+				codon:{'color':'#db8e3c','shape':'dot','label':'2Codon', alpha:1},
+				altcodon:{'color':'#db8e3c','shape':'dot','label':'Alternative codons', alpha:1},
+				nectar:{'color':'#db8e3c','shape':'dot','label':'NECTAR variants', alpha:1},
+				vep:{'color':'#db8e3c','shape':'dot','label':'VEP', alpha:1, link:'[%link.vep%]'},
+
+			}, 
+			edges:{
+				// disease 
+				hgmd:{ disease:{directed:true} },
+				cosmic:{ disease:{directed:true} },
+				clinvar:{ disease:{directed:true} },
+				humsavar:{ disease:{directed:true} },
+				disease:{ codon:{directed:true}, para:{directed:true} },
+
+				// function 
+				uniprot:{ para:{directed:true}, codon:{directed:true} },
+				[%FOREACH fd IN featuredef%]
+				[%fd.feature%]:{ uniprot:{directed:true}},
+				[%END%]
+
+				// para
+				para:{ paraD:{directed:true}, paraF:{directed:true}},
+				paraD:{ codon:{directed:true}},
+				paraF:{ codon:{directed:true}},
+
+				// mapping
+				codon:{ altcodon:{directed:true}, nectar:{directed:true}},
+				altcodon:{ nectar:{directed:true}},
+				nectar:{ vep:{directed:true}},
+				
+			}
+		}// end of theUI
+
+
+		var sys = arbor.ParticleSystem()
+		sys.parameters({stiffness:400, repulsion:1000, gravity:true, dt:0.015})
+		sys.renderer = Renderer("#viewport")
+		sys.graft(theUI)
+		
+		//var nav = Nav("#nav")
+		//$(sys.renderer).bind('navigate', nav.navigate)
+		//$(nav).bind('mode', sys.renderer.switchMode)
+		//nav.init()
+
+/*
+		setTimeout(function(){
+			var postLoadData = {
+				nodes:{
+					joe:{'color':'orange','shape':'dot','label':'joe'},
+					fido:{'color':'green','shape':'dot','label':'fido'},
+					fluffy:{'color':'blue','shape':'dot','label':'fluffy'}
+				}, 
+				edges:{
+					dog:{ fido:{} },
+					cat:{ fluffy:{} },
+					joe:{ fluffy:{},fido:{} }
+				}
+			};
+			sys.graft(postLoadData);
+		},10000);
+*/
+	</script>
+</div>
+<!--<script src="[%c.uri_for('/static/js/site.js')%]"></script>-->
