@@ -1,5 +1,7 @@
-		<script src="http://www.google.com/jsapi?key=[%google.ajax_api_key%]" type="text/javascript"></script>
-		<script language="Javascript" type="text/javascript">google.load("jquery", "[%jquery.ver%]");google.load("jqueryui", "[%jquery.ui_ver%]");</script>
+		<!--<script src="http://www.google.com/jsapi?key=[%google.ajax_api_key%]" type="text/javascript"></script>-->
+		<!--<script language="Javascript" type="text/javascript">google.load("jquery", "[%jquery.ver%]");google.load("jqueryui", "[%jquery.ui_ver%]");</script>-->
+		<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/[%jquery.ver%]/jquery.min.js"></script> 
+		<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jqueryui/[%jquery.ui_ver%]/jquery-ui.min.js"></script> 
 
 		[%-IF template.name=='about.tt2'%]
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=[%google.map_api_key%]&sensor=false"></script>
